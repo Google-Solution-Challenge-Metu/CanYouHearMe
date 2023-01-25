@@ -62,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 backgroundImage: AssetImage("assets/images/mithat.jpg"),
               ),
               const Text(
-                "Bilgi Kartları",
+                "Diet-App",
                 style: TextStyle(
                     fontFamily: "Pacifico",
                     fontSize: 30.0,
@@ -70,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     fontWeight: FontWeight.bold),
               ),
               Text(
-                "Aradığınız TYT - AYT Bilgileri Burada",
+                "to eat or not to eat",
                 style: TextStyle(
                   fontFamily: "Source Sans Pro",
                   fontSize: 15.0,
