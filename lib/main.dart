@@ -1,3 +1,5 @@
+import 'package:dietapp/screens/login/login_doctor.dart';
+import 'package:dietapp/screens/login/login_patient.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -93,11 +95,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: const Icon(
-                      Icons.book,
+                      Icons.personal_injury,
                       color: Colors.green,
                     ),
                     title: const Text(
-                      "TYT Kartlar",
+                      "Hasta Girişi",
                       style: TextStyle(
                         color: Colors.black54,
                       ),
@@ -105,8 +107,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     trailing: GestureDetector(
                       behavior: HitTestBehavior.translucent,
                       onTap: () {
-                        /* Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => TytPage())); */
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => PatientLoginPage()));
                       },
                       child: const Icon(
                         Icons.arrow_forward_ios,
@@ -123,11 +127,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
                     leading: const Icon(
-                      Icons.calculate,
+                      Icons.medical_services,
                       color: Colors.green,
                     ),
                     title: const Text(
-                      "AYT Kartlar",
+                      "Doktor Girişi",
                       style: TextStyle(
                         color: Colors.black54,
                       ),
@@ -135,39 +139,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     trailing: GestureDetector(
                       behavior: HitTestBehavior.translucent,
                       onTap: () {
-                        /* Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => AytPage())); */
-                      },
-                      child: const Icon(
-                        Icons.arrow_forward_ios,
-                        color: Colors.black54,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Card(
-                margin: EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
-                child: Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: ListTile(
-                    leading: const Icon(
-                      Icons.school,
-                      color: Colors.green,
-                    ),
-                    title: const Text(
-                      "TYT - AYT Kartlar",
-                      style: TextStyle(
-                        color: Colors.black54,
-                      ),
-                    ),
-                    trailing: GestureDetector(
-                      behavior: HitTestBehavior.translucent,
-                      onTap: () {
-                        /* Navigator.push(
+                        Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => TytAytPage())); */
+                                builder: (context) => DoctorLoginPage()));
                       },
                       child: const Icon(
                         Icons.arrow_forward_ios,
