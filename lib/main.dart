@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.green[400],
+        backgroundColor: Colors.green[600],
         body: SafeArea(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

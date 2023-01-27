@@ -10,46 +10,56 @@ class _DoctorLoginPageState extends State<DoctorLoginPage> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.green[400],
+        backgroundColor: Colors.green[600],
         body: SafeArea(
-          child: ListView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              const CircleAvatar(
+                radius: 50.0,
+                backgroundImage: AssetImage("assets/images/mithat.jpg"),
+              ),
+              const Text(
+                "Diet-App",
+                style: TextStyle(
+                    fontFamily: "Pacifico",
+                    fontSize: 30.0,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold),
+              ),
+              Text(
+                "to eat or not to eat",
+                style: TextStyle(
+                  fontFamily: "Source Sans Pro",
+                  fontSize: 15.0,
+                  letterSpacing: 2.5,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.green[100],
+                ),
+              ),
               const SizedBox(
                 height: 20.0,
                 width: 200.0,
+                child: Divider(
+                  color: Colors.white,
+                ),
               ),
-              Center(
-                child: Text(
-                  "TYT-AYT Kartlar",
-                  style: TextStyle(
-                    fontFamily: "Source Sans Pro",
-                    fontSize: 15.0,
-                    letterSpacing: 2.5,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.green[100],
-                  ),
+              const TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Password',
                 ),
               ),
               const SizedBox(
                 height: 20.0,
                 width: 200.0,
               ),
-              const Card(
-                margin: EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
-                child: Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.book,
-                      color: Colors.green,
-                    ),
-                    title: Text(
-                      "TYT Kartlar",
-                      style: TextStyle(
-                        color: Colors.black54,
-                      ),
-                    ),
-                  ),
+              const TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Password',
                 ),
               ),
             ],
