@@ -6,9 +6,11 @@ class PatientLoginPage extends StatefulWidget {
 }
 
 class _PatientLoginPageState extends State<PatientLoginPage> {
+  final usernameControler = TextEditingController();
+  final passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.of(context).size.height;
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.green[600],
@@ -47,11 +49,26 @@ class _PatientLoginPageState extends State<PatientLoginPage> {
                     thickness: 3.0,
                   ),
                 ),
-                buildTextField("Kullanıcı Adı", false),
+                buildTextField(usernameControler, "Kullanıcı Adı", false),
                 const SizedBox(
                   height: 20.0,
                 ),
-                buildTextField("Şifre", true),
+                buildTextField(passwordController, "Şifre", true),
+                const SizedBox(
+                  height: 10.0,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        "Şifrenizi mi unuttunuz?",
+                        style: TextStyle(color: Colors.grey.shade200),
+                      ),
+                    ],
+                  ),
+                ),
                 const SizedBox(
                   height: 20.0,
                 ),
@@ -107,13 +124,15 @@ class _PatientLoginPageState extends State<PatientLoginPage> {
     );
   }
 
-  Padding buildTextField(String hintText, bool obscureText) {
+  Padding buildTextField(final controller, String hintText, bool obscureText) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20.0),
       child: TextField(
+        controller: controller,
         obscureText: obscureText,
         decoration: InputDecoration(
           hintText: hintText,
+          hintStyle: TextStyle(color: Colors.grey[500]),
           enabledBorder: const OutlineInputBorder(
             borderRadius: BorderRadius.all(
               Radius.circular(10.0),
