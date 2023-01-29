@@ -24,8 +24,7 @@ class _HomePageState extends State<HomePage> {
             backgroundColor: Colors.green,
             color: Colors.white,
             activeColor: Colors.white,
-            tabBackgroundColor: Colors.green.shade700,
-            gap: 10.0,
+            tabBackgroundColor: Colors.green.shade700, ,
             padding: const EdgeInsets.all(16.0),
             tabs: const [
               GButton(
