@@ -40,17 +40,18 @@ class _PatientLoginPageState extends State<PatientLoginPage> {
                   ),
                 ),
                 const SizedBox(
-                  height: 20.0,
+                  height: 30.0,
                   width: 200.0,
                   child: Divider(
                     color: Colors.white,
+                    thickness: 3.0,
                   ),
                 ),
-                buildTextField("Kullanıcı Adı"),
+                buildTextField("Kullanıcı Adı", false),
                 const SizedBox(
                   height: 20.0,
                 ),
-                buildTextField("Şifre"),
+                buildTextField("Şifre", true),
                 const SizedBox(
                   height: 20.0,
                 ),
@@ -69,10 +70,33 @@ class _PatientLoginPageState extends State<PatientLoginPage> {
                         "Giriş Yap",
                         style: TextStyle(
                           color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
                         ),
                       ),
                     ),
                   ),
+                ),
+                const SizedBox(
+                  height: 20.0,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Kayıtlı değil misin?",
+                      style: TextStyle(
+                        color: Colors.grey[300],
+                      ),
+                    ),
+                    const Text(
+                      " Kaydol",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
                 )
               ],
             ),
@@ -83,17 +107,31 @@ class _PatientLoginPageState extends State<PatientLoginPage> {
     );
   }
 
-  Container buildTextField(String hintText) {
-    return Container(
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.0), color: Colors.white),
-      width: 350.0,
-      padding: const EdgeInsets.symmetric(horizontal: 25.0),
+  Padding buildTextField(String hintText, bool obscureText) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20.0),
       child: TextField(
-        obscureText: true,
+        obscureText: obscureText,
         decoration: InputDecoration(
-          border: InputBorder.none,
           hintText: hintText,
+          enabledBorder: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(10.0),
+            ),
+            borderSide: BorderSide(
+              color: Colors.white,
+            ),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: const BorderRadius.all(
+              Radius.circular(10.0),
+            ),
+            borderSide: BorderSide(
+              color: Colors.grey.shade400,
+            ),
+          ),
+          fillColor: Colors.grey.shade200,
+          filled: true,
         ),
       ),
     );

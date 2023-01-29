@@ -87,6 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 width: 200.0,
                 child: Divider(
                   color: Colors.white,
+                  thickness: 3.0,
                 ),
               ),
               Card(
@@ -111,7 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => HomePage()));
+                                builder: (context) => PatientLoginPage()));
                       },
                       child: const Icon(
                         Icons.arrow_forward_ios,
