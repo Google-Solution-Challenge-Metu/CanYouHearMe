@@ -9,6 +9,9 @@ class _PatientLoginPageState extends State<PatientLoginPage> {
   final usernameControler = TextEditingController();
   final passwordController = TextEditingController();
 
+  void signUserIn() {}
+  void registerUser() {}
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -72,28 +75,7 @@ class _PatientLoginPageState extends State<PatientLoginPage> {
                 const SizedBox(
                   height: 20.0,
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 25.0,
-                  ),
-                  child: Container(
-                    width: 150.0,
-                    padding: EdgeInsets.all(20.0),
-                    decoration: BoxDecoration(
-                        color: Colors.green[700],
-                        borderRadius: BorderRadius.circular(12.0)),
-                    child: const Center(
-                      child: Text(
-                        "Giriş Yap",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
+                buildButton(signUserIn),
                 const SizedBox(
                   height: 20.0,
                 ),
@@ -106,11 +88,14 @@ class _PatientLoginPageState extends State<PatientLoginPage> {
                         color: Colors.grey[300],
                       ),
                     ),
-                    const Text(
-                      " Kaydol",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
+                    GestureDetector(
+                      onTap: registerUser,
+                      child: const Text(
+                        " Kaydol",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ],
@@ -120,6 +105,32 @@ class _PatientLoginPageState extends State<PatientLoginPage> {
           ),
         ),
         // This trailing comma makes auto-formatting nicer for build methods.
+      ),
+    );
+  }
+
+  Padding buildButton(final Function()? onTap) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 25.0,
+      ),
+      child: GestureDetector(
+        onTap: onTap,
+        child: Container(
+          width: 150.0,
+          padding: EdgeInsets.all(20.0),
+          decoration: BoxDecoration(
+              color: Colors.green[700],
+              borderRadius: BorderRadius.circular(12.0)),
+          child: const Center(
+            child: Text(
+              "Giriş Yap",
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }
