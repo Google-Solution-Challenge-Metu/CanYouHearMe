@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Bread</folder>
+	<filename>102.jpg</filename>
+	<path>C:\Users\OVAK\Desktop\TF deneme\Tensorflow\workspace\images\collectedimages\Bread\102.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>341</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Bread</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>22</xmin>
+			<ymin>11</ymin>
+			<xmax>487</xmax>
+			<ymax>339</ymax>
+		</bndbox>
+	</object>
+</annotation>
