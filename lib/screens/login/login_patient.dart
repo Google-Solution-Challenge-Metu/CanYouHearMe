@@ -6,7 +6,7 @@ class PatientLoginPage extends StatefulWidget {
 }
 
 class _PatientLoginPageState extends State<PatientLoginPage> {
-  final usernameControler = TextEditingController();
+  final usernameController = TextEditingController();
   final passwordController = TextEditingController();
 
   void signUserIn() {}
@@ -52,7 +52,7 @@ class _PatientLoginPageState extends State<PatientLoginPage> {
                     thickness: 3.0,
                   ),
                 ),
-                buildTextField(usernameControler, "Kullanıcı Adı", false),
+                buildTextField(usernameController, "Kullanıcı Adı", false),
                 const SizedBox(
                   height: 20.0,
                 ),
@@ -118,7 +118,7 @@ class _PatientLoginPageState extends State<PatientLoginPage> {
         onTap: onTap,
         child: Container(
           width: 150.0,
-          padding: EdgeInsets.all(20.0),
+          padding: const EdgeInsets.all(20.0),
           decoration: BoxDecoration(
               color: Colors.green[700],
               borderRadius: BorderRadius.circular(12.0)),
