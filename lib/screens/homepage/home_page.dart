@@ -1,3 +1,4 @@
+import 'package:dietapp/screens/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -12,6 +13,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
+      body: const Center(
+        child: Text("Home"),
+      ),
       bottomNavigationBar: Container(
         decoration: const BoxDecoration(
           color: Colors.green,
@@ -29,7 +34,7 @@ class _HomePageState extends State<HomePage> {
             tabBackgroundColor: Colors.green.shade700,
             gap: 10.0,
             padding: const EdgeInsets.all(16.0),
-            tabs: const [
+            tabs: [
               GButton(
                 icon: Icons.home,
                 text: "Ana Sayfa",
@@ -45,6 +50,10 @@ class _HomePageState extends State<HomePage> {
               GButton(
                 icon: Icons.person,
                 text: "Profil",
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ProfileScreen()));
+                },
               ),
             ],
           ),
