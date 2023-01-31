@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:dietapp/routes/routes.dart';
 
 class DoctorLoginPage extends StatefulWidget {
   const DoctorLoginPage({super.key});
@@ -11,7 +13,16 @@ class _DoctorLoginPageState extends State<DoctorLoginPage> {
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
 
-  void signUserIn() {}
+  void signUserIn() {
+    return runApp(
+      GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        initialRoute: AppPage.getNavBar(),
+        getPages: AppPage.routes,
+      ),
+    );
+  }
+
   void registerUser() {}
 
   @override

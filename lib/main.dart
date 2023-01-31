@@ -1,4 +1,3 @@
-import 'package:dietapp/screens/homepage/home_page.dart';
 import 'package:dietapp/screens/login/login_doctor.dart';
 import 'package:dietapp/screens/login/login_patient.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -92,7 +92,8 @@ class _MyHomePageState extends State<MyHomePage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => HomePage()));
+                                builder: (context) =>
+                                    const PatientLoginPage()));
                       },
                       child: const Icon(
                         Icons.arrow_forward_ios,
@@ -124,7 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => DoctorLoginPage()));
+                                builder: (context) => const DoctorLoginPage()));
                       },
                       child: const Icon(
                         Icons.arrow_forward_ios,

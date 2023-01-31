@@ -1,9 +1,12 @@
 import "package:flutter/material.dart";
-import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
-class SocialScreen extends StatelessWidget {
-  const SocialScreen({Key? key}) : super(key: key);
+class SocialScreen extends StatefulWidget {
+  const SocialScreen({super.key});
+  @override
+  State<SocialScreen> createState() => _SocialScreenState();
+}
 
+class _SocialScreenState extends State<SocialScreen> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
