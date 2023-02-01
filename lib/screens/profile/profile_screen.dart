@@ -1,3 +1,4 @@
+import 'package:dietapp/screens/components/posts.dart';
 import "package:flutter/material.dart";
 
 class ProfileScreen extends StatefulWidget {
@@ -46,133 +47,175 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
         ),
       ),
-      body: Column(
-        children: [
-          Container(
-            color: Colors.white,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Stack(
-                  alignment: Alignment.bottomRight,
-                  children: [
-                    const CircleAvatar(
-                      radius: 50.0,
-                      backgroundImage: AssetImage("assets/images/mithat.jpg"),
-                    ),
-                    InkWell(
-                      onTap: () {},
-                      child: CircleAvatar(
-                        radius: 15.0,
-                        backgroundColor: Colors.green[600],
-                        child: const Icon(
-                          Icons.edit,
-                          size: 15,
-                          color: Colors.white,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.only(top: 10.0),
+              color: Colors.white,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Stack(
+                    alignment: Alignment.bottomRight,
+                    children: [
+                      const CircleAvatar(
+                        radius: 50.0,
+                        backgroundImage: AssetImage("assets/images/mithat.jpg"),
+                      ),
+                      InkWell(
+                        onTap: () {},
+                        child: CircleAvatar(
+                          radius: 15.0,
+                          backgroundColor: Colors.green[600],
+                          child: const Icon(
+                            Icons.edit,
+                            size: 15,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-                const Padding(
-                  padding: EdgeInsets.fromLTRB(20, 20, 20, 10),
-                  child: Text(
-                    "Mithat Can Timurcan",
-                    style: TextStyle(
-                        fontFamily: "Raleway", fontWeight: FontWeight.bold),
+                    ],
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 30.0, vertical: 10.0),
-                  child: Text(
-                    "20 yaşındayım, diyet yapmak ve sağlığımı korumak istiyorum!",
-                    style: TextStyle(
-                      fontFamily: "Raleway",
-                      fontWeight: FontWeight.bold,
-                      color: Colors.grey.shade700,
+                  const Padding(
+                    padding: EdgeInsets.fromLTRB(20, 20, 20, 10),
+                    child: Text(
+                      "Mithat Can Timurcan",
+                      style: TextStyle(
+                          fontFamily: "Raleway", fontWeight: FontWeight.bold),
                     ),
                   ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Column(
-                      children: [
-                        Text(
-                          "25",
-                          style: TextStyle(
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 30.0, vertical: 10.0),
+                    child: Text(
+                      "20 yaşındayım, diyet yapmak ve sağlığımı korumak istiyorum!",
+                      style: TextStyle(
+                        fontFamily: "Raleway",
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey.shade700,
+                      ),
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Column(
+                        children: [
+                          Text(
+                            "25",
+                            style: TextStyle(
+                                fontFamily: "Raleway",
+                                fontWeight: FontWeight.w300,
+                                fontSize: 20.0),
+                          ),
+                          const SizedBox(
+                            height: 10.0,
+                          ),
+                          Text(
+                            "Gönderi",
+                            style: TextStyle(
+                              color: Colors.grey.shade500,
                               fontFamily: "Raleway",
                               fontWeight: FontWeight.w300,
-                              fontSize: 20.0),
-                        ),
-                        const SizedBox(
-                          height: 10.0,
-                        ),
-                        Text(
-                          "Gönderi",
-                          style: TextStyle(
-                            color: Colors.grey.shade500,
-                            fontFamily: "Raleway",
-                            fontWeight: FontWeight.w300,
-                            fontSize: 15.0,
+                              fontSize: 15.0,
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Text(
-                          "543",
-                          style: TextStyle(
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Text(
+                            "543",
+                            style: TextStyle(
+                                fontFamily: "Raleway",
+                                fontWeight: FontWeight.w300,
+                                fontSize: 20.0),
+                          ),
+                          const SizedBox(
+                            height: 10.0,
+                          ),
+                          Text(
+                            "Takipçi",
+                            style: TextStyle(
+                              color: Colors.grey.shade500,
                               fontFamily: "Raleway",
                               fontWeight: FontWeight.w300,
-                              fontSize: 20.0),
-                        ),
-                        const SizedBox(
-                          height: 10.0,
-                        ),
-                        Text(
-                          "Takipçi",
-                          style: TextStyle(
-                            color: Colors.grey.shade500,
-                            fontFamily: "Raleway",
-                            fontWeight: FontWeight.w300,
-                            fontSize: 15.0,
+                              fontSize: 15.0,
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Text(
-                          "488",
-                          style: TextStyle(
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Text(
+                            "488",
+                            style: TextStyle(
+                                fontFamily: "Raleway",
+                                fontWeight: FontWeight.w300,
+                                fontSize: 20.0),
+                          ),
+                          const SizedBox(
+                            height: 10.0,
+                          ),
+                          Text(
+                            "Takip",
+                            style: TextStyle(
+                              color: Colors.grey.shade500,
                               fontFamily: "Raleway",
                               fontWeight: FontWeight.w300,
-                              fontSize: 20.0),
-                        ),
-                        const SizedBox(
-                          height: 10.0,
-                        ),
-                        Text(
-                          "Takip",
-                          style: TextStyle(
-                            color: Colors.grey.shade500,
-                            fontFamily: "Raleway",
-                            fontWeight: FontWeight.w300,
-                            fontSize: 15.0,
+                              fontSize: 15.0,
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                buildButton(changeUserProfile, "Profili Düzenle")
-              ],
+                        ],
+                      ),
+                    ],
+                  ),
+                  buildButton(changeUserProfile, "Profili Düzenle")
+                ],
+              ),
             ),
-          ),
-        ],
+            Container(
+              color: Colors.white,
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Column(
+                children: [
+                  const Center(
+                    child: Text(
+                      "Gönderiler",
+                      style: TextStyle(
+                        fontFamily: "Raleway",
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20.0,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10.0,
+                  ),
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 40.0),
+                    child: Column(
+                      children: [
+                        Divider(
+                          thickness: 1.0,
+                          color: Colors.green[900],
+                        ),
+                        GridView.count(
+                          physics: NeverScrollableScrollPhysics(),
+                          crossAxisCount: 2,
+                          shrinkWrap: true,
+                          childAspectRatio: 1,
+                          children: List.generate(5, (index) => PostBuilder()),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
