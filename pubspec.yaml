@@ -43,4 +43,6 @@ flutter:
   - family: Source Sans Pro
     fonts:
     - asset: assets/fonts/SourceSansPro-Regular.ttf
-
+  - family: Raleway
+    fonts:
+    - asset: assets/fonts/Raleway-Regular.ttf
