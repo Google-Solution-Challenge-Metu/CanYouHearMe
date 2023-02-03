@@ -1,6 +1,6 @@
-import 'package:dietapp/models/blogpostwidget.dart';
 import 'package:dietapp/models/blog_details_page.dart';
 import "package:flutter/material.dart";
+import 'package:dietapp/models/data.dart';
 
 class ExploreScreen extends StatefulWidget {
   const ExploreScreen({super.key});
@@ -71,14 +71,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
               final post = data[index];
               return Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                child: BlogModelWidget(
-                  post.title,
-                  post.imageName,
-                  post.author,
-                  post.date,
-                  post.context,
-                  () {},
-                ),
+                child: BlogModelWidget(post),
               );
             },
             separatorBuilder: (context, index) => const Padding(
@@ -88,6 +81,54 @@ class _ExploreScreenState extends State<ExploreScreen> {
             itemCount: data.length,
           )
         ],
+      ),
+    );
+  }
+
+  Widget BlogModelWidget(DataModel data) {
+    return InkWell(
+      onTap: () {
+        Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => BlogDetailsPage(data: data)));
+      },
+      child: Container(
+        child: Row(
+          children: [
+            Container(
+              width: 160,
+              height: 75,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8.0),
+                child: Image.asset(
+                  data.imageName,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            const SizedBox(
+              width: 20.0,
+            ),
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    data.title,
+                    style: const TextStyle(fontSize: 17.0),
+                  ),
+                  const SizedBox(
+                    height: 10.0,
+                  ),
+                  Text(
+                    "${data.author} ${data.date}",
+                    style: const TextStyle(fontSize: 10),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
