@@ -1,142 +1,92 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-
-class BlogModelWidget extends StatelessWidget {
+class DataModel {
   final String title;
   final String imageName;
   final String author;
   final String date;
   final String context;
-  final Function onClick;
-  BlogModelWidget(this.title, this.imageName, this.author, this.date,
-      this.context, this.onClick);
 
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onClick(),
-      child: Container(
-        child: Row(
-          children: [
-            Container(
-              width: 160,
-              height: 75,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(8.0),
-                child: Image.asset(
-                  imageName,
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-            const SizedBox(
-              width: 20.0,
-            ),
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    style: const TextStyle(fontSize: 17.0),
-                  ),
-                  const SizedBox(
-                    height: 10.0,
-                  ),
-                  Text(
-                    "$author, $date",
-                    style: const TextStyle(fontSize: 10),
-                  ),
-                ],
-              ),
-            )
-          ],
-        ),
-      ),
-    );
-  }
+  DataModel(this.title, this.imageName, this.author, this.date, this.context);
 }
 
-List<BlogModelWidget> dataList = [
-  BlogModelWidget(
-      "B12 Vitamini Hangi Besinlerde Bulunur?",
-      "assets/images/b12vitamini.jpg",
-      "Gamze Şanlı Ak",
-      "11.08.2022",
-      'B12 Vitamini Hangi Besinlerde Bulunur?\n' +
-          '\n' +
-          'B12 vitamini suda eriyen bir vitamindir ve diğer adı kobalamindir. Vücudunuzun kendini yenileyebilmesi, hastalıklara karşı kalkan oluşturabilmesi, büyümesi, gelişmesi ve sağlıklı bir yaşam rutini oluşturabilmesi için yardımcı olan vitaminlerin başında gelir.\n' +
-          '\n' +
-          'Peki, B12 vitamini hangi besinlerde bulunur?\n' +
-          '\n' +
-          'B12 vitamini, hayvansal kaynaklı besinler olan kırmızı et, tavuk, balık, karaciğer, deniz ürünleri, süt, yumurta, yoğurt ve peynirde bulunur. Günlük diyet çoğunlukla bitkisel besinlerden oluştuğunda, alınan B12 vitamini miktarı da azalır. Özellikle vejetaryen beslenme tipi uygulayanların çok dikkat etmesi gereken bir vitamindir. B12 ile zenginleştirilmiş yiyeceklerle takviye yapılabilir. Gerekirse, beslenmeye ek olarak B12 vitamini takviyesi alınabilir.  Besinlere uygulanan yüksek sıcaklık, B12 vitamininin de kaybına yol açmaktadır.\n' +
-          '\n' +
-          'Hafızayı güçlendirmeye yardımcı olur\n' +
-          '\n' +
-          'Bilişsel fonksiyonların gelişmesine destek sağlayan B12 vitamini, eksikliğinde unutkanlıkla kendini gösterir, düzenli alımda ise hafızayı güçlendirerek beyin sağlığını destekler.\n' +
-          '\n' +
-          'Kansızlık tedavisini destekler\n' +
-          '\n' +
-          'Kansızlık probleminde B12 vitamini destekleyici rol üstlenir. Folik asitle birlikte çalışarak kansızlığı önlemeye, tedavinin faydalı olmasına destek sağlar.\n' +
-          '\n' +
-          'Saç ve cilt sağlığının destekçisidir\n' +
-          '\n' +
-          'Saç, cilt ve tırnak yapısında görülen cansızlık, kırılmalar, dökülmeler ve genel problemler B12 eksikliğinden kaynaklanıyor olabilir. B12 vitaminini düzenli aldığınızda saç, cilt ve tırnak yapınızın daha güçlü, daha sağlıklı olması için destekleyebilirsiniz.\n' +
-          '\n' +
-          'Kilo kontrolüne yardımcı olur\n' +
-          '\n' +
-          'B12 vitamini vücuttaki karbonhidratların enerjiye dönüşümüne yardımcı olur. Bu döngü yağ yakımı, metabolizmanın hızlanması ve kilo kontrolü sağlamada destek sağlar. Vücut enerjisinin artması yanı zamanda fiziksel performansı da destekler, spor rutininizi canlandırabilir.\n' +
-          '\n' +
-          'Kalp ve damar sağlığını destekler\n' +
-          '\n' +
-          'Son yıllarda artış gösteren kalp ve damar rahatsızlıklarının temel sebeplerinden biri de vitamin eksikliğidir. B12 vitamini, kalp ve damar sağlığı rahatsızlıklarına yakalanma riskini düşürmeye yardımcı olabilir, kalbi doğal yollarla destekler.  \n' +
-          '\n' +
-          'Hücre onarımını destekler\n' +
-          '\n' +
-          'B12 vitamini sinir hücrelerini onarmaya, vücudunuzdaki hücrelerin yaşlanmasını önlemeye yardımcı olur.\n' +
-          '\n' +
-          'Günlük B12 Vitamini İhtiyacı\n' +
-          '\n' +
-          'B12 vitamini referans aralığına göre kişilerin günlük B12 vitamin ihtiyacı 2-3 mcg’dir. Hamile ve emziren kişilerde ise bu ihtiyaç daha yüksek seviyelerdedir. Günlük alım seviyeleri;\n' +
-          '\n' +
-          '    0 - 1 yaş bebeklerde; 0,5 mcg\n' +
-          '    1 - 13 yaş çocuklarda; 1 - 2 mcg\n' +
-          '    14 yaş üstü kişilerde; 2,4 mcg\n' +
-          '    Gebe ve emzirenlerde; 2,8 mcg\n' +
-          '\n' +
-          'B12 Vitamini Eksikliği Belirtileri\n' +
-          '\n' +
-          'B12 vitamini eksikliğini vücudunuzdaki değişikliklerden, olumsuz hallerden anlayabilirsiniz. İşte vücudunuzun size gönderdiği sinyaller;\n' +
-          '\n' +
-          '    Hafıza problemleri, yoğun unutkanlık\n' +
-          '    Depresyon, anksiyete, sinirlilik hali\n' +
-          '    Kilo kaybı\n' +
-          '    Ciltte kuruluk\n' +
-          '    Saç dökülmesi\n' +
-          '    Ağız için yara\n' +
-          '    Konsantrasyon bozukluğu\n' +
-          '    El ve ayaklarda uyuşma / karıncalanma\n' +
-          '    İştahsızlık, kilo kaybı\n' +
-          '    Denge problemleri\n' +
-          '\n' +
-          'B12 vitamini eksikliği nasıl tedavi edilir?\n' +
-          '\n' +
-          'Kandaki B12 seviyesini yükseltmek için vitamin takviyesi alabilirsiniz veya hayvansal ürünlerin tüketimini artırabilirsiniz. Ancak kandaki seviyeniz düşük durumdaysa hekiminizin yönlendirmesi ile B12 vitaminini burun spreyi olarak veya belirli aralıklarla iğne olarak da kullanılabilirsiniz. \n' +
-          '\n' +
-          'Vücuttaki B12 vitaminin ciddi eksikliğinde ne yaşanır?\n' +
-          '\n' +
-          'B12 vitamini beynin sinir ağını oluşturan hücrelerin büyümesinde ve onarımında önemli rol oynar. Eksikliğinde geri dönüşsüz olan hatırlama güçlüğü, hafıza kaybı ve demans gibi ciddi sorunlar ortaya çıkar.\n' +
-          '\n' +
-          'Hangi durumlar B12 vitamini eksikliği riskini arttırır?\n' +
-          '\n' +
-          'B12 vitamini eksikliği vücudunuza yeterli ve doğru besin ögesi alamadığınızda ve sindirim sisteminde yaşanan problemlere bağlı olarak görülebilir. Vegan olarak beslenen bireyler hayvansal kaynakları tüketmedikleri için risk altındadırlar. Kronik alkolizim, Crohn hastalığı veya çölyak hastası olmak, yağ aldırma operasyonları, ilerleyen yaş riski arttırır çünkü bu durumlarda vücutta yeterli emilim gerçekleşemez.\n' +
-          '\n' +
-          'Yeterli B12 vitamini alınmazsa ne olur?\n' +
-          '\n' +
-          'Vücut yeterli kırmızı kan hücresi üretemez. Yetersizliği halinde, sinir sistemi bozuklukları ile birlikte, “pernisiyöz anemi” (kansızlık) oluşur. Pernisiyöz anemide, kırmızı ve beyaz kan hücrelerinin sayısı azalır ve şekilleri bozulur. Bu durum, kemik iliğinde kan hücrelerinin yapımındaki bozukluktan ileri gelir. Pernisiyöz aneminin oluşum nedenleri farklı da olabilir. Nedenlerinden biri, diyetle yeteri kadar B12 vitamini alınmaması veya besinlerin hazırlanması ve saklanması için uygulanan işlemlerin vitamin kaybını artırmasıdır.',
-      () {}),
-  BlogModelWidget(
+List<DataModel> dataList = [
+  DataModel(
+    "B12 Vitamini Hangi Besinlerde Bulunur?",
+    "assets/images/b12vitamini.jpg",
+    "Gamze Şanlı Ak",
+    "11.08.2022",
+    'B12 Vitamini Hangi Besinlerde Bulunur?\n' +
+        '\n' +
+        'B12 vitamini suda eriyen bir vitamindir ve diğer adı kobalamindir. Vücudunuzun kendini yenileyebilmesi, hastalıklara karşı kalkan oluşturabilmesi, büyümesi, gelişmesi ve sağlıklı bir yaşam rutini oluşturabilmesi için yardımcı olan vitaminlerin başında gelir.\n' +
+        '\n' +
+        'Peki, B12 vitamini hangi besinlerde bulunur?\n' +
+        '\n' +
+        'B12 vitamini, hayvansal kaynaklı besinler olan kırmızı et, tavuk, balık, karaciğer, deniz ürünleri, süt, yumurta, yoğurt ve peynirde bulunur. Günlük diyet çoğunlukla bitkisel besinlerden oluştuğunda, alınan B12 vitamini miktarı da azalır. Özellikle vejetaryen beslenme tipi uygulayanların çok dikkat etmesi gereken bir vitamindir. B12 ile zenginleştirilmiş yiyeceklerle takviye yapılabilir. Gerekirse, beslenmeye ek olarak B12 vitamini takviyesi alınabilir.  Besinlere uygulanan yüksek sıcaklık, B12 vitamininin de kaybına yol açmaktadır.\n' +
+        '\n' +
+        'Hafızayı güçlendirmeye yardımcı olur\n' +
+        '\n' +
+        'Bilişsel fonksiyonların gelişmesine destek sağlayan B12 vitamini, eksikliğinde unutkanlıkla kendini gösterir, düzenli alımda ise hafızayı güçlendirerek beyin sağlığını destekler.\n' +
+        '\n' +
+        'Kansızlık tedavisini destekler\n' +
+        '\n' +
+        'Kansızlık probleminde B12 vitamini destekleyici rol üstlenir. Folik asitle birlikte çalışarak kansızlığı önlemeye, tedavinin faydalı olmasına destek sağlar.\n' +
+        '\n' +
+        'Saç ve cilt sağlığının destekçisidir\n' +
+        '\n' +
+        'Saç, cilt ve tırnak yapısında görülen cansızlık, kırılmalar, dökülmeler ve genel problemler B12 eksikliğinden kaynaklanıyor olabilir. B12 vitaminini düzenli aldığınızda saç, cilt ve tırnak yapınızın daha güçlü, daha sağlıklı olması için destekleyebilirsiniz.\n' +
+        '\n' +
+        'Kilo kontrolüne yardımcı olur\n' +
+        '\n' +
+        'B12 vitamini vücuttaki karbonhidratların enerjiye dönüşümüne yardımcı olur. Bu döngü yağ yakımı, metabolizmanın hızlanması ve kilo kontrolü sağlamada destek sağlar. Vücut enerjisinin artması yanı zamanda fiziksel performansı da destekler, spor rutininizi canlandırabilir.\n' +
+        '\n' +
+        'Kalp ve damar sağlığını destekler\n' +
+        '\n' +
+        'Son yıllarda artış gösteren kalp ve damar rahatsızlıklarının temel sebeplerinden biri de vitamin eksikliğidir. B12 vitamini, kalp ve damar sağlığı rahatsızlıklarına yakalanma riskini düşürmeye yardımcı olabilir, kalbi doğal yollarla destekler.  \n' +
+        '\n' +
+        'Hücre onarımını destekler\n' +
+        '\n' +
+        'B12 vitamini sinir hücrelerini onarmaya, vücudunuzdaki hücrelerin yaşlanmasını önlemeye yardımcı olur.\n' +
+        '\n' +
+        'Günlük B12 Vitamini İhtiyacı\n' +
+        '\n' +
+        'B12 vitamini referans aralığına göre kişilerin günlük B12 vitamin ihtiyacı 2-3 mcg’dir. Hamile ve emziren kişilerde ise bu ihtiyaç daha yüksek seviyelerdedir. Günlük alım seviyeleri;\n' +
+        '\n' +
+        '    0 - 1 yaş bebeklerde; 0,5 mcg\n' +
+        '    1 - 13 yaş çocuklarda; 1 - 2 mcg\n' +
+        '    14 yaş üstü kişilerde; 2,4 mcg\n' +
+        '    Gebe ve emzirenlerde; 2,8 mcg\n' +
+        '\n' +
+        'B12 Vitamini Eksikliği Belirtileri\n' +
+        '\n' +
+        'B12 vitamini eksikliğini vücudunuzdaki değişikliklerden, olumsuz hallerden anlayabilirsiniz. İşte vücudunuzun size gönderdiği sinyaller;\n' +
+        '\n' +
+        '    Hafıza problemleri, yoğun unutkanlık\n' +
+        '    Depresyon, anksiyete, sinirlilik hali\n' +
+        '    Kilo kaybı\n' +
+        '    Ciltte kuruluk\n' +
+        '    Saç dökülmesi\n' +
+        '    Ağız için yara\n' +
+        '    Konsantrasyon bozukluğu\n' +
+        '    El ve ayaklarda uyuşma / karıncalanma\n' +
+        '    İştahsızlık, kilo kaybı\n' +
+        '    Denge problemleri\n' +
+        '\n' +
+        'B12 vitamini eksikliği nasıl tedavi edilir?\n' +
+        '\n' +
+        'Kandaki B12 seviyesini yükseltmek için vitamin takviyesi alabilirsiniz veya hayvansal ürünlerin tüketimini artırabilirsiniz. Ancak kandaki seviyeniz düşük durumdaysa hekiminizin yönlendirmesi ile B12 vitaminini burun spreyi olarak veya belirli aralıklarla iğne olarak da kullanılabilirsiniz. \n' +
+        '\n' +
+        'Vücuttaki B12 vitaminin ciddi eksikliğinde ne yaşanır?\n' +
+        '\n' +
+        'B12 vitamini beynin sinir ağını oluşturan hücrelerin büyümesinde ve onarımında önemli rol oynar. Eksikliğinde geri dönüşsüz olan hatırlama güçlüğü, hafıza kaybı ve demans gibi ciddi sorunlar ortaya çıkar.\n' +
+        '\n' +
+        'Hangi durumlar B12 vitamini eksikliği riskini arttırır?\n' +
+        '\n' +
+        'B12 vitamini eksikliği vücudunuza yeterli ve doğru besin ögesi alamadığınızda ve sindirim sisteminde yaşanan problemlere bağlı olarak görülebilir. Vegan olarak beslenen bireyler hayvansal kaynakları tüketmedikleri için risk altındadırlar. Kronik alkolizim, Crohn hastalığı veya çölyak hastası olmak, yağ aldırma operasyonları, ilerleyen yaş riski arttırır çünkü bu durumlarda vücutta yeterli emilim gerçekleşemez.\n' +
+        '\n' +
+        'Yeterli B12 vitamini alınmazsa ne olur?\n' +
+        '\n' +
+        'Vücut yeterli kırmızı kan hücresi üretemez. Yetersizliği halinde, sinir sistemi bozuklukları ile birlikte, “pernisiyöz anemi” (kansızlık) oluşur. Pernisiyöz anemide, kırmızı ve beyaz kan hücrelerinin sayısı azalır ve şekilleri bozulur. Bu durum, kemik iliğinde kan hücrelerinin yapımındaki bozukluktan ileri gelir. Pernisiyöz aneminin oluşum nedenleri farklı da olabilir. Nedenlerinden biri, diyetle yeteri kadar B12 vitamini alınmaması veya besinlerin hazırlanması ve saklanması için uygulanan işlemlerin vitamin kaybını artırmasıdır.',
+  ),
+  DataModel(
       "Kahvenin İnsan Sağlığına Faydaları",
       "assets/images/kahve.jpg",
       "İlkay Gök",
@@ -215,9 +165,8 @@ List<BlogModelWidget> dataList = [
           '\n' +
           'Kaynakça:\n' +
           '\n' +
-          'Cite this article as: Gök, İ. (2021). Kavurma işlemi, demeleme/pişirme yöntemlerinin kahvenin biyoaktif bileşenlerine etkisi: Fonksiyonel içecek olarak insan sağlığına faydaları. Food and Health, 7(4), 311-328. https://doi.org/10.3153/FH21032',
-      () {}),
-  BlogModelWidget(
+          'Cite this article as: Gök, İ. (2021). Kavurma işlemi, demeleme/pişirme yöntemlerinin kahvenin biyoaktif bileşenlerine etkisi: Fonksiyonel içecek olarak insan sağlığına faydaları. Food and Health, 7(4), 311-328. https://doi.org/10.3153/FH21032'),
+  DataModel(
       "Sürdürülebilir Beslenme Nedir, Nasıl Uygulanır?",
       "assets/images/sürdürülebilir.jpg",
       "Kısık Ateş",
@@ -282,9 +231,8 @@ List<BlogModelWidget> dataList = [
           '    Willett, Walter et al. Food in the Anthropocene: the EAT–Lancet Commission on healthy diets from sustainable food systems, The Lancet, Vol. 393, Issue 10170, 447 –492\n' +
           '    The Nutrition Source, 5 Tips for Sustainable Eating, https://www.hsph.harvard.edu/ nutritionsource/ 2015/06/17/5-tips-for-sustainable-eating/\n' +
           '\n' +
-          'Bu içerik, Yaşar Üniversitesi Uygulamalı Bilimler Yüksekokulu Gastronomi ve Mutfak Sanatları Bölüm Başkanı Doç Dr. Seda Genç tarafından derlenmiştir.',
-      () {}),
-  BlogModelWidget(
+          'Bu içerik, Yaşar Üniversitesi Uygulamalı Bilimler Yüksekokulu Gastronomi ve Mutfak Sanatları Bölüm Başkanı Doç Dr. Seda Genç tarafından derlenmiştir.'),
+  DataModel(
       "Bağışıklık Sistemini Güçlendiren Top 10 Besin!",
       "assets/images/bağışıklık.jpg",
       "Gamze Şanlı Ak",
@@ -327,6 +275,5 @@ List<BlogModelWidget> dataList = [
           '\n' +
           '10. Yoğurt\n' +
           '\n' +
-          'Yoğurt, probiotikler ile zengin besin öğeleri içermesi sayesinde bağışıklık sistemini güçlendirir.',
-      () {}),
+          'Yoğurt, probiotikler ile zengin besin öğeleri içermesi sayesinde bağışıklık sistemini güçlendirir.'),
 ];

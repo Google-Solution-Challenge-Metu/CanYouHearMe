@@ -1,8 +1,8 @@
-import 'package:dietapp/models/blogpostwidget.dart';
+import 'package:dietapp/models/data.dart';
 import 'package:flutter/material.dart';
 
 class BlogDetailsPage extends StatefulWidget {
-  final BlogModelWidget data;
+  final DataModel data;
   const BlogDetailsPage({Key? key, required this.data}) : super(key: key);
 
   @override
@@ -53,14 +53,13 @@ class _BlogDetailsPageState extends State<BlogDetailsPage> {
             ),
           ),
           Expanded(
-            flex: 1,
             child: Padding(
               padding: const EdgeInsets.all(20),
               child: Text(
                 widget.data.context,
                 style: const TextStyle(
                     color: Colors.black54,
-                    fontSize: 24,
+                    fontSize: 17,
                     fontFamily: "Quicksand"),
               ),
             ),
