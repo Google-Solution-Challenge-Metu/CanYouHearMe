@@ -40,7 +40,7 @@ class _BlogDetailsPageState extends State<BlogDetailsPage> {
                   borderRadius: BorderRadius.circular(30),
                   image: DecorationImage(
                     image: AssetImage(
-                      widget.data.imageName,
+                      widget.data.imageNam,
                     ),
                     fit: BoxFit.fitHeight,
                   ),
