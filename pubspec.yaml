@@ -20,7 +20,7 @@ dependencies:
   line_awesome_flutter: ^2.0.0
   get: ^4.6.5
   tflite:
-    path: ./my_new_package
+    path: ./plugin_tflite
 
 dev_dependencies:
   flutter_test:
