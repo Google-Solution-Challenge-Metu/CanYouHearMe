@@ -18,6 +18,9 @@ dependencies:
   google_nav_bar: ^5.0.6
   cupertino_icons: ^1.0.2
   line_awesome_flutter: ^2.0.0
+  image_picker: ^0.8.4+11
+  tflite:
+    path: ./lib/flutter_tflite-master
   get: ^4.6.5
   #tflite:
   #  path: ./plugin_tflite
@@ -33,7 +36,9 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/images/
+    - assets/
+
+
 
   fonts:
   - family: Quicksand
