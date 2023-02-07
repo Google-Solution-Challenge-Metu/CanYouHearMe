@@ -1,8 +1,16 @@
 import 'package:dietapp/screens/login/login_doctor.dart';
 import 'package:dietapp/screens/login/login_patient.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+//void main() {
+//  runApp(const MyApp());
+//}
+
+Future main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   runApp(const MyApp());
 }
 
