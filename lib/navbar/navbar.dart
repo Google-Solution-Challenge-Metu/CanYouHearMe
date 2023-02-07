@@ -3,6 +3,7 @@ import 'package:dietapp/screens/homepage/home_page.dart';
 import 'package:dietapp/screens/profile/profile_screen.dart';
 import 'package:dietapp/screens/social/social.dart';
 import 'package:dietapp/screens/explore/explore.dart';
+import 'package:dietapp/screens/water/waterscreen.dart';
 import "package:flutter/material.dart";
 import 'package:get/get.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -25,6 +26,7 @@ class _NavBarState extends State<NavBar> {
             HomePage(),
             SocialScreen(),
             ExploreScreen(),
+            WaterScreen(),
             ProfileScreen()
           ],
         ),
@@ -50,19 +52,23 @@ class _NavBarState extends State<NavBar> {
               tabs: const [
                 GButton(
                   icon: Icons.home,
-                  text: "Ana Sayfa",
+                  text: "Home",
                 ),
                 GButton(
                   icon: Icons.favorite_border,
-                  text: "Sosyal Medya",
+                  text: "Social Food",
                 ),
                 GButton(
                   icon: Icons.search,
-                  text: "Keşfet",
+                  text: "Explore",
+                ),
+                GButton(
+                  icon: Icons.water_drop_outlined,
+                  text: "Water",
                 ),
                 GButton(
                   icon: Icons.person,
-                  text: "Profil",
+                  text: "My Profile",
                 ),
               ],
             ),

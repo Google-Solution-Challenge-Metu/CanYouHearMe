@@ -23,6 +23,9 @@ dependencies:
     path: ./lib/flutter_tflite-master
   get: ^4.6.5
 
+  #river
+  rive: ^0.9.1
+
   #firebase
   firebase_core: ^2.4.1
   firebase_auth: ^4.2.5
