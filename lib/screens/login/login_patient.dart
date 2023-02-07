@@ -20,8 +20,7 @@ class _PatientLoginPageState extends State<PatientLoginPage> {
         email: emailController.text,
         password: passwordController.text,
       );
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => AuthPage()));
+      runApp(AuthPage());
     } on FirebaseAuthException catch (e) {
       if (e.code == "user-not-found") {
         wrongEmailMessage();
