@@ -2,15 +2,17 @@ import 'package:dietapp/screens/login/login_doctor.dart';
 import 'package:dietapp/screens/login/login_patient.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 //void main() {
 //  runApp(const MyApp());
 //}
 
-Future main() async{
+Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -19,13 +21,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: "dietApp"),
     );
   }
 }
@@ -78,32 +76,31 @@ class _MyHomePageState extends State<MyHomePage> {
                   thickness: 3.0,
                 ),
               ),
-              Card(
-                margin: const EdgeInsets.symmetric(
-                    horizontal: 25.0, vertical: 10.0),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: ListTile(
-                    leading: const Icon(
-                      Icons.personal_injury,
-                      color: Colors.green,
-                    ),
-                    title: const Text(
-                      "Hasta Girişi",
-                      style: TextStyle(
-                        color: Colors.black54,
+              GestureDetector(
+                behavior: HitTestBehavior.translucent,
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const PatientLoginPage()));
+                },
+                child: const Card(
+                  margin:
+                      EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
+                  child: Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.personal_injury,
+                        color: Colors.green,
                       ),
-                    ),
-                    trailing: GestureDetector(
-                      behavior: HitTestBehavior.translucent,
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const PatientLoginPage()));
-                      },
-                      child: const Icon(
+                      title: Text(
+                        "Hasta Girişi",
+                        style: TextStyle(
+                          color: Colors.black54,
+                        ),
+                      ),
+                      trailing: Icon(
                         Icons.arrow_forward_ios,
                         color: Colors.black54,
                       ),
@@ -111,31 +108,31 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
-              Card(
-                margin: const EdgeInsets.symmetric(
-                    horizontal: 25.0, vertical: 10.0),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: ListTile(
-                    leading: const Icon(
-                      Icons.medical_services,
-                      color: Colors.green,
-                    ),
-                    title: const Text(
-                      "Doktor Girişi",
-                      style: TextStyle(
-                        color: Colors.black54,
+              GestureDetector(
+                behavior: HitTestBehavior.translucent,
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const DoctorLoginPage()));
+                },
+                child: const Card(
+                  margin:
+                      EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
+                  child: Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.medical_services,
+                        color: Colors.green,
                       ),
-                    ),
-                    trailing: GestureDetector(
-                      behavior: HitTestBehavior.translucent,
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const DoctorLoginPage()));
-                      },
-                      child: const Icon(
+                      title: Text(
+                        "Doktor Girişi",
+                        style: TextStyle(
+                          color: Colors.black54,
+                        ),
+                      ),
+                      trailing: Icon(
                         Icons.arrow_forward_ios,
                         color: Colors.black54,
                       ),
