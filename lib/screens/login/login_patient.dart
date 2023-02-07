@@ -1,10 +1,7 @@
-import 'package:dietapp/screens/homepage/home_page.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'auth_login.dart';
 import 'package:get/get.dart';
-import 'package:dietapp/routes/routes.dart';
+import 'auth_login.dart';
 
 class PatientLoginPage extends StatefulWidget {
   const PatientLoginPage({super.key});
@@ -18,11 +15,55 @@ class _PatientLoginPageState extends State<PatientLoginPage> {
   final passwordController = TextEditingController();
 
   signUserIn() async {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-      email: emailController.text,
-      password: passwordController.text,
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController.text,
+        password: passwordController.text,
+      );
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => AuthPage()));
+    } on FirebaseAuthException catch (e) {
+      if (e.code == "user-not-found") {
+        wrongEmailMessage();
+      } else if (e.code == "wrong-password") {
+        wrongPasswordMessage();
+      } else {
+        nothingMessage();
+      }
+    }
+  }
+
+  void wrongEmailMessage() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const AlertDialog(
+          title: Text("Wrong email."),
+        );
+      },
     );
-    runApp(AuthPage());
+  }
+
+  void wrongPasswordMessage() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const AlertDialog(
+          title: Text("Wrong email."),
+        );
+      },
+    );
+  }
+
+  void nothingMessage() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const AlertDialog(
+          title: Text("No email, password or both."),
+        );
+      },
+    );
   }
 
   void registerUser() {}
