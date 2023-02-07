@@ -14,7 +14,7 @@ class _WaterScreenState extends State<WaterScreen> {
   SMIInput<double>? inputValue;
 
   double currentLevel = 0;
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,11 +25,10 @@ class _WaterScreenState extends State<WaterScreen> {
             fit: BoxFit.cover,
             onInit: (artboard) {
               controller = StateMachineController.fromArtboard(
-                artboard, 
+                artboard,
                 "State Machine",
               );
-              
-              if(controller != null) {
+              if (controller != null) {
                 artboard.addController(controller!);
                 inputValue = controller?.findInput("Level");
                 inputValue?.change(currentLevel);
@@ -39,20 +38,24 @@ class _WaterScreenState extends State<WaterScreen> {
           Align(
             alignment: Alignment.bottomCenter,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 GestureDetector(
-                  onVerticalDragStart: (details){
+                  onVerticalDragStart: (details) {
                     print(details);
                   },
-                  onVerticalDragEnd: (velocity){
-
-                  },
+                  onVerticalDragEnd: (velocity) {},
                   onTap: () {
-                    setState(() {
-                      currentLevel--;
-                      _count=_count-100;
-                    });
+                    setState(
+                      () {
+                        currentLevel--;
+                        if (_count != 0) {
+                          _count = _count - 100;
+                        } else {
+                          _count = _count;
+                        }
+                      },
+                    );
                     inputValue?.change(currentLevel);
                   },
                   child: Container(
@@ -61,17 +64,14 @@ class _WaterScreenState extends State<WaterScreen> {
                     color: Colors.red,
                   ),
                 ),
-                Text("${_count}",
+                Text("$_count",
                     style: const TextStyle(
-                        color: Colors.greenAccent,
-                        fontSize: 20.0
-                    )),
-
+                        color: Colors.greenAccent, fontSize: 20.0)),
                 GestureDetector(
                   onTap: () {
                     setState(() {
                       currentLevel++;
-                      _count=_count+100;
+                      _count = _count + 100;
                     });
                     inputValue?.change(currentLevel);
                   },
