@@ -1,4 +1,8 @@
+import 'package:dietapp/screens/homepage/home_page.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'auth_login.dart';
 import 'package:get/get.dart';
 import 'package:dietapp/routes/routes.dart';
 
@@ -10,17 +14,15 @@ class PatientLoginPage extends StatefulWidget {
 }
 
 class _PatientLoginPageState extends State<PatientLoginPage> {
-  final usernameController = TextEditingController();
+  final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
-  void signUserIn() {
-    return runApp(
-      GetMaterialApp(
-        debugShowCheckedModeBanner: false,
-        initialRoute: AppPage.getNavBar(),
-        getPages: AppPage.routes,
-      ),
+  signUserIn() async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: emailController.text,
+      password: passwordController.text,
     );
+    runApp(AuthPage());
   }
 
   void registerUser() {}
@@ -65,11 +67,11 @@ class _PatientLoginPageState extends State<PatientLoginPage> {
                     thickness: 3.0,
                   ),
                 ),
-                buildTextField(usernameController, "Kullanıcı Adı", false),
+                buildTextField(emailController, "E-mail", false),
                 const SizedBox(
                   height: 20.0,
                 ),
-                buildTextField(passwordController, "Şifre", true),
+                buildTextField(passwordController, "Password", true),
                 const SizedBox(
                   height: 10.0,
                 ),
@@ -173,12 +175,13 @@ class _PatientLoginPageState extends State<PatientLoginPage> {
     );
   }
 
-  Padding buildButton(final Function()? onTap) {
+  Padding buildButton(Function() onTap) {
     return Padding(
       padding: const EdgeInsets.symmetric(
         horizontal: 25.0,
       ),
       child: GestureDetector(
+        behavior: HitTestBehavior.translucent,
         onTap: onTap,
         child: Container(
           width: 150.0,

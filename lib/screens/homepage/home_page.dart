@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:dietapp/screens/homepage/TfliteModel.dart';
 
@@ -10,11 +11,13 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.green,
+        title: Text("HomePage"),
+      ),
       backgroundColor: Colors.white,
       body: TfliteModel(),
-
-
     );
   }
 }

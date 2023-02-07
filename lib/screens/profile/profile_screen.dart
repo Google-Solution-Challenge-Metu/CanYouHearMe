@@ -1,4 +1,5 @@
 import 'package:dietapp/screens/components/posts.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import "package:flutter/material.dart";
 
 class ProfileScreen extends StatefulWidget {
@@ -8,6 +9,10 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  void signUserOut() {
+    FirebaseAuth.instance.signOut();
+  }
+
   void changeUserProfile() {}
   @override
   Widget build(BuildContext context) {
@@ -29,9 +34,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
           Padding(
             padding: const EdgeInsets.only(right: 15.0),
             child: IconButton(
-                onPressed: () {},
+                onPressed: signUserOut,
                 icon: Icon(
-                  Icons.settings,
+                  Icons.logout,
                   color: Colors.grey.shade600,
                 )),
           )
