@@ -1,12 +1,12 @@
 import "package:flutter/material.dart";
 
-class SocialScreen extends StatefulWidget {
-  const SocialScreen({super.key});
+class HelpScreen extends StatefulWidget {
+  const HelpScreen({super.key});
   @override
-  State<SocialScreen> createState() => _SocialScreenState();
+  State<HelpScreen> createState() => _HelpScreenState();
 }
 
-class _SocialScreenState extends State<SocialScreen> {
+class _HelpScreenState extends State<HelpScreen> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(

@@ -1,9 +1,8 @@
 import 'package:dietapp/controller/controller.dart';
 import 'package:dietapp/screens/homepage/home_page.dart';
 import 'package:dietapp/screens/profile/profile_screen.dart';
-import 'package:dietapp/screens/social/social.dart';
+import 'package:dietapp/screens/help/help.dart';
 import 'package:dietapp/screens/explore/explore.dart';
-import 'package:dietapp/screens/water/waterscreen.dart';
 import "package:flutter/material.dart";
 import 'package:get/get.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -24,9 +23,8 @@ class _NavBarState extends State<NavBar> {
           index: controller.tabIndex,
           children: const [
             HomePage(),
-            SocialScreen(),
+            HelpScreen(),
             ExploreScreen(),
-            WaterScreen(),
             ProfileScreen()
           ],
         ),
@@ -55,16 +53,12 @@ class _NavBarState extends State<NavBar> {
                   text: "Home",
                 ),
                 GButton(
-                  icon: Icons.favorite_border,
-                  text: "Social Food",
+                  icon: Icons.handshake_outlined,
+                  text: "Help",
                 ),
                 GButton(
                   icon: Icons.search,
                   text: "Explore",
-                ),
-                GButton(
-                  icon: Icons.water_drop_outlined,
-                  text: "Water",
                 ),
                 GButton(
                   icon: Icons.person,

@@ -94,7 +94,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 30.0, vertical: 10.0),
                     child: Text(
-                      "20 yaşındayım, diyet yapmak ve sağlığımı korumak istiyorum!",
+                      "İnsanlara yardım etmeyi seviyorum.",
                       style: TextStyle(
                         fontFamily: "Raleway",
                         fontWeight: FontWeight.bold,
@@ -119,52 +119,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           ),
                           Text(
                             "Gönderi",
-                            style: TextStyle(
-                              color: Colors.grey.shade500,
-                              fontFamily: "Raleway",
-                              fontWeight: FontWeight.w300,
-                              fontSize: 15.0,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          Text(
-                            "543",
-                            style: TextStyle(
-                                fontFamily: "Raleway",
-                                fontWeight: FontWeight.w300,
-                                fontSize: 20.0),
-                          ),
-                          const SizedBox(
-                            height: 10.0,
-                          ),
-                          Text(
-                            "Takipçi",
-                            style: TextStyle(
-                              color: Colors.grey.shade500,
-                              fontFamily: "Raleway",
-                              fontWeight: FontWeight.w300,
-                              fontSize: 15.0,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          Text(
-                            "488",
-                            style: TextStyle(
-                                fontFamily: "Raleway",
-                                fontWeight: FontWeight.w300,
-                                fontSize: 20.0),
-                          ),
-                          const SizedBox(
-                            height: 10.0,
-                          ),
-                          Text(
-                            "Takip",
                             style: TextStyle(
                               color: Colors.grey.shade500,
                               fontFamily: "Raleway",
