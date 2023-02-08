@@ -1,25 +1,64 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:dietapp/routes/routes.dart';
 
-class DoctorLoginPage extends StatefulWidget {
-  const DoctorLoginPage({super.key});
+class MainPage extends StatefulWidget {
+  const MainPage({super.key});
 
   @override
-  State<DoctorLoginPage> createState() => _DoctorLoginPageState();
+  State<MainPage> createState() => _MainPageState();
 }
 
-class _DoctorLoginPageState extends State<DoctorLoginPage> {
-  final usernameController = TextEditingController();
+class _MainPageState extends State<MainPage> {
+  final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
-  void signUserIn() {
-    return runApp(
-      GetMaterialApp(
-        debugShowCheckedModeBanner: false,
-        initialRoute: AppPage.getNavBar(),
-        getPages: AppPage.routes,
-      ),
+  signUserIn() async {
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController.text,
+        password: passwordController.text,
+      );
+    } on FirebaseAuthException catch (e) {
+      if (e.code == "user-not-found") {
+        wrongEmailMessage();
+      } else if (e.code == "wrong-password") {
+        wrongPasswordMessage();
+      } else {
+        nothingMessage();
+      }
+    }
+  }
+
+  void wrongEmailMessage() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const AlertDialog(
+          title: Text("Wrong email."),
+        );
+      },
+    );
+  }
+
+  void wrongPasswordMessage() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const AlertDialog(
+          title: Text("Wrong email."),
+        );
+      },
+    );
+  }
+
+  void nothingMessage() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const AlertDialog(
+          title: Text("No email, password or both."),
+        );
+      },
     );
   }
 
@@ -29,7 +68,7 @@ class _DoctorLoginPageState extends State<DoctorLoginPage> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.green[600],
+        backgroundColor: Color(0xFF4E6C50),
         body: SafeArea(
           child: Center(
             child: Column(
@@ -40,7 +79,7 @@ class _DoctorLoginPageState extends State<DoctorLoginPage> {
                   backgroundImage: AssetImage("assets/images/mithat.jpg"),
                 ),
                 const Text(
-                  "Diet-App",
+                  "Can You Hear Me?",
                   style: TextStyle(
                       fontFamily: "Pacifico",
                       fontSize: 30.0,
@@ -48,7 +87,7 @@ class _DoctorLoginPageState extends State<DoctorLoginPage> {
                       fontWeight: FontWeight.bold),
                 ),
                 Text(
-                  "to eat or not to eat",
+                  "to save someone from the earthquake",
                   style: TextStyle(
                     fontFamily: "Source Sans Pro",
                     fontSize: 15.0,
@@ -65,11 +104,11 @@ class _DoctorLoginPageState extends State<DoctorLoginPage> {
                     thickness: 3.0,
                   ),
                 ),
-                buildTextField(usernameController, "Kullanıcı Adı", false),
+                buildTextField(emailController, "E-mail", false),
                 const SizedBox(
                   height: 20.0,
                 ),
-                buildTextField(passwordController, "Şifre", true),
+                buildTextField(passwordController, "Password", true),
                 const SizedBox(
                   height: 10.0,
                 ),
@@ -173,18 +212,19 @@ class _DoctorLoginPageState extends State<DoctorLoginPage> {
     );
   }
 
-  Padding buildButton(final Function()? onTap) {
+  Padding buildButton(Function() onTap) {
     return Padding(
       padding: const EdgeInsets.symmetric(
         horizontal: 25.0,
       ),
       child: GestureDetector(
+        behavior: HitTestBehavior.translucent,
         onTap: onTap,
         child: Container(
           width: 150.0,
           padding: const EdgeInsets.all(20.0),
           decoration: BoxDecoration(
-              color: Colors.green[700],
+              color: const Color(0xFF698269),
               borderRadius: BorderRadius.circular(12.0)),
           child: const Center(
             child: Text(
