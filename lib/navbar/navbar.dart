@@ -30,7 +30,7 @@ class _NavBarState extends State<NavBar> {
         ),
         bottomNavigationBar: Container(
           decoration: const BoxDecoration(
-            color: Colors.green,
+            color: Color.fromARGB(255,242, 222, 186),
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(20.0),
               topRight: Radius.circular(20.0),
@@ -41,10 +41,10 @@ class _NavBarState extends State<NavBar> {
                 const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
             child: GNav(
               onTabChange: controller.changeTabIndex,
-              backgroundColor: Colors.green,
-              color: Colors.white,
-              activeColor: Colors.white,
-              tabBackgroundColor: Colors.green.shade700,
+              backgroundColor: Color.fromARGB(255,242, 222, 186),
+              color: Color.fromARGB(255,130, 0, 0),
+              activeColor: Color.fromARGB(255,130, 0, 0),
+              tabBackgroundColor: Color.fromARGB(255,250, 236, 214),
               gap: 10.0,
               padding: const EdgeInsets.all(16.0),
               tabs: const [

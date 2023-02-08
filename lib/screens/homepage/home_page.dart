@@ -13,10 +13,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green,
+        backgroundColor: Color(0xFF4E6C50),
         title: Text("HomePage"),
       ),
-      backgroundColor: Colors.white,
+      backgroundColor: Color.fromARGB(255,250, 236, 214),
       body: TfliteModel(),
     );
   }

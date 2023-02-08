@@ -82,11 +82,11 @@ class _MainPageState extends State<MainPage> {
                 style: TextStyle(
                     fontFamily: "Pacifico",
                     fontSize: 30.0,
-                    color: Colors.white,
+                    color: Color.fromARGB(255,250, 236, 214),
                     fontWeight: FontWeight.bold),
               ),
               Text(
-                "to save someone from the earthquake",
+                "To Save Someone From The Earthquake",
                 style: TextStyle(
                   fontFamily: "Source Sans Pro",
                   fontSize: 15.0,

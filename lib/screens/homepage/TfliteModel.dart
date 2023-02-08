@@ -86,7 +86,7 @@ class _TfliteModelState extends State<TfliteModel> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.green.shade400,
+        backgroundColor: Color.fromARGB(255,130, 0, 0),
         onPressed: pickImage,
         tooltip: "Pick Image",
         child: const Icon(Icons.image),
