@@ -19,10 +19,12 @@ dependencies:
   cupertino_icons: ^1.0.2
   line_awesome_flutter: ^2.0.0
   image_picker: ^0.8.4+11
+
+  #Tensorflow Lite
   tflite:
     path: ./lib/flutter_tflite-master
   get: ^4.6.5
-
+  webview_flutter: ^3.0.2
   #river
   rive: ^0.9.1
 

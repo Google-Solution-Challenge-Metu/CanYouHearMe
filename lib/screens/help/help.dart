@@ -20,13 +20,18 @@ class _HelpScreenState extends State<HelpScreen> {
       ),
       body: Center(
         child: Column(children: [
-          ElevatedButton.icon(
+          SizedBox(
+            height: 50,
+          ), 
+          ElevatedButton.icon(                     // BLOOD BUTTON
           icon: Icon(Icons.bloodtype_rounded),
           label: Text('Blood Donation Sites' ),
           onPressed: (){
-          print('button');
+            Navigator.push(context, MaterialPageRoute(
+              builder: (context)=>BloodScreen()
+              ));
           }, 
-          style: ElevatedButton.styleFrom(
+          style: ElevatedButton.styleFrom(      
             padding: EdgeInsets.all(20.0),
             fixedSize: Size(300,95),
             textStyle: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),
@@ -38,11 +43,17 @@ class _HelpScreenState extends State<HelpScreen> {
             shape: StadiumBorder()
           ),
         ),
-          ElevatedButton.icon(
+          SizedBox(
+            height: 30,
+          ), 
+
+          ElevatedButton.icon(                  // DONATION BUTTON
           icon: Icon(Icons.attach_money_sharp),
           label: Text('Donation'),
           onPressed: (){
-          print('button');
+              Navigator.push(context, MaterialPageRoute(
+              builder: (context)=>DonationScreen()
+              ));
           }, 
           style: ElevatedButton.styleFrom(
             padding: EdgeInsets.all(20.0),
@@ -56,11 +67,17 @@ class _HelpScreenState extends State<HelpScreen> {
             shape: StadiumBorder()
           ),
         ),
-          ElevatedButton.icon(
+          SizedBox(
+            height: 30,
+          ), 
+
+          ElevatedButton.icon(                 // BE VOLUNTEER
           icon: Icon(Icons.back_hand_rounded),
           label: Text('Be Volunteer'),
           onPressed: (){
-          print('button');
+              Navigator.push(context, MaterialPageRoute(
+              builder: (context)=>VolunteerScreen()
+              ));
           }, 
           style: ElevatedButton.styleFrom(
             padding: EdgeInsets.all(20.0),
@@ -73,12 +90,18 @@ class _HelpScreenState extends State<HelpScreen> {
             side: BorderSide(color: Color.fromARGB(255,242, 222, 186), width: 4),
             shape: StadiumBorder()
           ),
-        ),
-          ElevatedButton.icon(
+        ), 
+          SizedBox(
+            height: 30,
+          ), 
+
+          ElevatedButton.icon(                  // BOX BUTTON
           icon: Icon(Icons.wallet_giftcard_outlined),
           label: Text('Give Help Box'),
           onPressed: (){
-          print('button');
+              Navigator.push(context, MaterialPageRoute(
+              builder: (context)=>BoxScreen()
+              ));
           }, 
           style: ElevatedButton.styleFrom(
             padding: EdgeInsets.all(20.0),
