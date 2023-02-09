@@ -278,7 +278,6 @@ class DonationScreen extends StatelessWidget {
                             ],
                           ),
                         ),
-<<<<<<< HEAD
                         GestureDetector(
                           onTap: (){
                             print("Manual");
@@ -302,27 +301,6 @@ class DonationScreen extends StatelessWidget {
                                   height: 1.5*ffem/fem,
                                   color: Color(0xff9d9d9d),
                                 ),
-=======
-                        Container(
-                          // group9xrL (36:48)
-                          margin: EdgeInsets.fromLTRB(
-                              29.5 * fem, 0 * fem, 29.5 * fem, 0 * fem),
-                          width: double.infinity,
-                          height: 76 * fem,
-                          decoration: BoxDecoration(
-                            color: Color(0x26cdcdcd),
-                            borderRadius: BorderRadius.circular(20 * fem),
-                          ),
-                          child: Center(
-                            child: Text(
-                              'Enter Price Manually',
-                              style: SafeGoogleFont(
-                                'Poppins',
-                                fontSize: 16 * ffem,
-                                fontWeight: FontWeight.w500,
-                                height: 1.5 * ffem / fem,
-                                color: Color(0xff9d9d9d),
->>>>>>> 693ebe094002091ec39a862e4905b07f47fd67ef
                               ),
                             ),
                           ),
@@ -333,7 +311,6 @@ class DonationScreen extends StatelessWidget {
                 ],
               ),
             ),
-<<<<<<< HEAD
             ElevatedButton(
               onPressed: () {
                 ScaffoldMessenger.of(context).showSnackBar(
@@ -370,34 +347,6 @@ class DonationScreen extends StatelessWidget {
                       height: 1.5*ffem/fem,
                       color: Color.fromARGB(255,130, 0, 0),
                     ),
-=======
-            Container(
-              // frame28qQL (36:49)
-              margin: EdgeInsets.fromLTRB(1 * fem, 0 * fem, 2 * fem, 0 * fem),
-              width: double.infinity,
-              height: 56 * fem,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20 * fem),
-                gradient: LinearGradient(
-                  begin: Alignment(0, -1),
-                  end: Alignment(0, 1),
-                  colors: <Color>[
-                    Color.fromARGB(255, 242, 222, 186),
-                    Color.fromARGB(255, 242, 222, 186)
-                  ],
-                  stops: <double>[0, 1],
-                ),
-              ),
-              child: Center(
-                child: Text(
-                  'Donate now',
-                  style: SafeGoogleFont(
-                    'Poppins',
-                    fontSize: 16 * ffem,
-                    fontWeight: FontWeight.w700,
-                    height: 1.5 * ffem / fem,
-                    color: Color.fromARGB(255, 130, 0, 0),
->>>>>>> 693ebe094002091ec39a862e4905b07f47fd67ef
                   ),
                 ),
               ),
