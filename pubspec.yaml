@@ -23,6 +23,7 @@ dependencies:
 
   #error snackbar
   awesome_snackbar_content: ^0.1.0
+  flutter_svg: ^1.0.3
 
   #Tensorflow Lite
   tflite:
