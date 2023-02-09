@@ -1,11 +1,3 @@
-0 Bread
-1 Egg
-2 Dairy Product
-3 Dessert
-4 Fried Food
-5 Meat
-6 Noodles-Pasta
-7 Rice
-8 Seafood
-9 Soup
-10 Vegetable-Fruit
+0 Clothes
+1 Packaged Food
+2 Toys
