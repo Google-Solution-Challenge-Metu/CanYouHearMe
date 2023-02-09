@@ -52,7 +52,7 @@ class _HelpScreenState extends State<HelpScreen> {
           label: Text('Donation'),
           onPressed: (){
               Navigator.push(context, MaterialPageRoute(
-              builder: (context)=>DonationScreen()
+              builder: (context)=>Scene()
               ));
           }, 
           style: ElevatedButton.styleFrom(
