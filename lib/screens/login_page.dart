@@ -1,3 +1,4 @@
+import 'package:dietapp/screens/register_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -62,7 +63,10 @@ class _MainPageState extends State<MainPage> {
     );
   }
 
-  void registerUser() {}
+  void registerUser() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => RegisterPage()));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +86,7 @@ class _MainPageState extends State<MainPage> {
                 style: TextStyle(
                     fontFamily: "Pacifico",
                     fontSize: 30.0,
-                    color: Color.fromARGB(255,250, 236, 214),
+                    color: Color.fromARGB(255, 250, 236, 214),
                     fontWeight: FontWeight.bold),
               ),
               Text(
@@ -116,9 +120,12 @@ class _MainPageState extends State<MainPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Text(
-                      "Şifrenizi mi unuttunuz?",
-                      style: TextStyle(color: Colors.grey.shade200),
+                    GestureDetector(
+                      onTap: () {},
+                      child: Text(
+                        "Forgot your password?",
+                        style: TextStyle(color: Colors.grey.shade200),
+                      ),
                     ),
                   ],
                 ),
@@ -143,7 +150,7 @@ class _MainPageState extends State<MainPage> {
                     const Padding(
                       padding: EdgeInsets.symmetric(horizontal: 10.0),
                       child: Text(
-                        "Veya şununla devam edin",
+                        "Or continue with",
                         style: TextStyle(
                           color: Colors.white,
                         ),
@@ -185,7 +192,7 @@ class _MainPageState extends State<MainPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Kayıtlı değil misin?",
+                    "Not registered?",
                     style: TextStyle(
                       color: Colors.grey[300],
                     ),
@@ -193,7 +200,7 @@ class _MainPageState extends State<MainPage> {
                   GestureDetector(
                     onTap: registerUser,
                     child: const Text(
-                      " Kaydol",
+                      " Register now",
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
@@ -226,7 +233,7 @@ class _MainPageState extends State<MainPage> {
               borderRadius: BorderRadius.circular(12.0)),
           child: const Center(
             child: Text(
-              "Giriş Yap",
+              "Login",
               style: TextStyle(
                 color: Colors.white,
               ),
