@@ -35,7 +35,11 @@ class _MainPageState extends State<MainPage> {
       context: context,
       builder: (context) {
         return const AlertDialog(
-          title: Text("Wrong email."),
+          backgroundColor: Color(0xFF4E6C50),
+          title: Text(
+            "Incorrect email.",
+            style: TextStyle(color: Colors.white),
+          ),
         );
       },
     );
@@ -46,7 +50,11 @@ class _MainPageState extends State<MainPage> {
       context: context,
       builder: (context) {
         return const AlertDialog(
-          title: Text("Wrong email."),
+          backgroundColor: Color(0xFF4E6C50),
+          title: Text(
+            "Incorrect password.",
+            style: TextStyle(color: Colors.white),
+          ),
         );
       },
     );
@@ -57,7 +65,11 @@ class _MainPageState extends State<MainPage> {
       context: context,
       builder: (context) {
         return const AlertDialog(
-          title: Text("No email, password or both."),
+          backgroundColor: Color(0xFF4E6C50),
+          title: Text(
+            "No email, password or both.",
+            style: TextStyle(color: Colors.white),
+          ),
         );
       },
     );
@@ -71,7 +83,7 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF4E6C50),
+      backgroundColor: const Color(0xFF4E6C50),
       body: Center(
         child: SingleChildScrollView(
           child: Column(

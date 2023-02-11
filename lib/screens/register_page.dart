@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -11,22 +12,68 @@ class RegisterPage extends StatefulWidget {
 class _RegisterPageState extends State<RegisterPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  final confirmPasswordController = TextEditingController();
+  final nameController = TextEditingController();
+  final surnameController = TextEditingController();
 
-  signUserIn() async {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+
+  Future<User?> createPerson(
+      String name, String surname, String email, String password) async {
+    var user = await _auth.createUserWithEmailAndPassword(
+        email: email, password: password);
+
+    await _firestore
+        .collection("Person")
+        .doc(user.user?.uid)
+        .set({'name': name, 'surname': surname, 'email': email});
+
+    return user.user;
+  }
+
+  signUserUp() async {
     try {
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: emailController.text,
-        password: passwordController.text,
-      );
-    } on FirebaseAuthException catch (e) {
-      if (e.code == "user-not-found") {
-        // wrongEmailMessage();
-      } else if (e.code == "wrong-password") {
-        // wrongPasswordMessage();
-      } else {
-        // nothingMessage();
+      if (passwordController.text == confirmPasswordController.text) {
+        createPerson(nameController.text, surnameController.text,
+            emailController.text, passwordController.text);
+        Navigator.pop(context);
+      } else if (passwordController.text != confirmPasswordController.text) {
+        notConfirmedMessage();
       }
+    } on FirebaseAuthException catch (e) {
+      showErrorMessage(e.code);
     }
+  }
+
+  void showErrorMessage(String message) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          backgroundColor: const Color(0xFF4E6C50),
+          title: Text(
+            message,
+            style: const TextStyle(color: Colors.white),
+          ),
+        );
+      },
+    );
+  }
+
+  void notConfirmedMessage() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const AlertDialog(
+          backgroundColor: Color(0xFF4E6C50),
+          title: Text(
+            "Passwords do not match.",
+            style: TextStyle(color: Colors.white),
+          ),
+        );
+      },
+    );
   }
 
   @override
@@ -74,11 +121,10 @@ class _RegisterPageState extends State<RegisterPage> {
                   Row(
                     children: [
                       Expanded(
-                          child:
-                              buildTextField(emailController, "Name", false)),
+                          child: buildTextField(nameController, "Name", false)),
                       Expanded(
                           child: buildTextField(
-                              emailController, "Surname", false)),
+                              surnameController, "Surname", false)),
                     ],
                   ),
                   const SizedBox(
@@ -92,11 +138,12 @@ class _RegisterPageState extends State<RegisterPage> {
                   const SizedBox(
                     height: 20.0,
                   ),
-                  buildTextField(passwordController, "Confirm Password", true),
+                  buildTextField(
+                      confirmPasswordController, "Confirm Password", true),
                   const SizedBox(
                     height: 20.0,
                   ),
-                  buildButton(signUserIn),
+                  buildButton(signUserUp),
                   const SizedBox(
                     height: 20.0,
                   ),
@@ -148,6 +195,30 @@ class _RegisterPageState extends State<RegisterPage> {
                       )
                     ],
                   ),
+                  const SizedBox(
+                    height: 20.0,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Already registered?",
+                        style: TextStyle(
+                          color: Colors.grey[300],
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () => Navigator.pop(context),
+                        child: const Text(
+                          " Login",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  )
                 ],
               ),
             ),

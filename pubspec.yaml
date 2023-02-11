@@ -38,9 +38,14 @@ dependencies:
   rive: ^0.9.1
 
   #firebase
-  firebase_core: ^2.4.1
-  firebase_auth: ^4.2.5
-  #cloud_firestore: ^4.3.1  #gives error
+  firebase_auth: ^3.0.1
+  firebase_core: ^1.4.0
+  cloud_firestore: ^2.4.0
+  firebase_storage: ^10.0.1
+  firebase_core_platform_interface: 4.5.1 # note removed ^
+  firebase_messaging: ^13.0.4 # previously I only had this which was pulling in 4.5.2 which you do not want
+
+  #gives error
   #firebase_storage: ^11.0.10
 
 
