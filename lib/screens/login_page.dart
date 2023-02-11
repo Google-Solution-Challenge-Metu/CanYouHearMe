@@ -1,6 +1,7 @@
 import 'package:dietapp/screens/register_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -35,7 +36,7 @@ class _MainPageState extends State<MainPage> {
       context: context,
       builder: (context) {
         return const AlertDialog(
-          backgroundColor: Color(0xFF4E6C50),
+          backgroundColor: Color.fromARGB(255, 130, 0, 0),
           title: Text(
             "Incorrect email.",
             style: TextStyle(color: Colors.white),
@@ -50,7 +51,7 @@ class _MainPageState extends State<MainPage> {
       context: context,
       builder: (context) {
         return const AlertDialog(
-          backgroundColor: Color(0xFF4E6C50),
+          backgroundColor: Color.fromARGB(255, 130, 0, 0),
           title: Text(
             "Incorrect password.",
             style: TextStyle(color: Colors.white),
@@ -65,9 +66,24 @@ class _MainPageState extends State<MainPage> {
       context: context,
       builder: (context) {
         return const AlertDialog(
-          backgroundColor: Color(0xFF4E6C50),
+          backgroundColor: Color.fromARGB(255, 130, 0, 0),
           title: Text(
             "No email, password or both.",
+            style: TextStyle(color: Colors.white),
+          ),
+        );
+      },
+    );
+  }
+
+  void sos_warning() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const AlertDialog(
+          backgroundColor: Color.fromARGB(255, 130, 0, 0),
+          title: Text(
+            "Turn Up Your Phone Volume!",
             style: TextStyle(color: Colors.white),
           ),
         );
@@ -83,16 +99,28 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF4E6C50),
+      backgroundColor: const Color.fromARGB(255, 130, 0, 0),
       body: Center(
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              const CircleAvatar(
-                radius: 50.0,
-                backgroundImage: AssetImage("assets/images/mithat.jpg"),
+              Container(
+                width: 100,
+                height: 100,
+                decoration: BoxDecoration(
+                  image: DecorationImage(image: AssetImage("assets/images/sosbutton.png"),
+                  ),
+                   ),
+                  child: GestureDetector(
+                    onTap: () {
+                      final player=AudioCache();
+                      player.play("sossound.mp3");
+                      sos_warning();
+                    },
+                  ),
               ),
+              
               const Text(
                 "Can You Hear Me?",
                 style: TextStyle(
@@ -108,7 +136,7 @@ class _MainPageState extends State<MainPage> {
                   fontSize: 15.0,
                   letterSpacing: 2.5,
                   fontWeight: FontWeight.bold,
-                  color: Colors.green[100],
+                  color: Color.fromARGB(255, 255, 174, 174),
                 ),
               ),
               const SizedBox(
@@ -241,7 +269,7 @@ class _MainPageState extends State<MainPage> {
           width: 150.0,
           padding: const EdgeInsets.all(20.0),
           decoration: BoxDecoration(
-              color: const Color(0xFF698269),
+              color: Color.fromARGB(255, 130, 105, 105),
               borderRadius: BorderRadius.circular(12.0)),
           child: const Center(
             child: Text(
