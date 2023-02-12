@@ -120,6 +120,7 @@ class _MainPageState extends State<MainPage> {
                     },
                   ),
               ),
+              Divider(),
               
               const Text(
                 "Can You Hear Me?",

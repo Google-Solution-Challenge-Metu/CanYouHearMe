@@ -1,8 +1,8 @@
 import "package:flutter/material.dart";
-import 'blood.dart';
-import 'donation.dart';
-import 'helpbox.dart';
-import 'volunteer.dart';
+import 'blood/blood.dart';
+import 'donaiton/donation.dart';
+import 'helpbox/intro_screen.dart';
+import 'volunteer/volunteer.dart';
 
 class HelpScreen extends StatefulWidget {
   const HelpScreen({super.key});
@@ -104,7 +104,7 @@ class _HelpScreenState extends State<HelpScreen> {
               label: Text('Give Help Box'),
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => TfliteModel()));
+                    MaterialPageRoute(builder: (context) => IntroScreen()));
               },
               style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.all(20.0),
