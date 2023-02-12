@@ -66,7 +66,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     children: [
                       const CircleAvatar(
                         radius: 50.0,
-                        backgroundImage: AssetImage("assets/images/mithat.jpg"),
+                        backgroundImage: AssetImage("assets/images/profile_anonym.webp"),
                       ),
                       InkWell(
                         onTap: () {},
