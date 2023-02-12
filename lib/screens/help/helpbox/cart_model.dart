@@ -4,10 +4,10 @@ class CartModel extends ChangeNotifier {
   // list of items on sale
   final List _shopItems = const [
     // [ itemName, itemPrice, imagePath, color ]
-    ["Avocado", "4.00", "lib/images/avocado.png", Colors.green],
-    ["Banana", "2.50", "lib/images/banana.png", Colors.yellow],
-    ["Chicken", "12.80", "lib/images/chicken.png", Colors.brown],
-    ["Water", "1.00", "lib/images/water.png", Colors.blue],
+    ["Clothes", "1", "assets/images/google.png", Colors.green],
+    ["Toys", "1", "assets/images/google.png", Colors.yellow],
+    ["Packed Foods", "1", "assets/images/google.png", Colors.brown],
+    //["Water", "1.00", "assets/images/google.png", Colors.blue],
   ];
 
   // list of cart items
@@ -35,6 +35,6 @@ class CartModel extends ChangeNotifier {
     for (int i = 0; i < cartItems.length; i++) {
       totalPrice += double.parse(cartItems[i][1]);
     }
-    return totalPrice.toStringAsFixed(2);
+    return totalPrice.toStringAsFixed(0);
   }
 }
