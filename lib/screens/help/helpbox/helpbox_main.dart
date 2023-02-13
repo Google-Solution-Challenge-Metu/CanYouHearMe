@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
+import '../../homepage/TfliteModel.dart';
 import 'cart_model.dart';
 import 'cart_page.dart';
 import 'boxes_item_tile.dart';
@@ -54,7 +55,7 @@ class _HomePageState extends State<HomePage> {
                   height: 215,
                   decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
-                  color: Colors.red[100],
+                  color: Colors.green[100],
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -80,8 +81,15 @@ class _HomePageState extends State<HomePage> {
                       ),
 
                       MaterialButton(
-                        onPressed: null,
-                        color: Colors.red,
+                        onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return TfliteModel();
+                            },
+                          ),
+                        ),
+                        color: Color(0xFF4E6C50),
                         child: Text(
                           'Add ' + "1" + ' Box',
                           style: TextStyle(
