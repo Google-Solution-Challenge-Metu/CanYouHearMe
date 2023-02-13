@@ -6,14 +6,14 @@ import 'cart_page.dart';
 import 'boxes_item_tile.dart';
 import 'help_tflite.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class HelpBoxHomePage extends StatefulWidget {
+  const HelpBoxHomePage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HelpBoxHomePage> createState() => _HelpBoxHomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HelpBoxHomePageState extends State<HelpBoxHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,9 +21,10 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Color(0xFF4E6C50),
         title: Text("Help Box"),
       ),
-      floatingActionButton: FloatingActionButton(       // Go to CartPage
+      floatingActionButton: FloatingActionButton(
+        // Go to CartPage
         backgroundColor: Colors.black,
-        onPressed: () => Navigator.push(       
+        onPressed: () => Navigator.push(
           context,
           MaterialPageRoute(
             builder: (context) {
@@ -33,7 +34,6 @@ class _HomePageState extends State<HomePage> {
         ),
         child: const Icon(Icons.shopping_bag),
       ),
-      
       body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         const SizedBox(height: 20),
 
@@ -42,26 +42,29 @@ class _HomePageState extends State<HomePage> {
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Row(
             children: [
-              Expanded(child: Text(
-                "Prepare your box, We'll take them.",
-                style: GoogleFonts.notoSerif(
-                  fontSize: 29,
-                  fontWeight: FontWeight.bold,),
-                  ), 
+              Expanded(
+                child: Text(
+                  "Prepare your box, We'll take them.",
+                  style: GoogleFonts.notoSerif(
+                    fontSize: 29,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
-              Expanded(                                    // Extra Button for AI page.
-                child: Container( 
+              Expanded(
+                // Extra Button for AI page.
+                child: Container(
                   height: 215,
                   decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Colors.green[100],
+                    borderRadius: BorderRadius.circular(12),
+                    color: Colors.green[100],
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       SizedBox(height: 25),
-                    // item image
+                      // item image
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 40.0),
                         child: Image.asset(
@@ -88,8 +91,8 @@ class _HomePageState extends State<HomePage> {
                             },
                           ),
                         ),
-                        color: Color(0xFF4E6C50),
-                        child: Text(
+                        color: const Color(0xFF4E6C50),
+                        child: const Text(
                           'Add ' + "1" + ' Box',
                           style: TextStyle(
                             color: Colors.white,
@@ -97,9 +100,9 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       )
-                  ],
+                    ],
+                  ),
                 ),
-              ),
               ),
             ],
           ),
@@ -125,7 +128,8 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
-        Expanded(  // add items one by one
+        Expanded(
+          // add items one by one
           child: Consumer<CartModel>(
             builder: (context, value, child) {
               return GridView.builder(
@@ -137,7 +141,7 @@ class _HomePageState extends State<HomePage> {
                   childAspectRatio: 1 / 1.2,
                 ),
                 itemBuilder: (context, index) {
-                  return GroceryItemTile(
+                  return HelpBoxItemTile(
                     itemName: value.shopItems[index][0],
                     itemPrice: value.shopItems[index][1],
                     imagePath: value.shopItems[index][2],
@@ -145,7 +149,6 @@ class _HomePageState extends State<HomePage> {
                     onPressed: () =>
                         Provider.of<CartModel>(context, listen: false)
                             .addItemToCart(index),
-                        
                   );
                 },
               );

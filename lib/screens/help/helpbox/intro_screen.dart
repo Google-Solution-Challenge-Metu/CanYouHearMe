@@ -8,7 +8,6 @@ class IntroScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       backgroundColor: Colors.grey[50],
       body: SafeArea(
         child: Column(
@@ -55,7 +54,7 @@ class IntroScreen extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return HomePage();
+                    return HelpBoxHomePage();
                   },
                 ),
               ),
