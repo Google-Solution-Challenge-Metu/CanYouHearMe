@@ -27,25 +27,37 @@ class Callauthorized extends StatelessWidget {
                         color: Color.fromARGB(255, 130, 0, 0),
                         fontWeight: FontWeight.bold),
                   ),
+                  const SizedBox(
+                    height: 15.0,
+                  ),
                   
                   const SizedBox(
-                    height: 50.0,
+                    height: 25.0,
                     width: 200.0,
                     child: Divider(
                       color: Colors.white,
                       thickness: 3.0,
                     ),
                   ),
+                  
+                  Text(
+                    "Fields marked with an * are required",
+                    style: TextStyle(
+                        fontFamily: "Google",
+                        fontSize: 15.0,
+                        color: Color.fromARGB(255, 130, 0, 0),
+                        fontWeight: FontWeight.normal),
+                  ),
                   const SizedBox(
-                    height: 10.0,
+                    height: 25.0,
                   ),
                   Row(
                     children: [
                       Expanded(
-                          child: buildTextField(null, "Name", false)),
+                          child: buildTextField(null, "Name *", false)),
                       Expanded(
                           child: buildTextField(
-                              null, "Surname", false)),
+                              null, "Surname *", false)),
                     ],
                   ),
                   const SizedBox(
@@ -54,20 +66,20 @@ class Callauthorized extends StatelessWidget {
                   Row(
                     children: [
                       Expanded(
-                          child: buildTextField(null, "City", false)),
+                          child: buildTextField(null, "City *", false)),
                       Expanded(
                           child: buildTextField(
-                              null, "State", false)),
+                              null, "State *", false)),
                     ],
                   ),
                   const SizedBox(
                     height: 20.0,
                   ),
-                  buildTextField(null, "Address", false),
+                  buildTextField(null, "Address *", false),
                   const SizedBox(
                     height: 20.0,
                   ),
-                  buildTextField(null, "Any Note", true),
+                  buildTextField(null, "Any Note (Optional)", true),
                   const SizedBox(
                     height: 20.0,
                   ),

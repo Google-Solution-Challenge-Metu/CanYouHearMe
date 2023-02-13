@@ -33,26 +33,68 @@ class _HomePageState extends State<HomePage> {
         ),
         child: const Icon(Icons.shopping_bag),
       ),
+      
       body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        const SizedBox(height: 48),
-
-        // good morning bro
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.0),
-          child: Text('Good morning,'),
-        ),
-
-        const SizedBox(height: 4),
+        const SizedBox(height: 20),
 
         // Let's order fresh items for you
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
-          child: Text(
-            "Prepare your box, we'll take them",
-            style: GoogleFonts.notoSerif(
-              fontSize: 36,
-              fontWeight: FontWeight.bold,
-            ),
+          child: Row(
+            children: [
+              Expanded(child: Text(
+                "Prepare your box, We'll take them.",
+                style: GoogleFonts.notoSerif(
+                  fontSize: 29,
+                  fontWeight: FontWeight.bold,),
+                  ), 
+              ),
+              Expanded(
+                child: Container(
+                  height: 215,
+                  decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  color: Colors.red[100],
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SizedBox(height: 25),
+                    // item image
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 40.0),
+                        child: Image.asset(
+                          "assets/images/google.png",
+                          height: 64,
+                        ),
+                      ),
+                      SizedBox(height: 20),
+
+                      // item name
+                      Text(
+                        "Use AI",
+                        style: TextStyle(
+                          fontSize: 16,
+                        ),
+                      ),
+
+                      MaterialButton(
+                        onPressed: null,
+                        color: Colors.red,
+                        child: Text(
+                          'Add ' + "1" + ' Box',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      )
+                  ],
+                ),
+              ),)
+              
+            ],
           ),
         ),
 
