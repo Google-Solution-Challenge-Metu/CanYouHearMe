@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-
-import '../../homepage/TfliteModel.dart';
 import 'cart_model.dart';
 import 'cart_page.dart';
 import 'boxes_item_tile.dart';
+import 'help_tflite.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -22,9 +21,9 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Color(0xFF4E6C50),
         title: Text("Help Box"),
       ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton(       // Go to CartPage
         backgroundColor: Colors.black,
-        onPressed: () => Navigator.push(
+        onPressed: () => Navigator.push(       
           context,
           MaterialPageRoute(
             builder: (context) {
@@ -38,7 +37,7 @@ class _HomePageState extends State<HomePage> {
       body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         const SizedBox(height: 20),
 
-        // Let's order fresh items for you
+        // Let's report some boxes
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Row(
@@ -50,8 +49,8 @@ class _HomePageState extends State<HomePage> {
                   fontWeight: FontWeight.bold,),
                   ), 
               ),
-              Expanded(
-                child: Container(
+              Expanded(                                    // Extra Button for AI page.
+                child: Container( 
                   height: 215,
                   decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
@@ -100,8 +99,8 @@ class _HomePageState extends State<HomePage> {
                       )
                   ],
                 ),
-              ),)
-              
+              ),
+              ),
             ],
           ),
         ),
@@ -126,7 +125,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
-        Expanded(
+        Expanded(  // add items one by one
           child: Consumer<CartModel>(
             builder: (context, value, child) {
               return GridView.builder(
@@ -146,6 +145,7 @@ class _HomePageState extends State<HomePage> {
                     onPressed: () =>
                         Provider.of<CartModel>(context, listen: false)
                             .addItemToCart(index),
+                        
                   );
                 },
               );
