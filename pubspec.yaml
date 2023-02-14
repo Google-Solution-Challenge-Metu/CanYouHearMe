@@ -32,6 +32,10 @@ dependencies:
     path: ./lib/flutter_tflite-master
   get: ^4.6.5
 
+  #Google Maps
+  geolocator: ^9.0.2
+  google_maps_flutter: 
+
   #web view
   webview_flutter: ^3.0.2
 

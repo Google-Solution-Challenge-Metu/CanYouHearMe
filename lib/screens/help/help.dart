@@ -2,6 +2,7 @@ import "package:flutter/material.dart";
 import 'blood/blood.dart';
 import 'donaiton/donation.dart';
 import 'helpbox/intro_screen.dart';
+import 'maps/map_main.dart';
 import 'volunteer/volunteer.dart';
 
 class HelpScreen extends StatefulWidget {
@@ -123,6 +124,32 @@ class _HelpScreenState extends State<HelpScreen> {
                     side: const BorderSide(
                         color: Color.fromARGB(255, 242, 222, 186), width: 4),
                     shape: StadiumBorder()),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              ElevatedButton.icon(
+                // MAPS 
+                icon: const Icon(Icons.map_outlined),
+                label: const Text('Maps'),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MapUI()));
+                },
+                style: ElevatedButton.styleFrom(
+                    foregroundColor: const Color.fromARGB(255, 242, 222, 186),
+                    backgroundColor: const Color.fromARGB(255, 130, 0, 0),
+                    padding: const EdgeInsets.all(20.0),
+                    fixedSize: const Size(300, 95),
+                    textStyle: const TextStyle(
+                        fontSize: 25, fontWeight: FontWeight.bold),
+                    elevation: 15,
+                    shadowColor: const Color.fromARGB(255, 130, 0, 0),
+                    side: const BorderSide(
+                        color: Color.fromARGB(255, 242, 222, 186), width: 4),
+                    shape: const StadiumBorder()),
               ),
             ],
           ),
