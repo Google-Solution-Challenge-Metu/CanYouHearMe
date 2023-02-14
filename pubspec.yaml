@@ -23,6 +23,7 @@ dependencies:
   provider:
   ionicons: ^0.2.1
   audioplayers: ^0.20.1
+  google_sign_in: ^5.4.2
   #error snackbar
   awesome_snackbar_content: ^0.1.0
   flutter_svg: ^1.0.3

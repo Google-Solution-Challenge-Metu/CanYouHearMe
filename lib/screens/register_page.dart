@@ -1,3 +1,4 @@
+import 'package:dietapp/services/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -181,17 +182,20 @@ class _RegisterPageState extends State<RegisterPage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.white,
+                      GestureDetector(
+                        onTap: () => AuthService().signInWithGoogle(),
+                        child: Container(
+                          padding: const EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.white,
+                            ),
+                            color: Colors.grey.shade200,
+                            borderRadius: BorderRadius.circular(10.0),
                           ),
-                          color: Colors.grey.shade200,
-                          borderRadius: BorderRadius.circular(10.0),
+                          height: 50.0,
+                          child: Image.asset("assets/images/google.png"),
                         ),
-                        height: 50.0,
-                        child: Image.asset("assets/images/google.png"),
                       )
                     ],
                   ),
