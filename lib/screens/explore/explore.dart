@@ -18,7 +18,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
         title: Padding(
           padding: const EdgeInsets.only(left: 15.0),
           child: Text(
-            "Keşfet",
+            "Explore",
             style: TextStyle(
               color: Colors.grey.shade800,
               fontFamily: "Raleway",
@@ -55,7 +55,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
             child: Text(
-              "Blog Postları",
+              "Blog Posts",
               style: TextStyle(
                 fontFamily: "Raleway",
                 fontWeight: FontWeight.bold,

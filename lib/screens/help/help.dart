@@ -14,13 +14,13 @@ class HelpScreen extends StatefulWidget {
 class _HelpScreenState extends State<HelpScreen> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: const Color(0xFF4E6C50),
-          title: const Text("Let's Help!"),
-        ),
-        body: Center(
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: const Color(0xFF4E6C50),
+        title: const Text("Let's Help!"),
+      ),
+      body: SingleChildScrollView(
+        child: Center(
           child: Column(
             children: [
               const SizedBox(
@@ -129,14 +129,12 @@ class _HelpScreenState extends State<HelpScreen> {
                 height: 30,
               ),
               ElevatedButton.icon(
-                // MAPS 
+                // MAPS
                 icon: const Icon(Icons.map_outlined),
                 label: const Text('Maps'),
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => MapUI()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => MapUI()));
                 },
                 style: ElevatedButton.styleFrom(
                     foregroundColor: const Color.fromARGB(255, 242, 222, 186),
@@ -150,6 +148,9 @@ class _HelpScreenState extends State<HelpScreen> {
                     side: const BorderSide(
                         color: Color.fromARGB(255, 242, 222, 186), width: 4),
                     shape: const StadiumBorder()),
+              ),
+              const SizedBox(
+                height: 30,
               ),
             ],
           ),

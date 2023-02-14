@@ -21,6 +21,8 @@ class _PostPageState extends State<PostPage> {
     () => Navigator.pop(context);
   }
 
+  void postReport() {}
+
   void imagePicker() {
     Future.delayed(Duration.zero, () {
       showDialog(
@@ -66,6 +68,12 @@ class _PostPageState extends State<PostPage> {
           ),
           buildButton(imagePicker, "Pick an image"),
         ],
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: postReport,
+        icon: const Icon(Icons.save),
+        label: Text("Post"),
+        backgroundColor: Colors.green[800],
       ),
     );
   }

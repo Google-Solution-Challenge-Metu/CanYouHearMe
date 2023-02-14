@@ -20,7 +20,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       appBar: AppBar(
         title: Center(
           child: Text(
-            "Profilim",
+            "My Profile",
             style: TextStyle(
               color: Colors.grey.shade800,
               fontFamily: "Raleway",
@@ -66,7 +66,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     children: [
                       const CircleAvatar(
                         radius: 50.0,
-                        backgroundImage: AssetImage("assets/images/profile_anonym.webp"),
+                        backgroundImage:
+                            AssetImage("assets/images/profile_anonym.webp"),
                       ),
                       InkWell(
                         onTap: () {},

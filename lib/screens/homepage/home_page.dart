@@ -13,7 +13,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFF4E6C50),
-        title: const Text("HomePage"),
+        title: const Text("Make Your Voice Heard"),
       ),
       body: Column(
         children: [],
