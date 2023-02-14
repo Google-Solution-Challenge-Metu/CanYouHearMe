@@ -98,11 +98,11 @@ class _TfliteModelState extends State<TfliteModel> {
                                  }
                                  if(result['label'] == 'Toys'){ 
                                   Provider.of<CartModel>(context, listen: false)
-                                      .addItemToCart(1);
+                                      .addItemToCart(2);
                                  }
                                  if(result['label'] == 'Packaged Food'){ 
                                   Provider.of<CartModel>(context, listen: false)
-                                      .addItemToCart(2);
+                                      .addItemToCart(1);
                                  }
                                  else{}},
                               
