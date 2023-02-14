@@ -1,6 +1,8 @@
+import 'package:dietapp/screens/help/helpbox/cart_model.dart';
 import 'package:dietapp/screens/login/auth_login.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:provider/provider.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -16,9 +18,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: AuthPage(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => CartModel()),
+      ],
+      child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: AuthPage(),
+      ),
     );
   }
 }

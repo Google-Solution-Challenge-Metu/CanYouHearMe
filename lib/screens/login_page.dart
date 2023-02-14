@@ -108,20 +108,20 @@ class _MainPageState extends State<MainPage> {
               Container(
                 width: 100,
                 height: 100,
-                decoration: BoxDecoration(
-                  image: DecorationImage(image: AssetImage("assets/images/sosbutton.png"),
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage("assets/images/sosbutton.png"),
                   ),
-                   ),
-                  child: GestureDetector(
-                    onTap: () {
-                      final player=AudioCache();
-                      player.play("sossound.mp3");
-                      sos_warning();
-                    },
-                  ),
+                ),
+                child: GestureDetector(
+                  onTap: () {
+                    final player = AudioCache();
+                    player.play("sossound.mp3");
+                    sos_warning();
+                  },
+                ),
               ),
-              Divider(),
-              
+              const Divider(),
               const Text(
                 "Can You Hear Me?",
                 style: TextStyle(
@@ -130,7 +130,7 @@ class _MainPageState extends State<MainPage> {
                     color: Color.fromARGB(255, 250, 236, 214),
                     fontWeight: FontWeight.bold),
               ),
-              Text(
+              const Text(
                 "To Save Someone From The Earthquake",
                 style: TextStyle(
                   fontFamily: "Source Sans Pro",
