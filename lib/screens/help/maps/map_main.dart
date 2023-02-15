@@ -1,6 +1,9 @@
+import 'package:firebase_storage/firebase_storage.dart';
 import "package:flutter/material.dart";
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+//import 'package:google_maps_controller/google_maps_controller.dart';
 
 class MapUI extends StatefulWidget {
   @override
@@ -9,9 +12,13 @@ class MapUI extends StatefulWidget {
 
 class _MapUIState extends State<MapUI> {
 
+  // variables
   bool mapToggle = false;
   var currentLocation;
   late GoogleMapController mapController;
+  //var clients=[];
+  List<Marker> _markers = [];
+
 
   void initState(){
     super.initState();
@@ -19,9 +26,42 @@ class _MapUIState extends State<MapUI> {
       setState(() {
         currentLocation=currloc;
         mapToggle=true;
+        populateClients();
       });
-    });}
-  
+    });
+  }
+
+  populateClients(){
+    //clients=[];
+    FirebaseFirestore.instance.collection("markers").get().then((docs){
+      if(docs.docs.isNotEmpty){
+        for(int i=0; i<docs.docs.length; ++i){
+          //clients.add(docs.docs[i].data);
+          initMarker(docs.docs[i].data,i);
+        }
+      }
+    });
+  }
+  clearMarkers(){
+    setState(() {
+    _markers.clear();
+  });
+  }
+
+  initMarker(client,i){
+    //clearMarkers();
+    _markers.add(
+      Marker(
+        markerId: MarkerId("$i"),
+        position: LatLng(client()['location'].latitude,client()['location'].longitude),
+        draggable: false,
+        infoWindow: InfoWindow(title: client()['clientName'],snippet: "$i"),
+      )
+    );
+    print(_markers.length);
+    print(client()['clientName']);
+    print("Success");
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,10 +79,11 @@ class _MapUIState extends State<MapUI> {
                   width: double.infinity,
                   child: mapToggle
                   ?GoogleMap(
+                    markers: Set<Marker>.from(_markers),
                     onMapCreated: onMapCreated,
                     initialCameraPosition: CameraPosition(
-                      target: LatLng(36.2023, 36.1613), //LatLng(currentLocation.latitude, currentLocation.longitude),   //For Current Location
-                      zoom: 6.0
+                      target: LatLng(37.5753, 36.9228), //LatLng(currentLocation.latitude, currentLocation.longitude),   //For Current Location
+                      zoom: 7.0
                     ),
                   ):
                   Center(child: 
