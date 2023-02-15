@@ -1,6 +1,8 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:dietapp/services/report_service.dart';
+import 'package:toast/toast.dart';
 
 class PostPage extends StatefulWidget {
   const PostPage({super.key});
@@ -10,20 +12,48 @@ class PostPage extends StatefulWidget {
 }
 
 class _PostPageState extends State<PostPage> {
+  final ReportService _reportService = ReportService();
   final postController = TextEditingController();
-  late File file;
+  final ImagePicker _pickerImage = ImagePicker();
+  dynamic _pickImage;
+  var profileImage;
 
   handleTakePhoto() async {
     () => Navigator.pop(context);
   }
 
-  handleChooseFromGallery() async {
-    () => Navigator.pop(context);
+  handleChooseFromGallery(ImageSource source,
+      {required BuildContext context}) async {
+    try {
+      final pickedFile = await _pickerImage.pickImage(source: source);
+      setState(() {
+        profileImage = pickedFile!;
+        print("dosyaya geldim: $profileImage");
+        if (profileImage != null) {}
+      });
+      print('aaa');
+    } catch (e) {
+      setState(() {
+        _pickImage = e;
+        print("Image Error: " + _pickImage);
+      });
+    }
   }
 
-  void postReport() {}
+  void postReport() {
+    _reportService
+        .addStatus(postController.text, profileImage ?? '')
+        .then((value) {
+      Toast.show(
+        "Durum eklendi!",
+        duration: Toast.lengthShort,
+        gravity: Toast.bottom,
+      );
+      Navigator.pop(context);
+    });
+  }
 
-  void imagePicker() {
+  void imagePicker() async {
     Future.delayed(Duration.zero, () {
       showDialog(
         context: context,
@@ -36,7 +66,8 @@ class _PostPageState extends State<PostPage> {
                 child: const Text("Photo with Camera"),
               ),
               SimpleDialogOption(
-                onPressed: handleChooseFromGallery,
+                onPressed: () => handleChooseFromGallery(ImageSource.gallery,
+                    context: context),
                 child: const Text("Photo from Gallery"),
               ),
               SimpleDialogOption(
