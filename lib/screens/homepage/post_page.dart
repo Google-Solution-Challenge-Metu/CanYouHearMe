@@ -18,12 +18,38 @@ class _PostPageState extends State<PostPage> {
   dynamic _pickImage;
   var profileImage;
 
+  Widget imagePlace() {
+    double height = MediaQuery.of(context).size.height;
+    if (profileImage != null) {
+      return Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Image(
+          image: FileImage(File(profileImage!.path)),
+        ),
+      );
+    } else {
+      if (_pickImage != null) {
+        return Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Image(
+            image: NetworkImage(_pickImage),
+          ),
+        );
+      } else {
+        return SizedBox(
+          height: 10.0,
+        );
+      }
+    }
+  }
+
   handleTakePhoto() async {
     () => Navigator.pop(context);
   }
 
   handleChooseFromGallery(ImageSource source,
       {required BuildContext context}) async {
+    Navigator.pop(context);
     try {
       final pickedFile = await _pickerImage.pickImage(source: source);
       setState(() {
@@ -35,7 +61,7 @@ class _PostPageState extends State<PostPage> {
     } catch (e) {
       setState(() {
         _pickImage = e;
-        print("Image Error: " + _pickImage);
+        print("Image Error: $_pickImage");
       });
     }
   }
@@ -97,6 +123,7 @@ class _PostPageState extends State<PostPage> {
           const SizedBox(
             height: 10.0,
           ),
+          imagePlace(),
           buildButton(imagePicker, "Pick an image"),
         ],
       ),
