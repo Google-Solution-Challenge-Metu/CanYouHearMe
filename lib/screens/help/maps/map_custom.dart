@@ -1,7 +1,4 @@
-import 'dart:ffi';
-
 import 'package:custom_info_window/custom_info_window.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import "package:flutter/material.dart";
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -19,6 +16,8 @@ class _MapUIStatecustom extends State<MapUIcustom> {
 
   final LatLng _latLng = LatLng(28.7041, 77.1025);
   final double _zoom = 15.0;
+  bool mapToggle = false;
+  var currentLocation;
 
   @override
   void dispose() {
@@ -29,7 +28,13 @@ class _MapUIStatecustom extends State<MapUIcustom> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    loadData() ;
+    Geolocator.getCurrentPosition().then((currloc){
+      setState(() {
+        currentLocation=currloc;
+        mapToggle=true;
+        populateClients();
+      });
+    });
 
   }  
 
@@ -38,13 +43,23 @@ class _MapUIStatecustom extends State<MapUIcustom> {
     LatLng(38.4237, 27.1428),LatLng(41.0082, 28.9784)
   ];  
 
-  loadData(){
-  for(int i=0; i<_latLang.length; ++i){
+  populateClients(){
+    //clients=[];
+    FirebaseFirestore.instance.collection("markers").get().then((docs){
+      if(docs.docs.isNotEmpty){
+        for(int i=0; i<docs.docs.length; ++i){
+          //clients.add(docs.docs[i].data);
+          loadData(docs.docs[i].data,i);
+        }
+      }
+    });
+  }
+
+  loadData(_latLang,i){
     _markers.add(
       Marker(
         markerId: MarkerId("$i"),
-        position: _latLang[i],
-        infoWindow: InfoWindow(title: "$i"),
+        position: LatLng(_latLang()['location'].latitude,_latLang()['location'].longitude),
         onTap: () {
           _customInfoWindowController.addInfoWindow!(
             Container(
@@ -80,26 +95,26 @@ class _MapUIStatecustom extends State<MapUIcustom> {
                         SizedBox(
                           width: 100,
                           child: Text(
-                            "$i",
+                            _latLang()['clientName'],
                             maxLines: 1,
                             overflow: TextOverflow.fade,
                             softWrap: false,
                           ),
                         ),
                         const Spacer(),
-                        Text("sa")
+                        Text("!!!")
                       ],
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 10, left: 10,right: 10),
-                    child: Text("Ya devlet başa ya kuzgun leşe", 
+                    child: Text(_latLang()['snippet'], 
                     maxLines: 2, )
                   )
                 ],
               ),
             ),
-            _latLang[i],
+            LatLng(_latLang()['location'].latitude,_latLang()['location'].longitude),
           );
         },
       ),
@@ -107,12 +122,11 @@ class _MapUIStatecustom extends State<MapUIcustom> {
     setState(() {
 
       });
-    }
   }
 
   @override
   Widget build(BuildContext context) {
-    loadData();
+    populateClients();
     return Scaffold(
       appBar: AppBar(
         title: Text('Custom Info Window Example'),
