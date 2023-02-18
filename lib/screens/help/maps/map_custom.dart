@@ -129,9 +129,9 @@ class _MapUIStatecustom extends State<MapUIcustom> {
     populateClients();
     return Scaffold(
       appBar: AppBar(
-        title: Text('Custom Info Window Example'),
-        backgroundColor: Color.fromARGB(255, 118, 92, 126),
-      ),
+          backgroundColor: const Color(0xFF4E6C50),
+          title: const Text("Maps"),
+        ),
       body: Stack(
         children: <Widget>[
           GoogleMap(
