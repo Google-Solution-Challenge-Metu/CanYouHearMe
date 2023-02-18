@@ -36,6 +36,7 @@ dependencies:
   #Google Maps
   geolocator: ^9.0.2
   google_maps_flutter: 
+  custom_info_window: ^1.0.1
   #google_maps_controller: ^1.2.0
 
   #web view

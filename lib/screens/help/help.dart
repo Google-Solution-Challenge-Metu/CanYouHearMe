@@ -2,6 +2,7 @@ import "package:flutter/material.dart";
 import 'blood/blood.dart';
 import 'donaiton/donation.dart';
 import 'helpbox/intro_screen.dart';
+import 'maps/map_custom.dart';
 import 'maps/map_main.dart';
 import 'volunteer/volunteer.dart';
 
@@ -134,7 +135,7 @@ class _HelpScreenState extends State<HelpScreen> {
                 label: const Text('Maps'),
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => MapUI()));
+                      MaterialPageRoute(builder: (context) => MapUIcustom()));
                 },
                 style: ElevatedButton.styleFrom(
                     foregroundColor: const Color.fromARGB(255, 242, 222, 186),

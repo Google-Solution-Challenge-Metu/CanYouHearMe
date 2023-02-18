@@ -1,3 +1,4 @@
+import 'package:custom_info_window/custom_info_window.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import "package:flutter/material.dart";
 import 'package:geolocator/geolocator.dart';
@@ -13,9 +14,11 @@ class MapUI extends StatefulWidget {
 class _MapUIState extends State<MapUI> {
 
   // variables
+  CustomInfoWindowController _customInfoWindowController=
+  CustomInfoWindowController();
   bool mapToggle = false;
   var currentLocation;
-  late GoogleMapController mapController;
+  //late GoogleMapController mapController;
   //var clients=[];
   List<Marker> _markers = [];
 
@@ -55,7 +58,7 @@ class _MapUIState extends State<MapUI> {
         markerId: MarkerId("$i"),
         position: LatLng(client()['location'].latitude,client()['location'].longitude),
         draggable: false,
-        infoWindow: InfoWindow(title: client()['clientName'],snippet: "$i"),
+        infoWindow: InfoWindow(title: client()['clientName'],snippet: client()['snippet']),
       )
     );
     print(_markers.length);
@@ -79,12 +82,13 @@ class _MapUIState extends State<MapUI> {
                   width: double.infinity,
                   child: mapToggle
                   ?GoogleMap(
-                    markers: Set<Marker>.from(_markers),
-                    onMapCreated: onMapCreated,
                     initialCameraPosition: CameraPosition(
                       target: LatLng(37.5753, 36.9228), //LatLng(currentLocation.latitude, currentLocation.longitude),   //For Current Location
                       zoom: 7.0
                     ),
+                    markers: Set<Marker>.of(_markers),
+                    onMapCreated: onMapCreated,//(GoogleMapController controller){_customInfoWindowController.googleMapController =controller;},
+                    
                   ):
                   Center(child: 
                   Text("Loading ...",
@@ -98,7 +102,8 @@ class _MapUIState extends State<MapUI> {
   }
   void onMapCreated(controller){
     setState(() {
-      mapController=controller;
+      null;
+      //mapController=controller;
     });
   }
 }
