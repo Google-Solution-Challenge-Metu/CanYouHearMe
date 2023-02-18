@@ -32,11 +32,12 @@ class _ExploreScreenState extends State<ExploreScreen> {
           Padding(
             padding: const EdgeInsets.only(right: 15.0),
             child: IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.search,
-                  color: Colors.grey.shade600,
-                )),
+              onPressed: () {},
+              icon: Icon(
+                Icons.search,
+                color: Colors.grey.shade600,
+              ),
+            ),
           )
         ],
       ),
