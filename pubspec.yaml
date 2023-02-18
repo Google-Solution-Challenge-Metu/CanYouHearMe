@@ -24,6 +24,8 @@ dependencies:
   ionicons: ^0.2.1
   audioplayers: ^0.20.1
   google_sign_in: ^5.4.2
+  # fluttertoast: ^8.1.2
+  toast: ^0.3.0
   #error snackbar
   awesome_snackbar_content: ^0.1.0
   flutter_svg: ^1.0.3
