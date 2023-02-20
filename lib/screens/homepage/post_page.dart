@@ -19,6 +19,7 @@ class _PostPageState extends State<PostPage> {
   var profileImage;
 
   Widget imagePlace() {
+    double height = MediaQuery.of(context).size.height;
     if (profileImage != null) {
       return Padding(
         padding: const EdgeInsets.all(10.0),
@@ -35,7 +36,7 @@ class _PostPageState extends State<PostPage> {
           ),
         );
       } else {
-        return const SizedBox(
+        return SizedBox(
           height: 10.0,
         );
       }
