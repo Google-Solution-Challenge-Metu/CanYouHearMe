@@ -3,10 +3,6 @@
 
    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <!-- Required for ambient mode support -->
-   <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <!-- Flags the app as a Wear app -->
-   <uses-feature android:name="android.hardware.type.watch" />
 
    <application
         android:label="Can You Hear Me"
@@ -41,8 +37,5 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCNPJCKnLTUA4Z4Ig0cRXlbXIXxGcUSd_k" />
-        <meta-data
-            android:name="com.google.android.wearable.standalone"
-            android:value="true" />
     </application>
 </manifest>
