@@ -45,7 +45,7 @@ class _MapUIStatecustom extends State<MapUIcustom> {
 
   populateClients(){
     //clients=[];
-    FirebaseFirestore.instance.collection("markers").get().then((docs){
+    FirebaseFirestore.instance.collection("Status").get().then((docs){
       if(docs.docs.isNotEmpty){
         for(int i=0; i<docs.docs.length; ++i){
           //clients.add(docs.docs[i].data);
@@ -77,9 +77,9 @@ class _MapUIStatecustom extends State<MapUIcustom> {
                   Container(
                     width: 300,
                     height: 100,
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: NetworkImage("https://www.ekoiq.com/wp-content/uploads/2023/02/deprem-12-1200x700.jpg"),
+                        image: NetworkImage(_latLang()['image']),
                         fit: BoxFit.fitWidth,
                         filterQuality: FilterQuality.high),
                       borderRadius: const BorderRadius.all(
@@ -95,7 +95,7 @@ class _MapUIStatecustom extends State<MapUIcustom> {
                         SizedBox(
                           width: 100,
                           child: Text(
-                            _latLang()['clientName'],
+                            "_latLang()['']",
                             maxLines: 1,
                             overflow: TextOverflow.fade,
                             softWrap: false,
@@ -108,7 +108,7 @@ class _MapUIStatecustom extends State<MapUIcustom> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 10, left: 10,right: 10),
-                    child: Text(_latLang()['snippet'], 
+                    child: Text(_latLang()['status'],
                     maxLines: 2, )
                   )
                 ],
