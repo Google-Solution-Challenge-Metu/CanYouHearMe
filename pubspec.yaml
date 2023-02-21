@@ -24,7 +24,6 @@ dependencies:
   ionicons: ^0.2.1
   audioplayers: ^0.20.1
   google_sign_in: ^5.4.2
-  # fluttertoast: ^8.1.2
   toast: ^0.3.0
   #error snackbar
   awesome_snackbar_content: ^0.1.0
@@ -54,7 +53,7 @@ dependencies:
   firebase_storage: ^10.0.1
   firebase_core_platform_interface: 4.5.1 # note removed ^
   firebase_messaging: ^13.0.4 # previously I only had this which was pulling in 4.5.2 which you do not want
-
+  open_street_map_search_and_pick: ^0.0.16
   #gives error
   #firebase_storage: ^11.0.10
 

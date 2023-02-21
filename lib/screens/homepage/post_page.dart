@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:dietapp/services/report_service.dart';
 import 'package:toast/toast.dart';
+import 'package:dietapp/screens/homepage/map_picker_page.dart';
 
 class PostPage extends StatefulWidget {
   const PostPage({super.key});
@@ -36,7 +37,7 @@ class _PostPageState extends State<PostPage> {
           ),
         );
       } else {
-        return SizedBox(
+        return const SizedBox(
           height: 10.0,
         );
       }
@@ -125,12 +126,42 @@ class _PostPageState extends State<PostPage> {
           ),
           imagePlace(),
           buildButton(imagePicker, "Pick an image"),
+          GestureDetector(
+            behavior: HitTestBehavior.translucent,
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => MapPickerPage()));
+            },
+            child: const Card(
+              color: Color(0xFF4E6C50),
+              margin: EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
+              child: Padding(
+                padding: EdgeInsets.all(8.0),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.location_on,
+                    color: Colors.white,
+                  ),
+                  title: Text(
+                    "Pick a location",
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                  trailing: Icon(
+                    Icons.arrow_forward_ios,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+          )
         ],
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: postReport,
         icon: const Icon(Icons.save),
-        label: Text("Post"),
+        label: const Text("Post"),
         backgroundColor: Colors.green[800],
       ),
     );
