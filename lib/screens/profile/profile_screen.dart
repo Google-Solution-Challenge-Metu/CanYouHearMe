@@ -108,7 +108,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     children: [
                       Column(
                         children: [
-                          Text(
+                          const Text(
                             "25",
                             style: TextStyle(
                                 fontFamily: "Raleway",
