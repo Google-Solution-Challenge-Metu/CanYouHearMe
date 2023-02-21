@@ -9,18 +9,20 @@ class ReportService {
   final StorageService _storageService = StorageService();
   String mediaUrl = '';
 
-  Future<Report> addStatus(String status, XFile pickedFile, GeoPoint location) async {
+  Future<Report> addStatus(String status, XFile pickedFile, GeoPoint location, String address) async {
     var ref = _firestore.collection("Status");
 
     mediaUrl = await _storageService.uploadMedia(File(pickedFile.path));
 
-    var documentRef = await ref.add({'status': status, 'image': mediaUrl, 'location':location});
+    var documentRef = await ref.add({'status': status, 'image': mediaUrl, 'location':location, "address": address});
 
     return Report(
         id: documentRef.id,
         status: status,
         image: mediaUrl,
-        location: location);
+        location: location,
+        address: address,
+    );
   }
 
   //status göstermek için

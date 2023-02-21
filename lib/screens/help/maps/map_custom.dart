@@ -95,8 +95,8 @@ class _MapUIStatecustom extends State<MapUIcustom> {
                         SizedBox(
                           width: 100,
                           child: Text(
-                            "_latLang()['']",
-                            maxLines: 1,
+                            _latLang()['address'],
+                            maxLines: 2,
                             overflow: TextOverflow.fade,
                             softWrap: false,
                           ),

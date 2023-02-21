@@ -11,6 +11,7 @@ class MapPickerPage extends StatefulWidget {
 class MapPickerPageState extends State<MapPickerPage> {
   static double latitude = 0;
   static double longitude = 0;
+  static String address="";
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +23,10 @@ class MapPickerPageState extends State<MapPickerPage> {
           setState(() {
             latitude = pickedData.latLong.latitude;
             longitude = pickedData.latLong.longitude;
+            address=pickedData.address;
           });
           Navigator.pop(context);
-          print(pickedData.address);
+
         });
   }
 }

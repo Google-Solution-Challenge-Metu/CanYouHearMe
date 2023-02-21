@@ -72,7 +72,8 @@ class _PostPageState extends State<PostPage> {
   void postReport() {
     _reportService
         .addStatus(postController.text, profileImage ?? '',
-            GeoPoint(MapPickerPageState.latitude, MapPickerPageState.longitude))
+            GeoPoint(MapPickerPageState.latitude, MapPickerPageState.longitude),
+            MapPickerPageState.address)
         .then((value) {
       Toast.show(
         "Durum eklendi!",
