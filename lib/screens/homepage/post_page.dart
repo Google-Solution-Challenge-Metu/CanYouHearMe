@@ -1,9 +1,12 @@
 import 'dart:io';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:dietapp/services/report_service.dart';
 import 'package:toast/toast.dart';
 import 'package:dietapp/screens/homepage/map_picker_page.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:open_street_map_search_and_pick/open_street_map_search_and_pick.dart';
 
 class PostPage extends StatefulWidget {
   const PostPage({super.key});
@@ -20,7 +23,6 @@ class _PostPageState extends State<PostPage> {
   var profileImage;
 
   Widget imagePlace() {
-    double height = MediaQuery.of(context).size.height;
     if (profileImage != null) {
       return Padding(
         padding: const EdgeInsets.all(10.0),
@@ -69,7 +71,8 @@ class _PostPageState extends State<PostPage> {
 
   void postReport() {
     _reportService
-        .addStatus(postController.text, profileImage ?? '')
+        .addStatus(postController.text, profileImage ?? '',
+            GeoPoint(MapPickerPageState.latitude, MapPickerPageState.longitude))
         .then((value) {
       Toast.show(
         "Durum eklendi!",
@@ -155,7 +158,7 @@ class _PostPageState extends State<PostPage> {
                 ),
               ),
             ),
-          )
+          ),
         ],
       ),
       floatingActionButton: FloatingActionButton.extended(

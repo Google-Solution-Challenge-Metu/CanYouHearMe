@@ -5,19 +5,25 @@ class MapPickerPage extends StatefulWidget {
   const MapPickerPage({Key? key}) : super(key: key);
 
   @override
-  State<MapPickerPage> createState() => _MapPickerPageState();
+  State<MapPickerPage> createState() => MapPickerPageState();
 }
 
-class _MapPickerPageState extends State<MapPickerPage> {
+class MapPickerPageState extends State<MapPickerPage> {
+  static double latitude = 0;
+  static double longitude = 0;
+
   @override
   Widget build(BuildContext context) {
     return OpenStreetMapSearchAndPick(
-        center: LatLong(23, 89),
+        center: LatLong(39, 32),
         buttonColor: Colors.green,
         buttonText: 'Set Current Location',
         onPicked: (pickedData) {
-          print(pickedData.latLong.latitude);
-          print(pickedData.latLong.longitude);
+          setState(() {
+            latitude = pickedData.latLong.latitude;
+            longitude = pickedData.latLong.longitude;
+          });
+          Navigator.pop(context);
           print(pickedData.address);
         });
   }
