@@ -19,13 +19,23 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //Size screenSize = MediaQuery.of(context).size;
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => CartModel()),
       ],
-      child: const MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: AuthPage(),
+      child: MaterialApp( 
+        home: Scaffold(
+          body: LayoutBuilder(
+        builder: (context, constraints) {
+          if (constraints.maxWidth < 300) {
+            return AuthPage();
+          } else {
+            return AuthPage();
+          }
+        },
+      ),
+        ),
       ),
     );
   }
