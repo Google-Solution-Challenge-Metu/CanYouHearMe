@@ -93,7 +93,7 @@ class _MapUIStatecustom extends State<MapUIcustom> {
                     child: Row(
                       children: [
                         SizedBox(
-                          width: 100,
+                          width: 200,
                           child: Text(
                             _latLang()['address'],
                             maxLines: 2,

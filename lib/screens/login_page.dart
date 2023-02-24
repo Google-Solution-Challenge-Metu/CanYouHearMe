@@ -100,47 +100,73 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 130, 0, 0),
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
       body: Center(
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Container(
-                width: 100,
-                height: 100,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage("assets/images/sosbutton.png"),
-                  ),
+                // autogroupe2pp7c9 (57P22SfybUb95vsn6xE2PP)
+                margin:  EdgeInsets.fromLTRB(0, 0, 0, 19),
+                width:  double.infinity,
+                height:  207,
+                decoration:  BoxDecoration (
+                  color:  Color(0xffe97d47),
+                  borderRadius:  BorderRadius.circular(25),
                 ),
-                child: GestureDetector(
-                  onTap: () {
-                    final player = AudioCache();
-                    player.play("sossound.mp3");
-                    sos_warning();
-                  },
-                ),
-              ),
+                child:  
+              Column(
+                children:  [
+                  SizedBox(height:50.0),
+                  Container(
+                    width: 100,
+                    height: 100,
+                    decoration:  BoxDecoration (
+                      borderRadius:  BorderRadius.circular(50),
+                      color:  Color(0xffffffff),
+                      image: DecorationImage(
+                          image: AssetImage("assets/images/ring.png"),
+                        ),
+                      boxShadow:  [
+                        BoxShadow(
+                          color:  Color(0x3f000000),
+                          offset:  Offset(0, 4),
+                          blurRadius:  2,
+                        ),
+                      ],
+                    ),
+                    child: GestureDetector(
+                      onTap: () {
+                        final player = AudioCache();
+                        player.play("sossound.mp3");
+                        sos_warning();
+                      },
+                    ),
+                  ),        
+                ]
+              )
+            ),
+              
               const Divider(),
               const Text(
-                "Can You Hear Me?",
+                "LOG IN",
                 style: TextStyle(
-                    fontFamily: "Pacifico",
+                    fontFamily: "GoogleFonts",
                     fontSize: 30.0,
-                    color: Color.fromARGB(255, 250, 236, 214),
+                    color: Color(0xffe97d47),
                     fontWeight: FontWeight.bold),
               ),
-              const Text(
-                "To Save Someone From The Earthquake",
-                style: TextStyle(
-                  fontFamily: "Source Sans Pro",
-                  fontSize: 15.0,
-                  letterSpacing: 2.5,
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 255, 174, 174),
-                ),
-              ),
+              //const Text(
+              //  "To Save Someone From The Earthquake",
+              //  style: TextStyle(
+              //    fontFamily: "Source Sans Pro",
+              //    fontSize: 15.0,
+              //    letterSpacing: 2.5,
+              //    fontWeight: FontWeight.bold,
+              //    color: Color.fromARGB(255, 255, 174, 174),
+              //  ),
+              //),
               const SizedBox(
                 height: 30.0,
                 width: 200.0,
@@ -165,8 +191,8 @@ class _MainPageState extends State<MainPage> {
                     GestureDetector(
                       onTap: () {},
                       child: Text(
-                        "Forgot your password?",
-                        style: TextStyle(color: Colors.grey.shade200),
+                        "Forgot password?",
+                        style: TextStyle(color: Color(0xffe97d47)),
                       ),
                     ),
                   ],
@@ -192,9 +218,9 @@ class _MainPageState extends State<MainPage> {
                     const Padding(
                       padding: EdgeInsets.symmetric(horizontal: 10.0),
                       child: Text(
-                        "Or continue with",
+                        "Or",
                         style: TextStyle(
-                          color: Colors.white,
+                          color: Color(0xffe97d47),
                         ),
                       ),
                     ),
@@ -237,17 +263,17 @@ class _MainPageState extends State<MainPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Not registered?",
+                    "Don’t have an account?",
                     style: TextStyle(
-                      color: Colors.grey[300],
+                      color: Color.fromARGB(255, 0, 0, 0),
                     ),
                   ),
                   GestureDetector(
                     onTap: registerUser,
                     child: const Text(
-                      " Register now",
+                      " Sign Up",
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Color(0xffe97d47),
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -274,7 +300,7 @@ class _MainPageState extends State<MainPage> {
           width: 150.0,
           padding: const EdgeInsets.all(20.0),
           decoration: BoxDecoration(
-              color: Color.fromARGB(255, 130, 105, 105),
+              color: Color(0xffe97d47),
               borderRadius: BorderRadius.circular(12.0)),
           child: const Center(
             child: Text(
