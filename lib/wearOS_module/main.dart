@@ -1,5 +1,5 @@
+import 'package:dietapp/wearOS_module/intro.dart';
 import 'package:flutter/material.dart';
-import 'package:wearos/intro.dart';
 
 void main() {
   runApp(const PartlyWindy());
@@ -11,10 +11,10 @@ class PartlyWindy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Partly Windy',
+      title: 'WearOS',
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      home: const Intro_page(),
+      home: const Intro_Wear(),
     );
   }
 }

@@ -43,6 +43,11 @@ dependencies:
   #web view
   webview_flutter: ^3.0.2
 
+  #wearos
+  #wear: ^1.1.0
+  rotary_scrollbar: ^0.1.1
+  #wearable_communicator: ^0.1.1
+
   #river
   rive: ^0.9.1
 

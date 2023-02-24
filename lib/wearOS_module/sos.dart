@@ -1,5 +1,6 @@
+import 'package:dietapp/wearOS_module/devices.dart';
 import 'package:flutter/material.dart';
-import 'package:wearos/devices.dart';
+
 
 import 'intro.dart';
 
@@ -52,7 +53,7 @@ class _sos_pageState extends State<sos_page> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Image.asset(
-                    'assets/outline_arrow.png',
+                    'assets/images/outline_arrow.png',
                     height: 20,
                   ),
                   SizedBox(width: 5),
@@ -66,7 +67,7 @@ class _sos_pageState extends State<sos_page> {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return Intro_page();
+                    return Intro_Wear();
                   },
                 ),
               ),
@@ -80,7 +81,7 @@ class _sos_pageState extends State<sos_page> {
                 warnmes();
               },
               child: Image.asset(
-                'assets/sosbuttontrans.png',
+                'assets/images/sosbuttontrans.png',
                 height: 100,
               ),  
             ),

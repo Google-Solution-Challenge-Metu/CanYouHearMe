@@ -1,14 +1,14 @@
+import 'package:dietapp/wearOS_module/sos.dart';
 import "package:flutter/material.dart";
-import 'package:wearos/sos.dart';
 
-class Intro_page extends StatefulWidget {
-  const Intro_page({super.key});
+class Intro_Wear extends StatefulWidget {
+  const Intro_Wear({super.key});
 
   @override
-  State<Intro_page> createState() => _Intro_pageState();
+  State<Intro_Wear> createState() => _Intro_WearState();
 }
 
-class _Intro_pageState extends State<Intro_page> {
+class _Intro_WearState extends State<Intro_Wear> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +43,7 @@ class _Intro_pageState extends State<Intro_page> {
                 bottom: 0,
               ),
               child: Image.asset(
-                'assets/google.png',
+                'assets/images/google.png',
                 height: 50,
               ),
             ),
