@@ -60,7 +60,7 @@ class _intro1State extends State<intro1> {
                 ),
               ),
               child: Container(
-                padding: const EdgeInsets.all(5),
+                padding: const EdgeInsets.all(0),
                 width:  200,
                 height:  56.0,
                 decoration:  BoxDecoration (

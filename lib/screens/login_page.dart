@@ -253,8 +253,10 @@ class _MainPageState extends State<MainPage> {
                       height: 50.0,
                       child: Image.asset("assets/images/google.png"),
                     ),
-                  )
+                  ),
+                  
                 ],
+                
               ),
               const SizedBox(
                 height: 20.0,

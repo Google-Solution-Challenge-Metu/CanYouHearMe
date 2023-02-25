@@ -29,6 +29,10 @@ dependencies:
   awesome_snackbar_content: ^0.1.0
   flutter_svg: ^1.0.3
 
+  #QR code
+  qr_flutter: ^4.0.0 
+  qr_code_scanner: ^1.0.1
+
   #Tensorflow Lite
   tflite:
     path: ./lib/flutter_tflite-master
@@ -43,7 +47,7 @@ dependencies:
   #web view
   webview_flutter: ^3.0.2
 
-  #wearos
+  #Wearos
   #wear: ^1.1.0
   rotary_scrollbar: ^0.1.1
   #wearable_communicator: ^0.1.1

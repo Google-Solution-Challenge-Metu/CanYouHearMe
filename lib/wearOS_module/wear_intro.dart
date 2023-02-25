@@ -1,4 +1,5 @@
-import 'package:dietapp/wearOS_module/sos.dart';
+import 'package:dietapp/wearOS_module/wear_loginqr.dart';
+import 'package:dietapp/wearOS_module/wear_sos.dart';
 import "package:flutter/material.dart";
 
 class Intro_Wear extends StatefulWidget {
@@ -43,7 +44,7 @@ class _Intro_WearState extends State<Intro_Wear> {
                 bottom: 0,
               ),
               child: Image.asset(
-                'assets/images/google.png',
+                'assets/images/hands.png',
                 height: 50,
               ),
             ),
@@ -61,7 +62,7 @@ class _Intro_WearState extends State<Intro_Wear> {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return sos_page();
+                    return loginQR();//sos_page
                   },
                 ),
               ),

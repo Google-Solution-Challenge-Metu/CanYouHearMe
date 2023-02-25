@@ -1,4 +1,4 @@
-import 'package:dietapp/wearOS_module/intro.dart';
+import 'package:dietapp/wearOS_module/wear_intro.dart';
 import 'package:flutter/material.dart';
 
 void main() {

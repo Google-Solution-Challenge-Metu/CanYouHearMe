@@ -1,8 +1,8 @@
-import 'package:dietapp/wearOS_module/devices.dart';
+import 'package:dietapp/wearOS_module/wear_devices.dart';
 import 'package:flutter/material.dart';
 
 
-import 'intro.dart';
+import 'wear_intro.dart';
 
 class sos_page extends StatefulWidget {
   const sos_page({super.key});

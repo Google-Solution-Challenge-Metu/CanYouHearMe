@@ -1,6 +1,6 @@
 import 'package:dietapp/screens/help/helpbox/cart_model.dart';
 import 'package:dietapp/screens/login/auth_login.dart';
-import 'package:dietapp/wearOS_module/intro.dart';
+import 'package:dietapp/wearOS_module/wear_intro.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
