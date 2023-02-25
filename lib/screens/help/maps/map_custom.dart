@@ -35,7 +35,7 @@ class _MapUIStatecustom extends State<MapUIcustom> {
         mapToggle=true;
         populateClients();
         i_mar=_markers.length;
-        apopulateClients();
+        populateClients_safeArea();
         
       });
     });
@@ -47,19 +47,19 @@ class _MapUIStatecustom extends State<MapUIcustom> {
   List<LatLng> _latLang = <LatLng> [
     LatLng(38.4237, 27.1428),LatLng(41.0082, 28.9784)
   ];  
-  apopulateClients(){
+  populateClients_safeArea(){
     //clients=[];
     FirebaseFirestore.instance.collection("markers").get().then((docs){
       if(docs.docs.isNotEmpty){
         for(int i=0; i<docs.docs.length; ++i){
           //clients.add(docs.docs[i].data);
-          aloadData(docs.docs[i].data,i+i_mar);
+          loadData_safeArea(docs.docs[i].data,i+i_mar);
         }
       }
     });
   }
 
-  aloadData(_latLang,i){
+  loadData_safeArea(_latLang,i){
     _markers.add(
       Marker(
         markerId: MarkerId("$i"),
