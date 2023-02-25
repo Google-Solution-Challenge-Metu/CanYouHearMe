@@ -26,6 +26,7 @@ class _Qr_ScannState extends State<Qr_Scann> {
       controller!.resumeCamera();
     }
   }
+  
 
 
   @override
@@ -67,8 +68,14 @@ class _Qr_ScannState extends State<Qr_Scann> {
                       'Barcode Type: ${describeEnum(result!.format)}   Data: ${result!.code}')
                   : Text('Scan a code'),
             ),
-          )
+          ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: addCodeToFirestore,
+        icon: const Icon(Icons.save),
+        label: const Text("Connect"),
+        backgroundColor: Colors.green[800],
       ),
     );
   }
@@ -86,5 +93,9 @@ class _Qr_ScannState extends State<Qr_Scann> {
   void dispose() {
     controller?.dispose();
     super.dispose();
+  }
+  @override
+  void addCodeToFirestore(){
+    
   }
 }

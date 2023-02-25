@@ -37,7 +37,7 @@ class _MainPageState extends State<MainPage> {
       context: context,
       builder: (context) {
         return const AlertDialog(
-          backgroundColor: Color.fromARGB(255, 130, 0, 0),
+          backgroundColor: Color(0xffe97d47),
           title: Text(
             "Incorrect email.",
             style: TextStyle(color: Colors.white),
@@ -52,7 +52,7 @@ class _MainPageState extends State<MainPage> {
       context: context,
       builder: (context) {
         return const AlertDialog(
-          backgroundColor: Color.fromARGB(255, 130, 0, 0),
+          backgroundColor: Color(0xffe97d47),
           title: Text(
             "Incorrect password.",
             style: TextStyle(color: Colors.white),
@@ -67,7 +67,7 @@ class _MainPageState extends State<MainPage> {
       context: context,
       builder: (context) {
         return const AlertDialog(
-          backgroundColor: Color.fromARGB(255, 130, 0, 0),
+          backgroundColor: Color(0xffe97d47),
           title: Text(
             "No email, password or both.",
             style: TextStyle(color: Colors.white),
@@ -82,7 +82,7 @@ class _MainPageState extends State<MainPage> {
       context: context,
       builder: (context) {
         return const AlertDialog(
-          backgroundColor: Color.fromARGB(255, 130, 0, 0),
+          backgroundColor: Color(0xffe97d47),
           title: Text(
             "Turn Up Your Phone Volume!",
             style: TextStyle(color: Colors.white),
