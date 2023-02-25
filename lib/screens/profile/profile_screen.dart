@@ -131,9 +131,44 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ],
                   ),
-                  buildButton(changeUserProfile, "Profili Düzenle")
+                  buildButton(changeUserProfile, "Profili Düzenle"),
+                  Row(children: [
+                      const SizedBox(
+                        width: 100.0,
+                      ),
+                      GestureDetector(
+                        onTap: () => null,
+                        child: Container(
+                          padding: const EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.white,
+                            ),
+                            color: Color.fromARGB(255, 226, 188, 165),
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          height: 50.0,
+                          child: Image.asset("assets/images/qr_iconn.png"),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 10.0,
+                      ),
+                      Text(
+                            "Add A Smart Device",
+                            style: TextStyle(
+                              color: Colors.grey.shade500,
+                              fontFamily: "Raleway",
+                              fontWeight: FontWeight.w300,
+                              fontSize: 15.0,
+                            ),
+                          ),
+                  ],),
                 ],
               ),
+            ),
+            const SizedBox(
+              height: 10.0,
             ),
             Container(
               color: Colors.white,
