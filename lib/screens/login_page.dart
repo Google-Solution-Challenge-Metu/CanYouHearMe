@@ -94,7 +94,7 @@ class _MainPageState extends State<MainPage> {
 
   void registerUser() {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => RegisterPage()));
+        context, MaterialPageRoute(builder: (context) => const RegisterPage()));
   }
 
   @override
