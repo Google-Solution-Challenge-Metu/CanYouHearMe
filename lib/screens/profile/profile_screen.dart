@@ -1,4 +1,5 @@
 import 'package:dietapp/screens/components/posts.dart';
+import 'package:dietapp/screens/profile/qr_read.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import "package:flutter/material.dart";
 
@@ -137,7 +138,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         width: 100.0,
                       ),
                       GestureDetector(
-                        onTap: () => null,
+                        onTap: () => Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return Qr_Scann(title: 'QR scanner');
+                            },
+                          ),
+                        ),
                         child: Container(
                           padding: const EdgeInsets.all(10),
                           decoration: BoxDecoration(
