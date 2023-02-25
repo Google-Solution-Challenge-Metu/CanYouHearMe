@@ -80,12 +80,23 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Color(0xffe97d47),
+          ),
+          onPressed: () => Navigator.pop(context),
+        ),
+      ),
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       body: Center(
         child: ListView(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 50.0),
+              padding: const EdgeInsets.only(top: 10.0, bottom: 50.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -98,11 +109,11 @@ class _RegisterPageState extends State<RegisterPage> {
                     style: TextStyle(
                         fontFamily: "Pacifico",
                         fontSize: 30.0,
-                        color: Color.fromARGB(255, 250, 236, 214),
+                        color: Color(0xffe97d47),
                         fontWeight: FontWeight.bold),
                   ),
-                  Text(
-                    "To Save Someone From The Earthquake",
+                  const Text(
+                    "Register Page",
                     style: TextStyle(
                       fontFamily: "Source Sans Pro",
                       fontSize: 15.0,
@@ -111,12 +122,12 @@ class _RegisterPageState extends State<RegisterPage> {
                       color: Color.fromARGB(255, 255, 174, 174),
                     ),
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: 30.0,
                     width: 200.0,
                     child: Divider(
-                      color: Colors.white,
-                      thickness: 3.0,
+                      color: Colors.grey.shade200,
+                      thickness: 1,
                     ),
                   ),
                   Row(
@@ -163,7 +174,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           child: Text(
                             "Or continue with",
                             style: TextStyle(
-                              color: Colors.white,
+                              color: Color(0xffe97d47),
                             ),
                           ),
                         ),
@@ -205,10 +216,10 @@ class _RegisterPageState extends State<RegisterPage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      const Text(
                         "Already registered?",
                         style: TextStyle(
-                          color: Colors.grey[300],
+                          color: Color.fromARGB(255, 0, 0, 0),
                         ),
                       ),
                       GestureDetector(
@@ -216,7 +227,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         child: const Text(
                           " Login",
                           style: TextStyle(
-                            color: Colors.white,
+                            color: Color(0xffe97d47),
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -245,7 +256,7 @@ class _RegisterPageState extends State<RegisterPage> {
           width: 150.0,
           padding: const EdgeInsets.all(20.0),
           decoration: BoxDecoration(
-              color: const Color(0xFF698269),
+              color: const Color(0xffe97d47),
               borderRadius: BorderRadius.circular(12.0)),
           child: const Center(
             child: Text(

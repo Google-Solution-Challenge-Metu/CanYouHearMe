@@ -35,11 +35,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
           Padding(
             padding: const EdgeInsets.only(right: 15.0),
             child: IconButton(
-                onPressed: signUserOut,
-                icon: Icon(
-                  Icons.logout,
-                  color: Colors.grey.shade600,
-                )),
+              onPressed: signUserOut,
+              icon: Icon(
+                Icons.logout,
+                color: Colors.grey.shade600,
+              ),
+            ),
           )
         ],
         leading: Padding(
@@ -133,7 +134,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ],
                   ),
                   buildButton(changeUserProfile, "Profili Düzenle"),
-                  Row(children: [
+                  Row(
+                    children: [
                       const SizedBox(
                         width: 100.0,
                       ),
@@ -163,15 +165,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         width: 10.0,
                       ),
                       Text(
-                            "Add A Smart Device",
-                            style: TextStyle(
-                              color: Colors.grey.shade500,
-                              fontFamily: "Raleway",
-                              fontWeight: FontWeight.w300,
-                              fontSize: 15.0,
-                            ),
-                          ),
-                  ],),
+                        "Add A Smart Device",
+                        style: TextStyle(
+                          color: Colors.grey.shade500,
+                          fontFamily: "Raleway",
+                          fontWeight: FontWeight.w300,
+                          fontSize: 15.0,
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),

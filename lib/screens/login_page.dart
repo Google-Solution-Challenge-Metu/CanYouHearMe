@@ -146,7 +146,6 @@ class _MainPageState extends State<MainPage> {
                       ),
                     ),
                   ])),
-
               const Text(
                 "Can You Hear Me?",
                 style: TextStyle(
@@ -155,22 +154,22 @@ class _MainPageState extends State<MainPage> {
                     color: Color(0xffe97d47),
                     fontWeight: FontWeight.bold),
               ),
-              //const Text(
-              //  "To Save Someone From The Earthquake",
-              //  style: TextStyle(
-              //    fontFamily: "Source Sans Pro",
-              //    fontSize: 15.0,
-              //    letterSpacing: 2.5,
-              //    fontWeight: FontWeight.bold,
-              //    color: Color.fromARGB(255, 255, 174, 174),
-              //  ),
-              //),
-              const SizedBox(
+              const Text(
+                "Login Page",
+                style: TextStyle(
+                  fontFamily: "Source Sans Pro",
+                  fontSize: 15.0,
+                  letterSpacing: 2.5,
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 255, 174, 174),
+                ),
+              ),
+              SizedBox(
                 height: 30.0,
                 width: 200.0,
                 child: Divider(
-                  color: Colors.white,
-                  thickness: 3.0,
+                  color: Colors.grey.shade200,
+                  thickness: 1.0,
                 ),
               ),
               buildTextField(emailController, "E-mail", false),
@@ -260,7 +259,7 @@ class _MainPageState extends State<MainPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     "Don’t have an account?",
                     style: TextStyle(
                       color: Color.fromARGB(255, 0, 0, 0),
@@ -301,7 +300,7 @@ class _MainPageState extends State<MainPage> {
           width: 150.0,
           padding: const EdgeInsets.all(20.0),
           decoration: BoxDecoration(
-              color: Color(0xffe97d47),
+              color: const Color(0xffe97d47),
               borderRadius: BorderRadius.circular(12.0)),
           child: const Center(
             child: Text(
