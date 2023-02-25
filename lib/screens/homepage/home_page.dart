@@ -19,7 +19,8 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: const Color(0xFF4E6C50),
         title: const Text("Make Your Voice Heard"),
       ),
-      body: Column(
+      body: ListView(
+        physics: ScrollPhysics(),
         children: [
           const SizedBox(
             height: 10,
@@ -47,7 +48,7 @@ class _HomePageState extends State<HomePage> {
               return !snapshot.hasData
                   ? const CircularProgressIndicator()
                   : ListView.builder(
-                      scrollDirection: Axis.vertical,
+                      physics: NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
                       itemCount: snapshot.data!.docs.length,
                       itemBuilder: (context, index) {

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'intro2.dart';
@@ -13,8 +11,8 @@ class intro1 extends StatefulWidget {
 }
 
 class _intro1State extends State<intro1> {
+  var fem = 1;
   @override
-  var fem=1;
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[50],
@@ -37,12 +35,12 @@ class _intro1State extends State<intro1> {
               padding: const EdgeInsets.all(28.0),
               child: Text(
                 'Help',
-                 style:  GoogleFonts.nunitoSans (
-                  fontSize:  36,
-                  fontWeight:  FontWeight.w800,
-                  height:  1.3625/fem,
-                  color:  Color(0xffee844e),
-                  ),
+                style: GoogleFonts.nunitoSans(
+                  fontSize: 36,
+                  fontWeight: FontWeight.w800,
+                  height: 1.3625 / fem,
+                  color: Color(0xffee844e),
+                ),
               ),
             ),
             const SizedBox(height: 24),
@@ -61,31 +59,33 @@ class _intro1State extends State<intro1> {
               ),
               child: Container(
                 padding: const EdgeInsets.all(0),
-                width:  200,
-                height:  56.0,
-                decoration:  BoxDecoration (
-                  borderRadius:  BorderRadius.circular(25.0),
-                  color:  Color(0xffe97d47),
+                width: 200,
+                height: 56.0,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25.0),
+                  color: Color(0xffe97d47),
                 ),
                 child: const Text(
                   'Next',
                   textAlign: TextAlign.center,
-                  style:  TextStyle( 
+                  style: TextStyle(
                     fontFamily: "GoogleFonts",
-                    fontSize:  20,
-                    fontWeight:  FontWeight.w400,
-                    height:  2.5,
-                    color:  Color.fromARGB(255, 255, 255, 255),
-                   
+                    fontSize: 20,
+                    fontWeight: FontWeight.w400,
+                    height: 2.5,
+                    color: Color.fromARGB(255, 255, 255, 255),
                   ),
-                ),  
+                ),
               ),
             ),
 
             const Spacer(),
           ],
         ),
-      ),);}}
+      ),
+    );
+  }
+}
 //      backgroundColor: Colors.grey[50],
 //      body: SafeArea(
 //        child: Column(
@@ -96,7 +96,7 @@ class _intro1State extends State<intro1> {
 //            margin:  EdgeInsets.fromLTRB(0.0, 0.0, 10.0, 37.0),
 //            width:  205.0,
 //            height:  208.0,
-//            child:  
+//            child:
 //              Image.asset("assets/images/hands.png",
 //                fit:  BoxFit.cover,
 //              ),
@@ -105,7 +105,7 @@ class _intro1State extends State<intro1> {
 //          // component3guj (2:80)
 //            margin:  EdgeInsets.fromLTRB(88.0, 0.0, 65.0, 0.0),
 //            width:  double.infinity,
-//            child:  
+//            child:
 //              Column(
 //                crossAxisAlignment:  CrossAxisAlignment.center,
 //                children:  [
@@ -113,14 +113,14 @@ class _intro1State extends State<intro1> {
 //                    // autogroupvtofBbb (57NyeG9DpBwdm1f1ZGVtof)
 //                    padding:  EdgeInsets.fromLTRB(3.0, 0.0, 2.0, 22.0),
 //                    width:  double.infinity,
-//                    child:  
+//                    child:
 //                      Column(
 //                        crossAxisAlignment:  CrossAxisAlignment.center,
 //                        children:  [
 //                        Container(
 //                          // help4fP (I2:80;2:60)
 //                          margin:  EdgeInsets.fromLTRB(0.0, 0.0, 9.0, 9.0),
-//                          child:  
+//                          child:
 //                            Text(
 //                            'Help',
 //                             style:  GoogleFonts.nunitoSans (
@@ -137,7 +137,7 @@ class _intro1State extends State<intro1> {
 //                        constraints:  BoxConstraints (
 //                            maxWidth:  191.0,
 //                            ),
-//                        child:  
+//                        child:
 //                          Text(
 //                              'Help by making your voice heard.',
 //                              textAlign:  TextAlign.center,
@@ -153,7 +153,7 @@ class _intro1State extends State<intro1> {
 //                          // component10zSZ (I2:80;4:130)
 //                          margin:  EdgeInsets.fromLTRB(67.0, 0.0, 64.0, 0.0),
 //                          width:  double.infinity,
-//                          child:  
+//                          child:
 //                          Row(
 //                          crossAxisAlignment:  CrossAxisAlignment.center,
 //                          children:  [
@@ -208,7 +208,7 @@ class _intro1State extends State<intro1> {
 //                  style:  TextButton.styleFrom (
 //                    padding:  EdgeInsets.zero,
 //                  ),
-//                  child:  
+//                  child:
 //                Container(
 //                    width:  double.infinity,
 //                    height:  56.0,
@@ -226,19 +226,19 @@ class _intro1State extends State<intro1> {
 //                      height:  2.5/fem,
 //                      color:  Color(0xffffffff),
 //                    ),
-//                  ),  
+//                  ),
 //                  ),
 //                ),
 ////                Container(
 ////                  // skipgPF (I2:80;4:237)
 ////                  margin:  EdgeInsets.fromLTRB(1.0, 0.0, 0.0, 0.0),
-////                  child:  
+////                  child:
 ////                  TextButton(
 ////                    onPressed:  () {},
 ////                    style:  TextButton.styleFrom (
 ////                      padding:  EdgeInsets.zero,
 ////                    ),
-////                    child:  
+////                    child:
 ////                    Text(
 ////                      'Skip',
 ////                      textAlign:  TextAlign.center,
@@ -247,11 +247,11 @@ class _intro1State extends State<intro1> {
 //    fontWeight:  FontWeight.w400,
 //    height:  2.5/fem,
 //    color:  Color(0xffe97d47),
-//  ),  
+//  ),
 ////                    ),
 ////                  ),
 ////                ),
-////  
+////
 ////  ],
 ////  ),
 ////  ),

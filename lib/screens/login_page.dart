@@ -100,59 +100,57 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 255, 255, 255),
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       body: Center(
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Container(
-                // autogroupe2pp7c9 (57P22SfybUb95vsn6xE2PP)
-                margin:  EdgeInsets.fromLTRB(0, 0, 0, 19),
-                width:  double.infinity,
-                height:  207,
-                decoration:  BoxDecoration (
-                  color:  Color(0xffe97d47),
-                  borderRadius:  BorderRadius.circular(25),
-                ),
-                child:  
-              Column(
-                children:  [
-                  SizedBox(height:50.0),
-                  Container(
-                    width: 100,
-                    height: 100,
-                    decoration:  BoxDecoration (
-                      borderRadius:  BorderRadius.circular(50),
-                      color:  Color(0xffffffff),
-                      image: DecorationImage(
+                  // autogroupe2pp7c9 (57P22SfybUb95vsn6xE2PP)
+                  margin: const EdgeInsets.fromLTRB(0, 0, 0, 19),
+                  width: double.infinity,
+                  height: 207,
+                  decoration: const BoxDecoration(
+                    color: Color(0xffe97d47),
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(20),
+                      bottomRight: Radius.circular(20),
+                    ),
+                  ),
+                  child: Column(children: [
+                    const SizedBox(height: 50.0),
+                    Container(
+                      width: 100,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                        color: const Color(0xffffffff),
+                        image: const DecorationImage(
                           image: AssetImage("assets/images/ring.png"),
                         ),
-                      boxShadow:  [
-                        BoxShadow(
-                          color:  Color(0x3f000000),
-                          offset:  Offset(0, 4),
-                          blurRadius:  2,
-                        ),
-                      ],
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Color(0x3f000000),
+                            offset: Offset(0, 4),
+                            blurRadius: 2,
+                          ),
+                        ],
+                      ),
+                      child: GestureDetector(
+                        onTap: () {
+                          final player = AudioCache();
+                          player.play("sossound.mp3");
+                          sos_warning();
+                        },
+                      ),
                     ),
-                    child: GestureDetector(
-                      onTap: () {
-                        final player = AudioCache();
-                        player.play("sossound.mp3");
-                        sos_warning();
-                      },
-                    ),
-                  ),        
-                ]
-              )
-            ),
-              
-              const Divider(),
+                  ])),
+
               const Text(
-                "LOG IN",
+                "Can You Hear Me?",
                 style: TextStyle(
-                    fontFamily: "GoogleFonts",
+                    fontFamily: "Pacifico",
                     fontSize: 30.0,
                     color: Color(0xffe97d47),
                     fontWeight: FontWeight.bold),
@@ -190,7 +188,7 @@ class _MainPageState extends State<MainPage> {
                   children: [
                     GestureDetector(
                       onTap: () {},
-                      child: Text(
+                      child: const Text(
                         "Forgot password?",
                         style: TextStyle(color: Color(0xffe97d47)),
                       ),
@@ -218,7 +216,7 @@ class _MainPageState extends State<MainPage> {
                     const Padding(
                       padding: EdgeInsets.symmetric(horizontal: 10.0),
                       child: Text(
-                        "Or",
+                        "or continue with",
                         style: TextStyle(
                           color: Color(0xffe97d47),
                         ),
@@ -254,9 +252,7 @@ class _MainPageState extends State<MainPage> {
                       child: Image.asset("assets/images/google.png"),
                     ),
                   ),
-                  
                 ],
-                
               ),
               const SizedBox(
                 height: 20.0,
@@ -281,7 +277,10 @@ class _MainPageState extends State<MainPage> {
                     ),
                   ),
                 ],
-              )
+              ),
+              const SizedBox(
+                height: 40.0,
+              ),
             ],
           ),
         ),

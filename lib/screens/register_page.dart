@@ -80,7 +80,7 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 130, 0, 0),
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       body: Center(
         child: ListView(
           children: [
