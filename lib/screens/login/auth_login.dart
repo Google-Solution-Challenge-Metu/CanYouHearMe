@@ -1,4 +1,4 @@
-import '../login_page.dart';
+import 'package:dietapp/onboardingscreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -21,7 +21,7 @@ class AuthPage extends StatelessWidget {
                 getPages: AppPage.routes,
               );
             } else {
-              return const MainPage();
+              return const OnBoardingScreen();
             }
           },
         ),
