@@ -18,12 +18,16 @@ class _HelpBoxHomePageState extends State<HelpBoxHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF4E6C50),
-        title: Text("Help Box"),
+        backgroundColor: Colors.transparent,
+        title: Text("Donate a Box",
+          style: TextStyle(
+            color:Color.fromARGB(255, 0, 0, 0) 
+          ),
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         // Go to CartPage
-        backgroundColor: Colors.black,
+        backgroundColor: Color(0xffe97d47),
         onPressed: () => Navigator.push(
           context,
           MaterialPageRoute(
@@ -32,7 +36,7 @@ class _HelpBoxHomePageState extends State<HelpBoxHomePage> {
             },
           ),
         ),
-        child: const Icon(Icons.shopping_bag),
+        child: const Icon(Icons.add),
       ),
       body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         const SizedBox(height: 20),
@@ -44,35 +48,37 @@ class _HelpBoxHomePageState extends State<HelpBoxHomePage> {
             children: [
               Expanded(
                 child: Text(
-                  "Prepare your box, We'll take them.",
+                  "Set up a donation box let us take it from your address.",
                   style: GoogleFonts.notoSerif(
-                    fontSize: 29,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 24,
+                    fontWeight: FontWeight.w600,
+                    height: 1.355,
+                    color: Color(0xffe97d47),
                   ),
                 ),
               ),
               Expanded(
                 // Extra Button for AI page.
                 child: Container(
-                  height: 215,
+                  height: 160,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
-                    color: Colors.green[100],
+                    color: Color(0xffd9d9d9),
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      SizedBox(height: 25),
+                      SizedBox(height: 5),
                       // item image
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 40.0),
                         child: Image.asset(
-                          "assets/images/google.png",
+                          "assets/images/box_ai.png",
                           height: 64,
                         ),
                       ),
-                      SizedBox(height: 20),
+                      
 
                       // item name
                       Text(
@@ -81,6 +87,7 @@ class _HelpBoxHomePageState extends State<HelpBoxHomePage> {
                           fontSize: 16,
                         ),
                       ),
+                      SizedBox(height: 10),
 
                       MaterialButton(
                         onPressed: () => Navigator.push(
@@ -91,7 +98,10 @@ class _HelpBoxHomePageState extends State<HelpBoxHomePage> {
                             },
                           ),
                         ),
-                        color: const Color(0xFF4E6C50),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25.0),
+                        ),
+                        color: Color(0xffe97d47),
                         child: const Text(
                           'Add ' + "1" + ' Box',
                           style: TextStyle(
@@ -134,7 +144,7 @@ class _HelpBoxHomePageState extends State<HelpBoxHomePage> {
             builder: (context, value, child) {
               return GridView.builder(
                 padding: const EdgeInsets.all(12),
-                physics: const NeverScrollableScrollPhysics(),
+                physics: const AlwaysScrollableScrollPhysics(),
                 itemCount: value.shopItems.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,

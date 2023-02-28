@@ -23,8 +23,8 @@ class HelpBoxItemTile extends StatelessWidget {
       padding: const EdgeInsets.all(12),
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
-          color: color[100],
+          borderRadius: BorderRadius.circular(40),
+          color: color,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -46,12 +46,16 @@ class HelpBoxItemTile extends StatelessWidget {
                 fontSize: 16,
               ),
             ),
+            
 
             MaterialButton(
               onPressed: onPressed,
-              color: color,
+              color: Color(0xffe97d47),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(25.0),
+              ),
               child: Text(
-                'Add ' + itemPrice + ' Box',
+                'Add a box',
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
