@@ -18,11 +18,18 @@ class _HelpBoxHomePageState extends State<HelpBoxHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        title: Text("Donate a Box",
-          style: TextStyle(
-            color:Color.fromARGB(255, 0, 0, 0) 
+        leading: IconButton(
+          onPressed: () => Navigator.pop(context),
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Color(0xffe97d47),
           ),
+        ),
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        title: Text(
+          "Donate a Box",
+          style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -78,7 +85,6 @@ class _HelpBoxHomePageState extends State<HelpBoxHomePage> {
                           height: 64,
                         ),
                       ),
-                      
 
                       // item name
                       Text(

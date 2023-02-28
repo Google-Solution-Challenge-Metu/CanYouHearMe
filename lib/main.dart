@@ -24,17 +24,17 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (context) => CartModel()),
       ],
-      child: MaterialApp( 
+      child: MaterialApp(
         home: Scaffold(
           body: LayoutBuilder(
-        builder: (context, constraints) {
-          if (constraints.maxWidth < 300) {
-            return Intro_Wear();
-          } else {
-            return AuthPage();
-          }
-        },
-      ),
+            builder: (context, constraints) {
+              if (constraints.maxWidth < 300) {
+                return Intro_Wear();
+              } else {
+                return AuthPage();
+              }
+            },
+          ),
         ),
       ),
     );

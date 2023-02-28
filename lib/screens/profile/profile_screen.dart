@@ -10,8 +10,9 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  void signUserOut() {
-    FirebaseAuth.instance.signOut();
+  final user = FirebaseAuth.instance.currentUser!;
+  signUserOut() async {
+    await FirebaseAuth.instance.signOut();
   }
 
   void changeUserProfile() {}
@@ -85,11 +86,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ],
                   ),
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.fromLTRB(20, 20, 20, 10),
                     child: Text(
-                      "Mithat Can Timurcan",
-                      style: TextStyle(
+                      user.email!,
+                      style: const TextStyle(
                           fontFamily: "Raleway", fontWeight: FontWeight.bold),
                     ),
                   ),
