@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dietapp/screens/components/posts.dart';
 import 'package:dietapp/screens/profile/qr_read.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -11,13 +12,28 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   final user = FirebaseAuth.instance.currentUser!;
+  final FirebaseFirestore db = FirebaseFirestore.instance;
+  String name = "";
+  String surname = "";
+
   signUserOut() async {
     await FirebaseAuth.instance.signOut();
   }
 
+  FirebaseDocument() async {
+    var document = await db.collection('Person').doc(user.uid).get();
+    Map<String, dynamic>? value = document.data();
+    setState(() {
+      name = value!['name'];
+      surname = value!['surname'];
+    });
+  }
+
   void changeUserProfile() {}
+
   @override
   Widget build(BuildContext context) {
+    FirebaseDocument();
     return Scaffold(
       appBar: AppBar(
         title: Center(
@@ -89,7 +105,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   Padding(
                     padding: EdgeInsets.fromLTRB(20, 20, 20, 10),
                     child: Text(
-                      user.email!,
+                      "$name $surname",
                       style: const TextStyle(
                           fontFamily: "Raleway", fontWeight: FontWeight.bold),
                     ),

@@ -25,10 +25,12 @@ class _RegisterPageState extends State<RegisterPage> {
     var user = await _auth.createUserWithEmailAndPassword(
         email: email, password: password);
 
-    await _firestore
-        .collection("Person")
-        .doc(user.user?.uid)
-        .set({'name': name, 'surname': surname, 'email': email});
+    await _firestore.collection("Person").doc(user.user?.uid).set({
+      'name': name,
+      'surname': surname,
+      'email': email,
+      'password': password
+    });
 
     return user.user;
   }
