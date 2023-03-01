@@ -49,8 +49,10 @@ dependencies:
   webview_flutter: ^3.0.2
 
   #Wearos
-  #wear: ^1.1.0
+  wear: ^1.1.0
   rotary_scrollbar: ^0.1.1
+  watch_connectivity: ^0.1.4+1
+  watch_connectivity_garmin: ^0.1.2
   #wearable_communicator: ^0.1.1
 
   #river
@@ -75,6 +77,8 @@ dev_dependencies:
 
   flutter_lints: ^2.0.0
 
+dependency_overrides:
+  watch_connectivity_platform_interface: ^0.1.1
 
 flutter:
   uses-material-design: true

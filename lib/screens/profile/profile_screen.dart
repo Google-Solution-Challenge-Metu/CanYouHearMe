@@ -4,6 +4,8 @@ import 'package:dietapp/screens/profile/qr_read.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import "package:flutter/material.dart";
 
+import 'add_smart_device.dart';
+
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
   @override
@@ -25,11 +27,22 @@ class _ProfileScreenState extends State<ProfileScreen> {
     Map<String, dynamic>? value = document.data();
     setState(() {
       name = value!['name'];
-      surname = value!['surname'];
+      surname = value['surname'];
     });
   }
 
   void changeUserProfile() {}
+
+  void add_device(){
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: (context) {
+          return AddDevice();
+        },
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -151,47 +164,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ],
                   ),
                   buildButton(changeUserProfile, "Profili Düzenle"),
-                  Row(
-                    children: [
-                      const SizedBox(
-                        width: 100.0,
-                      ),
-                      GestureDetector(
-                        onTap: () => Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return Qr_Scann(title: 'QR scanner');
-                            },
-                          ),
-                        ),
-                        child: Container(
-                          padding: const EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.white,
-                            ),
-                            color: Color.fromARGB(255, 226, 188, 165),
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          height: 50.0,
-                          child: Image.asset("assets/images/qr_iconn.png"),
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 10.0,
-                      ),
-                      Text(
-                        "Add A Smart Device",
-                        style: TextStyle(
-                          color: Colors.grey.shade500,
-                          fontFamily: "Raleway",
-                          fontWeight: FontWeight.w300,
-                          fontSize: 15.0,
-                        ),
-                      ),
-                    ],
-                  ),
+                  buildButton(add_device, "Add device"),
                 ],
               ),
             ),

@@ -916,6 +916,38 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.7.6"
+  watch_connectivity:
+    dependency: "direct main"
+    description:
+      name: watch_connectivity
+      sha256: fcd525fceaf8992bf4dba759862ecdd790301f066eda2ef38fd3ef7791220099
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.4+1"
+  watch_connectivity_garmin:
+    dependency: "direct main"
+    description:
+      name: watch_connectivity_garmin
+      sha256: "7b9a1254c4e649851f523fc2542eb34006eacee3b56739fb04aa614f49d74687"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.2"
+  watch_connectivity_platform_interface:
+    dependency: "direct overridden"
+    description:
+      name: watch_connectivity_platform_interface
+      sha256: c03b17267c7829f047b4b16476304b08082e4e94320e44af031e6f4c0c7e5e40
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.1"
+  wear:
+    dependency: "direct main"
+    description:
+      name: wear
+      sha256: b8aa77aff3351d301561a665d94416ed929dfa69ab898c5255d19f4a478eb27a
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.0"
   wearable_rotary:
     dependency: transitive
     description:
