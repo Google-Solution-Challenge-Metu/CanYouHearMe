@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import '../../components/CustomSnackBarContent.dart';
+import '../../../components/CustomSnackBarContent.dart';
 import 'call_authorized.dart';
 import 'cart_model.dart';
 
@@ -109,46 +109,47 @@ class CartPage extends StatelessWidget {
                           ),
                         ],
                       ),
-
                       GestureDetector(
                         onTap: () {
                           print(value.calculateTotal().runtimeType);
-                          if(value.calculateTotal()=='0'){
-                            ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: CustomSnackBarContent(errorText: "You must select at least 1 box." ,),
-                            behavior: SnackBarBehavior.floating,
-                            backgroundColor: Colors.transparent,
-                            elevation: 0,
-                            )
-                          );
-                          }else{
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                            builder: (context) => Callauthorized()));}
+                          if (value.calculateTotal() == '0') {
+                            ScaffoldMessenger.of(context)
+                                .showSnackBar(const SnackBar(
+                              content: CustomSnackBarContent(
+                                errorText: "You must select at least 1 box.",
+                              ),
+                              behavior: SnackBarBehavior.floating,
+                              backgroundColor: Colors.transparent,
+                              elevation: 0,
+                            ));
+                          } else {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Callauthorized()));
+                          }
                         },
-                      child: 
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.green.shade200),
-                          borderRadius: BorderRadius.circular(28),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.green.shade200),
+                            borderRadius: BorderRadius.circular(28),
+                          ),
+                          padding: const EdgeInsets.all(12),
+                          child: Row(
+                            children: const [
+                              Text(
+                                'Call The Authorized',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              Icon(
+                                Icons.arrow_forward_ios,
+                                size: 16,
+                                color: Colors.white,
+                              ),
+                            ],
+                          ),
                         ),
-                        padding: const EdgeInsets.all(12),
-                        child: Row(
-                          children: const [
-                            Text(
-                              'Call The Authorized',
-                              style: TextStyle(color: Colors.white),
-                            ),
-                            Icon(
-                              Icons.arrow_forward_ios,
-                              size: 16,
-                              color: Colors.white,
-                            ),
-                          ],
-                        ),
-                      ),)
+                      )
                     ],
                   ),
                 ),

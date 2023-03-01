@@ -4,9 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:dietapp/services/report_service.dart';
 import 'package:toast/toast.dart';
-import 'package:dietapp/screens/homepage/map_picker_page.dart';
-import 'package:geolocator/geolocator.dart';
-import 'package:open_street_map_search_and_pick/open_street_map_search_and_pick.dart';
+import 'package:dietapp/screens/home/makeyourvoiceheard/map_picker_page.dart';
 
 class PostPage extends StatefulWidget {
   const PostPage({super.key});
@@ -71,7 +69,9 @@ class _PostPageState extends State<PostPage> {
 
   void postReport() {
     _reportService
-        .addStatus(postController.text, profileImage ?? '',
+        .addStatus(
+            postController.text,
+            profileImage ?? '',
             GeoPoint(MapPickerPageState.latitude, MapPickerPageState.longitude),
             MapPickerPageState.address)
         .then((value) {

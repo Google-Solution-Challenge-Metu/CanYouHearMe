@@ -1,23 +1,34 @@
-import 'package:dietapp/screens/homepage/post_page.dart';
+import 'package:dietapp/screens/home/makeyourvoiceheard/post_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dietapp/services/report_service.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class MakeYourVoiceHeardPage extends StatefulWidget {
+  const MakeYourVoiceHeardPage({super.key});
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<MakeYourVoiceHeardPage> createState() => _MakeYourVoiceHeardPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _MakeYourVoiceHeardPageState extends State<MakeYourVoiceHeardPage> {
   final ReportService _reportService = ReportService();
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFF4E6C50),
-        title: const Text("Make Your Voice Heard"),
+        elevation: 0,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () => Navigator.pop(context),
+          color: Color(0xffe97d47),
+        ),
+        backgroundColor: Colors.transparent,
+        title: const Text(
+          "Make Your Voice Heard",
+          style: TextStyle(
+            color: Color(0xffe97d47),
+          ),
+        ),
       ),
       body: ListView(
         physics: ScrollPhysics(),

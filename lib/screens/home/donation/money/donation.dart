@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../components/CustomSnackBarContent.dart';
+import '../../../components/CustomSnackBarContent.dart';
 import 'utils.dart';
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter_svg/flutter_svg.dart';
