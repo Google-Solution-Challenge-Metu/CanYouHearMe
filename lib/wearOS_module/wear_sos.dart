@@ -1,4 +1,5 @@
 import 'package:dietapp/wearOS_module/wear_devices.dart';
+import 'package:dietapp/wearOS_module/wear_profile.dart';
 import 'package:flutter/material.dart';
 
 
@@ -53,12 +54,12 @@ class _sos_pageState extends State<sos_page> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Image.asset(
-                    'assets/images/outline_arrow.png',
-                    height: 20,
+                    'assets/images/profile_black.png',
+                    height: 23,
                   ),
                   SizedBox(width: 5),
                   Text(
-                    'Back',
+                    'Profile',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w300),
                   )
                 ],
@@ -67,7 +68,7 @@ class _sos_pageState extends State<sos_page> {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return Intro_Wear();
+                    return Wear_Profile();
                   },
                 ),
               ),
