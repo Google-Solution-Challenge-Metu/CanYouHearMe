@@ -1,21 +1,23 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:dietapp/wearOS_module/wear_sos.dart';
 import 'package:flutter/material.dart';
-
+import 'package:dietapp/services/auth_service.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:watch_connectivity/watch_connectivity.dart';
 import 'package:watch_connectivity_garmin/watch_connectivity_garmin.dart';
 import 'package:wear/wear.dart';
 
 
-class wear_intro extends StatefulWidget {
-  const wear_intro({Key? key}) : super(key: key);
+class wear_login extends StatefulWidget {
+  const wear_login({Key? key}) : super(key: key);
 
   @override
-  State<wear_intro> createState() => _wear_introState();
+  State<wear_login> createState() => _wear_loginState();
 }
 
-class _wear_introState extends State<wear_intro> {
+class _wear_loginState extends State<wear_login> {
   
 
   double heartRate = 0;
@@ -24,7 +26,8 @@ class _wear_introState extends State<wear_intro> {
   late final WatchConnectivityBase _watch;
 
   var _count = 0;
-
+  var _email="";
+  var _password="";
   var _supported = false;
   var _paired = false;
   var _reachable = false;
@@ -50,10 +53,97 @@ class _wear_introState extends State<wear_intro> {
         ),
       );
     }
+    _watch.messageStream
+        .listen((e) => 
+        setState(() => Listener(e))
+      );
+
+    if (_watch is! WatchConnectivityGarmin) {
+      _watch.contextStream
+          .listen((e) => setState(() => _log.add(e.toString())));
+    }
     
     initPlatformState();
   }
 
+  signUserIn() async {
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: _email,
+        password: _password,
+      );
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) {
+            return sos_page();
+          },
+        ),
+      );
+    } on FirebaseAuthException catch (e) {
+      if (e.code == "user-not-found") {
+        wrongEmailMessage();
+      } else if (e.code == "wrong-password") {
+        wrongPasswordMessage();
+      } else {
+        nothingMessage();
+      }
+    }
+  }
+
+  void Listener(e){
+    setState(() => _log.add(e.toString()));
+    setState(() {
+      _email=e["email"];
+      _password=e["password"];
+    });
+    print(e["email"]);
+  }
+
+  void wrongEmailMessage() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const AlertDialog(
+          backgroundColor: Color(0xffe97d47),
+          title: Text(
+            "Incorrect email.",
+            style: TextStyle(color: Colors.white),
+          ),
+        );
+      },
+    );
+  }
+
+  void wrongPasswordMessage() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const AlertDialog(
+          backgroundColor: Color(0xffe97d47),
+          title: Text(
+            "Incorrect password.",
+            style: TextStyle(color: Colors.white),
+          ),
+        );
+      },
+    );
+  }
+
+  void nothingMessage() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const AlertDialog(
+          backgroundColor: Color(0xffe97d47),
+          title: Text(
+            "No email, password or both.",
+            style: TextStyle(color: Colors.white),
+          ),
+        );
+      },
+    );
+  }
   // Platform messages are asynchronous, so we initialize in an async method.
   void initPlatformState() async {
     _supported = await _watch.isSupported;
@@ -113,9 +203,9 @@ class _wear_introState extends State<wear_intro> {
                 ),
                 
                 TextButton(
-                  onPressed: toggleBackgroundMessaging,
+                  onPressed: signUserIn,
                   child: Text(
-                    '${timer == null ? 'Start' : 'Stop'} background messaging',
+                    'Log In',
                     textAlign: TextAlign.center,
                   ),
                 ),

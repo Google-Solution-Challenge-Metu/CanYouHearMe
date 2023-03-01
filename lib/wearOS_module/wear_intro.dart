@@ -1,4 +1,5 @@
-import 'package:dietapp/wearOS_module/wear_loginqr.dart';
+import 'package:dietapp/wearOS_module/wear_auth.dart';
+import 'package:dietapp/wearOS_module/wear_login.dart';
 import 'package:dietapp/wearOS_module/wear_sos.dart';
 import "package:flutter/material.dart";
 
@@ -62,7 +63,7 @@ class _Intro_WearState extends State<Intro_Wear> {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return loginQR();//sos_page
+                    return Wear_Auth();
                   },
                 ),
               ),

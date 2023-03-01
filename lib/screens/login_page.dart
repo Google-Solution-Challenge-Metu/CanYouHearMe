@@ -3,6 +3,9 @@ import 'package:dietapp/services/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+
+import '../routes/routes.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -20,6 +23,11 @@ class _MainPageState extends State<MainPage> {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: emailController.text,
         password: passwordController.text,
+      );
+      return GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        initialRoute: AppPage.getNavBar(),
+        getPages: AppPage.routes,
       );
     } on FirebaseAuthException catch (e) {
       if (e.code == "user-not-found") {
