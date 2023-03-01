@@ -1,9 +1,10 @@
+import 'package:dietapp/wearOS_module/wear%20Service/wear_report_service.dart';
 import 'package:dietapp/wearOS_module/wear_devices.dart';
 import 'package:dietapp/wearOS_module/wear_profile.dart';
 import 'package:flutter/material.dart';
-
-
 import 'wear_intro.dart';
+import 'package:geolocator/geolocator.dart';
+
 
 class sos_page extends StatefulWidget {
   const sos_page({super.key});
@@ -13,7 +14,12 @@ class sos_page extends StatefulWidget {
 }
 
 class _sos_pageState extends State<sos_page> {
+  final SOSReportService _reportService = SOSReportService();
+  var currentLocation;
+  late bool serviceEnabled;
+  late LocationPermission permission;
 
+  
   void warnmes() {
     showDialog(
       context: context,
@@ -29,6 +35,40 @@ class _sos_pageState extends State<sos_page> {
       },
     );
   }
+  Future AskPer() async {
+    serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    if (!serviceEnabled) {
+      return Future.error('Location services are disabled');
+    }
+  
+    permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        return Future.error('Location permissions are denied');
+      }
+    }
+  
+    if (permission == LocationPermission.deniedForever) {
+      return Future.error(
+          'Location permissions are permanently denied, we cannot request permissions.');
+    }  
+
+  }
+  void SendSosMessage(){
+    //AskPer();
+    Geolocator.getCurrentPosition().then((currloc){
+      setState(() {
+        currentLocation=currloc;});});
+    print(currentLocation);
+    //_reportService
+    //    .addStatus("Help Me Please", 
+    //        GeoPoint(60, 60),
+    //    ).then((value) {
+    //      warnmes();
+    //});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,6 +120,7 @@ class _sos_pageState extends State<sos_page> {
           GestureDetector(
               onTap: () {
                 warnmes();
+                SendSosMessage();
               },
               child: Image.asset(
                 'assets/images/sosbuttontrans.png',

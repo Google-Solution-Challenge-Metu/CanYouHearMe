@@ -38,13 +38,6 @@ class _Wear_ProfileState extends State<Wear_Profile> {
   }
 
   void changeUserProfile() {}
-//IconButton(
-//              onPressed: signUserOut,
-//              icon: Icon(
-//                Icons.logout,
-//                color: Colors.grey.shade600,
-//              ),
-//            ),
 
   @override
   Widget build(BuildContext context) {
