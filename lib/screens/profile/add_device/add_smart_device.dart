@@ -1,3 +1,4 @@
+import 'package:dietapp/screens/profile/add_device/send_tile.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:io';
@@ -5,6 +6,8 @@ import 'package:watch_connectivity/watch_connectivity.dart';
 import 'package:watch_connectivity_garmin/watch_connectivity_garmin.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+
+import 'check_tile.dart';
 
 class AddDevice extends StatefulWidget {
   const AddDevice({super.key});
@@ -84,7 +87,7 @@ class _AddDeviceState extends State<AddDevice> {
   void sendMessage() {
     final message = {"email": email, "password":password};
     _watch.sendMessage(message);
-    setState(() => _log.add('email:'+message["email"].toString()));
+    setState(() => _log.add('Notice: You have been sent "connection key" to your smart device. Please refresh your smart device.'));
   }
 
   @override
@@ -104,25 +107,43 @@ class _AddDeviceState extends State<AddDevice> {
           ),
       ),
       body: Center(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.all(16),
-          child: SafeArea(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              //mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(email),
-                Text(password),
-                Text('Supported: $_supported'),
-                Text('Paired: $_paired'),
-                Text('Reachable: $_reachable'),
-                if (_watch is! WatchConnectivityGarmin) ...[
-                  Text('Context: $_context'),
-                  //Text('Received contexts: $_receivedContexts'),
-                ],
-                TextButton(
-                  onPressed: initPlatformState,
-                  child: const Text('Refresh',style: TextStyle(color: Color.fromARGB(255, 31, 177, 107)),),
+                Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Container(
+                    height: 250,
+                    padding: EdgeInsets.all(20),
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage(
+                          'assets/images/watch_vector.png',
+                        ),
+                      ),
+                      //shape: BoxShape.circle,
+                      color: Color.fromARGB(255, 251, 190, 160),
+                      borderRadius: BorderRadius.circular(27),
+                    ),
+                  ),
                 ),
+                CheckTile(
+                  Titles: 'Supported:',
+                  bools: _supported,
+                  iconss: Icons.devices_other_outlined,
+                ),
+                CheckTile(
+                  Titles: 'Paired:',
+                  bools: _paired,
+                  iconss: Icons.bluetooth_connected,
+                ),
+                CheckTile(
+                  Titles: 'Reachable:',
+                  bools: _reachable,
+                  iconss: Icons.access_time_outlined,
+                ),
+
                 if (_watch is WatchConnectivityGarmin && Platform.isIOS)
                   TextButton(
                     onPressed:
@@ -130,37 +151,32 @@ class _AddDeviceState extends State<AddDevice> {
                     child: const Text('Open device selection'),
                   ),
                 const SizedBox(height: 8),
-                const Text('Send'),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    TextButton(
-                      onPressed: sendMessage,//sendMessage,
-                      child: const Text('Message'),
-                    ),
-                    if (_watch is! WatchConnectivityGarmin) ...[
-                      const SizedBox(width: 8),
-                      TextButton(
-                        onPressed: sendMessage,//sendContext,
-                        child: const Text('Context'),
-                      ),
-                    ],
-                  ],
-                ),
-                TextButton(
-                  onPressed: sendMessage,//toggleBackgroundMessaging,
-                  child: Text(
-                    '${timer == null ? 'Start' : 'Stop'} background messaging',
-                    textAlign: TextAlign.center,
+                
+                Padding(
+                padding: EdgeInsets.only(left:20,right: 20,top:20),
+                child:
+                  (_supported&_paired&_reachable)?
+                  SendTile(
+                    colorset: Color(0xffe97d47),
+                    func: sendMessage,
+                  ):
+                  SendTile(
+                    colorset: Color.fromARGB(255, 161, 142, 133),
+                    func: sendMessage,
                   ),
                 ),
-                const SizedBox(width: 16),
+                const SizedBox(width: 50),
                 const Text('Log'),
                 ..._log.reversed.map(Text.new),
               ],
             ),
           ),
-        ),
+      
+      floatingActionButton: FloatingActionButton(     // refresh
+        backgroundColor: Color(0xffe97d47),
+        onPressed: initPlatformState,
+        tooltip: "Refresh the page",
+        child: const Icon(Icons.cached_outlined),
       ),
     );
   }

@@ -191,28 +191,28 @@ class _wear_loginState extends State<wear_login> {
                 SizedBox(height: 5),
                 Container(
                   height: 20,
-                child:
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text('Paired:        '),
-                    Checkbox(
-                      value: _paired,
-                      activeColor: Color(0xffe97d47), 
-                      onChanged: null)
+                  child:
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text('Paired:        '),
+                      Checkbox(
+                        value: _paired,
+                        activeColor: Color(0xffe97d47), 
+                        onChanged: null)
                 ],),),
                 SizedBox(height: 5),
                 Container(
                   height: 20,
                   child:
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text('Reachable: '),
-                    Checkbox(
-                      value: _reachable,
-                      activeColor: Color(0xffe97d47), 
-                      onChanged: null)
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text('Reachable: '),
+                      Checkbox(
+                        value: _reachable,
+                        activeColor: Color(0xffe97d47), 
+                        onChanged: null)
                 ],),),
                 SizedBox(height: 5),
                 Container(

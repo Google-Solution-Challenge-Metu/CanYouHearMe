@@ -3,7 +3,7 @@ import 'package:dietapp/screens/components/posts.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import "package:flutter/material.dart";
 
-import 'add_smart_device.dart';
+import 'add_device/add_smart_device.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
