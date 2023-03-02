@@ -106,7 +106,7 @@ class _AddDeviceState extends State<AddDevice> {
             ),
           ),
       ),
-      body: Center(
+      body: SingleChildScrollView(
             child: Column(
               //mainAxisAlignment: MainAxisAlignment.center,
               children: [
