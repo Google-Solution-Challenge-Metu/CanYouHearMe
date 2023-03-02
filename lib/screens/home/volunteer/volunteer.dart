@@ -1,6 +1,5 @@
-import 'package:dietapp/screens/help/volunteer/glassbox.dart';
+import 'package:dietapp/screens/home/volunteer/glassbox.dart';
 import "package:flutter/material.dart";
-
 
 class VolunteerScreen extends StatefulWidget {
   const VolunteerScreen({super.key});
@@ -17,8 +16,7 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
         title: Text("Let's Help!"),
       ),
       backgroundColor: Colors.grey[300],
-      body: 
-      Container(
+      body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
             // Import image in pubspec.yaml first
@@ -30,36 +28,24 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
         alignment: Alignment.center,
         child: Column(
           children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: FrostedGlassBox(
-                  theWidth: 350.0, 
-                  theHeight: 200.0, 
-                  theChild: Text("data")),
-              ),
-              
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: FrostedGlassBox(
-                  theWidth: 350.0, 
-                  theHeight: 200.0, 
-                  theChild: Text("data")),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: FrostedGlassBox(
-                  theWidth: 350.0, 
-                  theHeight: 200.0, 
-                  theChild: Text("data")),
-              ),
-            
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: FrostedGlassBox(
+                  theWidth: 350.0, theHeight: 200.0, theChild: Text("data")),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: FrostedGlassBox(
+                  theWidth: 350.0, theHeight: 200.0, theChild: Text("data")),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: FrostedGlassBox(
+                  theWidth: 350.0, theHeight: 200.0, theChild: Text("data")),
+            ),
           ],
         ),
-          
-
-        ),
-      
-      );
-    
+      ),
+    );
   }
 }

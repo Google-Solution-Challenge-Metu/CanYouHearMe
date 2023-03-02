@@ -1,24 +1,28 @@
+import 'package:dietapp/screens/home/donation/donation_main.dart';
+import 'package:dietapp/screens/home/makeyourvoiceheard/home_page.dart';
 import "package:flutter/material.dart";
-import 'blood/blood.dart';
-import 'donaiton/donation.dart';
-import 'helpbox/intro_screen.dart';
-import 'maps/map_custom.dart';
-import 'maps/map_main.dart';
-import 'volunteer/volunteer.dart';
+import 'home/maps/map_custom.dart';
+import 'home/volunteer/volunteer.dart';
 
-class HelpScreen extends StatefulWidget {
-  const HelpScreen({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
   @override
-  State<HelpScreen> createState() => _HelpScreenState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HelpScreenState extends State<HelpScreen> {
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFF4E6C50),
-        title: const Text("Let's Help!"),
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        title: const Text(
+          "Home Page",
+          style: TextStyle(
+            color: Color(0xffe97d47),
+          ),
+        ),
       ),
       body: SingleChildScrollView(
         child: Center(
@@ -30,12 +34,13 @@ class _HelpScreenState extends State<HelpScreen> {
               ElevatedButton.icon(
                 // BLOOD BUTTON
                 icon: const Icon(Icons.bloodtype_rounded),
-                label: const Text('Blood Donation Sites'),
+                label: const Text('Make Your Voice Heard'),
                 onPressed: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const BloodScreen()));
+                          builder: (context) =>
+                              const MakeYourVoiceHeardPage()));
                 },
                 style: ElevatedButton.styleFrom(
                     foregroundColor: const Color.fromARGB(255, 242, 222, 186),
@@ -49,32 +54,6 @@ class _HelpScreenState extends State<HelpScreen> {
                     side: const BorderSide(
                         color: Color.fromARGB(255, 242, 222, 186), width: 4),
                     shape: const StadiumBorder()),
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              ElevatedButton.icon(
-                // DONATION BUTTON
-                icon: Icon(Icons.attach_money_sharp),
-                label: Text('Donation'),
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => DonationScreen()));
-                },
-                style: ElevatedButton.styleFrom(
-                    foregroundColor: Color.fromARGB(255, 242, 222, 186),
-                    backgroundColor: Color.fromARGB(255, 130, 0, 0),
-                    padding: EdgeInsets.all(20.0),
-                    fixedSize: Size(300, 95),
-                    textStyle:
-                        TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                    elevation: 15,
-                    shadowColor: Color.fromARGB(255, 130, 0, 0),
-                    side: const BorderSide(
-                        color: Color.fromARGB(255, 242, 222, 186), width: 4),
-                    shape: StadiumBorder()),
               ),
               const SizedBox(
                 height: 30,
@@ -108,10 +87,12 @@ class _HelpScreenState extends State<HelpScreen> {
               ElevatedButton.icon(
                 // BOX BUTTON
                 icon: Icon(Icons.wallet_giftcard_outlined),
-                label: Text('Give Help Box'),
+                label: const Text('Donate'),
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => IntroScreen()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => DonationMainScreen()));
                 },
                 style: ElevatedButton.styleFrom(
                     foregroundColor: const Color.fromARGB(255, 242, 222, 186),
