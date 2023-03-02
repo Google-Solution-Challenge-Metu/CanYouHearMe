@@ -5,17 +5,18 @@ class SOSReportService {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
 
-  Future<SosReport> addStatus(String status, GeoPoint location) async {
+  Future<SosReport> addStatus(String status, String Name_Surname,) async {//GeoPoint location
     var ref = _firestore.collection("SOS");
 
 
 
-    var documentRef = await ref.add({'status': status,  'location':location});
+    var documentRef = await ref.add({'status': status, 'Name_Surname':Name_Surname, }); //'location':location
 
     return SosReport(
         id: documentRef.id,
         status: status,
-        location: location,
+        Name_Surname: Name_Surname,
+        //location: location,
     );
   }
 

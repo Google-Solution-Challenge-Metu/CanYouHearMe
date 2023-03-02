@@ -11,6 +11,10 @@ class PartlyWindy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData.dark().copyWith(
+        primaryColor: Color(0xffe97d47),
+        unselectedWidgetColor: Color(0xffe97d47)
+      ),
       title: 'WearOS',
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,

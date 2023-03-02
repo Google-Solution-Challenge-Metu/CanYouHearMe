@@ -1,6 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dietapp/wearOS_module/wear%20Service/wear_report_service.dart';
 import 'package:dietapp/wearOS_module/wear_devices.dart';
 import 'package:dietapp/wearOS_module/wear_profile.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'wear_intro.dart';
 import 'package:geolocator/geolocator.dart';
@@ -18,8 +20,20 @@ class _sos_pageState extends State<sos_page> {
   var currentLocation;
   late bool serviceEnabled;
   late LocationPermission permission;
+  final user = FirebaseAuth.instance.currentUser!;
+  final FirebaseFirestore db = FirebaseFirestore.instance;
+  String name = "";
+  String surname = "";
 
-  
+  FirebaseDocument() async {
+    var document = await db.collection('Person').doc(user.uid).get();
+    Map<String, dynamic>? value = document.data();
+    setState(() {
+      name = value!['name'];
+      surname = value['surname'];
+      print(name);
+    });
+  }  
   void warnmes() {
     showDialog(
       context: context,
@@ -57,16 +71,17 @@ class _sos_pageState extends State<sos_page> {
   }
   void SendSosMessage(){
     //AskPer();
-    Geolocator.getCurrentPosition().then((currloc){
-      setState(() {
-        currentLocation=currloc;});});
-    print(currentLocation);
-    //_reportService
-    //    .addStatus("Help Me Please", 
-    //        GeoPoint(60, 60),
-    //    ).then((value) {
-    //      warnmes();
-    //});
+    //Geolocator.getCurrentPosition().then((currloc){
+    //  setState(() {
+    //    currentLocation=currloc;});});
+    //print(currentLocation);
+    FirebaseDocument();
+    _reportService
+        .addStatus("Help Me Please", 
+                  (name+" "+surname),
+        ).then((value) {
+          warnmes();
+    });
   }
 
   @override

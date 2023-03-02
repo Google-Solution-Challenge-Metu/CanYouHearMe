@@ -31,6 +31,7 @@ class _wear_loginState extends State<wear_login> {
   var _supported = false;
   var _paired = false;
   var _reachable = false;
+  var _permission = false;
   var _context = <String, dynamic>{};
   var _receivedContexts = <Map<String, dynamic>>[];
   final _log = <String>[];
@@ -114,7 +115,7 @@ class _wear_loginState extends State<wear_login> {
       },
     );
   }
-
+  
   void wrongPasswordMessage() {
     showDialog(
       context: context,
@@ -146,6 +147,7 @@ class _wear_loginState extends State<wear_login> {
   }
   // Platform messages are asynchronous, so we initialize in an async method.
   void initPlatformState() async {
+    PermissionCheck();
     _supported = await _watch.isSupported;
     _paired = await _watch.isPaired;
     _reachable = await _watch.isReachable;
@@ -156,6 +158,13 @@ class _wear_loginState extends State<wear_login> {
     setState(() {});
   }
 
+  void PermissionCheck() async{
+    if (_password=="" ){
+      _permission=false;
+    }else{
+      _permission=true;
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -166,16 +175,65 @@ class _wear_loginState extends State<wear_login> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Supported: $_supported'),
-                Text('Paired: $_paired'),
-                Text('Reachable: $_reachable'),
-                if (_watch is! WatchConnectivityGarmin) ...[
-                  Text('Context: $_context'),
-                  //Text('Received contexts: $_receivedContexts'),
-                ],
+                SizedBox(height: 15),
+                Container(
+                  height: 20,
+                  child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text('Supported: '),
+                    Checkbox(
+                      value: _supported,
+                      activeColor: Color(0xffe97d47), 
+                      onChanged: null)
+                ],),
+                ),
+                SizedBox(height: 5),
+                Container(
+                  height: 20,
+                child:
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text('Paired:        '),
+                    Checkbox(
+                      value: _paired,
+                      activeColor: Color(0xffe97d47), 
+                      onChanged: null)
+                ],),),
+                SizedBox(height: 5),
+                Container(
+                  height: 20,
+                  child:
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text('Reachable: '),
+                    Checkbox(
+                      value: _reachable,
+                      activeColor: Color(0xffe97d47), 
+                      onChanged: null)
+                ],),),
+                SizedBox(height: 5),
+                Container(
+                  height: 20,
+                  child:
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text('Permission:'),
+                      Checkbox(
+                        value: _permission,
+                        activeColor: Color(0xffe97d47), 
+                        onChanged: null)
+                ],),),
+                //if (_watch is! WatchConnectivityGarmin) ...[
+                //  Text('Context: $_context'),
+                //  //Text('Received contexts: $_receivedContexts'),
+                //],
                 TextButton(
                   onPressed: initPlatformState,
-                  child: const Text('Refresh',style: TextStyle(color: Colors.redAccent),),
+                  child: const Text('Refresh',style: TextStyle(color: Color(0xffe97d47)),),
                 ),
                 if (_watch is WatchConnectivityGarmin && Platform.isIOS)
                   TextButton(
@@ -183,35 +241,37 @@ class _wear_loginState extends State<wear_login> {
                         (_watch as WatchConnectivityGarmin).showDeviceSelection,
                     child: const Text('Open device selection'),
                   ),
-                const SizedBox(height: 8),
-                const Text('Send'),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    TextButton(
-                      onPressed: sendMessage,
-                      child: const Text('Message'),
+                //const SizedBox(height: 8),
+                //const Text('Send'),
+                //Row(
+                //  mainAxisAlignment: MainAxisAlignment.center,
+                //  children: [
+                //    TextButton(
+                //      onPressed: sendMessage,
+                //      child: const Text('Message'),
+                //    ),
+                //    if (_watch is! WatchConnectivityGarmin) ...[
+                //      const SizedBox(width: 8),
+                //      TextButton(
+                //        onPressed: sendContext,
+                //        child: const Text('Context'),
+                //      ),
+                //    ],
+                //  ],
+                //),
+                Container(
+                  child: TextButton(
+                    onPressed: signUserIn,
+                    child: Text(
+                      'Log In',style: TextStyle(color: Color(0xffe97d47)),
+                      textAlign: TextAlign.center,
                     ),
-                    if (_watch is! WatchConnectivityGarmin) ...[
-                      const SizedBox(width: 8),
-                      TextButton(
-                        onPressed: sendContext,
-                        child: const Text('Context'),
-                      ),
-                    ],
-                  ],
-                ),
-                
-                TextButton(
-                  onPressed: signUserIn,
-                  child: Text(
-                    'Log In',
-                    textAlign: TextAlign.center,
                   ),
                 ),
+                
                 const SizedBox(width: 16),
-                const Text('Log'),
-                ..._log.reversed.map(Text.new),
+                //const Text('Log'),
+                //..._log.reversed.map(Text.new),
               ],
             ),
           ),
