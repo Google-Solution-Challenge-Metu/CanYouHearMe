@@ -18,9 +18,9 @@ class _MakeYourVoiceHeardPageState extends State<MakeYourVoiceHeardPage> {
       appBar: AppBar(
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () => Navigator.pop(context),
-          color: Color(0xffe97d47),
+          color: const Color(0xffe97d47),
         ),
         backgroundColor: Colors.transparent,
         title: const Text(
@@ -31,7 +31,7 @@ class _MakeYourVoiceHeardPageState extends State<MakeYourVoiceHeardPage> {
         ),
       ),
       body: ListView(
-        physics: ScrollPhysics(),
+        physics: const ScrollPhysics(),
         children: [
           const SizedBox(
             height: 10,
@@ -46,20 +46,21 @@ class _MakeYourVoiceHeardPageState extends State<MakeYourVoiceHeardPage> {
                   fontSize: 20.0),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25),
-            child: Divider(
-              thickness: 2,
-              color: Colors.grey.shade500,
-            ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 25),
+            child: Divider(),
           ),
           StreamBuilder(
             stream: _reportService.getStatus(),
             builder: (context, snapshot) {
               return !snapshot.hasData
                   ? const CircularProgressIndicator()
-                  : ListView.builder(
-                      physics: NeverScrollableScrollPhysics(),
+                  : ListView.separated(
+                      separatorBuilder: (context, index) => const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 20.0),
+                        child: Divider(),
+                      ),
+                      physics: const NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
                       itemCount: snapshot.data!.docs.length,
                       itemBuilder: (context, index) {
@@ -94,6 +95,19 @@ class _MakeYourVoiceHeardPageState extends State<MakeYourVoiceHeardPage> {
                                 padding: const EdgeInsets.all(8.0),
                                 child: Column(
                                   children: [
+                                    Row(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: const CircleAvatar(
+                                            backgroundImage: AssetImage(
+                                                "assets/images/profile_anonym.webp"),
+                                          ),
+                                        ),
+                                        Text('Name'),
+                                        Text('Date'),
+                                      ],
+                                    ),
                                     Text(
                                       "${myReport['status']}",
                                       style: const TextStyle(
