@@ -2,6 +2,7 @@ import 'package:dietapp/screens/home/donation/blood/blood.dart';
 import 'package:flutter/material.dart';
 
 import 'helpbox/intro_screen.dart';
+import 'money/donation.dart';
 
 class DonationMainScreen extends StatelessWidget {
   const DonationMainScreen({Key? key}) : super(key: key);
@@ -60,7 +61,7 @@ class DonationMainScreen extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => DonationMainScreen()));
+                        builder: (context) => DonationScreen()));
               },
               style: ElevatedButton.styleFrom(
                   foregroundColor: const Color.fromARGB(255, 242, 222, 186),

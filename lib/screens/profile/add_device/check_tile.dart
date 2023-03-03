@@ -1,6 +1,3 @@
-
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 
 class CheckTile extends StatelessWidget {

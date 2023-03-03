@@ -17,9 +17,12 @@ class _DonationScreen extends State<DonationScreen> {
     double baseWidth = 390;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
+    bool fifty=false;
+    bool hunder=false;
+    bool fifhun=false;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF4E6C50),
+        backgroundColor: Color(0xffe97d47),
         title: Text("Donation"),
       ),
       body: Padding(
@@ -132,96 +135,151 @@ class _DonationScreen extends State<DonationScreen> {
                           SizedBox(
                             width: 15 * fem,
                           ),
-                          Container(
-                            // group12xnU (49:25)
-                            width: 96 * fem,
-                            height: double.infinity,
-                            decoration: BoxDecoration(
-                              border: Border.all(color: Color(0xffff607d)),
-                              color: Color(0xffffffff),
-                              borderRadius: BorderRadius.circular(20 * fem),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Color(0x26000000),
-                                  offset: Offset(0 * fem, 0 * fem),
-                                  blurRadius: 2 * fem,
-                                ),
-                              ],
-                            ),
-                            child: Center(
-                              child: Text(
-                                '\$50',
-                                style: SafeGoogleFont(
-                                  'Poppins',
-                                  fontSize: 17 * ffem,
-                                  fontWeight: FontWeight.w600,
-                                  height: 1.5 * ffem / fem,
-                                  color: Color.fromARGB(255, 130, 0, 0),
+                          GestureDetector(
+                            onTap: () => setState(() {
+                              fifty=true;
+                              hunder=false;
+                              fifhun=false;
+                            }),
+                              
+                            child: Container(
+                              width: 96 * fem,
+                              height: double.infinity,
+                              decoration: BoxDecoration(
+                                border: Border.all(color: Color(0xffe97d47)),
+                                color: Color(0xffffffff),
+                                borderRadius: BorderRadius.circular(20 * fem),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Color(0x26000000),
+                                    offset: Offset(0 * fem, 0 * fem),
+                                    blurRadius: 2 * fem,
+                                  ),
+                                ],
+                              ),
+                              child: Center(
+                                child: Text(
+                                  '\$50',
+                                  style: SafeGoogleFont(
+                                    'Poppins',
+                                    fontSize: 17 * ffem,
+                                    fontWeight: FontWeight.w600,
+                                    height: 1.5 * ffem / fem,
+                                    color: Color.fromARGB(195, 233, 125, 71),
+                                  ),
                                 ),
                               ),
-                            ),
+                            )
+                          ),
+                          
+                          SizedBox(
+                            width: 20 * fem,
+                          ),
+                          GestureDetector(
+                            onTap: () => setState(() {
+                              fifty=false;
+                              hunder=true;
+                              fifhun=false;
+                            }),
+                              
+                            child:
+                              Container(
+                                // group111Vr (49:24)
+                                width: 96 * fem,
+                                height: double.infinity,
+                                decoration: BoxDecoration(
+                                  color: Color(0xffffffff),
+                                  borderRadius: BorderRadius.circular(20 * fem),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Color(0x26000000),
+                                      offset: Offset(0 * fem, 0 * fem),
+                                      blurRadius: 2 * fem,
+                                    ),
+                                  ],
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    '\$100',
+                                    style: SafeGoogleFont(
+                                      'Poppins',
+                                      fontSize: 17 * ffem,
+                                      fontWeight: FontWeight.w600,
+                                      height: 1.5 * ffem / fem,
+                                      color: Color(0xff000000),
+                                    ),
+                                  ),
+                                ),
+                              ),
                           ),
                           SizedBox(
                             width: 20 * fem,
                           ),
-                          Container(
-                            // group111Vr (49:24)
-                            width: 96 * fem,
-                            height: double.infinity,
-                            decoration: BoxDecoration(
-                              color: Color(0xffffffff),
-                              borderRadius: BorderRadius.circular(20 * fem),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Color(0x26000000),
-                                  offset: Offset(0 * fem, 0 * fem),
-                                  blurRadius: 2 * fem,
+                          GestureDetector(
+                            onTap: () => setState(() {
+                              fifty=false;
+                              hunder=false;
+                              fifhun=true;
+                              print(fifhun);
+                            }),
+                            child:
+                              (!fifhun)?
+                              Container(
+                                // group10GAt (49:23)
+                                width: 96 * fem,
+                                height: double.infinity,
+                                decoration: BoxDecoration(
+                                  color: Color(0xffffffff),
+                                  borderRadius: BorderRadius.circular(20 * fem),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Color(0x26000000),
+                                      offset: Offset(0 * fem, 0 * fem),
+                                      blurRadius: 2 * fem,
+                                    ),
+                                  ],
                                 ),
-                              ],
-                            ),
-                            child: Center(
-                              child: Text(
-                                '\$100',
-                                style: SafeGoogleFont(
-                                  'Poppins',
-                                  fontSize: 17 * ffem,
-                                  fontWeight: FontWeight.w600,
-                                  height: 1.5 * ffem / fem,
-                                  color: Color(0xff000000),
+                                child: Center(
+                                  child: Text(
+                                    '\$500',
+                                    style: SafeGoogleFont(
+                                      'Poppins',
+                                      fontSize: 17 * ffem,
+                                      fontWeight: FontWeight.w600,
+                                      height: 1.5 * ffem / fem,
+                                      color: Color(0xff000000),
+                                    ),
+                                  ),
+                                ),
+                              ):
+                              Container(
+                              width: 96 * fem,
+                              height: double.infinity,
+                              decoration: BoxDecoration(
+                                border: Border.all(color: Color(0xffe97d47)),
+                                color: Color(0xffffffff),
+                                borderRadius: BorderRadius.circular(20 * fem),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Color(0x26000000),
+                                    offset: Offset(0 * fem, 0 * fem),
+                                    blurRadius: 2 * fem,
+                                  ),
+                                ],
+                              ),
+                              child: Center(
+                                child: Text(
+                                  '\$50',
+                                  style: SafeGoogleFont(
+                                    'Poppins',
+                                    fontSize: 17 * ffem,
+                                    fontWeight: FontWeight.w600,
+                                    height: 1.5 * ffem / fem,
+                                    color: Color.fromARGB(195, 233, 125, 71),
+                                  ),
                                 ),
                               ),
-                            ),
-                          ),
-                          SizedBox(
-                            width: 20 * fem,
-                          ),
-                          Container(
-                            // group10GAt (49:23)
-                            width: 96 * fem,
-                            height: double.infinity,
-                            decoration: BoxDecoration(
-                              color: Color(0xffffffff),
-                              borderRadius: BorderRadius.circular(20 * fem),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Color(0x26000000),
-                                  offset: Offset(0 * fem, 0 * fem),
-                                  blurRadius: 2 * fem,
-                                ),
-                              ],
-                            ),
-                            child: Center(
-                              child: Text(
-                                '\$500',
-                                style: SafeGoogleFont(
-                                  'Poppins',
-                                  fontSize: 17 * ffem,
-                                  fontWeight: FontWeight.w600,
-                                  height: 1.5 * ffem / fem,
-                                  color: Color(0xff000000),
-                                ),
-                              ),
-                            ),
+                            )
                           ),
                         ],
                       ),
@@ -251,7 +309,7 @@ class _DonationScreen extends State<DonationScreen> {
                                     width: 141 * fem,
                                     height: 1 * fem,
                                     decoration: BoxDecoration(
-                                      color: Color(0x4c9d9d9d),
+                                      color: Color(0xffe97d47),
                                     ),
                                   ),
                                 ),
@@ -266,7 +324,7 @@ class _DonationScreen extends State<DonationScreen> {
                                     fontSize: 17 * ffem,
                                     fontWeight: FontWeight.w500,
                                     height: 1.5 * ffem / fem,
-                                    color: Color(0xff9d9d9d),
+                                    color: Color(0xffe97d47),
                                   ),
                                 ),
                                 SizedBox(
@@ -281,7 +339,7 @@ class _DonationScreen extends State<DonationScreen> {
                                     width: 141 * fem,
                                     height: 1 * fem,
                                     decoration: BoxDecoration(
-                                      color: Color(0x4c9d9d9d),
+                                      color: Color(0xffe97d47),
                                     ),
                                   ),
                                 ),
@@ -319,8 +377,8 @@ class _DonationScreen extends State<DonationScreen> {
                       begin: Alignment(0, -1),
                       end: Alignment(0, 1),
                       colors: <Color>[
-                        Color.fromARGB(255, 242, 222, 186),
-                        Color.fromARGB(255, 242, 222, 186)
+                        Color(0xffe97d47),
+                        Color(0xffe97d47)
                       ],
                       stops: <double>[0, 1],
                     ),
@@ -333,7 +391,7 @@ class _DonationScreen extends State<DonationScreen> {
                         fontSize: 16 * ffem,
                         fontWeight: FontWeight.w700,
                         height: 1.5 * ffem / fem,
-                        color: Color.fromARGB(255, 130, 0, 0),
+                        color: Colors.white,
                       ),
                     ),
                   ),

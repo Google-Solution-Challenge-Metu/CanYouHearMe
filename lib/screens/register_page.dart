@@ -102,10 +102,10 @@ class _RegisterPageState extends State<RegisterPage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  const CircleAvatar(
-                    radius: 50.0,
-                    backgroundImage: AssetImage("assets/images/mithat.jpg"),
-                  ),
+                  //const CircleAvatar(
+                  //  radius: 50.0,
+                  //  backgroundImage: AssetImage("assets/images/mithat.jpg"),
+                  //),
                   const Text(
                     "Can You Hear Me?",
                     style: TextStyle(
