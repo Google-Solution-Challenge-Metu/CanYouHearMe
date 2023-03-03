@@ -4,6 +4,7 @@ import 'package:dietapp/wearOS_module/wear_devices.dart';
 import 'package:dietapp/wearOS_module/wear_profile.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'wear_intro.dart';
 import 'package:geolocator/geolocator.dart';
 
@@ -90,15 +91,15 @@ class _sos_pageState extends State<sos_page> {
       
       body: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Colors.orange,
-              Color.fromARGB(255, 245, 203, 141),
-            ],
-            stops: [0.05,1],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter
-          )
+          //gradient: LinearGradient(
+          //  colors: [
+          //    Colors.orange,
+          //    Color.fromARGB(255, 245, 203, 141),
+          //  ],
+          //  stops: [0.05,1],
+          //  begin: Alignment.topCenter,
+          //  end: Alignment.bottomCenter
+          //)
         ),
         child: Column(
           children: [
@@ -115,7 +116,13 @@ class _sos_pageState extends State<sos_page> {
                   SizedBox(width: 5),
                   Text(
                     'Profile',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w300),
+                    style: GoogleFonts.nunitoSans(
+                      textStyle: TextStyle(
+                        fontSize: 20, 
+                        fontWeight: FontWeight.w300,
+                        color: Color(0xffe97d47)),
+                    ),
+                    
                   )
                 ],
               ),
@@ -130,20 +137,35 @@ class _sos_pageState extends State<sos_page> {
             ),
           ),
           const SizedBox(
-                height: 20,
+                height: 6,
               ),
-          GestureDetector(
+          Container(
+            width: 120,
+            height: 120,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(60),
+              color: const Color(0xffffffff),
+              image: const DecorationImage(
+                image: AssetImage("assets/images/ring.png"),
+              ),
+              boxShadow: const [
+                BoxShadow(
+                  color: Color(0xffe97d47),
+                  offset: Offset(0, 4),
+                  blurRadius: 2,
+                ),
+              ],
+            ),
+            child: GestureDetector(
               onTap: () {
                 warnmes();
                 SendSosMessage();
               },
-              child: Image.asset(
-                'assets/images/sosbuttontrans.png',
-                height: 100,
-              ),  
             ),
+          ),
+
           const SizedBox(
-                height: 29,
+                height: 19,
               ),  
           GestureDetector(
               onTap: () => Navigator.pushReplacement(
@@ -158,7 +180,7 @@ class _sos_pageState extends State<sos_page> {
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
-                  color: Color.fromARGB(255, 222, 91, 91),
+                  color: Color(0xffe97d47),
                 ),
                 child: const Text(
                   "Find Device",

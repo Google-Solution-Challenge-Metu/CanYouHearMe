@@ -21,19 +21,24 @@ class _Intro_WearState extends State<Intro_Wear> {
         
         elevation: 0,
         backgroundColor: Colors.transparent,
-        title: const Text("Let's Start"),
+        title: const Text(
+          "Let's Start",
+          style: TextStyle(
+            color: Color(0xffe97d47),
+          ),
+          ),
       ),
       body: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Colors.orange,
-              Color.fromARGB(255, 245, 203, 141),
-            ],
-            stops: [0.05,1],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter
-          )
+          //gradient: LinearGradient(
+          //  colors: [
+          //    Colors.orange,
+          //    Color.fromARGB(255, 245, 203, 141),
+          //  ],
+          //  stops: [0.05,1],
+          //  begin: Alignment.topCenter,
+          //  end: Alignment.bottomCenter
+          //)
         ),
         child: Column(
           children: [
@@ -71,7 +76,7 @@ class _Intro_WearState extends State<Intro_Wear> {
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(100),
-                  color: Color.fromARGB(255, 222, 91, 91),
+                  color: Color(0xffe97d47),
                 ),
                 child: const Text(
                   "Get Started",

@@ -155,7 +155,9 @@ class _wear_loginState extends State<wear_login> {
       _context = await _watch.applicationContext;
       _receivedContexts = await _watch.receivedApplicationContexts;
     }
-    setState(() {});
+    if (this.mounted){
+      setState(() {});
+    }
   }
 
   void PermissionCheck() async{

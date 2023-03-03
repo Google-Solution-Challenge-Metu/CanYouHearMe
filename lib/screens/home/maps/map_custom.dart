@@ -214,8 +214,8 @@ class _MapUIStatecustom extends State<MapUIcustom> {
     populateClients();
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: const Color(0xFF4E6C50),
-          title: const Text("Maps"),
+          backgroundColor: Color(0xffe97d47),
+          title: const Text("Maps",style: TextStyle(color: Colors.white),),
         ),
       body: Stack(
         children: <Widget>[

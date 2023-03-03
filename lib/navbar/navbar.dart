@@ -24,7 +24,7 @@ class _NavBarState extends State<NavBar> {
         ),
         bottomNavigationBar: Container(
           decoration: const BoxDecoration(
-            color: Color.fromARGB(255, 242, 222, 186),
+            color: Colors.transparent,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(20.0),
               topRight: Radius.circular(20.0),
@@ -36,10 +36,10 @@ class _NavBarState extends State<NavBar> {
             child: GNav(
               selectedIndex: controller.tabIndex,
               onTabChange: controller.changeTabIndex,
-              backgroundColor: Color.fromARGB(255, 242, 222, 186),
-              color: Color.fromARGB(255, 130, 0, 0),
-              activeColor: Color.fromARGB(255, 130, 0, 0),
-              tabBackgroundColor: Color.fromARGB(255, 250, 236, 214),
+              backgroundColor: Colors.transparent,
+              color: Colors.black,
+              activeColor: Color(0xffe97d47),
+              tabBackgroundColor: Color.fromARGB(43, 233, 125, 71),
               gap: 10.0,
               padding: const EdgeInsets.all(16.0),
               tabs: const [

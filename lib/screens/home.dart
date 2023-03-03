@@ -43,16 +43,16 @@ class _HomeScreenState extends State<HomeScreen> {
                               const MakeYourVoiceHeardPage()));
                 },
                 style: ElevatedButton.styleFrom(
-                    foregroundColor: const Color.fromARGB(255, 242, 222, 186),
-                    backgroundColor: const Color.fromARGB(255, 130, 0, 0),
+                    foregroundColor: Colors.black,
+                    backgroundColor: Colors.white,
                     padding: const EdgeInsets.all(20.0),
                     fixedSize: const Size(300, 95),
                     textStyle: const TextStyle(
                         fontSize: 25, fontWeight: FontWeight.bold),
                     elevation: 15,
-                    shadowColor: const Color.fromARGB(255, 130, 0, 0),
+                    shadowColor: const Color(0xffe97d47),
                     side: const BorderSide(
-                        color: Color.fromARGB(255, 242, 222, 186), width: 4),
+                        color: Color(0xffe97d47), width: 4),
                     shape: const StadiumBorder()),
               ),
               const SizedBox(
@@ -69,16 +69,16 @@ class _HomeScreenState extends State<HomeScreen> {
                           builder: (context) => VolunteerScreen()));
                 },
                 style: ElevatedButton.styleFrom(
-                    foregroundColor: const Color.fromARGB(255, 242, 222, 186),
-                    backgroundColor: const Color.fromARGB(255, 130, 0, 0),
+                    foregroundColor: Colors.black,
+                    backgroundColor: Colors.white,
                     padding: const EdgeInsets.all(20.0),
                     fixedSize: const Size(300, 95),
                     textStyle: const TextStyle(
                         fontSize: 25, fontWeight: FontWeight.bold),
                     elevation: 15,
-                    shadowColor: const Color.fromARGB(255, 130, 0, 0),
+                    shadowColor: Color(0xffe97d47),
                     side: const BorderSide(
-                        color: Color.fromARGB(255, 242, 222, 186), width: 4),
+                        color: Color(0xffe97d47), width: 4),
                     shape: const StadiumBorder()),
               ),
               const SizedBox(
@@ -95,16 +95,16 @@ class _HomeScreenState extends State<HomeScreen> {
                           builder: (context) => DonationMainScreen()));
                 },
                 style: ElevatedButton.styleFrom(
-                    foregroundColor: const Color.fromARGB(255, 242, 222, 186),
-                    backgroundColor: Color.fromARGB(255, 130, 0, 0),
+                    foregroundColor: Colors.black,
+                    backgroundColor: Colors.white,
                     padding: EdgeInsets.all(20.0),
                     fixedSize: const Size(300, 95),
                     textStyle: const TextStyle(
                         fontSize: 25, fontWeight: FontWeight.bold),
                     elevation: 15,
-                    shadowColor: Color.fromARGB(255, 130, 0, 0),
+                    shadowColor: Color(0xffe97d47),
                     side: const BorderSide(
-                        color: Color.fromARGB(255, 242, 222, 186), width: 4),
+                        color: Color(0xffe97d47), width: 4),
                     shape: StadiumBorder()),
               ),
               const SizedBox(
@@ -119,16 +119,16 @@ class _HomeScreenState extends State<HomeScreen> {
                       MaterialPageRoute(builder: (context) => MapUIcustom()));
                 },
                 style: ElevatedButton.styleFrom(
-                    foregroundColor: const Color.fromARGB(255, 242, 222, 186),
-                    backgroundColor: const Color.fromARGB(255, 130, 0, 0),
+                    foregroundColor: Colors.black,
+                    backgroundColor: Colors.white,
                     padding: const EdgeInsets.all(20.0),
                     fixedSize: const Size(300, 95),
                     textStyle: const TextStyle(
                         fontSize: 25, fontWeight: FontWeight.bold),
                     elevation: 15,
-                    shadowColor: const Color.fromARGB(255, 130, 0, 0),
+                    shadowColor: Color(0xffe97d47),
                     side: const BorderSide(
-                        color: Color.fromARGB(255, 242, 222, 186), width: 4),
+                        color: Color(0xffe97d47), width: 4),
                     shape: const StadiumBorder()),
               ),
               const SizedBox(
