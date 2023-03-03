@@ -10,6 +10,12 @@ class DonationMainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: const Text(
+          'Donation Options',
+          style: TextStyle(
+            color: Color(0xffe97d47),
+          ),
+        ),
         elevation: 0,
         backgroundColor: Colors.transparent,
         leading: IconButton(
@@ -37,16 +43,15 @@ class DonationMainScreen extends StatelessWidget {
                         builder: (context) => const BloodScreen()));
               },
               style: ElevatedButton.styleFrom(
-                  foregroundColor: const Color.fromARGB(255, 242, 222, 186),
-                  backgroundColor: const Color.fromARGB(255, 130, 0, 0),
+                  foregroundColor: Colors.black,
+                  backgroundColor: Colors.white,
                   padding: const EdgeInsets.all(20.0),
                   fixedSize: const Size(300, 95),
                   textStyle: const TextStyle(
                       fontSize: 25, fontWeight: FontWeight.bold),
                   elevation: 15,
-                  shadowColor: const Color.fromARGB(255, 130, 0, 0),
-                  side: const BorderSide(
-                      color: Color.fromARGB(255, 242, 222, 186), width: 4),
+                  shadowColor: const Color(0xffe97d47),
+                  side: const BorderSide(color: Color(0xffe97d47), width: 4),
                   shape: const StadiumBorder()),
             ),
             const SizedBox(
@@ -63,16 +68,15 @@ class DonationMainScreen extends StatelessWidget {
                         builder: (context) => DonationMainScreen()));
               },
               style: ElevatedButton.styleFrom(
-                  foregroundColor: const Color.fromARGB(255, 242, 222, 186),
-                  backgroundColor: const Color.fromARGB(255, 130, 0, 0),
+                  foregroundColor: Colors.black,
+                  backgroundColor: Colors.white,
                   padding: const EdgeInsets.all(20.0),
                   fixedSize: const Size(300, 95),
                   textStyle: const TextStyle(
                       fontSize: 25, fontWeight: FontWeight.bold),
                   elevation: 15,
-                  shadowColor: const Color.fromARGB(255, 130, 0, 0),
-                  side: const BorderSide(
-                      color: Color.fromARGB(255, 242, 222, 186), width: 4),
+                  shadowColor: const Color(0xffe97d47),
+                  side: const BorderSide(color: Color(0xffe97d47), width: 4),
                   shape: const StadiumBorder()),
             ),
             const SizedBox(
@@ -87,17 +91,16 @@ class DonationMainScreen extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => IntroScreen()));
               },
               style: ElevatedButton.styleFrom(
-                  foregroundColor: const Color.fromARGB(255, 242, 222, 186),
-                  backgroundColor: Color.fromARGB(255, 130, 0, 0),
-                  padding: EdgeInsets.all(20.0),
+                  foregroundColor: Colors.black,
+                  backgroundColor: Colors.white,
+                  padding: const EdgeInsets.all(20.0),
                   fixedSize: const Size(300, 95),
                   textStyle: const TextStyle(
                       fontSize: 25, fontWeight: FontWeight.bold),
                   elevation: 15,
-                  shadowColor: Color.fromARGB(255, 130, 0, 0),
-                  side: const BorderSide(
-                      color: Color.fromARGB(255, 242, 222, 186), width: 4),
-                  shape: StadiumBorder()),
+                  shadowColor: const Color(0xffe97d47),
+                  side: const BorderSide(color: Color(0xffe97d47), width: 4),
+                  shape: const StadiumBorder()),
             ),
           ],
         ),

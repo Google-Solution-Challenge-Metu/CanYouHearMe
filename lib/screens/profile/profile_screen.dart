@@ -24,7 +24,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   FirebaseDocument() async {
     var document = await db.collection('Person').doc(user.uid).get();
     Map<String, dynamic>? value = document.data();
-    if (this.mounted){
+    if (this.mounted) {
       setState(() {
         name = value!['name'];
         surname = value['surname'];
@@ -34,7 +34,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   void changeUserProfile() {}
 
-  void add_device(){
+  void add_device() {
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(
@@ -49,6 +49,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     FirebaseDocument();
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Center(
           child: Text(
@@ -104,10 +105,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                       InkWell(
                         onTap: () {},
-                        child: CircleAvatar(
+                        child: const CircleAvatar(
                           radius: 15.0,
-                          backgroundColor: Colors.green[600],
-                          child: const Icon(
+                          backgroundColor: Color(0xffe97d47),
+                          child: Icon(
                             Icons.edit,
                             size: 15,
                             color: Colors.white,
@@ -163,6 +164,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ],
                       ),
                     ],
+                  ),
+                  const SizedBox(
+                    height: 10,
                   ),
                   buildButton(changeUserProfile, "Profili Düzenle"),
                   buildButton(add_device, "Add device"),
@@ -221,7 +225,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Padding(
       padding: const EdgeInsets.symmetric(
         horizontal: 25.0,
-        vertical: 20.0,
+        vertical: 5.0,
       ),
       child: GestureDetector(
         onTap: onTap,
@@ -229,7 +233,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           width: 250.0,
           padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
           decoration: BoxDecoration(
-              color: Color(0xFF4E6C50),
+              color: const Color(0xffe97d47),
               borderRadius: BorderRadius.circular(12.0)),
           child: Center(
             child: Text(

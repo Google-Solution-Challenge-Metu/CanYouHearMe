@@ -117,7 +117,7 @@ class _PostPageState extends State<PostPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Create a report"),
-        backgroundColor: const Color(0xFF4E6C50),
+        backgroundColor: const Color(0xffe97d47),
       ),
       body: Column(
         children: [
@@ -137,7 +137,7 @@ class _PostPageState extends State<PostPage> {
                   MaterialPageRoute(builder: (context) => MapPickerPage()));
             },
             child: const Card(
-              color: Color(0xFF4E6C50),
+              color: Color(0xffe97d47),
               margin: EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
               child: Padding(
                 padding: EdgeInsets.all(8.0),
@@ -166,7 +166,7 @@ class _PostPageState extends State<PostPage> {
         onPressed: postReport,
         icon: const Icon(Icons.save),
         label: const Text("Post"),
-        backgroundColor: Colors.green[800],
+        backgroundColor: const Color(0xffe97d47),
       ),
     );
   }
@@ -217,7 +217,7 @@ class _PostPageState extends State<PostPage> {
           width: 250.0,
           padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
           decoration: BoxDecoration(
-              color: Color(0xFF4E6C50),
+              color: const Color(0xffe97d47),
               borderRadius: BorderRadius.circular(12.0)),
           child: Center(
             child: Text(

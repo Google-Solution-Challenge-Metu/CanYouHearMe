@@ -10,7 +10,7 @@ class PostBuilder extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(4.0),
       child: Container(
-        color: Colors.green[300],
+        color: const Color(0xffe97d47),
       ),
     );
   }
