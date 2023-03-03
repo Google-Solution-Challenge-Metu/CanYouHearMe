@@ -1,8 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:dietapp/screens/components/posts.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import "package:flutter/material.dart";
+import 'package:google_fonts/google_fonts.dart';
 
+import '../../services/report_service.dart';
 import 'add_device/add_smart_device.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -12,6 +13,7 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  final ReportService _reportService = ReportService();
   final user = FirebaseAuth.instance.currentUser!;
   final FirebaseFirestore db = FirebaseFirestore.instance;
   String name = "";
@@ -47,6 +49,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     FirebaseDocument();
     return Scaffold(
       backgroundColor: Colors.white,
@@ -183,7 +186,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 children: [
                   const Center(
                     child: Text(
-                      "Gönderiler",
+                      "My Posts",
                       style: TextStyle(
                         fontFamily: "Raleway",
                         fontWeight: FontWeight.bold,
@@ -191,27 +194,130 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 10.0,
-                  ),
-                  Container(
+                  const SizedBox(height: 5),
+                  Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 40.0),
-                    child: Column(
-                      children: [
-                        Divider(
-                          thickness: 1.0,
-                          color: Colors.green[900],
-                        ),
-                        GridView.count(
-                          physics: NeverScrollableScrollPhysics(),
-                          crossAxisCount: 2,
-                          shrinkWrap: true,
-                          childAspectRatio: 1,
-                          children: List.generate(5, (index) => PostBuilder()),
-                        )
-                      ],
+                    child: Divider(
+                      thickness: 1,
+                      color: Colors.green[900],
                     ),
                   ),
+                  StreamBuilder(
+                    stream: _reportService.getStatus(),
+                    builder: (context, snapshot) {
+                      return !snapshot.hasData
+                          ? const CircularProgressIndicator()
+                          : ListView.builder(
+                              physics: const NeverScrollableScrollPhysics(),
+                              shrinkWrap: true,
+                              itemCount: snapshot.data!.docs.length,
+                              itemBuilder: (context, index) {
+                                var item_count = 0;
+                                DocumentSnapshot myReport =
+                                    snapshot.data!.docs[index];
+                                Widget imagePlace(height) {
+                                  if (myReport["image"] != "") {
+                                    return Padding(
+                                      padding: const EdgeInsets.all(10.0),
+                                      child: Image(
+                                        height: height,
+                                        image: NetworkImage(myReport["image"]),
+                                      ),
+                                    );
+                                  } else {
+                                    return const SizedBox(
+                                      height: 10.0,
+                                    );
+                                  }
+                                }
+
+                                if (myReport['user'] == "$name $surname") {
+                                  item_count += 1;
+                                  return Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        color: Colors.grey[300],
+                                        borderRadius: const BorderRadius.all(
+                                          Radius.circular(25),
+                                        ),
+                                      ),
+                                      margin: EdgeInsets.fromLTRB(3, 0, 3, 9),
+                                      width: double.infinity,
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(15.0),
+                                        child: Column(
+                                          children: [
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                Row(
+                                                  children: [
+                                                    Image.asset(
+                                                        "assets/images/profile_black.png"),
+                                                    const SizedBox(width: 10),
+                                                    Text(
+                                                      myReport['user'],
+                                                      style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.w700,
+                                                      ),
+                                                    )
+                                                  ],
+                                                ),
+                                                Text('date'),
+                                              ],
+                                            ),
+                                            const SizedBox(height: 20),
+                                            Text(
+                                              myReport['status'],
+                                              style: GoogleFonts.nunitoSans(
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.w400,
+                                                height: 1.3625,
+                                                color: Color(0xff000000),
+                                              ),
+                                            ),
+                                            SizedBox(height: 10),
+                                            imagePlace(size.height * 0.3),
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.end,
+                                              children: [
+                                                Image.asset(
+                                                    "assets/images/call_black.png"),
+                                                const SizedBox(width: 10),
+                                                Image.asset(
+                                                    "assets/images/location_black.png"),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                }
+                                if (index == snapshot.data!.docs.length - 1 &&
+                                    item_count == 0) {
+                                  return Center(
+                                    child: Column(
+                                      children: const [
+                                        Text("End of posts."),
+                                        SizedBox(
+                                          height: 15.0,
+                                        )
+                                      ],
+                                    ),
+                                  );
+                                } else {
+                                  return const SizedBox();
+                                }
+                              },
+                            );
+                    },
+                  )
                 ],
               ),
             ),
