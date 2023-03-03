@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:dietapp/wearOS_module/wear%20Service/wear_report_service.dart';
+import 'package:dietapp/wearOS_module/wear_services/wear_report_service.dart';
 import 'package:dietapp/wearOS_module/wear_devices.dart';
 import 'package:dietapp/wearOS_module/wear_profile.dart';
 import 'package:firebase_auth/firebase_auth.dart';

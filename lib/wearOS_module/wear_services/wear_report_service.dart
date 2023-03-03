@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:dietapp/wearOS_module/wear%20Service/wear_report.dart';
+import 'package:dietapp/wearOS_module/wear_services/wear_report.dart';
 
 class SOSReportService {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;

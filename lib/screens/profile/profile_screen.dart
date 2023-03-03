@@ -24,10 +24,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
   FirebaseDocument() async {
     var document = await db.collection('Person').doc(user.uid).get();
     Map<String, dynamic>? value = document.data();
-    setState(() {
-      name = value!['name'];
-      surname = value['surname'];
-    });
+    if (this.mounted){
+      setState(() {
+        name = value!['name'];
+        surname = value['surname'];
+      });
+    }
   }
 
   void changeUserProfile() {}

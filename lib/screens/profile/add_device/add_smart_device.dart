@@ -38,10 +38,12 @@ class _AddDeviceState extends State<AddDevice> {
   FirebaseDocument() async {
     var document = await db.collection('Person').doc(user.uid).get();
     Map<String, dynamic>? value = document.data();
-    setState(() {
-      email = value!['email'];
-      password = value['password'];
-    });
+    if (this.mounted){
+      setState(() {
+        email = value!['email'];
+        password = value['password'];
+      });
+    }  
   }
 
   @override

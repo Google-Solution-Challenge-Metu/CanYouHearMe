@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HelpBoxItemTile extends StatelessWidget {
   final String itemName;
@@ -20,10 +21,11 @@ class HelpBoxItemTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(12),
+      padding: const EdgeInsets.only(right:15,left:15,top: 30, bottom: 10),
       child: Container(
+        height: 160,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(40),
+          borderRadius: BorderRadius.circular(25),
           color: color,
         ),
         child: Column(
@@ -35,6 +37,7 @@ class HelpBoxItemTile extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 40.0),
               child: Image.asset(
                 imagePath,
+                scale: 0.8,
                 height: 64,
               ),
             ),
@@ -42,9 +45,12 @@ class HelpBoxItemTile extends StatelessWidget {
             // item name
             Text(
               itemName,
-              style: TextStyle(
-                fontSize: 16,
-              ),
+              style: GoogleFonts.nunitoSans(
+                textStyle: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold
+                ),
+              )
             ),
             
 
@@ -56,10 +62,15 @@ class HelpBoxItemTile extends StatelessWidget {
               ),
               child: Text(
                 'Add a box',
-                style: TextStyle(
+                style: GoogleFonts.nunitoSans(
+                textStyle: TextStyle(
                   color: Colors.white,
-                  fontWeight: FontWeight.bold,
+                  //fontSize: 16,
+                  fontWeight: FontWeight.w800
                 ),
+              )
+
+                
               ),
             )
           ],

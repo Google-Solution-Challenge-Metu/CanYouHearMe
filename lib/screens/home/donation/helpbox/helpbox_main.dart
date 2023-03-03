@@ -20,7 +20,7 @@ class _HelpBoxHomePageState extends State<HelpBoxHomePage> {
       appBar: AppBar(
         leading: IconButton(
           onPressed: () => Navigator.pop(context),
-          icon: const Icon(
+          icon: Icon(
             Icons.arrow_back,
             color: Color(0xffe97d47),
           ),
@@ -43,7 +43,10 @@ class _HelpBoxHomePageState extends State<HelpBoxHomePage> {
             },
           ),
         ),
-        child: const Icon(Icons.add),
+        child: const Icon(
+          Icons.add,
+          size: 35.0,
+        ),
       ),
       body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         const SizedBox(height: 20),
@@ -56,70 +59,15 @@ class _HelpBoxHomePageState extends State<HelpBoxHomePage> {
               Expanded(
                 child: Text(
                   "Set up a donation box let us take it from your address.",
-                  style: GoogleFonts.notoSerif(
+                  style: GoogleFonts.prozaLibre(
                     fontSize: 24,
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.bold,
                     height: 1.355,
                     color: Color(0xffe97d47),
                   ),
                 ),
               ),
-              Expanded(
-                // Extra Button for AI page.
-                child: Container(
-                  height: 160,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    color: Color(0xffd9d9d9),
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      SizedBox(height: 5),
-                      // item image
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 40.0),
-                        child: Image.asset(
-                          "assets/images/box_ai.png",
-                          height: 64,
-                        ),
-                      ),
-
-                      // item name
-                      Text(
-                        "Use AI",
-                        style: TextStyle(
-                          fontSize: 16,
-                        ),
-                      ),
-                      SizedBox(height: 10),
-
-                      MaterialButton(
-                        onPressed: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return TfliteModel();
-                            },
-                          ),
-                        ),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(25.0),
-                        ),
-                        color: Color(0xffe97d47),
-                        child: const Text(
-                          'Add ' + "1" + ' Box',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
+              
             ],
           ),
         ),
@@ -148,27 +96,82 @@ class _HelpBoxHomePageState extends State<HelpBoxHomePage> {
           // add items one by one
           child: Consumer<CartModel>(
             builder: (context, value, child) {
-              return GridView.builder(
-                padding: const EdgeInsets.all(12),
-                physics: const AlwaysScrollableScrollPhysics(),
-                itemCount: value.shopItems.length,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  childAspectRatio: 1 / 1.2,
-                ),
-                itemBuilder: (context, index) {
-                  return HelpBoxItemTile(
-                    itemName: value.shopItems[index][0],
-                    itemPrice: value.shopItems[index][1],
-                    imagePath: value.shopItems[index][2],
-                    color: value.shopItems[index][3],
-                    onPressed: () =>
-                        Provider.of<CartModel>(context, listen: false)
-                            .addItemToCart(index),
-                  );
+              //return GridView.builder(
+              //  padding: const EdgeInsets.all(12),
+              //  physics: const AlwaysScrollableScrollPhysics(),
+              //  itemCount: value.shopItems.length,
+              //  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              //    crossAxisCount: 2,
+              //    childAspectRatio: 1 / 1.2,
+              //  ),
+              //  itemBuilder: (context, index) {
+                  return SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        //HelpBoxItemTile(
+                        //  itemName: value.shopItems[index][0],
+                        //  itemPrice: value.shopItems[index][1],
+                        //  imagePath: value.shopItems[index][2],
+                        //  color: value.shopItems[index][3],
+                        //  onPressed: () =>
+                        //      Provider.of<CartModel>(context, listen: false)
+                        //          .addItemToCart(index),
+                        //),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            HelpBoxItemTile(
+                              itemName: "Clothes",
+                              itemPrice: "1",
+                              imagePath: "assets/images/box_clothes.png",
+                              color: Color(0xffd9d9d9),
+                              onPressed: () =>
+                                  Provider.of<CartModel>(context, listen: false)
+                                      .addItemToCart(0),
+                            ),
+                            HelpBoxItemTile(
+                              itemName: "Packed Foods",
+                              itemPrice: "1",
+                              imagePath: "assets/images/box_food.png",
+                              color: Color(0xffd9d9d9),
+                              onPressed: () =>
+                                  Provider.of<CartModel>(context, listen: false)
+                                      .addItemToCart(1),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            HelpBoxItemTile(
+                              itemName: "Toys",
+                              itemPrice: "1",
+                              imagePath: "assets/images/box_toys.png",
+                              color: Color(0xffd9d9d9),
+                              onPressed: () =>
+                                  Provider.of<CartModel>(context, listen: false)
+                                      .addItemToCart(2),
+                            ),
+                            HelpBoxItemTile(
+                              itemName: "Use AI",
+                              itemPrice: "1",
+                              imagePath: "assets/images/box_ai.png",
+                              color: Color(0xffd9d9d9),
+                              onPressed: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return TfliteModel();
+                                  },
+                                ),
+                        ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  );               
                 },
-              );
-            },
           ),
         ),
       ]),
