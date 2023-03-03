@@ -1,5 +1,6 @@
 import 'package:dietapp/screens/home/donation/blood/blood.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'helpbox/intro_screen.dart';
 import 'money/donation.dart';
@@ -11,10 +12,13 @@ class DonationMainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
+        title: Text(
           'Donation Options',
-          style: TextStyle(
-            color: Color(0xffe97d47),
+          style: GoogleFonts.prozaLibre(
+            color: const Color(0xffe97d47),
+            fontSize: 25,
+            fontWeight: FontWeight.w600,
+            height: 1.355,
           ),
         ),
         elevation: 0,
@@ -63,10 +67,8 @@ class DonationMainScreen extends StatelessWidget {
               icon: const Icon(Icons.back_hand_rounded),
               label: const Text('Money Donation'),
               onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => DonationScreen()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => DonationScreen()));
               },
               style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.black,

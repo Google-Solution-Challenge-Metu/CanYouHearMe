@@ -2,6 +2,7 @@ import 'package:dietapp/screens/home/makeyourvoiceheard/post_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dietapp/services/report_service.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MakeYourVoiceHeardPage extends StatefulWidget {
   const MakeYourVoiceHeardPage({super.key});
@@ -23,10 +24,13 @@ class _MakeYourVoiceHeardPageState extends State<MakeYourVoiceHeardPage> {
           color: const Color(0xffe97d47),
         ),
         backgroundColor: Colors.transparent,
-        title: const Text(
+        title: Text(
           "Make Your Voice Heard",
-          style: TextStyle(
-            color: Color(0xffe97d47),
+          style: GoogleFonts.prozaLibre(
+            color: const Color(0xffe97d47),
+            fontSize: 20,
+            fontWeight: FontWeight.w600,
+            height: 1.355,
           ),
         ),
       ),
@@ -83,47 +87,62 @@ class _MakeYourVoiceHeardPageState extends State<MakeYourVoiceHeardPage> {
 
                         return Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: InkWell(
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: Colors.grey[300],
-                                borderRadius: const BorderRadius.all(
-                                  Radius.circular(10),
-                                ),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.grey[300],
+                              borderRadius: const BorderRadius.all(
+                                Radius.circular(25),
                               ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Column(
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: const CircleAvatar(
-                                            backgroundImage: AssetImage(
-                                                "assets/images/profile_anonym.webp"),
-                                          ),
-                                        ),
-                                        Text('Name'),
-                                        Text('Date'),
-                                      ],
+                            ),
+                            margin: EdgeInsets.fromLTRB(3, 0, 3, 9),
+                            width: double.infinity,
+                            child: Padding(
+                              padding: const EdgeInsets.all(15.0),
+                              child: Column(
+                                children: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Image.asset(
+                                              "assets/images/profile_black.png"),
+                                          const SizedBox(width: 10),
+                                          Text(
+                                            'user',
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.w700,
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                      Text('date'),
+                                    ],
+                                  ),
+                                  const SizedBox(height: 20),
+                                  Text(
+                                    myReport['status'],
+                                    style: GoogleFonts.nunitoSans(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w400,
+                                      height: 1.3625,
+                                      color: Color(0xff000000),
                                     ),
-                                    Text(
-                                      "${myReport['status']}",
-                                      style: const TextStyle(
-                                          fontSize: 16,
-                                          fontFamily: "Raleway",
-                                          fontWeight: FontWeight.w700),
-                                      textAlign: TextAlign.center,
-                                    ),
-                                    const SizedBox(
-                                      height: 10.0,
-                                    ),
-                                    Container(
-                                      child: imagePlace(size.height * 0.3),
-                                    ),
-                                  ],
-                                ),
+                                  ),
+                                  SizedBox(height: 10),
+                                  imagePlace(size.height * 0.3),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      Image.asset(
+                                          "assets/images/call_black.png"),
+                                      SizedBox(width: 10),
+                                      Image.asset(
+                                          "assets/images/location_black.png"),
+                                    ],
+                                  ),
+                                ],
                               ),
                             ),
                           ),
@@ -131,6 +150,9 @@ class _MakeYourVoiceHeardPageState extends State<MakeYourVoiceHeardPage> {
                       },
                     );
             },
+          ),
+          const SizedBox(
+            height: 30.0,
           ),
         ],
       ),
