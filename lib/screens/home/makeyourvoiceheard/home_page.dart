@@ -110,7 +110,7 @@ class _MakeYourVoiceHeardPageState extends State<MakeYourVoiceHeardPage> {
                                               "assets/images/profile_black.png"),
                                           const SizedBox(width: 10),
                                           Text(
-                                            'user',
+                                            myReport['user'],
                                             style: TextStyle(
                                               fontWeight: FontWeight.w700,
                                             ),

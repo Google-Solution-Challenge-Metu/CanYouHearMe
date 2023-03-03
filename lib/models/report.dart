@@ -6,13 +6,15 @@ class Report {
   String image;
   GeoPoint location;
   String address;
+  String user;
 
   Report(
       {required this.id,
       required this.status,
       required this.image,
       required this.location,
-      required this.address,});
+      required this.address,
+      required this.user});
 
   factory Report.fromSnapshot(DocumentSnapshot snapshot) {
     return Report(
@@ -21,6 +23,7 @@ class Report {
       image: snapshot["image"],
       location: snapshot["location"],
       address: snapshot["address"],
+      user: snapshot["user"],
     );
   }
 }

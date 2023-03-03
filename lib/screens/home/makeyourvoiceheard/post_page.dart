@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:dietapp/services/report_service.dart';
@@ -14,6 +15,10 @@ class PostPage extends StatefulWidget {
 }
 
 class _PostPageState extends State<PostPage> {
+  final user = FirebaseAuth.instance.currentUser!;
+  final FirebaseFirestore db = FirebaseFirestore.instance;
+  String name = "";
+  String surname = "";
   final ReportService _reportService = ReportService();
   final postController = TextEditingController();
   final ImagePicker _pickerImage = ImagePicker();
@@ -41,6 +46,17 @@ class _PostPageState extends State<PostPage> {
           height: 10.0,
         );
       }
+    }
+  }
+
+  FirebaseDocument() async {
+    var document = await db.collection('Person').doc(user.uid).get();
+    Map<String, dynamic>? value = document.data();
+    if (this.mounted) {
+      setState(() {
+        name = value!['name'];
+        surname = value['surname'];
+      });
     }
   }
 
@@ -73,7 +89,8 @@ class _PostPageState extends State<PostPage> {
             postController.text,
             profileImage ?? '',
             GeoPoint(MapPickerPageState.latitude, MapPickerPageState.longitude),
-            MapPickerPageState.address)
+            MapPickerPageState.address,
+            "$name $surname")
         .then((value) {
       Toast.show(
         "Durum eklendi!",
@@ -114,6 +131,7 @@ class _PostPageState extends State<PostPage> {
 
   @override
   Widget build(BuildContext context) {
+    FirebaseDocument();
     return Scaffold(
       appBar: AppBar(
         title: const Text("Create a report"),
