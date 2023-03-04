@@ -37,10 +37,17 @@ class DonationMainScreen extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            ElevatedButton.icon(
+            ElevatedButton(
               // BLOOD BUTTON
-              icon: const Icon(Icons.bloodtype_rounded),
-              label: const Text('Blood Donation'),
+              child: Row(
+                  //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Image.asset("assets/images/blood_black.png",width: 60,),
+                    SizedBox(width: 5,),
+                    Text('Blood Donation'),
+                    
+                  ]
+                ),
               onPressed: () {
                 Navigator.push(
                     context,
@@ -57,15 +64,29 @@ class DonationMainScreen extends StatelessWidget {
                   elevation: 15,
                   shadowColor: const Color(0xffe97d47),
                   side: const BorderSide(color: Color(0xffe97d47), width: 4),
-                  shape: const StadiumBorder()),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25.0))),
             ),
             const SizedBox(
               height: 30,
             ),
-            ElevatedButton.icon(
+            ElevatedButton(
               // BE VOLUNTEER
-              icon: const Icon(Icons.back_hand_rounded),
-              label: const Text('Money Donation'),
+              child: Row(
+                  //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Image.asset("assets/images/money_black.png",width: 60,),
+                    SizedBox(width: 5,),
+                    Text('Money Donation'),
+                    //Container(
+                    //  width: 180,
+                    //  child:
+                    //    Text('Money Donation'),
+                    //),
+                    
+                    
+                  ]
+                ),
               onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => DonationScreen()));
@@ -80,15 +101,23 @@ class DonationMainScreen extends StatelessWidget {
                   elevation: 15,
                   shadowColor: const Color(0xffe97d47),
                   side: const BorderSide(color: Color(0xffe97d47), width: 4),
-                  shape: const StadiumBorder()),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25.0))),
             ),
             const SizedBox(
               height: 30,
             ),
-            ElevatedButton.icon(
+            ElevatedButton(
               // BOX BUTTON
-              icon: Icon(Icons.wallet_giftcard_outlined),
-              label: const Text('Give a helpbox'),
+              child: Row(
+                  //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Image.asset("assets/images/box_black.png",width: 60,),
+                    SizedBox(width: 5,),
+                    Text('Donate a box'),
+                    
+                  ]
+                ),
               onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => IntroScreen()));
@@ -103,7 +132,8 @@ class DonationMainScreen extends StatelessWidget {
                   elevation: 15,
                   shadowColor: const Color(0xffe97d47),
                   side: const BorderSide(color: Color(0xffe97d47), width: 4),
-                  shape: const StadiumBorder()),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25.0))),
             ),
           ],
         ),

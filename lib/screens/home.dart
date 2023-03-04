@@ -35,10 +35,21 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(
                 height: 30,
               ),
-              ElevatedButton.icon(
+              ElevatedButton(
                 // BLOOD BUTTON
-                icon: const Icon(Icons.bloodtype_rounded),
-                label: const Text('Make Your Voice Heard'),
+                child: Row(
+                  //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Image.asset("assets/images/myvh_black.png",width: 75,),
+                    SizedBox(width: 5,),
+                    Container(
+                      width: 180,
+                      child:
+                        Text('Make Your Voice Heard'),
+                    ),
+                  ]
+                ),
+                
                 onPressed: () {
                   Navigator.push(
                       context,
@@ -56,15 +67,24 @@ class _HomeScreenState extends State<HomeScreen> {
                     elevation: 15,
                     shadowColor: const Color(0xffe97d47),
                     side: const BorderSide(color: Color(0xffe97d47), width: 4),
-                    shape: const StadiumBorder()),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25.0))),
               ),
               const SizedBox(
                 height: 30,
               ),
-              ElevatedButton.icon(
+              ElevatedButton(
                 // BE VOLUNTEER
-                icon: const Icon(Icons.back_hand_rounded),
-                label: const Text('Be Volunteer'),
+                child: Row(
+                  //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Image.asset("assets/images/hands_black.png",width: 75,),
+                    SizedBox(width: 5,),
+                    Text('Volunteer'),
+                    //SizedBox(width: 75,),
+                  ]
+                ),
+                
                 onPressed: () {
                   Navigator.push(
                       context,
@@ -81,15 +101,24 @@ class _HomeScreenState extends State<HomeScreen> {
                     elevation: 15,
                     shadowColor: Color(0xffe97d47),
                     side: const BorderSide(color: Color(0xffe97d47), width: 4),
-                    shape: const StadiumBorder()),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25.0))),
               ),
               const SizedBox(
                 height: 30,
               ),
-              ElevatedButton.icon(
+              ElevatedButton(
                 // BOX BUTTON
-                icon: Icon(Icons.wallet_giftcard_outlined),
-                label: const Text('Donate'),
+                //icon: Icon(Icons.wallet_giftcard_outlined),
+                child: Row(
+                  //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Image.asset("assets/images/donation_main_black.png",width: 75,),
+                    SizedBox(width: 5,),
+                    Text('Donate'),
+                    
+                  ]
+                ),
                 onPressed: () {
                   Navigator.push(
                       context,
@@ -106,15 +135,24 @@ class _HomeScreenState extends State<HomeScreen> {
                     elevation: 15,
                     shadowColor: Color(0xffe97d47),
                     side: const BorderSide(color: Color(0xffe97d47), width: 4),
-                    shape: StadiumBorder()),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25.0))),
               ),
               const SizedBox(
                 height: 30,
               ),
-              ElevatedButton.icon(
+              ElevatedButton(
                 // MAPS
-                icon: const Icon(Icons.map_outlined),
-                label: const Text('Maps'),
+                child: Row(
+                  //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Image.asset("assets/images/map_black.png",width: 75,),
+                    SizedBox(width: 5,),
+                    Text('Maps'),
+                    //SizedBox(width: 75,),
+                  ]
+                ),
+                
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => MapUIcustom()));
@@ -129,7 +167,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     elevation: 15,
                     shadowColor: Color(0xffe97d47),
                     side: const BorderSide(color: Color(0xffe97d47), width: 4),
-                    shape: const StadiumBorder()),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25.0))),
               ),
               const SizedBox(
                 height: 30,

@@ -1,11 +1,14 @@
 import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dietapp/screens/home/makeyourvoiceheard/test.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:dietapp/services/report_service.dart';
 import 'package:toast/toast.dart';
 import 'package:dietapp/screens/home/makeyourvoiceheard/map_picker_page.dart';
+
+import 'google_map_picker.dart';
 
 class PostPage extends StatefulWidget {
   const PostPage({super.key});
@@ -152,7 +155,7 @@ class _PostPageState extends State<PostPage> {
             behavior: HitTestBehavior.translucent,
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => MapPickerPage()));
+                  MaterialPageRoute(builder: (context) => SearchPlacesScreen()));
             },
             child: const Card(
               color: Color(0xffe97d47),
