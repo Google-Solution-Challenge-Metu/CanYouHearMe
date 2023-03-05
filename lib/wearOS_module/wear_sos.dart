@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dietapp/wearOS_module/wear_location_test.dart';
 import 'package:dietapp/wearOS_module/wear_services/wear_report_service.dart';
 import 'package:dietapp/wearOS_module/wear_devices.dart';
 import 'package:dietapp/wearOS_module/wear_profile.dart';
@@ -56,59 +57,48 @@ class _sos_pageState extends State<sos_page> {
   }
   
   void warnmes(BuildContext context) {
-      FirebaseDocument();
-      // set up the buttons
-      Widget cancelButton = TextButton(
-        child: Text("Cancel", style: TextStyle(color: Colors.white),),
-        onPressed:  () {
-          Navigator.of(context, rootNavigator: true).pop();    
-        },
-      );
-      Widget continueButton = TextButton(
-        child: Text("Continue", style: TextStyle(color: Colors.white),),
-        onPressed:  () {
-          Navigator.of(context, rootNavigator: true).pop();   
-          SendSosMessage();
-          
-        },
-      );
-      // set up the AlertDialog
-      AlertDialog alert = AlertDialog(
-        backgroundColor: Color(0xffe97d47),
-        content: Container(
-          width: MediaQuery.of(context).size.width-20,
-          height: 50,),
-        title: Text(
-          "Sending a sos call, are you sure?",
-          style: TextStyle(color: Colors.white, fontSize: 12),
-          textAlign: TextAlign.center,
-        ),
-        actions: [
-          cancelButton,
-          continueButton,
-        ],
-      );
-    
-      // show the dialog
-      showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return alert;
-        },
-      );
-    //showDialog(
-    //  context: context,
-    //  builder: (context) {
-    //    return const AlertDialog(
-    //      backgroundColor: Color(0xffe97d47),
-    //      title: Text(
-    //        "Sending a sos call, are you",
-    //        style: TextStyle(color: Colors.white),
-    //        textAlign: TextAlign.center,
-    //      ),
-    //    );
-    //  },
-    //);
+    Navigator.push(context,MaterialPageRoute(builder: (context) => MapWear()));
+    FirebaseDocument();
+    // set up the buttons
+    Widget cancelButton = TextButton(
+      child: Text("Cancel", style: TextStyle(color: Colors.white),),
+      onPressed:  () {
+        Navigator.of(context, rootNavigator: true).pop();    
+      },
+    );
+    Widget continueButton = TextButton(
+      child: Text("Continue", style: TextStyle(color: Colors.white),),
+      onPressed:  () {
+        Navigator.of(context, rootNavigator: true).pop();   
+        SendSosMessage();
+        
+      },
+    );
+    // set up the AlertDialog
+    AlertDialog alert = AlertDialog(
+      backgroundColor: Color(0xffe97d47),
+      content: Container(
+        width: MediaQuery.of(context).size.width-20,
+        height: 50,),
+      title: Text(
+        "Sending a sos call, are you sure?",
+        style: TextStyle(color: Colors.white, fontSize: 12),
+        textAlign: TextAlign.center,
+      ),
+      actions: [
+        cancelButton,
+        continueButton,
+      ],
+    );
+  
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
+
   }
   Future AskPer() async {
     serviceEnabled = await Geolocator.isLocationServiceEnabled();
@@ -142,6 +132,7 @@ class _sos_pageState extends State<sos_page> {
     _reportService
         .addStatus("Help Me Please", 
                   (name+" "+surname),
+                  GeoPoint(10, 10),
         ).then((value) {
           SOSsent();
     });
@@ -221,7 +212,9 @@ class _sos_pageState extends State<sos_page> {
             ),
             child: GestureDetector(
               onTap: () {
-                warnmes(context);
+                Navigator.push(context,MaterialPageRoute(builder: (context) => MapWear()));
+                  
+                //warnmes(context);
                 //SendSosMessage();
                 //_getCurrentPosition();
               },

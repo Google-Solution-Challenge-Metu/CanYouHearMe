@@ -1,4 +1,5 @@
 import 'package:dietapp/onboardingscreen.dart';
+import 'package:dietapp/wearOS_module/wear_location_test.dart';
 import 'package:dietapp/wearOS_module/wear_login.dart';
 import 'package:dietapp/wearOS_module/wear_sos.dart';
 import 'package:firebase_auth/firebase_auth.dart';

@@ -4,13 +4,13 @@ class SosReport {
   String id;
   String status;
   String Name_Surname;
- //GeoPoint location;
+  GeoPoint location;
 
   SosReport(
       {required this.id,
       required this.status,
       required this.Name_Surname,
-      //required this.location,
+      required this.location,
       });
 
   factory SosReport.fromSnapshot(DocumentSnapshot snapshot) {
@@ -18,7 +18,7 @@ class SosReport {
       id: snapshot.id,
       status: snapshot["status"],
       Name_Surname: snapshot["Name_Surname"],
-      //location: snapshot["location"],
+      location: snapshot["location"],
     );
   }
 }
