@@ -41,8 +41,10 @@ dependencies:
 
   #Google Maps
   geolocator: ^9.0.2
+  permission_handler: ^10.2.0
+  location: ^4.4.0
   google_maps_flutter: 
-  #google_maps_place_picker_mb: ^3.0.1
+  google_maps_place_picker_mb: ^3.0.1 #delete later
   flutter_google_places_sdk: ^0.3.2+6
   custom_info_window: ^1.0.1
   geocoding: ^2.0.5

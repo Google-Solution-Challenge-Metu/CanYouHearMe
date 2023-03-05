@@ -5,8 +5,11 @@ import 'package:dietapp/wearOS_module/wear_profile.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'wear_intro.dart';
+import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:permission_handler/permission_handler.dart';
+//import 'wear_intro.dart';
+
 
 
 class sos_page extends StatefulWidget {
@@ -26,6 +29,7 @@ class _sos_pageState extends State<sos_page> {
   String name = "";
   String surname = "";
 
+
   FirebaseDocument() async {
     var document = await db.collection('Person').doc(user.uid).get();
     Map<String, dynamic>? value = document.data();
@@ -35,20 +39,76 @@ class _sos_pageState extends State<sos_page> {
       print(name);
     });
   }  
-  void warnmes() {
+  void SOSsent() {
     showDialog(
       context: context,
       builder: (context) {
         return const AlertDialog(
-          backgroundColor: Color.fromARGB(255, 130, 0, 0),
+          backgroundColor: Color.fromARGB(148, 233, 125, 71),
           title: Text(
-            "Sending a sos call...",
+            "Sending a sos call, are you",
             style: TextStyle(color: Colors.white),
             textAlign: TextAlign.center,
           ),
         );
-      },
+      }
     );
+  }
+  
+  void warnmes(BuildContext context) {
+      FirebaseDocument();
+      // set up the buttons
+      Widget cancelButton = TextButton(
+        child: Text("Cancel", style: TextStyle(color: Colors.white),),
+        onPressed:  () {
+          Navigator.of(context, rootNavigator: true).pop();    
+        },
+      );
+      Widget continueButton = TextButton(
+        child: Text("Continue", style: TextStyle(color: Colors.white),),
+        onPressed:  () {
+          Navigator.of(context, rootNavigator: true).pop();   
+          SendSosMessage();
+          
+        },
+      );
+      // set up the AlertDialog
+      AlertDialog alert = AlertDialog(
+        backgroundColor: Color(0xffe97d47),
+        content: Container(
+          width: MediaQuery.of(context).size.width-20,
+          height: 50,),
+        title: Text(
+          "Sending a sos call, are you sure?",
+          style: TextStyle(color: Colors.white, fontSize: 12),
+          textAlign: TextAlign.center,
+        ),
+        actions: [
+          cancelButton,
+          continueButton,
+        ],
+      );
+    
+      // show the dialog
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return alert;
+        },
+      );
+    //showDialog(
+    //  context: context,
+    //  builder: (context) {
+    //    return const AlertDialog(
+    //      backgroundColor: Color(0xffe97d47),
+    //      title: Text(
+    //        "Sending a sos call, are you",
+    //        style: TextStyle(color: Colors.white),
+    //        textAlign: TextAlign.center,
+    //      ),
+    //    );
+    //  },
+    //);
   }
   Future AskPer() async {
     serviceEnabled = await Geolocator.isLocationServiceEnabled();
@@ -70,19 +130,22 @@ class _sos_pageState extends State<sos_page> {
     }  
 
   }
-  void SendSosMessage(){
+  Future<void> SendSosMessage() async {
     //AskPer();
     //Geolocator.getCurrentPosition().then((currloc){
     //  setState(() {
     //    currentLocation=currloc;});});
     //print(currentLocation);
+    
     FirebaseDocument();
+
     _reportService
         .addStatus("Help Me Please", 
                   (name+" "+surname),
         ).then((value) {
-          warnmes();
+          SOSsent();
     });
+  
   }
 
   @override
@@ -158,8 +221,9 @@ class _sos_pageState extends State<sos_page> {
             ),
             child: GestureDetector(
               onTap: () {
-                warnmes();
-                SendSosMessage();
+                warnmes(context);
+                //SendSosMessage();
+                //_getCurrentPosition();
               },
             ),
           ),
@@ -192,12 +256,9 @@ class _sos_pageState extends State<sos_page> {
                 ),
               ),
             ),  
-
           ],
-        ),
-        
+        ),     
       ),
-
     );
   }
 }
