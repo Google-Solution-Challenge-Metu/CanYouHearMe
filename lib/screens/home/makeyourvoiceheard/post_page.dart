@@ -155,7 +155,7 @@ class _PostPageState extends State<PostPage> {
             behavior: HitTestBehavior.translucent,
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => SearchPlacesScreen()));
+                  MaterialPageRoute(builder: (context) => MapPickerPage()));
             },
             child: const Card(
               color: Color(0xffe97d47),

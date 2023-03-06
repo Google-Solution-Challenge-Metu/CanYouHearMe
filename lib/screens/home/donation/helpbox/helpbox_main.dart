@@ -29,7 +29,7 @@ class _HelpBoxHomePageState extends State<HelpBoxHomePage> {
         backgroundColor: Colors.transparent,
         title: Text(
           "Donate a Box",
-          style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
+          style: TextStyle(color: Color(0xffe97d47)),
         ),
       ),
       floatingActionButton: FloatingActionButton(

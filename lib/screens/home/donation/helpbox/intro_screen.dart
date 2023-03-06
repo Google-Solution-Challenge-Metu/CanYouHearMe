@@ -29,8 +29,12 @@ class IntroScreen extends StatelessWidget {
               child: Text(
                 'Prepare your helpbox, pack each variety separately',
                 textAlign: TextAlign.center,
-                style: GoogleFonts.notoSerif(
-                    fontSize: 36, fontWeight: FontWeight.bold),
+                style: GoogleFonts.prozaLibre(
+                  color: const Color(0xffe97d47),
+                  fontSize: 25,
+                  fontWeight: FontWeight.w600,
+                  height: 1.355,
+                ),
               ),
             ),
 
@@ -61,15 +65,15 @@ class IntroScreen extends StatelessWidget {
               child: Container(
                 padding: const EdgeInsets.all(24),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                  color: const Color.fromARGB(255, 112, 91, 222),
+                  borderRadius: BorderRadius.circular(25),
+                  color: Color(0xffe97d47),
                 ),
                 child: const Text(
                   "Get Started",
                   style: TextStyle(
                     color: Colors.white,
                     // fontWeight: FontWeight.bold,
-                    fontSize: 16,
+                    fontSize: 18,
                   ),
                 ),
               ),

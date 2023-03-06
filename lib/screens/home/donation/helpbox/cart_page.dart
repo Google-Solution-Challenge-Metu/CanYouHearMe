@@ -28,9 +28,10 @@ class CartPage extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 24.0),
                 child: Text(
                   "My Cart",
-                  style: GoogleFonts.notoSerif(
+                  style: GoogleFonts.prozaLibre(
                     fontSize: 36,
                     fontWeight: FontWeight.bold,
+                    color: Color(0xffe97d47),
                   ),
                 ),
               ),
@@ -83,7 +84,7 @@ class CartPage extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
-                    color: Colors.green,
+                    color: Color(0xffe97d47),
                   ),
                   padding: const EdgeInsets.all(24),
                   child: Row(
@@ -94,7 +95,7 @@ class CartPage extends StatelessWidget {
                         children: [
                           Text(
                             'Total Boxes',
-                            style: TextStyle(color: Colors.green[200]),
+                            style: TextStyle(color: Colors.white60),
                           ),
 
                           const SizedBox(height: 8),
@@ -131,7 +132,7 @@ class CartPage extends StatelessWidget {
                         },
                         child: Container(
                           decoration: BoxDecoration(
-                            border: Border.all(color: Colors.green.shade200),
+                            border: Border.all(color: Colors.white60),
                             borderRadius: BorderRadius.circular(28),
                           ),
                           padding: const EdgeInsets.all(12),

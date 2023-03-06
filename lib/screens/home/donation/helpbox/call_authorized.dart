@@ -6,11 +6,22 @@ class Callauthorized extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 242, 222, 186),
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
-            backgroundColor: Color(0xFF4E6C50),
-            title: Text("Call The Authorized"),
+        leading: IconButton(
+          onPressed: () => Navigator.pop(context),
+          icon: Icon(
+            Icons.arrow_back,
+            color: Color(0xffe97d47),
           ),
+        ),
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        title: Text(
+          "Call The Authorized",
+          style: TextStyle(color: Color(0xffe97d47)),
+        ),
+      ),
       body: Center(
         child: ListView(
           children: [
@@ -24,7 +35,7 @@ class Callauthorized extends StatelessWidget {
                     style: TextStyle(
                         fontFamily: "Google",
                         fontSize: 30.0,
-                        color: Color.fromARGB(255, 130, 0, 0),
+                        color: Color(0xffe97d47),
                         fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(
@@ -45,7 +56,7 @@ class Callauthorized extends StatelessWidget {
                     style: TextStyle(
                         fontFamily: "Google",
                         fontSize: 15.0,
-                        color: Color.fromARGB(255, 130, 0, 0),
+                        color: Color.fromARGB(255, 0, 0, 0),
                         fontWeight: FontWeight.normal),
                   ),
                   const SizedBox(
@@ -119,16 +130,16 @@ class Callauthorized extends StatelessWidget {
                       
                     },
                     style: ElevatedButton.styleFrom(
-                        foregroundColor: Color.fromARGB(255, 242, 222, 186),
-                        backgroundColor: Color.fromARGB(255, 130, 0, 0),
+                        foregroundColor: Color(0xffe97d47),
+                        backgroundColor: Color.fromARGB(255, 255, 255, 255),
                         padding: EdgeInsets.all(20.0),
                         fixedSize: Size(325, 80),
                         textStyle:
                             TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                         elevation: 15,
-                        shadowColor: Color.fromARGB(255, 130, 0, 0),
+                        shadowColor: Color(0xffe97d47),
                         side: const BorderSide(
-                            color: Color.fromARGB(255, 242, 222, 186), width: 4),
+                            color: Color(0xffe97d47), width: 4),
                         shape: StadiumBorder()),
                   ),
                   const SizedBox(
@@ -140,7 +151,7 @@ class Callauthorized extends StatelessWidget {
                       Text(
                         "Want to add more boxes?",
                         style: TextStyle(
-                          color: Color.fromARGB(255, 130, 0, 0),
+                          color: Color.fromARGB(255, 0, 0, 0),
                         ),
                       ),
                       GestureDetector(
@@ -148,7 +159,7 @@ class Callauthorized extends StatelessWidget {
                         child: const Text(
                           " Turn back",
                           style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.blueGrey,
                             fontWeight: FontWeight.bold,
                           ),
                         ),

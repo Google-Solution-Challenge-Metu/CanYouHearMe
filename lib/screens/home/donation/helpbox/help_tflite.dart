@@ -52,8 +52,19 @@ class _TfliteModelState extends State<TfliteModel> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF4E6C50),
-        title: Text("AI"),
+        leading: IconButton(
+          onPressed: () => Navigator.pop(context),
+          icon: Icon(
+            Icons.arrow_back,
+            color: Color(0xffe97d47),
+          ),
+        ),
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        title: Text(
+          "AI",
+          style: TextStyle(color: Color(0xffe97d47)),
+        ),
       ),
       body: ListView(
         children: [
@@ -107,16 +118,16 @@ class _TfliteModelState extends State<TfliteModel> {
                                  else{}},
                               
                               style: ElevatedButton.styleFrom(
-                                  foregroundColor: Color.fromARGB(255, 242, 222, 186),
-                                  backgroundColor: Color.fromARGB(255, 130, 0, 0),
+                                  foregroundColor: Colors.white,
+                                  backgroundColor: Color(0xffe97d47),
                                   padding: EdgeInsets.all(20.0),
                                   fixedSize: Size(300, 75),
                                   textStyle:
                                       TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                                   elevation: 15,
-                                  shadowColor: Color.fromARGB(255, 130, 0, 0),
+                                  shadowColor: Color(0xffe97d47),
                                   side: const BorderSide(
-                                      color: Color.fromARGB(255, 242, 222, 186), width: 4),
+                                      color: Colors.black, width: 4),
                                   shape: StadiumBorder()),
                             ),
                             const SizedBox(       // try again button // same fonction with floatingActionButton buttom
@@ -128,16 +139,16 @@ class _TfliteModelState extends State<TfliteModel> {
                               label: Text("No, Try Again"),
                               onPressed: pickImage,
                               style: ElevatedButton.styleFrom(
-                                  foregroundColor: Color.fromARGB(255, 242, 222, 186),
-                                  backgroundColor: Color.fromARGB(255, 130, 0, 0),
+                                  foregroundColor: Colors.white,
+                                  backgroundColor: Color(0xffe97d47),
                                   padding: EdgeInsets.all(20.0),
                                   fixedSize: Size(300, 75),
                                   textStyle:
                                       TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                                   elevation: 15,
-                                  shadowColor: Color.fromARGB(255, 130, 0, 0),
+                                  shadowColor: Color(0xffe97d47),
                                   side: const BorderSide(
-                                      color: Color.fromARGB(255, 242, 222, 186), width: 4),
+                                      color: Colors.black, width: 4),
                                   shape: StadiumBorder()),
                             ),
 
@@ -151,7 +162,7 @@ class _TfliteModelState extends State<TfliteModel> {
         ],
       ),
       floatingActionButton: FloatingActionButton(     // pick image
-        backgroundColor: Color.fromARGB(255,130, 0, 0),
+        backgroundColor: Color(0xffe97d47),
         onPressed: pickImage,
         tooltip: "Pick Image",
         child: const Icon(Icons.image),
