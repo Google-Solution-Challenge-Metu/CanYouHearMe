@@ -37,14 +37,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
   void changeUserProfile() {}
 
   void add_device() {
-    Navigator.pushReplacement(
+    Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) {
-          return AddDevice();
-        },
-      ),
-    );
+          builder: (context) => AddDevice()));
   }
 
   @override
