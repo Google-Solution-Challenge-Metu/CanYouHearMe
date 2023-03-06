@@ -161,7 +161,7 @@ class _MakeYourVoiceHeardPageState extends State<MakeYourVoiceHeardPage> {
         backgroundColor: Colors.black,
         onPressed: () => Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const PostPage()),
+          MaterialPageRoute(builder: (context) => PostPage()),
         ),
         child: const Icon(Icons.add),
       ),

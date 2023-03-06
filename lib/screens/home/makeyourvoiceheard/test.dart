@@ -135,8 +135,8 @@ class _SearchPlacesScreenState extends State<SearchPlacesScreen> {
   PickResult? selectedPlace;
   bool _showPlacePickerInContainer = false;
   bool _showGoogleMapInContainer = false;
-  String androidApiKey="AIzaSyCNPJCKnLTUA4Z4Ig0cRXlbXIXxGcUSd_k";
-  String iosApiKey="AIzaSyCNPJCKnLTUA4Z4Ig0cRXlbXIXxGcUSd_k";
+  String androidApiKey="AIzaSyArrKwbIUKX0iZqzYWM4EtvNWbpAC0au1s";
+  String iosApiKey="AIzaSyArrKwbIUKX0iZqzYWM4EtvNWbpAC0au1s";
 
   bool _mapsInitialized = false;
   String _mapsRenderer = "latest";

@@ -1,17 +1,28 @@
 import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:dietapp/screens/home/makeyourvoiceheard/test.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:dietapp/services/report_service.dart';
-import 'package:toast/toast.dart';
-import 'package:dietapp/screens/home/makeyourvoiceheard/map_picker_page.dart';
 
-import 'google_map_picker.dart';
+import 'package:google_maps_place_picker_mb/google_maps_place_picker.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+
+// ignore: implementation_imports, unused_import
+import 'package:google_maps_place_picker_mb/src/google_map_place_picker.dart'; // do not import this yourself
+import 'dart:io' show Platform;
+
+// Only to control hybrid composition and the renderer in Android
+import 'package:google_maps_flutter_android/google_maps_flutter_android.dart';
+import 'package:google_maps_flutter_platform_interface/google_maps_flutter_platform_interface.dart';
 
 class PostPage extends StatefulWidget {
-  const PostPage({super.key});
+  PostPage({Key? key}) : super(key: key);
+
+  static final kInitialPosition = LatLng(38.9637, 35.2433);
+
+  final GoogleMapsFlutterPlatform mapsImplementation =
+      GoogleMapsFlutterPlatform.instance;
 
   @override
   State<PostPage> createState() => _PostPageState();
@@ -27,6 +38,39 @@ class _PostPageState extends State<PostPage> {
   final ImagePicker _pickerImage = ImagePicker();
   dynamic _pickImage;
   var profileImage;
+
+  // for map
+  PickResult? selectedPlace;
+  bool _showPlacePickerInContainer = false;
+  bool _showGoogleMapInContainer = false;
+  String androidApiKey="AIzaSyArrKwbIUKX0iZqzYWM4EtvNWbpAC0au1s";
+  String iosApiKey="AIzaSyArrKwbIUKX0iZqzYWM4EtvNWbpAC0au1s";
+
+  bool _mapsInitialized = false;
+  String _mapsRenderer = "latest";
+
+  double _latitude=0;
+  double _longitude=0;
+  String _address="";
+
+  void initRenderer() {
+    if (_mapsInitialized) return;
+    if (widget.mapsImplementation is GoogleMapsFlutterAndroid) {
+      switch (_mapsRenderer) {
+        case "legacy":
+          (widget.mapsImplementation as GoogleMapsFlutterAndroid)
+              .initializeWithRenderer(AndroidMapRenderer.legacy);
+          break;
+        case "latest":
+          (widget.mapsImplementation as GoogleMapsFlutterAndroid)
+              .initializeWithRenderer(AndroidMapRenderer.latest);
+          break;
+      }
+    }
+    setState(() {
+      _mapsInitialized = true;
+    });
+  }
 
   Widget imagePlace() {
     if (profileImage != null) {
@@ -87,19 +131,26 @@ class _PostPageState extends State<PostPage> {
   }
 
   void postReport() {
+    if(selectedPlace != null){
+      setState(() {
+        _latitude=selectedPlace!.geometry!.location.lat;
+        _longitude=selectedPlace!.geometry!.location.lng;
+        _address=selectedPlace!.formattedAddress!;
+      });
+    };
     _reportService
         .addStatus(
             postController.text,
             profileImage ?? '',
-            GeoPoint(MapPickerPageState.latitude, MapPickerPageState.longitude),
-            MapPickerPageState.address,
+            GeoPoint(_latitude, _longitude),
+            _address,
             "$name $surname")
         .then((value) {
-      Toast.show(
-        "Durum eklendi!",
-        duration: Toast.lengthShort,
-        gravity: Toast.bottom,
-      );
+      //Toast.show(
+      //  "Durum eklendi!",
+      //  duration: Toast.lengthShort,
+      //  gravity: Toast.bottom,
+      //);
       Navigator.pop(context);
     });
   }
@@ -150,13 +201,60 @@ class _PostPageState extends State<PostPage> {
             height: 10.0,
           ),
           imagePlace(),
+          if (selectedPlace != null) ...[
+            Text(selectedPlace!.formattedAddress!),
+            Text("(lat: " +
+                selectedPlace!.geometry!.location.lat.toString() +
+                ", lng: " +
+                selectedPlace!.geometry!.location.lng.toString() +
+                ")"),
+          ],
           buildButton(imagePicker, "Pick an image"),
           GestureDetector(
             behavior: HitTestBehavior.translucent,
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => MapPickerPage()));
-            },
+                        initRenderer();
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return PlacePicker(
+                                resizeToAvoidBottomInset:
+                                    false, // only works in page mode, less flickery
+                                apiKey: Platform.isAndroid
+                                    ?  androidApiKey
+                                    :  iosApiKey,
+                                hintText: "Find a place ...",
+                                searchingText: "Please wait ...",
+                                selectText: "Select place",
+                                outsideOfPickAreaText: "Place not in area",
+                                initialPosition: PostPage.kInitialPosition,
+                                useCurrentLocation: true,
+                                selectInitialPosition: true,
+                                usePinPointingSearch: true,
+                                usePlaceDetailSearch: true,
+                                zoomGesturesEnabled: true,
+                                zoomControlsEnabled: true,
+                                onMapCreated: (GoogleMapController controller) {
+                                  print("Map created");
+                                },
+                                onPlacePicked: (PickResult result) {
+                                  print(
+                                      "Place picked: ${result.formattedAddress}");
+                                  setState(() {
+                                    selectedPlace = result;
+                                    Navigator.of(context).pop();
+                                  });
+                                },
+                                onMapTypeChanged: (MapType mapType) {
+                                  print(
+                                      "Map type changed to ${mapType.toString()}");
+                                },
+                              );
+                            },
+                          ),
+                        );
+                      },
             child: const Card(
               color: Color(0xffe97d47),
               margin: EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
