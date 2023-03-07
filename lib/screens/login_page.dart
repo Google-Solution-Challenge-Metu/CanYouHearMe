@@ -1,11 +1,10 @@
+import 'package:dietapp/screens/login/auth_login.dart';
 import 'package:dietapp/screens/register_page.dart';
 import 'package:dietapp/services/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
-
-import '../routes/routes.dart';
+import 'package:get/get.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -23,11 +22,6 @@ class _MainPageState extends State<MainPage> {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: emailController.text,
         password: passwordController.text,
-      );
-      return GetMaterialApp(
-        debugShowCheckedModeBanner: false,
-        initialRoute: AppPage.getNavBar(),
-        getPages: AppPage.routes,
       );
     } on FirebaseAuthException catch (e) {
       if (e.code == "user-not-found") {
@@ -108,6 +102,7 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       body: Center(
         child: SingleChildScrollView(
@@ -180,11 +175,11 @@ class _MainPageState extends State<MainPage> {
                   thickness: 1.0,
                 ),
               ),
-              buildTextField(emailController, "E-mail", false),
+              buildTextField(Icons.email, emailController, "E-mail", false),
               const SizedBox(
                 height: 20.0,
               ),
-              buildTextField(passwordController, "Password", true),
+              buildTextField(Icons.lock, passwordController, "Password", true),
               const SizedBox(
                 height: 10.0,
               ),
@@ -323,13 +318,15 @@ class _MainPageState extends State<MainPage> {
     );
   }
 
-  Padding buildTextField(final controller, String hintText, bool obscureText) {
+  Padding buildTextField(
+      IconData icon, final controller, String hintText, bool obscureText) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20.0),
       child: TextField(
         controller: controller,
         obscureText: obscureText,
         decoration: InputDecoration(
+          prefixIcon: Icon(icon, color: Colors.grey[500]),
           hintText: hintText,
           hintStyle: TextStyle(color: Colors.grey[500]),
           enabledBorder: const OutlineInputBorder(

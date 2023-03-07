@@ -38,9 +38,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   void add_device() {
     Navigator.push(
-      context,
-      MaterialPageRoute(
-          builder: (context) => AddDevice()));
+        context, MaterialPageRoute(builder: (context) => AddDevice()));
   }
 
   @override
@@ -211,6 +209,53 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 var item_count = 0;
                                 DocumentSnapshot myReport =
                                     snapshot.data!.docs[index];
+                                Future<void> _showChoiceDialog(BuildContext) {
+                                  return showDialog(
+                                    context: context,
+                                    builder: (context) {
+                                      return AlertDialog(
+                                        title: const Text(
+                                            'Do you really want to delete this post?'),
+                                        shape: const RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.all(
+                                            Radius.circular(10),
+                                          ),
+                                        ),
+                                        content: Container(
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.end,
+                                            children: [
+                                              InkWell(
+                                                onTap: () => _reportService
+                                                    .removeStatus(myReport.id)
+                                                    .then((value) =>
+                                                        Navigator.pop(context)),
+                                                child: const Text(
+                                                  'Yes',
+                                                  style: TextStyle(
+                                                      color: Color(0xffe97d47)),
+                                                ),
+                                              ),
+                                              const SizedBox(width: 15),
+                                              InkWell(
+                                                onTap: () =>
+                                                    Navigator.pop(context),
+                                                child: const Text(
+                                                  'No',
+                                                  style: TextStyle(
+                                                    color: Color(0xffe97d47),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                  );
+                                }
+
                                 Widget imagePlace(height) {
                                   if (myReport["image"] != "") {
                                     return Padding(
@@ -282,11 +327,22 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                               mainAxisAlignment:
                                                   MainAxisAlignment.end,
                                               children: [
-                                                Image.asset(
-                                                    "assets/images/call_black.png"),
+                                                IconButton(
+                                                  onPressed: () {},
+                                                  icon: Icon(Icons.call),
+                                                ),
                                                 const SizedBox(width: 10),
-                                                Image.asset(
-                                                    "assets/images/location_black.png"),
+                                                IconButton(
+                                                  onPressed: () {},
+                                                  icon: Icon(Icons.location_on),
+                                                ),
+                                                const SizedBox(width: 10),
+                                                IconButton(
+                                                  onPressed: () =>
+                                                      _showChoiceDialog(
+                                                          context),
+                                                  icon: Icon(Icons.delete),
+                                                ),
                                               ],
                                             ),
                                           ],

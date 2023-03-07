@@ -43,15 +43,15 @@ class _PostPageState extends State<PostPage> {
   PickResult? selectedPlace;
   bool _showPlacePickerInContainer = false;
   bool _showGoogleMapInContainer = false;
-  String androidApiKey="AIzaSyArrKwbIUKX0iZqzYWM4EtvNWbpAC0au1s";
-  String iosApiKey="AIzaSyArrKwbIUKX0iZqzYWM4EtvNWbpAC0au1s";
+  String androidApiKey = "AIzaSyArrKwbIUKX0iZqzYWM4EtvNWbpAC0au1s";
+  String iosApiKey = "AIzaSyArrKwbIUKX0iZqzYWM4EtvNWbpAC0au1s";
 
   bool _mapsInitialized = false;
   String _mapsRenderer = "latest";
 
-  double _latitude=0;
-  double _longitude=0;
-  String _address="";
+  double _latitude = 0;
+  double _longitude = 0;
+  String _address = "";
 
   void initRenderer() {
     if (_mapsInitialized) return;
@@ -107,8 +107,22 @@ class _PostPageState extends State<PostPage> {
     }
   }
 
-  handleTakePhoto() async {
+  handleTakePhoto(ImageSource source, {required BuildContext context}) async {
     () => Navigator.pop(context);
+    try {
+      final pickedFile = await _pickerImage.pickImage(source: source);
+      setState(() {
+        profileImage = pickedFile!;
+        print("dosyaya geldim: $profileImage");
+        if (profileImage != null) {}
+      });
+      print('aaa');
+    } catch (e) {
+      setState(() {
+        _pickImage = e;
+        print("Image Error: $_pickImage");
+      });
+    }
   }
 
   handleChooseFromGallery(ImageSource source,
@@ -131,20 +145,17 @@ class _PostPageState extends State<PostPage> {
   }
 
   void postReport() {
-    if(selectedPlace != null){
+    if (selectedPlace != null) {
       setState(() {
-        _latitude=selectedPlace!.geometry!.location.lat;
-        _longitude=selectedPlace!.geometry!.location.lng;
-        _address=selectedPlace!.formattedAddress!;
+        _latitude = selectedPlace!.geometry!.location.lat;
+        _longitude = selectedPlace!.geometry!.location.lng;
+        _address = selectedPlace!.formattedAddress!;
       });
-    };
+    }
+    ;
     _reportService
-        .addStatus(
-            postController.text,
-            profileImage ?? '',
-            GeoPoint(_latitude, _longitude),
-            _address,
-            "$name $surname")
+        .addStatus(postController.text, profileImage ?? '',
+            GeoPoint(_latitude, _longitude), _address, "$name $surname")
         .then((value) {
       //Toast.show(
       //  "Durum eklendi!",
@@ -164,7 +175,8 @@ class _PostPageState extends State<PostPage> {
             title: const Text("Pick an image"),
             children: [
               SimpleDialogOption(
-                onPressed: handleTakePhoto,
+                onPressed: () =>
+                    handleTakePhoto(ImageSource.camera, context: context),
                 child: const Text("Photo with Camera"),
               ),
               SimpleDialogOption(
@@ -187,99 +199,98 @@ class _PostPageState extends State<PostPage> {
   Widget build(BuildContext context) {
     FirebaseDocument();
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: const Text("Create a report"),
         backgroundColor: const Color(0xffe97d47),
       ),
-      body: Column(
-        children: [
-          const SizedBox(
-            height: 20.0,
-          ),
-          buildTextField(postController, "Type the report here.", false),
-          const SizedBox(
-            height: 10.0,
-          ),
-          imagePlace(),
-          if (selectedPlace != null) ...[
-            Text(selectedPlace!.formattedAddress!),
-            Text("(lat: " +
-                selectedPlace!.geometry!.location.lat.toString() +
-                ", lng: " +
-                selectedPlace!.geometry!.location.lng.toString() +
-                ")"),
-          ],
-          buildButton(imagePicker, "Pick an image"),
-          GestureDetector(
-            behavior: HitTestBehavior.translucent,
-            onTap: () {
-                        initRenderer();
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return PlacePicker(
-                                resizeToAvoidBottomInset:
-                                    false, // only works in page mode, less flickery
-                                apiKey: Platform.isAndroid
-                                    ?  androidApiKey
-                                    :  iosApiKey,
-                                hintText: "Find a place ...",
-                                searchingText: "Please wait ...",
-                                selectText: "Select place",
-                                outsideOfPickAreaText: "Place not in area",
-                                initialPosition: PostPage.kInitialPosition,
-                                useCurrentLocation: true,
-                                selectInitialPosition: true,
-                                usePinPointingSearch: true,
-                                usePlaceDetailSearch: true,
-                                zoomGesturesEnabled: true,
-                                zoomControlsEnabled: true,
-                                onMapCreated: (GoogleMapController controller) {
-                                  print("Map created");
-                                },
-                                onPlacePicked: (PickResult result) {
-                                  print(
-                                      "Place picked: ${result.formattedAddress}");
-                                  setState(() {
-                                    selectedPlace = result;
-                                    Navigator.of(context).pop();
-                                  });
-                                },
-                                onMapTypeChanged: (MapType mapType) {
-                                  print(
-                                      "Map type changed to ${mapType.toString()}");
-                                },
-                              );
-                            },
-                          ),
-                        );
-                      },
-            child: const Card(
-              color: Color(0xffe97d47),
-              margin: EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
-              child: Padding(
-                padding: EdgeInsets.all(8.0),
-                child: ListTile(
-                  leading: Icon(
-                    Icons.location_on,
-                    color: Colors.white,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 20.0,
+            ),
+            buildTextField(postController, "Type the report here.", false),
+            const SizedBox(
+              height: 10.0,
+            ),
+            imagePlace(),
+            if (selectedPlace != null) ...[
+              Text(selectedPlace!.formattedAddress!),
+              Text("(lat: " +
+                  selectedPlace!.geometry!.location.lat.toString() +
+                  ", lng: " +
+                  selectedPlace!.geometry!.location.lng.toString() +
+                  ")"),
+            ],
+            buildButton(imagePicker, "Pick an image"),
+            GestureDetector(
+              behavior: HitTestBehavior.translucent,
+              onTap: () {
+                initRenderer();
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return PlacePicker(
+                        resizeToAvoidBottomInset:
+                            false, // only works in page mode, less flickery
+                        apiKey: Platform.isAndroid ? androidApiKey : iosApiKey,
+                        hintText: "Find a place ...",
+                        searchingText: "Please wait ...",
+                        selectText: "Select place",
+                        outsideOfPickAreaText: "Place not in area",
+                        initialPosition: PostPage.kInitialPosition,
+                        useCurrentLocation: true,
+                        selectInitialPosition: true,
+                        usePinPointingSearch: true,
+                        usePlaceDetailSearch: true,
+                        zoomGesturesEnabled: true,
+                        zoomControlsEnabled: true,
+                        onMapCreated: (GoogleMapController controller) {
+                          print("Map created");
+                        },
+                        onPlacePicked: (PickResult result) {
+                          print("Place picked: ${result.formattedAddress}");
+                          setState(() {
+                            selectedPlace = result;
+                            Navigator.of(context).pop();
+                          });
+                        },
+                        onMapTypeChanged: (MapType mapType) {
+                          print("Map type changed to ${mapType.toString()}");
+                        },
+                      );
+                    },
                   ),
-                  title: Text(
-                    "Pick a location",
-                    style: TextStyle(
+                );
+              },
+              child: const Card(
+                color: Color(0xffe97d47),
+                margin: EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
+                child: Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.location_on,
                       color: Colors.white,
                     ),
-                  ),
-                  trailing: Icon(
-                    Icons.arrow_forward_ios,
-                    color: Colors.white,
+                    title: Text(
+                      "Pick a location",
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                    trailing: Icon(
+                      Icons.arrow_forward_ios,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: postReport,
