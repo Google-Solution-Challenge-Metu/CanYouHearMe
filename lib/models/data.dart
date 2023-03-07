@@ -10,270 +10,164 @@ class DataModel {
 
 List<DataModel> dataList = [
   DataModel(
-    "B12 Vitamini Hangi Besinlerde Bulunur?",
-    "assets/images/b12vitamini.jpg",
-    "Gamze Şanlı Ak",
+    "What Should You Do Before, During, and After an Earthquake?",
+    "assets/images/todo.jpg",
+    "Pamela Bjorkman",
     "11.08.2022",
-    'B12 Vitamini Hangi Besinlerde Bulunur?\n' +
+    'It is impossible to predict when and where an earthquake will strike. Nonetheless, you can take steps before, during, and after a quake to help yourself stay safe and recover quickly.\n' +
         '\n' +
-        'B12 vitamini suda eriyen bir vitamindir ve diğer adı kobalamindir. Vücudunuzun kendini yenileyebilmesi, hastalıklara karşı kalkan oluşturabilmesi, büyümesi, gelişmesi ve sağlıklı bir yaşam rutini oluşturabilmesi için yardımcı olan vitaminlerin başında gelir.\n' +
+        'Before an earthquake\n' +
         '\n' +
-        'Peki, B12 vitamini hangi besinlerde bulunur?\n' +
+        'Make sure you and your household are earthquake-ready:\n' +
         '\n' +
-        'B12 vitamini, hayvansal kaynaklı besinler olan kırmızı et, tavuk, balık, karaciğer, deniz ürünleri, süt, yumurta, yoğurt ve peynirde bulunur. Günlük diyet çoğunlukla bitkisel besinlerden oluştuğunda, alınan B12 vitamini miktarı da azalır. Özellikle vejetaryen beslenme tipi uygulayanların çok dikkat etmesi gereken bir vitamindir. B12 ile zenginleştirilmiş yiyeceklerle takviye yapılabilir. Gerekirse, beslenmeye ek olarak B12 vitamini takviyesi alınabilir.  Besinlere uygulanan yüksek sıcaklık, B12 vitamininin de kaybına yol açmaktadır.\n' +
+        '    Secure heavy furniture and appliances – More than half of the injuries associated with the 1994 Northridge earthquake were caused by toppling objects. One way to protect yourself is to look around your home or workplace and make sure heavy furniture, such as bookcases and beds, as well as appliances, such as water heaters and televisions, are safely secured to the wall using straps, closed hooks, or wall studs. Large, heavy, or unstable items should be placed on low shelves, close to the floor, and away from doors and escape routes.\n' +
         '\n' +
-        'Hafızayı güçlendirmeye yardımcı olur\n' +
+        '    Identify safe spots – Know where you can take cover in every room, for example under a sturdy table or desk. Conduct regular drills on how to drop, cover, and hold on.\n' +
         '\n' +
-        'Bilişsel fonksiyonların gelişmesine destek sağlayan B12 vitamini, eksikliğinde unutkanlıkla kendini gösterir, düzenli alımda ise hafızayı güçlendirerek beyin sağlığını destekler.\n' +
+        '    Have a plan – Make sure everyone in your household knows how to access disaster supplies, and whom to call and where to meet if an earthquake strikes when you are apart.\n' +
+        '    Gather supplies – Have ample water and an emergency kit ready in your home, as well as smaller go-bags in your car, workplace, and any other places you might be when an earthquake hits. Your emergency supplies should be tailored for your specific needs, but common items include water, a first-aid kit, sturdy shoes, a portable radio, snacks, and emergency cash. FEMA and The Earthquake Country Alliance provide detailed checklists of items to include in an emergency kit.\n' +
         '\n' +
-        'Kansızlık tedavisini destekler\n' +
         '\n' +
-        'Kansızlık probleminde B12 vitamini destekleyici rol üstlenir. Folik asitle birlikte çalışarak kansızlığı önlemeye, tedavinin faydalı olmasına destek sağlar.\n' +
+        'During an earthquake\n' +
         '\n' +
-        'Saç ve cilt sağlığının destekçisidir\n' +
+        'The safest steps to take in the middle of an earthquake depend on where you are:\n' +
         '\n' +
-        'Saç, cilt ve tırnak yapısında görülen cansızlık, kırılmalar, dökülmeler ve genel problemler B12 eksikliğinden kaynaklanıyor olabilir. B12 vitaminini düzenli aldığınızda saç, cilt ve tırnak yapınızın daha güçlü, daha sağlıklı olması için destekleyebilirsiniz.\n' +
+        '    Indoors – Get under a desk or table, cover your head and neck with one arm or hand, and use your other arm or hand to hang on (drop, cover, and hold on). If no shelter is available, move into a hallway or against an inside wall. If you use a wheelchair or walker with a seat, make sure your wheels are locked and remain seated until the shaking subsides. Stay away from windows, fireplaces, and heavy furniture or appliances, and do not use elevators. If you are in bed when an earthquake starts, do not get out of bed. Instead, lie face down to protect vital organs, and cover your head and neck with a pillow.\n' +
+        '    Outdoors – Quickly find an open space away from buildings, power lines, and anything else that can topple on you. If you are driving, safely pull over and stop, and stay in your car until the shaking stops. Do not stop under bridges, overpasses, trees, or anything else that can strike your vehicle. If you are in a mountainous area, watch out for falling rocks and landslides, and if you are near the ocean during a severe earthquake, be mindful of tsunamis.\n' +
         '\n' +
-        'Kilo kontrolüne yardımcı olur\n' +
         '\n' +
-        'B12 vitamini vücuttaki karbonhidratların enerjiye dönüşümüne yardımcı olur. Bu döngü yağ yakımı, metabolizmanın hızlanması ve kilo kontrolü sağlamada destek sağlar. Vücut enerjisinin artması yanı zamanda fiziksel performansı da destekler, spor rutininizi canlandırabilir.\n' +
+        'After an earthquake\n' +
         '\n' +
-        'Kalp ve damar sağlığını destekler\n' +
+        'After the shaking subsides, assess your wellbeing and that of those around you. Stay alert to new or continuing hazards.\n' +
         '\n' +
-        'Son yıllarda artış gösteren kalp ve damar rahatsızlıklarının temel sebeplerinden biri de vitamin eksikliğidir. B12 vitamini, kalp ve damar sağlığı rahatsızlıklarına yakalanma riskini düşürmeye yardımcı olabilir, kalbi doğal yollarla destekler.  \n' +
+        '    Conduct a safety check – Once you are in a safe place, check yourself and others for injuries, and call for help if needed. Look around to make sure you are not in danger from other hazards caused by the quake, such as gas leaks or fire. Wear boots or sturdy shoes to protect your feet from broken glass and debris.\n' +
         '\n' +
-        'Hücre onarımını destekler\n' +
+        '    Get help, if needed – If you are trapped, cover your mouth, nose, and eyes against dust. Send a text and make noise to alert rescuers to your location.\n' +
         '\n' +
-        'B12 vitamini sinir hücrelerini onarmaya, vücudunuzdaki hücrelerin yaşlanmasını önlemeye yardımcı olur.\n' +
+        '    Be prepared for aftershocks – Aftershocks can be as strong as the original quake.\n' +
         '\n' +
-        'Günlük B12 Vitamini İhtiyacı\n' +
+        '    Stay connected – If you have access to a battery-operated radio (perhaps in your car) or television, update yourself on the latest emergency information. Let friends and family know you are safe, but, if possible, minimize calls to help protect internet and telephone connectivity. You can also register on the American Red Cross "Safe and Well" website to let people know you are safe.\n' +
         '\n' +
-        'B12 vitamini referans aralığına göre kişilerin günlük B12 vitamin ihtiyacı 2-3 mcg’dir. Hamile ve emziren kişilerde ise bu ihtiyaç daha yüksek seviyelerdedir. Günlük alım seviyeleri;\n' +
         '\n' +
-        '    0 - 1 yaş bebeklerde; 0,5 mcg\n' +
-        '    1 - 13 yaş çocuklarda; 1 - 2 mcg\n' +
-        '    14 yaş üstü kişilerde; 2,4 mcg\n' +
-        '    Gebe ve emzirenlerde; 2,8 mcg\n' +
+        'What not to do\n' +
         '\n' +
-        'B12 Vitamini Eksikliği Belirtileri\n' +
         '\n' +
-        'B12 vitamini eksikliğini vücudunuzdaki değişikliklerden, olumsuz hallerden anlayabilirsiniz. İşte vücudunuzun size gönderdiği sinyaller;\n' +
+        '    Avoid running to other rooms while the ground is still shaking.\n' +
         '\n' +
-        '    Hafıza problemleri, yoğun unutkanlık\n' +
-        '    Depresyon, anksiyete, sinirlilik hali\n' +
-        '    Kilo kaybı\n' +
-        '    Ciltte kuruluk\n' +
-        '    Saç dökülmesi\n' +
-        '    Ağız için yara\n' +
-        '    Konsantrasyon bozukluğu\n' +
-        '    El ve ayaklarda uyuşma / karıncalanma\n' +
-        '    İştahsızlık, kilo kaybı\n' +
-        '    Denge problemleri\n' +
+        '    Do not seek shelter in doorways. They offer no protection against falling or flying objects.\n' +
         '\n' +
-        'B12 vitamini eksikliği nasıl tedavi edilir?\n' +
+        '    After a quake, do not use matches or lighters near stoves or barbecues until you are sure there are no gas leaks. If the gas is turned off, do not turn it back on by yourself; let the gas company do it.\n' +
         '\n' +
-        'Kandaki B12 seviyesini yükseltmek için vitamin takviyesi alabilirsiniz veya hayvansal ürünlerin tüketimini artırabilirsiniz. Ancak kandaki seviyeniz düşük durumdaysa hekiminizin yönlendirmesi ile B12 vitaminini burun spreyi olarak veya belirli aralıklarla iğne olarak da kullanılabilirsiniz. \n' +
-        '\n' +
-        'Vücuttaki B12 vitaminin ciddi eksikliğinde ne yaşanır?\n' +
-        '\n' +
-        'B12 vitamini beynin sinir ağını oluşturan hücrelerin büyümesinde ve onarımında önemli rol oynar. Eksikliğinde geri dönüşsüz olan hatırlama güçlüğü, hafıza kaybı ve demans gibi ciddi sorunlar ortaya çıkar.\n' +
-        '\n' +
-        'Hangi durumlar B12 vitamini eksikliği riskini arttırır?\n' +
-        '\n' +
-        'B12 vitamini eksikliği vücudunuza yeterli ve doğru besin ögesi alamadığınızda ve sindirim sisteminde yaşanan problemlere bağlı olarak görülebilir. Vegan olarak beslenen bireyler hayvansal kaynakları tüketmedikleri için risk altındadırlar. Kronik alkolizim, Crohn hastalığı veya çölyak hastası olmak, yağ aldırma operasyonları, ilerleyen yaş riski arttırır çünkü bu durumlarda vücutta yeterli emilim gerçekleşemez.\n' +
-        '\n' +
-        'Yeterli B12 vitamini alınmazsa ne olur?\n' +
-        '\n' +
-        'Vücut yeterli kırmızı kan hücresi üretemez. Yetersizliği halinde, sinir sistemi bozuklukları ile birlikte, “pernisiyöz anemi” (kansızlık) oluşur. Pernisiyöz anemide, kırmızı ve beyaz kan hücrelerinin sayısı azalır ve şekilleri bozulur. Bu durum, kemik iliğinde kan hücrelerinin yapımındaki bozukluktan ileri gelir. Pernisiyöz aneminin oluşum nedenleri farklı da olabilir. Nedenlerinden biri, diyetle yeteri kadar B12 vitamini alınmaması veya besinlerin hazırlanması ve saklanması için uygulanan işlemlerin vitamin kaybını artırmasıdır.',
+        '    Do not call 911 or 155 unless you are experiencing a true emergency.\n'
   ),
   DataModel(
-      "Kahvenin İnsan Sağlığına Faydaları",
-      "assets/images/kahve.jpg",
-      "İlkay Gök",
+      "Can Seismologists Predict Earthquakes?",
+      "assets/images/predict.jpg",
+      "Simona Bordoni",
       "21.10.2021",
-      'Bir Fincan Kahveyle Gelen Sağlık\n' +
+      'Can Seismologists Predict Earthquakes?\n' +
           '\n' +
-          'Dünyada en popüler içeceklerden biri olan kahve, sağlığa kanıtlı faydalarından dolayı fonksiyonel gıda olarak değerlendirilmeye başlandı.\n' +
+          'It is not currently possible to predict exactly when and where an earthquake will occur, nor how large it will be. However, seismologists can estimate where earthquakes may be likely to strike by calculating probabilities and forecasts.\n' +
           '\n' +
-          'Kahve içeceğinin fonksiyonel özelliği, yapısında bulunan kafein, klorojenik asid ve malliard reaksiyonun ürünü melanoidinler gibi bioaktif bileşenlerden kaynaklıdır.\n' +
           '\n' +
-          'Araştırma sonuçlarına göre günlük 2-3 fincan kahve içeceği tüketimi güvenlidir.\n' +
+          'What is an earthquake probability and how is it calculated?\n' +
           '\n' +
-          '*Metabolik ve mental sağlığı destekleyici,\n' +
+          'Earthquake probabilities describe the chances of an earthquake of a certain magnitude occurring within a region over a span of years.\n' +
           '\n' +
-          '*Keyif verici ve uyanıklık artırıcı,\n' +
+          'Probabilities can be calculated based on the average rate of past seismic activity in a region. This technique is particularly useful in regions where earthquakes have been recorded by seismographs, which first came into wide use in the early 1900s.\n' +
           '\n' +
-          '*Yüksek tansiyon ve depresyonla savaşmaya yardımcı,\n' +
+          'Scientists can obtain additional, though less precise, information by digging trenches to examine the geological record for earthquake ruptures that occurred in ancient history.\n' +
           '\n' +
-          '*Tip 2 diyabet,\n' +
+          'Probabilities also can be derived mathematically. For example, seismologists estimate the number of years it could take to experience an earthquake of a certain magnitude by accounting for two processes:\n' +
           '\n' +
-          '*Alzaymır ve Parkinson hastalıkları gibi bazı kronik hastalıkları,\n' +
+          '    1. the buildup of strain onto faults as a result of the continual motion of tectonic plates, and\n' +
           '\n' +
-          '*Karaciğer kanseri gibi bazı kanser türlerini\n' +
+          '    2.the relieving of strain as a result of fault slip, which can occur as an earthquake or as slow creep along a fault line without an earthquake.\n' +
           '\n' +
-          '*Kardiyovasküler hastalıklar gibi dejeneratif hastalıkları önleyici faydaları vardır.\n' +
+          'What is an earthquake forecast?\n' +
           '\n' +
-          'Bununla birlikte bazı çalışmalarda olumsuz etkileri açıklanmış, hamile kadınlar için zararlı olabileceği ve kahve tüketiminin 300 mg/g kafein miktarıyla sınırlandırmaları gerektiği aktarılmıştır.\n' +
-          '\n' +
-          'Kahve çekirdeği hasadı, yeşil çekirdeğe uygulanan yöntemler ve sonrasında kavurma sıcaklık dereceleri, öğütme ve ardından uygulanan kahve demleme yöntemleri, kahve içeceğinin kalitesini belirler.\n' +
-          '\n' +
-          'Yapılan araştırmalarda kafein, klorojenik asit, kafestol-kahveol ve melanodinlerin sağlık açısından önemli etkileri tespit edilmiştir.\n' +
-          '\n' +
-          'Kafein\n' +
-          '\n' +
-          'Bilimsel araştırma sonuçları yetişkin bireylerin günlük 400 mg kafein tüketiminin güvenli olduğunu belirtmektedir.\n' +
-          '\n' +
-          'Kavrulmuş Arabika kahve çekirdeğinde, 100 g kuru maddede yaklaşık olarak 0.7-1.6 g, Robusta’da ise 1.8-2.6 g kafein tespit edilmiştir.\n' +
-          '\n' +
-          'Türk kahvesi, kaynatılmış kahve demlemenin yer aldığı dekoksiyon yönteminde, filtre kahvenin yer aldığı infüzyon yöntemine göre kafein oranı daha yüksek bulunmuştur. Koyu kavrulmuş kahve çekirdeğinde yüksek kafein miktarı bulunur.\n' +
-          '\n' +
-          'Kafein 15-120 dk. içinde kanda en yüksek seviyeye ulaşır ve alınan miktara göre merkezi sinir sisteminde uyarı etki gösterir.\n' +
-          '\n' +
-          'Günde 250-400 mg arası ya da 1-5 mg/vücut ağırlığı kafein, keyif verme, enerjik hissetme, işte isteklilik ve motivasyon, güçlü dikkat ve odaklanmayla kendine güven ve bilişsel fonksiyonların artması gibi olumlu etkilere sahipken bilimsel araştırmalar 500 mg üstü kafein alımının tedirginlik, huzursuzluk gibi olumsuz etkilere neden olduğunu göstermektedir.\n' +
-          '\n' +
-          'Günde 9 fincandan fazla (600-900 mg kafein) tüketimin kalp hızı ve kan basıncında artışa neden olduğu bildirilmiştir. Kafeinin ayrıca midenin asit salgısını artışına ve diüretik etkiye neden olduğu belirtilmektedir.\n' +
-          '\n' +
-          'Son yıllarda ‘’kafein tüketimi ile Tip 2 diyabet, Alzaymır ve Parkinson hastalığı riskinde azalma, kafein tüketimi ile karaciğer dokusunda yenilenme’’ en çok araştırılan konularındandır.\n' +
-          '\n' +
-          'Günlük 300 mg kafein tüketiminin metabolizmayı hızlandırdığı, yaklaşık 79 kcal lik enerji harcamasını sağladığı bulunmuştur.\n' +
-          '\n' +
-          'Klorojenik Asit\n' +
-          '\n' +
-          'Klorojenik asit çok yüksek antioksidan kapasitesine sahiptir ve kafein gibi ısıya dayanıklı değildir.\n' +
-          '\n' +
-          'Bir fincan kahve içeceğindeki klorojenik asit miktarı, kavurma derecesi, demleme yöntemi, su ve öğütülmüş kahve oranı, suyun sıcaklığı, kahve ve suyun temas süresine bağlı olarak değişmektedir.\n' +
-          '\n' +
-          'Bir araştırmada kahve içeceğindeki klorojenik asit miktarı 20-675 mg aralığında tespit edilmişken başka bir çalışmada bir fincan ya da 200 ml kahve içeceğinde klorojenik asit miktarı 70-350 mg, kafeik asit miktarı 35-175 mg arasında, diğer bir araştırmada ise 200 ml kahve içeceğinde klorojenik asit miktarı 15-325 mg aralığında bulunmuştur.\n' +
-          '\n' +
-          'Melanoidinler\n' +
-          '\n' +
-          'Melanoidinler kahve çekirdeğinin kavrulması esnasında oluşur ve yüksek antioksidan özelliği taşırlar.\n' +
-          '\n' +
-          'Melanoidinlerin;\n' +
-          '\n' +
-          '*antioksidan,\n' +
-          '\n' +
-          '*antimikrobiyal,\n' +
-          '\n' +
-          '*antihipertansif,\n' +
-          '\n' +
-          '*antialerjij ve\n' +
-          '\n' +
-          '*prebiyotik\n' +
-          '\n' +
-          'Özelliğiyle sağlığı destekleyici özelliklere sahip olduğu, bu özelliklere ek olarak metal iyonlarıyla bağ yapabildiği için antimutajenik ve timör büyümeyi önleyici özellikleri de yeni çalışmalarda gösterilmektedir.\n' +
-          '\n' +
-          'Kaynakça:\n' +
-          '\n' +
-          'Cite this article as: Gök, İ. (2021). Kavurma işlemi, demeleme/pişirme yöntemlerinin kahvenin biyoaktif bileşenlerine etkisi: Fonksiyonel içecek olarak insan sağlığına faydaları. Food and Health, 7(4), 311-328. https://doi.org/10.3153/FH21032'),
+          'Earthquake forecasts provide information on the likelihood of earthquakes over a shorter time window of time. Forecasts are used typically to describe aftershocks, which tend to follow a pattern of decreasing frequency and magnitude over time after an earthquake.\n' +
+          '\n'),
+          
   DataModel(
-      "Sürdürülebilir Beslenme Nedir, Nasıl Uygulanır?",
-      "assets/images/sürdürülebilir.jpg",
-      "Kısık Ateş",
+      "What Happens During an Earthquake?",
+      "assets/images/happens.jpg",
+      "Jed Buchwald",
       "27.07.2021",
-      'Sürdürülebilir Beslenme Modeli\n' +
+      'What causes earthquakes, and what types of earthquakes are there? To answer these questions, it is first helpful to have an understanding of Earth’s composition.\n' +
           '\n' +
-          'Dünya nüfusu hızla artıyor ve 2050 yılında dünya nüfusunun yaklaşık 10 milyar olması bekleniyor. Günümüzde 3 milyardan fazla insanın yetersiz beslendiği ve 7 milyarlık nüfusun çoğunun düşük kaliteli diyetlerle beslendiği düşünüldüğünde, mevcut gıda sisteminin artan gıda talebini karşılamak için en az %60 oranında daha fazla üretim yapması gerekiyor. Dünyamızın kaynakları sınırlı olduğu için üretimin bu oranda artması çok mümkün görünmese de en azından kaynakların verimli kullanılması, gıda israfının azaltılması, çevreye en az zarar verecek biçimde beslenme ve gıda sisteminde değişiklik yapılması için hepimize önemli görevler düşüyor. Bir başka deyişle, gelecek nesillere daha yaşanılır bir dünya bırakmak için beslenmenin de sürdürülebilir olması gerekiyor.\n' +
           '\n' +
-          'Mevcut küresel gıda sistemini incelediğimizde, tarımsal faaliyetlerin küresel iklim değişikliğinin en büyük nedenlerinden biri olduğunu görürüz. Çünkü gıda üretimi, küresel sera gazı emisyonlarının yaklaşık %30\'undan sorumludur ve tek başına hayvancılık sektörü bu emisyonların neredeyse yarısını (%14,5) temsil eder. Ayrıca gıda tarımı ve üretimi, karasal arazinin yaklaşık %40\'ını kaplarken, tatlı suyun %70\'ini kullanmaktadır. Bunun yanında gıda üretimi nesli tükenmekte olan türleri tehdit eden en büyük etken olarak karşımıza çıkmaktadır. Tüm bu gerçeklerin ışığında, küresel gıda tedarik sistemi maalesef sürdürülebilir değildir. Hepimiz adına sürdürülebilir bir gelecek istiyorsak yediğimiz gıdayı ve nasıl üretildiğini tekrar düşünmek bir zorunluluk haline gelmiştir.\n' +
+          'Earth basics\n' +
           '\n' +
-          'Gıda Tarım Örgütü (FAO) sürdürülebilir beslenmeyi, besleyici, güvenli, sağlıklı, aynı zamanda düşük çevresel etkiye sahip olarak tanımlamaktadır. Tüm bu özelliklere ek olarak, bu beslenme şekli uygulandığı coğrafyada kültürel olarak kabul edilebilir, ulaşılabilir, adil, ekonomik, gıda güvencesine katkı sağlayan ve şimdiki ve gelecek nesiller için sağlıklı olmayı destekleyen bir yaşam biçimi olmalıdır.\n' +
+          'Earth is made up of\n' +
           '\n' +
-          'Literatürde, diyetleri, insan sağlığı ve çevresel sürdürülebilirlik ile ilişkilendiren önemli çalışmalar bulunmaktadır. 2019 yılında, küresel olarak sağlıklı diyetler ve sürdürülebilir gıda üretimi arasındaki ilişkiyi açıklamak üzere EAT-Lancet Komisyonu (insan sağlığı, beslenme, ekonomi, tarım, siyaset bilimleri ve çevresel sürdürülebilirlik alanlarında çalışan 37 bilim insanından oluşan grup) mevcut bilimsel çalışmaları değerlendirerek, sağlıklı diyetler ve sürdürülebilir gıda üretimi arasındaki ilişkiyi açıklamak üzere hedef geliştirmiştir. Bu hedefler, tüm insanlar ve gezegen için geçerli olan iki temel alana odaklanmaktadır.\n' +
+          '    *a solid inner core\n' +
           '\n' +
-          'Bunlardan ilki “Sağlıklı Diyetler” olup, komisyon, gıdalar, diyet tipleri ve sağlık sonuçları üzerine yapılan araştırmaları kapsamlı bir şekilde inceleyerek, her gıda grubu için tüketim aralıkları olan bir “gezegen diyeti” tanımlamıştır. Bu diyet, büyük ölçüde sebze, meyve, kepekli tahıllar, baklagiller, kuruyemişler ve doymamış yağlardan oluşan esnek bir diyet modelidir; bu diyet aynı zamanda düşük-orta miktarda deniz ürünleri ve kümes hayvanları içerirken kırmızı et, işlenmiş et, ilave şeker, rafine tahıllar ve nişastalı sebzelerden hiçbirini içermeyen veya çok az içeren şekilde oluşturulmuştur. Komisyon\'a göre, bu yeme düzeninin küresel olarak benimsenmesi, toplam ölüm oranında büyük bir azalmanın yanında önemli sağlık yararları da sağlayacaktır. Gezegen diyeti modeli, çeşitli yüksek kaliteli bitki bazlı gıdalar ve düşük miktarda hayvansal bazlı gıdalar, rafine edilmiş tahıllar, gıdalara eklenmiş şekerler ve sağlıksız yağlar ile tanımlanabilir. Bu model yerel ve bireysel duruma, geleneklere ve diyet tercihlerine uyum sağlamak için esnek olacak şekilde tasarlanmalıdır. Halihazırdaki diyetlerle karşılaştırıldığında, bu değişim, kırmızı et ve gıdaya eklenmiş şeker gibi içeriklerin küresel tüketiminin %50 oranında azalmasını, meyve, kuruyemiş, sebze ve bakliyat tüketiminin ise iki katına çıkmasını gerektirmektedir. Bununla birlikte, Komisyon bu hedefleri yerel durumlara uyarlamanın önemini vurgulamaktadır. Örneğin, Kuzey Amerika ülkeleri şu anda bu modelde önerilen kırmızı et miktarının neredeyse 6,5 katı fazlasını tüketirken, Güney Asya\'daki ülkeler ise önerilen miktarın sadece yarısını tüketiyor.\n' +
+          '    *a molten outer core\n' +
           '\n' +
-          'İkinci alan ise “Sürdürülebilir Gıda Üretimidir”. Mevcut gıda üretimi, iklim değişikliğini, biyolojik çeşitlilik kaybını, çevresel kirliliği, su ve arazi kullanımındaki sürdürülemez oluşumları tetiklemektedir. Komisyon, Dünya sisteminin geri dönüşü olmayan ve potansiyel olarak yıkıcı değişimlere uğrama riskini azaltmak için küresel gıda üretiminin içinde kalması gereken bir dizi limit ölçüt tanımlamıştır. Bu sınırlar altı temel süreçle ilgilidir: iklim değişikliği (sera gazı emisyonlarına dayalı), arazi sistemi değişikliği (ekilebilir arazi kullanımına dayalı), tatlı su kullanımı, biyolojik çeşitlilik kaybı (yok olma oranına dayalı) ve azot ve fosfor döngüsü (bu aktif maddeleri içeren kimyasal gübrelerin uygulanması temelli).\n' +
+          "    *the thick and mostly solid mantle, which occupies approximately 84 percent of the earth's total volume\n" +
           '\n' +
-          '2050 yılına kadar tahmini 10 milyar insana sağlıklı beslenme sağlayabilecek sürdürülebilir bir gıda sistemine geçiş, insanlık adına benzeri görülmemiş bir zorluktur. Ancak, yapılan araştırmalar, bu Büyük Gıda Dönüşümünün, gıda kayıpları ve israfında çarpıcı azalmalar, gıda üretim uygulamalarında büyük iyileştirmeler ve çoğunlukla bitki temelli beslenme modellerine yönelik önemli diyet değişiklikleri ile elde edilebileceğini gösteriyor.\n' +
+          '    *the comparatively thin crust, which varies between 5 to 50 km in thickness.\n' +
           '\n' +
-          ' Sürdürülebilir Beslenme Modellerine en iyi örnek Akdeniz Diyeti ile Yeni İskandinav Diyeti’dir. Akdeniz ve Yeni İskandinav diyetlerinin her ikisi de, çoğunlukla bitki bazlı gıdalar, biraz balık ve sınırlı miktarda et içerir. Bitki bazlı diyetlerin çevre üzerinde daha az olumsuz etkisi vardır.\n' +
+          "Earth's outer skin is not a continuous surface. Instead, it is composed of massive segments called tectonic plates. Earthquakes occur along the boundaries between tectonic plates or at the site of cracks within the plates, which are called faults.\n" +
           '\n' +
-          'Akdeniz Diyeti, Akdeniz bölgesinin zeytin yetiştirilen bölgelerinde ortaya çıkmıştır ve bu bölgelerle güçlü bir kültürel ilişkiye sahiptir. Bu beslenme modelinde, bitki bazlı gıdalar (meyve, sebze, kabuklu yemişler ve tahıllar) ve zeytinyağı tüketimi fazladır. Ortalama balık ve kümes hayvanı tüketiminin yanında nispeten daha düşük miktarda süt ürünleri (esas olarak yoğurt ve peynir), kırmızı et, işlenmiş et ve tatlı tüketimi vardır.\n' +
           '\n' +
-          'Yeni İskandinav Diyeti’nin Akdeniz Diyeti ile birçok ortak özelliği vardır, ancak geleneksel olarak Danimarka, Finlandiya, İzlanda, Norveç ve İsveç\'ten elde edilen gıdaları içermektedir. Yeni İskandinav Diyeti’nin temel bileşenleri arasında meyveler, yağlı (ringa balığı, uskumru ve somon) ve yağsız balıklar, baklagiller, sebzeler (lahana ve kök sebzeler) ve tam tahıllar (arpa, yulaf ve çavdar) bulunur. Akdeniz Diyeti’nden önemli bir farklılığı ise zeytinyağı yerine kolza (kanola) yağının kullanılmasıdır. İskandinav Diyeti ağırlıklı olarak bitki bazlı ve yerel kaynaklıdır, bu nedenle İskandinav bölgesinde tüketildiğinde daha az atıkla daha çevre dostu üretim sağlar.\n' +
+          'What causes earthquakes?\n' +
           '\n' +
-          'Akdeniz Diyeti ve Yeni İskandinav Diyeti arasında birçok benzerlik vardır. Her iki diyet de, bitkisel bazlı beslenme ilkelerine dayalı benzer beslenme önerilerini paylaşmakta ve çevreyi korumaya ve sürdürülebilirliğe yönelmektedir. İki diyet arasındaki temel fark ise kullanılan yağ kaynağıdır. Zeytinyağı Akdeniz Diyeti’nin temel yağ kaynağı iken, İskandinav Diyeti’nde kolza tohumu/kanola yağı kullanır.\n' +
+          "The tectonic plates that make up the earth's crust are moving constantly. As the edges of these plates slide against each other in fault zones, friction can slow them down, leading to the buildup of pressure over long periods of time. When the force of movement finally overcomes the friction, sections of the crust suddenly break or become displaced, releasing the pent-up pressure in the form of seismic waves. This is a naturally occurring earthquake, sometimes referred to as a tectonic earthquake.\n" +
           '\n' +
-          'Sonuç olarak, tabaklarımıza koyduğumuz her gıdanın çevre üzerinde büyük bir etkisi olduğu açıktır. Daha sağlıklı ve daha sürdürülebilir bir beslenme için, yani hem kendi sağlığımızı iyileştiren ve aynı zamanda gezegenin sağlığına fayda sağlayan sürdürülebilir beslenme uygulamaları geliştirebiliriz.\n' +
+          'While tectonic earthquakes can occur at any location around the world, the majority of large earthquakes—about 80 percent—occur at the circum-Pacific seismic belt found along the rim of the Pacific Ocean. Two other regions regularly exhibiting earthquakes include the Alpide belt, extending along the southern margin of Eurasia through the Himalayan Mountains, Sumatra, and Java; and the Mid-Atlantic Ridge running along the floor of the Atlantic Ocean.\n' +
           '\n' +
-          'Sürdürülebilir Beslenme İçin 5 İpucu\n' +
+          'When an earthquake occurs, different types of energy waves are generated.\n' +
           '\n' +
-          '1. Bitkisel kaynaklı gıdalara öncelik verin\n' +
+          '     "P waves" or "primary waves" are the first waves to be detected. These are compressional waves that push and pull as they move through rock and fluids.\n' +
           '\n' +
-          'Sağlıklı beslenme tabağı hazırlamak için tabağınızın yarısını sebze ve meyvelerle doldurun, yemeklerimizi bu prensibe göre planlamak gezegene de fayda sağlar. Daha bitkisel temelli bir beslenme biçimine geçmek kişisel sağlığımızı olumlu yönde iyileştirirken, içilebilir su kaynaklarının ve ormanların azalmasının engellenmesinde fayda sağlayacaktır.\n' +
+          '     "S waves" or "secondary waves" are the next waves to be detected. These waves move only through rock. They move up and down or side to side, perpendicular to the direction in which the wave is moving.\n' +
           '\n' +
-          '2. Eti en aza indirin\n' +
+          '     Surface waves follow P and S waves. They travel along the surface of the earth and thus cause the most damage. Surface waves can be characterized as Love waves, which are faster and move the ground from side to side, and Rayleigh waves, which roll like waves on the surface of oceans and lakes.\n' +
           '\n' +
-          'Et üretimi, özellikle sığır eti üretimi, sera gazı emisyonlarına önemli bir katkıda bulunur. Besi hayvanlarının yetiştirilmesi, taşınması ve kesilmesi bitkisel gıdalara kıyasla daha fazla yem, su, toprak ve enerji gerektirdiğinden dünyamızın karşılaştığı çevresel yük daha da artmaktadır. Hem kendi sağlığımız hem de gezegenin sağlığı için et proteinleri yerine kuruyemiş ve baklagillerden elde edilen bitkisel proteinleri seçmeyi tekrar düşünmeliyiz.\n' +
+          'What other types of earthquakes exist?\n' +
           '\n' +
-          '3. Yeni deniz ürünleri seçin\n' +
+          'In addition to tectonic earthquakes, seismologists have classified three more earthquake types:\n' +
           '\n' +
-          'Balık, genel olarak beslenme açısından sağlıklı bir seçim olabilir, ancak bazı türler aşırı avlanmakta veya deniz ortamına zarar verecek şekilde üretilmektedir. Burada size sunulan balık çeşidi “risk altındaki türler” listesindeyse, farklı deniz ürünleri denemeyi düşünün.\n' +
+          '     Volcanic: Earthquakes that occur in conjunction with volcanic activity\n' +
           '\n' +
-          '4. Yerele yönelin\n' +
+          '     Collapse: Smaller-scale earthquakes that result from the subterranean collapse of caverns or mines\n' +
           '\n' +
-          'Çiftçi pazarlarını keşfetmek, hem yerel olarak yetiştirilen taze ürünleri bulmanıza yardımcı olurken, hem de yemeğinizi üreten çiftçilerle tanışma fırsatı bulursunuz. Bu tür ilişkiler kurmak, yemeğinizin nasıl yetiştirildiğini, ne zaman hasat edildiğini ve hatta nasıl hazırlanacağını öğrenmek için önemlidir.\n' +
+          '     Explosion: Earthquakes caused by underground explosions of nuclear or chemical devices.\n' +
           '\n' +
-          '5. Yeme farkındalığı geliştirin\n' +
+          'Does fracking cause earthquakes?\n' +
           '\n' +
-          'Daha sürdürülebilir bir şekilde yemek yemek için yapabileceğiniz en basit şeylerden biri, yeme farkındalığı geliştirmektir. Ne yediğinize odaklanmak, yemeğinizin nereden geldiğini ve vücudunuzu nasıl beslediğini düşünmenizi sağlar.\n' +
+          '"Fracking" is an informal term for hydraulic fracturing, a process used to increase the flow of oil or gas to a production well. It involves the injection of large volumes of water, sand, and chemicals under high pressure into a bedrock formation to create new fractures in the rock or increase the size, extent, and connectivity of existing fractures, leading to more permeability.\n' +
           '\n' +
-          'Ek olarak, açlık hissinizi dikkate alarak, düşündüğünüz kadar fazla yiyeceğe ihtiyacınız olmadığını öğrenebilir ve öğünlerinizi buna göre yeniden planlayabilirsiniz.\n' +
-          '\n' +
-          'Nasıl yediğimize daha fazla dikkat ederek, sadece yiyeceğe odaklı değil arkasındaki “büyük resim” hakkında da daha fazla düşünerek, gıda tüketimimizi değiştirebilir, gıda israfını azaltabilir ve daha sürdürülebilir gıda kaynakları arayabiliriz.\n' +
-          '\n' +
-          'Referanslar\n' +
-          '\n' +
-          '    FAO/WHO. Sustainable healthy diets – Guiding principles. Rome, 2019, http://www.fao.org/3/ca6640en/ca6640en.pdf\n' +
-          '    Krznaric, Z, Karas, I, Kelečić,D.L, Bender,D.V. Mediterranean and Nordic diet: a review of differences and similarities of two sustainable, health-promoting dietary patterns, Front. Nutr. | doi: 10.3389/fnut.2021.683678\n' +
-          '    Pekcan G.A. Sürdürülebilir Beslenme ve Beslenme Örüntüsü: Bitkisel Kaynaklı Beslenme. Beslenme ve Diyet Dergisi. 2019, 47, 2\n' +
-          '    Willett, Walter et al. Food in the Anthropocene: the EAT–Lancet Commission on healthy diets from sustainable food systems, The Lancet, Vol. 393, Issue 10170, 447 –492\n' +
-          '    The Nutrition Source, 5 Tips for Sustainable Eating, https://www.hsph.harvard.edu/ nutritionsource/ 2015/06/17/5-tips-for-sustainable-eating/\n' +
-          '\n' +
-          'Bu içerik, Yaşar Üniversitesi Uygulamalı Bilimler Yüksekokulu Gastronomi ve Mutfak Sanatları Bölüm Başkanı Doç Dr. Seda Genç tarafından derlenmiştir.'),
+          'On rare occasions, fracking can lead directly to earthquakes. More frequently, earthquakes are induced by the disposal of waste water associated with the oil production into underground wells. Seismic events associated with fracking and waste fluid disposal tend to be low-level and dependent on conditions such as the injection rate and total volume injected, the proximity of faults near the injection site and the pathways permitting pressure to travel from the injection site to the fault, and the presence of stresses on faults that are large enough to produce earthquakes.\n' +
+          '\n' ),
+
   DataModel(
-      "Bağışıklık Sistemini Güçlendiren Top 10 Besin!",
-      "assets/images/bağışıklık.jpg",
-      "Gamze Şanlı Ak",
+      "How Do Earthquake Early Warning Systems Work?",
+      "assets/images/warnsystem.jpg",
+      "Andrew Howard",
       "06.04.2020",
-      '1. Turunçgiller, Kuşburnu ve Kivi\n' +
+      'Earthquake early warning systems don’t predict earthquakes. Instead, they detect ground motion as soon as an earthquake begins and quickly send alerts that a tremor is on its way, giving people crucial seconds to prepare.\n' +
           '\n' +
-          'Yüksek C vitamini bağışıklık sistemi aktivasyonunu arttırır. C vitaminin çok iyi kaynağı olan kivinin günde 2 adet tüketimi, günlük C vitamini ihtiyacımızı karşılamaktadır.\n' +
+          'In 1985, Caltech seismologist Tom Heaton published the first paper on the concept of earthquake early warning systems, networks of ground-based sensors that send alerts to users when the earth begins to tremble.\n' +
           '\n' +
-          '2. Sarımsak\n' +
+          'Such systems, including ShakeAlert on the West Coast of the United States, operate on the principle that while seismic waves travel at just a few miles per second, electronic alerts from the region of the epicenter can be sent almost instantly. Here is how it works:\n' +
           '\n' +
-          'Doğal bir antibiyotik olarak da bilinen sarımsak bağışıklık sistemini destekleyen antioksidanları içerir.\n' +
+          "     1) During an earthquake, several types of seismic waves radiate out from the quake's epicenter. First, weaker but faster-moving P-waves trigger sensors that, in turn, transmit signals to data processing centers.\n" +
           '\n' +
-          '3. Nar\n' +
+          "     2) Algorithms quickly estimate the earthquake's location, magnitude, and intensity: Where is it? How big is it? Who is going to feel it?\n" +
           '\n' +
-          'Antioksidan kapasitesi oldukça zengin olan nar önemli miktarda da potasyum, lif, C ve A vitamini ve niasin içermektedir. Bağışıklık sistemini de güçlendirdiği için gribe karşı koruyucudur.\n' +
+          '     3) The system then sends an alert before slower, but more destructive S-waves and surface waves arrive.\n' +
           '\n' +
-          '4. Kefir\n' +
+          'Although people who are near the epicenter will have little, if any advance warning, those farther away may have critical seconds to brace for shaking. Paired with automated responses that can slow trains or shut off gas lines, early warning systems may help prevent some of the injuries and damage typically associated with major quakes.\n' +
           '\n' +
-          'İçerisinde bulunan probiyotikler bağışıklık sistemini destekleyici bir rol oynarlar.\n' +
           '\n' +
-          '5. Yulaf\n' +
+          'An earthquake just happened. Why did not I receive an alert on my smartphone?\n' +
           '\n' +
-          'İçinde bulunan beta-glukan, bağışıklık sistemini güçlendirir.\n' +
+          "You might be too close to the epicenter. Early-warning alerts are typically delivered three to five seconds after an earthquake starts. That's the time it takes for seismic waves to travel to the closest stations, and for computers to analyze the data. If you are less than 10 miles from the epicenter, it is unlikely you will get a warning.\n" +
           '\n' +
-          '6. Elma\n' +
+          "The shaking might not have been strong enough. It is important to remember that most people experience weak shaking during an earthquake. This is because large earthquakes are rare, and because individuals are often too far from the epicenter to experience significant shaking. Currently, apps, such as MyShake, are designed to send alerts only for stronger shaking. This could change as scientists and public officials continue to tune the system's parameters.\n" +
           '\n' +
-          'Elma, içeriğindeki E ve C gibi antioksidan vitaminler ile bağışıklılık sistemini güçlendirerek hastalıklara karşı vücut direncini artırır.\n' +
-          '\n' +
-          '7. Yeşil çay\n' +
-          '\n' +
-          'İçerisinde bulunan polifenollar ve flavonoidlerden dolayı güçlü bir antioksidan özelliğe sahiptir.\n' +
-          '\n' +
-          '8. Propolis\n' +
-          '\n' +
-          'Doğal bir arı ürünü olan propolis, bağışıklık sistemine destek olup hastalık oluşumunu engeller.\n' +
-          '\n' +
-          '9. Brokoli, Ispanak ve Lahana\n' +
-          '\n' +
-          'İçerisindeki antioksidan vitamin ve minerallerden dolayı bağışıklık sistemini güçlendirici bir etki sağlar.\n' +
-          '\n' +
-          '10. Yoğurt\n' +
-          '\n' +
-          'Yoğurt, probiotikler ile zengin besin öğeleri içermesi sayesinde bağışıklık sistemini güçlendirir.'),
+          '\n' ),
 ];
