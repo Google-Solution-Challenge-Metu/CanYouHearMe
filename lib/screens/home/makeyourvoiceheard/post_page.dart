@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dietapp/screens/components/CustomSnackBarContent.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -162,11 +163,14 @@ class _PostPageState extends State<PostPage> {
       DateTime.now(),
     )
         .then((value) {
-      //Toast.show(
-      //  "Durum eklendi!",
-      //  duration: Toast.lengthShort,
-      //  gravity: Toast.bottom,
-      //);
+    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+        content: CustomSnackBarContent(
+          errorText: "Your post has been shared",
+        ),
+        behavior: SnackBarBehavior.floating,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ));
       Navigator.pop(context);
     });
   }

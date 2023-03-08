@@ -18,11 +18,11 @@ class CustomSnackBarContent extends StatelessWidget {
         Container(
           padding: const EdgeInsets.all(16),
           height: 90,
-          decoration: const BoxDecoration(
-            color: Color.fromARGB(255,250, 236, 214),
+          decoration: BoxDecoration(
+            color: Colors.white,
             borderRadius: BorderRadius.all(Radius.circular(20)),
-            
-            ),
+            border: Border.all(color: Color(0xffe97d47), width: 3)            
+          ),
           child: Row(
             children: [
               const SizedBox(width: 48),
@@ -30,12 +30,12 @@ class CustomSnackBarContent extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children:  [
-                    const Text('Notification!', style: TextStyle(fontSize: 25, color: Color.fromARGB(255, 130, 0, 0)),),
+                    const Text('Notification!', style: TextStyle(fontSize: 25, color: Color.fromARGB(255, 0, 0, 0)),),
                     const Spacer(),
                     Text(
                       errorText,
                       style: const TextStyle(
-                        color: Color.fromARGB(255, 56, 54, 54),
+                        color: Color.fromARGB(255, 73, 73, 73),
                         fontSize: 18,
                         fontStyle: FontStyle.italic
                       ),
@@ -55,7 +55,7 @@ class CustomSnackBarContent extends StatelessWidget {
                 "assets/images/bubbles.svg",
                 height: 48,
                 width: 40,
-                color: Color(0xFF4E6C50),
+                color: Color(0xffe97d47),
                 ),
             ),
           ),
@@ -68,7 +68,7 @@ class CustomSnackBarContent extends StatelessWidget {
                 SvgPicture.asset(
                   "assets/images/fail.svg",
                   height: 40,
-                  color: Color(0xFF4E6C50)
+                  color: Color(0xffe97d47)
                 ),
                 Positioned(
                   top: 10,
