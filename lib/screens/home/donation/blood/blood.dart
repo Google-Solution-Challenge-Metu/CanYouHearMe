@@ -1,5 +1,7 @@
 import "package:flutter/material.dart";
-import 'package:webview_flutter/webview_flutter.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:google_fonts/google_fonts.dart';
+//import 'package:webview_flutter/webview_flutter.dart';
 
 class BloodScreen extends StatefulWidget {
   const BloodScreen({super.key});
@@ -8,38 +10,40 @@ class BloodScreen extends StatefulWidget {
 }
 
 class _BloodScreenState extends State<BloodScreen> {
+
+  InAppWebViewController? webViewController;
+  PullToRefreshController? refreshController;
+  late var url;
+  var initialURL ="https://www.kanver.org/KanHizmetleri/KanBagisiNoktalari";
+  double progress=0;
+  var urlController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFF4E6C50),
-        title: const Text("Locations for DONATION"),
-      ),
+        title: Text(
+          'Locations for DONATION',
+          style: GoogleFonts.prozaLibre(
+            color: const Color(0xffe97d47),
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        leading: IconButton(
+          onPressed: () => Navigator.pop(context),
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Color(0xffe97d47),
+          ),
+        ),
+      ),      
       body: Column(
         children: [
           Expanded(
-            child: WebView(
-              initialUrl: 'https://www.kizilay.org.tr',
-              initialMediaPlaybackPolicy: AutoMediaPlaybackPolicy.always_allow,
-              javascriptMode: JavascriptMode.unrestricted,
-              debuggingEnabled: false,
-              javascriptChannels: {
-                JavascriptChannel(
-                    name: 'flutter',
-                    onMessageReceived: (JavascriptMessage message) {
-                      if (message.message == 'onSubscribeClick') {
-                        print('onSubscribeClick');
-                      }
-                    }),
-              },
-              onWebResourceError: (webresourceerror) {
-                print(webresourceerror.domain.toString());
-              },
-              onPageStarted: (String page) {},
-              onPageFinished: (String page) {},
-              onWebViewCreated: (WebViewController webviewcontroller) {
-                try {} catch (error, stackTrace) {}
-              },
+            child: InAppWebView(
+              initialUrlRequest: URLRequest(url: Uri.parse(initialURL)),
             ),
           ),
         ],
