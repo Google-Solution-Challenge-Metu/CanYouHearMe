@@ -152,10 +152,15 @@ class _PostPageState extends State<PostPage> {
         _address = selectedPlace!.formattedAddress!;
       });
     }
-    ;
     _reportService
-        .addStatus(postController.text, profileImage ?? '',
-            GeoPoint(_latitude, _longitude), _address, "$name $surname")
+        .addStatus(
+      postController.text,
+      profileImage ?? '',
+      GeoPoint(_latitude, _longitude),
+      _address,
+      "$name $surname",
+      DateTime.now(),
+    )
         .then((value) {
       //Toast.show(
       //  "Durum eklendi!",

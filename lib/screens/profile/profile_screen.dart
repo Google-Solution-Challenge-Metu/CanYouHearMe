@@ -283,7 +283,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                           Radius.circular(25),
                                         ),
                                       ),
-                                      margin: EdgeInsets.fromLTRB(3, 0, 3, 9),
+                                      margin:
+                                          const EdgeInsets.fromLTRB(3, 0, 3, 9),
                                       width: double.infinity,
                                       child: Padding(
                                         padding: const EdgeInsets.all(15.0),
@@ -301,14 +302,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                     const SizedBox(width: 10),
                                                     Text(
                                                       myReport['user'],
-                                                      style: TextStyle(
+                                                      style: const TextStyle(
                                                         fontWeight:
                                                             FontWeight.w700,
                                                       ),
                                                     )
                                                   ],
                                                 ),
-                                                Text('date'),
+                                                Text(
+                                                  myReport['createdAt']
+                                                      .toDate()
+                                                      .toString()
+                                                      .substring(0, 10),
+                                                  style: const TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      fontSize: 12),
+                                                )
                                               ],
                                             ),
                                             const SizedBox(height: 20),
