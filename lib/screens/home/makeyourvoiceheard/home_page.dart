@@ -111,13 +111,21 @@ class _MakeYourVoiceHeardPageState extends State<MakeYourVoiceHeardPage> {
                                           const SizedBox(width: 10),
                                           Text(
                                             myReport['user'],
-                                            style: TextStyle(
+                                            style: const TextStyle(
                                               fontWeight: FontWeight.w700,
                                             ),
-                                          )
+                                          ),
                                         ],
                                       ),
-                                      Text('date'),
+                                      Text(
+                                        myReport['createdAt']
+                                            .toDate()
+                                            .toString()
+                                            .substring(0, 10),
+                                        style: const TextStyle(
+                                            fontWeight: FontWeight.w700,
+                                            fontSize: 12),
+                                      )
                                     ],
                                   ),
                                   const SizedBox(height: 20),

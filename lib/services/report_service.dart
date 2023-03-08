@@ -9,8 +9,14 @@ class ReportService {
   final StorageService _storageService = StorageService();
   String mediaUrl = '';
 
-  Future<Report> addStatus(String status, XFile pickedFile, GeoPoint location,
-      String address, String user) async {
+  Future<Report> addStatus(
+    String status,
+    XFile pickedFile,
+    GeoPoint location,
+    String address,
+    String user,
+    DateTime createdAt,
+  ) async {
     var ref = _firestore.collection("Status");
 
     mediaUrl = await _storageService.uploadMedia(File(pickedFile.path));
@@ -20,7 +26,8 @@ class ReportService {
       'image': mediaUrl,
       'location': location,
       "address": address,
-      'user': user
+      'user': user,
+      'createdAt': createdAt,
     });
 
     return Report(
@@ -30,12 +37,16 @@ class ReportService {
       location: location,
       address: address,
       user: user,
+      createdAt: createdAt,
     );
   }
 
   //status göstermek için
   Stream<QuerySnapshot> getStatus() {
-    var ref = _firestore.collection("Status").snapshots();
+    var ref = _firestore
+        .collection("Status")
+        .orderBy('createdAt', descending: true)
+        .snapshots();
 
     return ref;
   }

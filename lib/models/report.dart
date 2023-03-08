@@ -7,6 +7,7 @@ class Report {
   GeoPoint location;
   String address;
   String user;
+  DateTime createdAt;
 
   Report(
       {required this.id,
@@ -14,16 +15,17 @@ class Report {
       required this.image,
       required this.location,
       required this.address,
-      required this.user});
+      required this.user,
+      required this.createdAt});
 
   factory Report.fromSnapshot(DocumentSnapshot snapshot) {
     return Report(
-      id: snapshot.id,
-      status: snapshot["status"],
-      image: snapshot["image"],
-      location: snapshot["location"],
-      address: snapshot["address"],
-      user: snapshot["user"],
-    );
+        id: snapshot.id,
+        status: snapshot["status"],
+        image: snapshot["image"],
+        location: snapshot["location"],
+        address: snapshot["address"],
+        user: snapshot["user"],
+        createdAt: snapshot["createdAt"]);
   }
 }

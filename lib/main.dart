@@ -19,7 +19,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //Size screenSize = MediaQuery.of(context).size;
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => CartModel()),

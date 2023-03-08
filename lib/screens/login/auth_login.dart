@@ -9,22 +9,19 @@ class AuthPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: StreamBuilder<User?>(
-          stream: FirebaseAuth.instance.authStateChanges(),
-          builder: (context, snapshot) {
-            if (snapshot.hasData) {
-              return GetMaterialApp(
-                debugShowCheckedModeBanner: false,
-                initialRoute: AppPage.getNavBar(),
-                getPages: AppPage.routes,
-              );
-            } else {
-              return const OnBoardingScreen();
-            }
-          },
-        ),
+    return Scaffold(
+      body: StreamBuilder<User?>(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return GetMaterialApp(
+              initialRoute: AppPage.getNavBar(),
+              getPages: AppPage.routes,
+            );
+          } else {
+            return OnBoardingScreen();
+          }
+        },
       ),
     );
   }

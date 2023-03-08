@@ -38,6 +38,7 @@ dependencies:
   tflite:
     path: ./lib/flutter_tflite-master
   get: ^4.6.5
+  get_storage: ^2.0.3
 
   #Google Maps
   geolocator: ^9.0.2
@@ -64,12 +65,12 @@ dependencies:
   rive: ^0.9.1
 
   #firebase
-  firebase_auth: ^3.0.1
-  firebase_core: ^1.4.0
-  cloud_firestore: ^2.4.0
-  firebase_storage: ^10.0.1
-  firebase_core_platform_interface: 4.5.1 # note removed ^
-  firebase_messaging: ^13.0.4 # previously I only had this which was pulling in 4.5.2 which you do not want
+  firebase_auth: ^4.2.9
+  firebase_core: ^2.7.0
+  cloud_firestore: ^4.4.3
+  firebase_storage: ^11.0.14
+  firebase_core_platform_interface: 4.5.3 # note removed ^
+  firebase_messaging: ^14.0.1 # previously I only had this which was pulling in 4.5.2 which you do not want
   open_street_map_search_and_pick: ^0.0.16
   #gives error
   #firebase_storage: ^11.0.10
