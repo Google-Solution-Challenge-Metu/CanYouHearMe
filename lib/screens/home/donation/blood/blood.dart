@@ -23,7 +23,7 @@ class _BloodScreenState extends State<BloodScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Locations for DONATION',
+          'Blood Donations',
           style: GoogleFonts.prozaLibre(
             color: const Color(0xffe97d47),
             fontWeight: FontWeight.w600,
@@ -38,11 +38,34 @@ class _BloodScreenState extends State<BloodScreen> {
             color: Color(0xffe97d47),
           ),
         ),
+        actions: [
+          IconButton(
+            onPressed: (){
+              webViewController!.reload();
+            }, 
+            icon: Icon(Icons.refresh),color: Color(0xffe97d47),),
+          IconButton(
+            onPressed: () async {
+              if(await webViewController!.canGoBack()){
+                webViewController!.goBack();
+              }
+            }, 
+            icon: Icon(Icons.arrow_back,color: Color(0xffe97d47),)),
+          IconButton(
+            onPressed: () async {
+              if(await webViewController!.canGoForward()){
+                webViewController!.goForward();
+              }
+            }, 
+            icon: Icon(Icons.arrow_forward),
+            color: Color(0xffe97d47),),
+        ],
       ),      
       body: Column(
         children: [
           Expanded(
             child: InAppWebView(
+              onWebViewCreated: (controller) => webViewController = controller,
               initialUrlRequest: URLRequest(url: Uri.parse(initialURL)),
             ),
           ),
