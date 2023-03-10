@@ -1,3 +1,4 @@
+import 'package:dietapp/screens/components/CustomSnackBarContent.dart';
 import 'package:flutter/material.dart';
 
 class Callauthorized extends StatelessWidget {
@@ -127,7 +128,14 @@ class Callauthorized extends StatelessWidget {
                     icon: Icon(Icons.add_home_work_outlined),
                     label: Text('Call The Authorized'),
                     onPressed: () {
-                      
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                        content: CustomSnackBarContent(
+                          errorText: "You are very thoughtful!",
+                        ),
+                        behavior: SnackBarBehavior.floating,
+                        backgroundColor: Colors.transparent,
+                        elevation: 0,
+                      ));                      
                     },
                     style: ElevatedButton.styleFrom(
                         foregroundColor: Color(0xffe97d47),
@@ -192,7 +200,7 @@ class Callauthorized extends StatelessWidget {
               borderRadius: BorderRadius.circular(12.0)),
           child: const Center(
             child: Text(
-              "Sign In",
+              "",
               style: TextStyle(
                 color: Colors.white,
               ),

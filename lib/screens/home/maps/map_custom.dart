@@ -1,9 +1,9 @@
 import 'package:custom_info_window/custom_info_window.dart';
 import "package:flutter/material.dart";
 import 'package:geolocator/geolocator.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-//import 'package:google_maps_controller/google_maps_controller.dart';
 
 class MapUIcustom extends StatefulWidget {
   @override
@@ -27,7 +27,6 @@ class _MapUIStatecustom extends State<MapUIcustom> {
   }
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     Geolocator.getCurrentPosition().then((currloc){
       setState(() {
@@ -214,9 +213,23 @@ class _MapUIStatecustom extends State<MapUIcustom> {
     populateClients();
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Color(0xffe97d47),
-          title: const Text("Maps",style: TextStyle(color: Colors.white),),
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => Navigator.pop(context),
+          color: const Color(0xffe97d47),
         ),
+        backgroundColor: Colors.transparent,
+        title: Text(
+          "Maps",
+          style: GoogleFonts.prozaLibre(
+            color: const Color(0xffe97d47),
+            fontSize: 20,
+            fontWeight: FontWeight.w600,
+            height: 1.355,
+          ),
+        ),
+      ),
       body: Stack(
         children: <Widget>[
           GoogleMap(
@@ -247,117 +260,3 @@ class _MapUIStatecustom extends State<MapUIcustom> {
     );
   }
 }
-//  // variables
-//  //late GoogleMapController mapController;
-//  CustomInfoWindowController _customInfoWindowController=
-//  CustomInfoWindowController();
-//  bool mapToggle = false;
-//  var currentLocation;
-//  
-//  List<Marker> _markers = [];
-//  List<LatLng> _latLang = <LatLng> [
-//    LatLng(38.4237, 27.1428),LatLng(41.0082, 28.9784)
-//  ];
-//
-//
-//void initState(){
-//    super.initState();
-//    Geolocator.getCurrentPosition().then((currloc){
-//      setState(() {
-//        currentLocation=currloc;
-//        mapToggle=true;
-//        populateClients();
-//      });
-//    });
-//  }
-//
-//  populateClients(){
-//    //clients=[];
-//   
-//    for(int i=0; i<_latLang.length; ++i){
-//      //clients.add(docs.docs[i].data);
-//      _markers.add(
-//      Marker(
-//        markerId: MarkerId("$i"),
-//        position: _latLang[i],
-//        draggable: false,
-//        onTap: () {
-//          _customInfoWindowController.addInfoWindow!(
-//            Text("data"),
-//            _latLang[i]
-//          );
-//        }
-//      )
-//      );
-//        }
-//      
-//    
-//  }
-//  clearMarkers(){
-//    setState(() {
-//    _markers.clear();
-//  });
-//  }
-//
-//  initMarker(client,i){
-//    //clearMarkers();
-//    _markers.add(
-//      Marker(
-//        markerId: MarkerId("$i"),
-//        position: client,
-//        draggable: false,
-//        onTap: () {
-//          _customInfoWindowController.addInfoWindow!(
-//            Text("data"),
-//            client
-//          );
-//        }
-//      )
-//    );
-//    print(_markers.length);
-//    print("Success");
-//  }
-//
-//  @override
-//  Widget build(BuildContext context) {
-//    return Scaffold(
-//      appBar: AppBar(
-//          backgroundColor: Color.fromARGB(255, 108, 78, 98),
-//          title: const Text("Maps"),
-//        ),
-//        body: Column(
-//          children: [
-//            Stack(
-//              children: [
-//                mapToggle
-//                  ?GoogleMap(
-//                    initialCameraPosition: CameraPosition(
-//                      target: LatLng(37.5753, 36.9228), //LatLng(currentLocation.latitude, currentLocation.longitude),   //For Current Location
-//                      zoom: 4.0
-//                    ),
-//                    markers: Set<Marker>.of(_markers),
-//                    onMapCreated: (GoogleMapController controller){
-//                      _customInfoWindowController.googleMapController =controller;},
-//                  ):
-//                  Center(child: 
-//                  Text("Loading ...",
-//                  style: TextStyle(fontSize: 20.0),)),
-//                CustomInfoWindow(
-//                  controller: _customInfoWindowController,
-//                  height: 200,
-//                  width: 300,
-//                  offset: 35,
-//                  )
-//              ]
-//            )
-//          ],
-//        )   
-//    );
-//  }
-//  void onMapCreated(controller){
-//    setState(() {
-//      null;
-//      //mapController=controller;
-//    });
-//  }
-//}

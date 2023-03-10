@@ -27,7 +27,7 @@ class CartPage extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 24.0),
                 child: Text(
-                  "My Cart",
+                  "My Boxes",
                   style: GoogleFonts.prozaLibre(
                     fontSize: 36,
                     fontWeight: FontWeight.bold,

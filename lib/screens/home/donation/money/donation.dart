@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../../../components/CustomSnackBarContent.dart';
 import 'utils.dart';
 
@@ -21,8 +22,22 @@ class _DonationScreen extends State<DonationScreen> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        backgroundColor: Color(0xffe97d47),
-        title: Text("Donation"),
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => Navigator.pop(context),
+          color: const Color(0xffe97d47),
+        ),
+        backgroundColor: Colors.transparent,
+        title: Text(
+          "Money Donation",
+          style: GoogleFonts.prozaLibre(
+            color: const Color(0xffe97d47),
+            fontSize: 20,
+            fontWeight: FontWeight.w600,
+            height: 1.355,
+          ),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(15.0),

@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:dietapp/screens/components/CustomSnackBarContent.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -33,6 +34,23 @@ class _TfliteModelState extends State<TfliteModel> {
     print("Models loading status: $res");
   }
 
+  Future pickImageGallery() async {
+    final ImagePicker _picker = ImagePicker();
+    final XFile? pickedFile = await _picker.pickImage(
+      source: ImageSource.gallery,
+    );
+    File image = File(pickedFile!.path);
+    imageClassification(image);
+  }
+  Future pickImageCamera() async {
+    final ImagePicker _picker = ImagePicker();
+    final XFile? pickedFile = await _picker.pickImage(
+      source: ImageSource.camera,
+    );
+    File image = File(pickedFile!.path);
+    imageClassification(image);
+  }
+
   Future imageClassification(File image) async {     // Image Classification
     final List? recognitions = await Tflite.runModelOnImage(
       path: image.path,
@@ -47,7 +65,50 @@ class _TfliteModelState extends State<TfliteModel> {
       imageSelect = true;
     });
   }
-
+  Future SnackBarBox(String box) async{
+    ScaffoldMessenger.of(context).showSnackBar( SnackBar(
+      content: CustomSnackBarContent(
+        errorText: "$box box added by AI",
+      ),
+      behavior: SnackBarBehavior.floating,
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+    ));
+  }
+  void imagePicker() async {
+    Future.delayed(Duration.zero, () {
+      showDialog(
+        context: context,
+        builder: (context) {
+          return SimpleDialog(
+            title: const Text("Pick an image"),
+            children: [
+              SimpleDialogOption(
+                onPressed: () {
+                  pickImageCamera();
+                  Navigator.pop(context);  
+                },
+                child: const Text("Photo with Camera"),
+              ),
+              SimpleDialogOption(
+                onPressed: () {
+                  pickImageGallery();
+                  Navigator.pop(context);
+                  },
+                child: const Text("Photo from Gallery"),
+              ),
+              SimpleDialogOption(
+                child: const Text("Cancel"),
+                onPressed: () { 
+                  Navigator.pop(context);
+                }
+              ),
+            ],
+          );
+        },
+      );
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -103,6 +164,8 @@ class _TfliteModelState extends State<TfliteModel> {
                               icon: Icon(Icons.assignment_turned_in_outlined),
                               label: Text("${result['label']}"),
                               onPressed: () {
+                                Navigator.pop(context);
+                                SnackBarBox("${result['label']}");
                                 if(result['label'] == 'Clothes'){ 
                                   Provider.of<CartModel>(context, listen: false)
                                       .addItemToCart(0);
@@ -137,7 +200,7 @@ class _TfliteModelState extends State<TfliteModel> {
                               // Try Again
                               icon: Icon(Icons.assignment_late_outlined),
                               label: Text("No, Try Again"),
-                              onPressed: pickImage,
+                              onPressed: pickImageGallery,
                               style: ElevatedButton.styleFrom(
                                   foregroundColor: Colors.white,
                                   backgroundColor: Color(0xffe97d47),
@@ -163,19 +226,12 @@ class _TfliteModelState extends State<TfliteModel> {
       ),
       floatingActionButton: FloatingActionButton(     // pick image
         backgroundColor: Color(0xffe97d47),
-        onPressed: pickImage,
+        onPressed: imagePicker,
         tooltip: "Pick Image",
         child: const Icon(Icons.image),
       ),
     );
   }
 
-  Future pickImage() async {
-    final ImagePicker _picker = ImagePicker();
-    final XFile? pickedFile = await _picker.pickImage(
-      source: ImageSource.gallery,
-    );
-    File image = File(pickedFile!.path);
-    imageClassification(image);
-  }
+
 }

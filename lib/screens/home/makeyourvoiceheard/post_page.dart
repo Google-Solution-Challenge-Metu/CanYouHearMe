@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dietapp/screens/components/CustomSnackBarContent.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:dietapp/services/report_service.dart';
 
@@ -210,8 +211,22 @@ class _PostPageState extends State<PostPage> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: const Text("Create a report"),
-        backgroundColor: const Color(0xffe97d47),
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => Navigator.pop(context),
+          color: const Color(0xffe97d47),
+        ),
+        backgroundColor: Colors.transparent,
+        title: Text(
+          "Create A Report",
+          style: GoogleFonts.prozaLibre(
+            color: const Color(0xffe97d47),
+            fontSize: 20,
+            fontWeight: FontWeight.w600,
+            height: 1.355,
+          ),
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -274,7 +289,9 @@ class _PostPageState extends State<PostPage> {
                   ),
                 );
               },
-              child: const Card(
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(25),),
                 color: Color(0xffe97d47),
                 margin: EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
                 child: Padding(
