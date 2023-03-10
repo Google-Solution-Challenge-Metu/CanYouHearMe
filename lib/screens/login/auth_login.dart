@@ -1,12 +1,21 @@
-import 'package:dietapp/onboardingscreen.dart';
+import 'package:dietapp/screens/onboardingscreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:dietapp/screens/login/service/login_service.dart';
 import 'package:get/get.dart';
 import 'package:dietapp/routes/routes.dart';
+import 'package:provider/provider.dart';
 
-class AuthPage extends StatelessWidget {
+import '../../navbar/navbar.dart';
+
+class AuthPage extends StatefulWidget {
   const AuthPage({super.key});
 
+  @override
+  State<AuthPage> createState() => _AuthPageState();
+}
+
+class _AuthPageState extends State<AuthPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

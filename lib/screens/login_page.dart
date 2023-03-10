@@ -2,9 +2,9 @@ import 'package:dietapp/screens/login/auth_login.dart';
 import 'package:dietapp/screens/register_page.dart';
 import 'package:dietapp/services/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:dietapp/screens/login/service/login_service.dart';
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
-import 'package:get/get.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -16,68 +16,6 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
-
-  signUserIn() async {
-    try {
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: emailController.text,
-        password: passwordController.text,
-      );
-    } on FirebaseAuthException catch (e) {
-      if (e.code == "user-not-found") {
-        wrongEmailMessage();
-      } else if (e.code == "wrong-password") {
-        wrongPasswordMessage();
-      } else {
-        nothingMessage();
-      }
-    }
-  }
-
-  void wrongEmailMessage() {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return const AlertDialog(
-          backgroundColor: Color(0xffe97d47),
-          title: Text(
-            "Incorrect email.",
-            style: TextStyle(color: Colors.white),
-          ),
-        );
-      },
-    );
-  }
-
-  void wrongPasswordMessage() {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return const AlertDialog(
-          backgroundColor: Color(0xffe97d47),
-          title: Text(
-            "Incorrect password.",
-            style: TextStyle(color: Colors.white),
-          ),
-        );
-      },
-    );
-  }
-
-  void nothingMessage() {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return const AlertDialog(
-          backgroundColor: Color(0xffe97d47),
-          title: Text(
-            "No email, password or both.",
-            style: TextStyle(color: Colors.white),
-          ),
-        );
-      },
-    );
-  }
 
   void sos_warning() {
     showDialog(
@@ -201,7 +139,15 @@ class _MainPageState extends State<MainPage> {
               const SizedBox(
                 height: 20.0,
               ),
-              buildButton(signUserIn),
+              buildButton(() async {
+                await FirebaseUserAuthentication.signIn(
+                  email: emailController.text,
+                  password: passwordController.text,
+                  context: context,
+                );
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => AuthPage()));
+              }),
               const SizedBox(
                 height: 20.0,
               ),

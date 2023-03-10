@@ -60,7 +60,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         ? Padding(
                             padding: const EdgeInsets.all(10.0),
                             child: buildButton(
-                              () => Navigator.push(
+                              () => Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => const MainPage(),
@@ -88,7 +88,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       child: buildButton(
                         onLastPage
                             ? () {}
-                            : () => Navigator.push(
+                            : () => Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) => const MainPage(),

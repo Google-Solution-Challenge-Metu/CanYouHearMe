@@ -12,12 +12,14 @@ class AppPage {
     GetPage(name: explore, page: () => const ExploreScreen())
   ];
 
+  static getLogin() => login;
   static getNavBar() => navbar;
   static getHome() => home;
   static getProfile() => profile;
   static getExplore() => explore;
 
-  static String navbar = "/";
+  static String login = "/";
+  static String navbar = "/navbar";
   static String home = "/home";
   static String profile = "/profile";
   static String explore = "/explore";

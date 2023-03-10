@@ -1,7 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dietapp/screens/login/service/login_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 import '../../services/report_service.dart';
 import 'add_device/add_smart_device.dart';
@@ -20,7 +22,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
   String surname = "";
 
   signUserOut() async {
-    await FirebaseAuth.instance.signOut();
+    await Provider.of<FirebaseUserAuthentication>(context, listen: false)
+        .logout();
   }
 
   FirebaseDocument() async {
