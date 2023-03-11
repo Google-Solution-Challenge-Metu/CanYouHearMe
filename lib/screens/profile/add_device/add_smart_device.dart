@@ -1,3 +1,4 @@
+import 'package:dietapp/screens/components/CustomSnackBarContent.dart';
 import 'package:dietapp/screens/profile/add_device/send_tile.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
@@ -90,6 +91,25 @@ class _AddDeviceState extends State<AddDevice> {
     final message = {"email": email, "password":password};
     _watch.sendMessage(message);
     setState(() => _log.add('Notice: You have been sent "connection key" to your smart device. Please refresh your smart device.'));
+    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+      content: CustomSnackBarContent(
+        errorText: "Connecting to your device",
+      ),
+      behavior: SnackBarBehavior.floating,
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+    ));
+  }
+
+  void cannotsendMessage(){
+    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+      content: CustomSnackBarContent(
+        errorText: "Please check your connection",
+      ),
+      behavior: SnackBarBehavior.floating,
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+    ));
   }
 
   @override
@@ -137,7 +157,7 @@ class _AddDeviceState extends State<AddDevice> {
                   iconss: Icons.devices_other_outlined,
                 ),
                 CheckTile(
-                  Titles: 'Paired:',
+                  Titles: 'Pairable:',
                   bools: _paired,
                   iconss: Icons.bluetooth_connected,
                 ),
@@ -165,7 +185,7 @@ class _AddDeviceState extends State<AddDevice> {
                   ):
                   SendTile(
                     colorset: Color.fromARGB(255, 161, 142, 133),
-                    func: sendMessage,
+                    func: cannotsendMessage,
                   ),
                 ),
                 const SizedBox(width: 50),

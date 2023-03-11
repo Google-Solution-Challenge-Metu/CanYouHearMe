@@ -245,7 +245,7 @@ class _MapUIStatecustom extends State<MapUIcustom> {
             markers: _markers,
             initialCameraPosition: CameraPosition(
               target: LatLng(37.5753, 36.9228),
-              zoom: 4,
+              zoom: 5,
             ),
             
           ),
