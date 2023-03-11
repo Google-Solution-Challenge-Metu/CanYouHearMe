@@ -1,4 +1,4 @@
-# CanYouHearMe
+# Can You Hear Me
 
 This app is a mobile application designed to help individuals and communities respond to natural disasters in a more organized and efficient manner. The app features five main components: account creation and information sharing, volunteer work, donation system, mapping function, and a watch version of the app with additional features.
 # The Sustainable Development Goals
