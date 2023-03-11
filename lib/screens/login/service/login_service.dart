@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import "package:firebase_auth/firebase_auth.dart";
 
+import '../auth_login.dart';
+
 class FirebaseUserAuthentication {
   final FirebaseAuth _auth;
 
@@ -24,6 +26,8 @@ class FirebaseUserAuthentication {
         email: email.toString().trim(),
         password: password.toString().trim(),
       );
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => AuthPage()));
     } on FirebaseAuthException catch (e) {
       if (e.code == "user-not-found") {
         wrongEmailMessage(context);
