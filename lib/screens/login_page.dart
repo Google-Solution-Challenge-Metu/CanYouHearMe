@@ -145,8 +145,6 @@ class _MainPageState extends State<MainPage> {
                   password: passwordController.text,
                   context: context,
                 );
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => AuthPage()));
               }),
               const SizedBox(
                 height: 20.0,
