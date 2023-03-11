@@ -7,7 +7,6 @@ import 'package:watch_connectivity/watch_connectivity.dart';
 import 'package:watch_connectivity_garmin/watch_connectivity_garmin.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-
 import 'check_tile.dart';
 
 class AddDevice extends StatefulWidget {
@@ -127,6 +126,36 @@ class _AddDeviceState extends State<AddDevice> {
               color: Color(0xffe97d47),
             ),
           ),
+          actions: [
+            Padding(
+              padding: EdgeInsets.only(right: 20.0),
+              child: GestureDetector(
+                onTap: () {
+                  showDialog(
+                    context: context, 
+                    builder: (context)=> SimpleDialog(
+                      title: const Text("Add A Smart Device"),
+                      contentPadding: const EdgeInsets.all(20.0),
+                      children: [
+                        const Text(" Supported:\n \nCheck if your device is supported by the current platform. \n \n \nPairable:\n \nTo provide your device. Please make sure that Wear OS or Galaxy Wearable apps are installed. \n \n \nReachable:\n \nCheck if your smart device connected to your phone and ready to send a connection key."),
+                        TextButton(
+                          onPressed:() {
+                            Navigator.of(context).pop();
+                          }, 
+                          child: const Text("Close", style: TextStyle(color:Color(0xffe97d47) ),),
+                        )
+                      ],
+
+                    )
+                  );
+                },
+                child: Icon(
+                  Icons.info_outline,
+                  color: Color(0xffe97d47),
+                ),
+              ),
+            )
+          ],
       ),
 
       body: SingleChildScrollView(
