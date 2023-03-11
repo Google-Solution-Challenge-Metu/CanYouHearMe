@@ -33,6 +33,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => CartModel()),
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         initialRoute: "/",
         home: Scaffold(
           body: LayoutBuilder(

@@ -24,6 +24,7 @@ class _AuthPageState extends State<AuthPage> {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return GetMaterialApp(
+              debugShowCheckedModeBanner: false,
               initialRoute: AppPage.getNavBar(),
               getPages: AppPage.routes,
             );
