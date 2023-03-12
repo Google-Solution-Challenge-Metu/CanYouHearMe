@@ -18,8 +18,8 @@ import 'dart:io' show Platform;
 import 'package:google_maps_flutter_android/google_maps_flutter_android.dart';
 import 'package:google_maps_flutter_platform_interface/google_maps_flutter_platform_interface.dart';
 
-class PostPage extends StatefulWidget {
-  PostPage({Key? key}) : super(key: key);
+class MissingPostPage extends StatefulWidget {
+  MissingPostPage({Key? key}) : super(key: key);
 
   static final kInitialPosition = LatLng(38.9637, 35.2433);
 
@@ -27,10 +27,10 @@ class PostPage extends StatefulWidget {
       GoogleMapsFlutterPlatform.instance;
 
   @override
-  State<PostPage> createState() => _PostPageState();
+  State<MissingPostPage> createState() => _MissingPostPageState();
 }
 
-class _PostPageState extends State<PostPage> {
+class _MissingPostPageState extends State<MissingPostPage> {
   final user = FirebaseAuth.instance.currentUser!;
   final FirebaseFirestore db = FirebaseFirestore.instance;
   String name = "";
@@ -264,7 +264,7 @@ class _PostPageState extends State<PostPage> {
                         searchingText: "Please wait ...",
                         selectText: "Select place",
                         outsideOfPickAreaText: "Place not in area",
-                        initialPosition: PostPage.kInitialPosition,
+                        initialPosition: MissingPostPage.kInitialPosition,
                         useCurrentLocation: true,
                         selectInitialPosition: true,
                         usePinPointingSearch: true,

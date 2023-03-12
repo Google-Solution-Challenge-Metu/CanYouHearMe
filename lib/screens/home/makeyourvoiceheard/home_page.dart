@@ -1,4 +1,4 @@
-import 'package:dietapp/screens/home/makeyourvoiceheard/post_page.dart';
+import 'package:dietapp/screens/home/makeyourvoiceheard/post_options.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dietapp/services/report_service.dart';
 import 'package:flutter/material.dart';
@@ -167,10 +167,9 @@ class _MakeYourVoiceHeardPageState extends State<MakeYourVoiceHeardPage> {
       floatingActionButton: FloatingActionButton(
         // Go to CartPage
         backgroundColor: Colors.black,
-        onPressed: () => Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => PostPage()),
-        ),
+        onPressed: () {
+          showOptions(context);
+        },
         child: const Icon(Icons.add),
       ),
     );
