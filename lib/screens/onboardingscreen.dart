@@ -20,92 +20,89 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Stack(
-          children: [
-            PageView(
-              controller: _controller,
-              onPageChanged: (index) {
-                setState(() {
-                  onLastPage = (index == 3);
-                });
-              },
-              children: const [
-                IntroScreen1(),
-                IntroScreen2(),
-                IntroScreen3(),
-                IntroScreen4(),
-              ],
-            ),
-            // dot indicators
-            Container(
-              alignment: const Alignment(0, 0.75),
-              child: Padding(
-                padding: EdgeInsets.only(bottom: height * 0.05),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: SmoothPageIndicator(
-                        controller: _controller,
-                        count: 4,
-                        effect: const WormEffect(
-                          activeDotColor: Color(0xffe97d47),
-                        ),
+    return Scaffold(
+      body: Stack(
+        children: [
+          PageView(
+            controller: _controller,
+            onPageChanged: (index) {
+              setState(() {
+                onLastPage = (index == 3);
+              });
+            },
+            children: const [
+              IntroScreen1(),
+              IntroScreen2(),
+              IntroScreen3(),
+              IntroScreen4(),
+            ],
+          ),
+          // dot indicators
+          Container(
+            alignment: const Alignment(0, 0.75),
+            child: Padding(
+              padding: EdgeInsets.only(bottom: height * 0.05),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SmoothPageIndicator(
+                      controller: _controller,
+                      count: 4,
+                      effect: const WormEffect(
+                        activeDotColor: Color(0xffe97d47),
                       ),
                     ),
-                    onLastPage
-                        ? Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: buildButton(
-                              () => Navigator.pushReplacement(
+                  ),
+                  onLastPage
+                      ? Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: buildButton(
+                            () => Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const MainPage(),
+                              ),
+                            ),
+                            'Done',
+                            const Color(0xffe97d47),
+                            Colors.white,
+                          ),
+                        )
+                      : Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: buildButton(
+                            () => _controller.nextPage(
+                              duration: const Duration(milliseconds: 500),
+                              curve: Curves.ease,
+                            ),
+                            'Next',
+                            const Color(0xffe97d47),
+                            Colors.white,
+                          ),
+                        ),
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: buildButton(
+                      onLastPage
+                          ? () {}
+                          : () => Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => const MainPage(),
                                 ),
                               ),
-                              'Done',
-                              const Color(0xffe97d47),
-                              Colors.white,
-                            ),
-                          )
-                        : Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: buildButton(
-                              () => _controller.nextPage(
-                                duration: const Duration(milliseconds: 500),
-                                curve: Curves.ease,
-                              ),
-                              'Next',
-                              const Color(0xffe97d47),
-                              Colors.white,
-                            ),
-                          ),
-                    Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: buildButton(
-                        onLastPage
-                            ? () {}
-                            : () => Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const MainPage(),
-                                  ),
-                                ),
-                        'Skip',
-                        Colors.white,
-                        onLastPage ? Colors.white : const Color(0xffe97d47),
-                      ),
-                    )
-                  ],
-                ),
+                      'Skip',
+                      Colors.white,
+                      onLastPage ? Colors.white : const Color(0xffe97d47),
+                    ),
+                  )
+                ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

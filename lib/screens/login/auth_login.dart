@@ -1,12 +1,8 @@
-import 'package:dietapp/screens/onboardingscreen.dart';
+import 'package:dietapp/screens/login/splashscreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:dietapp/screens/login/service/login_service.dart';
 import 'package:get/get.dart';
 import 'package:dietapp/routes/routes.dart';
-import 'package:provider/provider.dart';
-
-import '../../navbar/navbar.dart';
 
 class AuthPage extends StatefulWidget {
   const AuthPage({super.key});
@@ -29,7 +25,7 @@ class _AuthPageState extends State<AuthPage> {
               getPages: AppPage.routes,
             );
           } else {
-            return OnBoardingScreen();
+            return Splash();
           }
         },
       ),

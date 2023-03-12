@@ -76,6 +76,9 @@ dependencies:
   #gives error
   #firebase_storage: ^11.0.10
 
+  shared_preferences: ^2.0.18
+  after_layout: ^1.2.0
+
 
 dev_dependencies:
   flutter_test:

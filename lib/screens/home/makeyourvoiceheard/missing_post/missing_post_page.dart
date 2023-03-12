@@ -164,7 +164,7 @@ class _MissingPostPageState extends State<MissingPostPage> {
       DateTime.now(),
     )
         .then((value) {
-    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
         content: CustomSnackBarContent(
           errorText: "Your post has been shared",
         ),
@@ -219,7 +219,7 @@ class _MissingPostPageState extends State<MissingPostPage> {
         ),
         backgroundColor: Colors.transparent,
         title: Text(
-          "Create A Report",
+          "Create a Report",
           style: GoogleFonts.prozaLibre(
             color: const Color(0xffe97d47),
             fontSize: 20,
@@ -291,7 +291,8 @@ class _MissingPostPageState extends State<MissingPostPage> {
               },
               child: Card(
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(25),),
+                  borderRadius: BorderRadius.circular(25),
+                ),
                 color: Color(0xffe97d47),
                 margin: EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
                 child: Padding(

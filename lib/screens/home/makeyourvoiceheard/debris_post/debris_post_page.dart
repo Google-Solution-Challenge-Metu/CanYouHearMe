@@ -13,7 +13,6 @@ import 'package:geocoding/geocoding.dart';
 
 // Only to control hybrid composition and the renderer in Android
 
-
 class DebrisPostPage extends StatefulWidget {
   DebrisPostPage({Key? key}) : super(key: key);
 
@@ -33,30 +32,34 @@ class _DebrisPostPageState extends State<DebrisPostPage> {
   var profileImage;
 
   // for map
-  Completer<GoogleMapController> _controller=Completer();
+  Completer<GoogleMapController> _controller = Completer();
 
   double _latitude = 0;
   double _longitude = 0;
   String _address = "";
 
   late LatLng _currentPostion;
-  Set<Marker> _markers ={};
-
+  Set<Marker> _markers = {};
 
   void _getUserLocation() async {
-    var position = await GeolocatorPlatform.instance
-        .getCurrentPosition(locationSettings: LocationSettings(accuracy: LocationAccuracy.high) );
+    var position = await GeolocatorPlatform.instance.getCurrentPosition(
+        locationSettings: LocationSettings(accuracy: LocationAccuracy.high));
 
-    List<Placemark> placemarks = await placemarkFromCoordinates(position.latitude, position.longitude);
+    List<Placemark> placemarks =
+        await placemarkFromCoordinates(position.latitude, position.longitude);
     setState(() {
       _currentPostion = LatLng(position.latitude, position.longitude);
-      _latitude =position.latitude;
-      _longitude= position.longitude;
-      _address=placemarks.reversed.last.country.toString()+" "+
-               placemarks.reversed.last.locality.toString()+" "+
-               placemarks.reversed.last.street.toString()+" "+
-               placemarks.reversed.last.administrativeArea.toString()+" "+
-               placemarks.reversed.last.name.toString();
+      _latitude = position.latitude;
+      _longitude = position.longitude;
+      _address = placemarks.reversed.last.country.toString() +
+          " " +
+          placemarks.reversed.last.locality.toString() +
+          " " +
+          placemarks.reversed.last.street.toString() +
+          " " +
+          placemarks.reversed.last.administrativeArea.toString() +
+          " " +
+          placemarks.reversed.last.name.toString();
     });
     //_markers.add(Marker(
     //  markerId: MarkerId("currentlocation"),
@@ -147,7 +150,7 @@ class _DebrisPostPageState extends State<DebrisPostPage> {
       DateTime.now(),
     )
         .then((value) {
-    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
         content: CustomSnackBarContent(
           errorText: "Your post has been shared",
         ),
@@ -187,11 +190,13 @@ class _DebrisPostPageState extends State<DebrisPostPage> {
       );
     });
   }
+
   @override
   void initState() {
-  _getUserLocation();
-  super.initState();
-}
+    _getUserLocation();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     _getUserLocation();
@@ -207,7 +212,7 @@ class _DebrisPostPageState extends State<DebrisPostPage> {
         ),
         backgroundColor: Colors.transparent,
         title: Text(
-          "Create A Report",
+          "Create a Report",
           style: GoogleFonts.prozaLibre(
             color: const Color(0xffe97d47),
             fontSize: 20,
@@ -227,25 +232,21 @@ class _DebrisPostPageState extends State<DebrisPostPage> {
               height: 10.0,
             ),
             imagePlace(),
-            
             buildButton(imagePicker, "Pick an image"),
-
             Container(
-              height: 250,
-              width: MediaQuery.of(context).size.width,
-              child: GoogleMap(
-                initialCameraPosition: CameraPosition(
-                  target: _currentPostion,
-                  zoom: 20,
-                ),
-                markers: _markers,  
-                myLocationEnabled: true, 
-                onMapCreated: (GoogleMapController controller){
-                  _controller.complete(controller);
-                },
-              )
-            ),
-            
+                height: 250,
+                width: MediaQuery.of(context).size.width,
+                child: GoogleMap(
+                  initialCameraPosition: CameraPosition(
+                    target: _currentPostion,
+                    zoom: 20,
+                  ),
+                  markers: _markers,
+                  myLocationEnabled: true,
+                  onMapCreated: (GoogleMapController controller) {
+                    _controller.complete(controller);
+                  },
+                )),
           ],
         ),
       ),
@@ -317,6 +318,5 @@ class _DebrisPostPageState extends State<DebrisPostPage> {
         ),
       ),
     );
-
   }
 }
