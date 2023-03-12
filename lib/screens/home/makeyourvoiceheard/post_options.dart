@@ -1,3 +1,4 @@
+import 'package:dietapp/screens/home/makeyourvoiceheard/debris_post/debris_post_page.dart';
 import 'package:dietapp/screens/home/makeyourvoiceheard/missing_post_page.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +25,11 @@ showOptions(context){
                 child: const Text("Report A Missing Person"),
               ),
               SimpleDialogOption(
-                onPressed: () => null,
+                onPressed: () => 
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => DebrisPostPage()),
+                  ),
                 child: const Text("Report A Debris Building or Needs"),
               ),
               SimpleDialogOption(
