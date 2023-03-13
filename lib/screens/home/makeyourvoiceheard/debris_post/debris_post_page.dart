@@ -38,7 +38,7 @@ class _DebrisPostPageState extends State<DebrisPostPage> {
   double _longitude = 0;
   String _address = "";
 
-  late LatLng _currentPostion;
+  late LatLng _currentPostion=LatLng(38.9637, 35.2433);
   Set<Marker> _markers = {};
 
   void _getUserLocation() async {
@@ -61,10 +61,10 @@ class _DebrisPostPageState extends State<DebrisPostPage> {
           " " +
           placemarks.reversed.last.name.toString();
     });
-    //_markers.add(Marker(
-    //  markerId: MarkerId("currentlocation"),
-    //  position: LatLng(position.latitude, position.longitude),
-    //));
+    _markers.add(Marker(
+      markerId: MarkerId("currentlocation"),
+      position: LatLng(position.latitude, position.longitude),
+    ));
   }
 
   Widget imagePlace() {
@@ -239,7 +239,7 @@ class _DebrisPostPageState extends State<DebrisPostPage> {
                 child: GoogleMap(
                   initialCameraPosition: CameraPosition(
                     target: _currentPostion,
-                    zoom: 20,
+                    zoom: 5,
                   ),
                   markers: _markers,
                   myLocationEnabled: true,
