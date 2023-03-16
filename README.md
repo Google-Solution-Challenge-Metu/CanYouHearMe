@@ -50,6 +50,7 @@ Our app has user-friendly interface, after you login our simple, easy to use mai
 <p align="center">
 <img src="https://user-images.githubusercontent.com/124795286/225681115-c5ef6e37-868d-4328-8477-3e79437e0131.png" width="250" height="450" />
 </p>
+
 * **Donation System:** The app features a donation system that facilitates monetary donations and blood donations to organizations supporting earthquake relief efforts. 
 
 <p align="center">
@@ -86,6 +87,7 @@ The green marks are places of shelters for earthquake victims.
 <p align="center">
 <img src="https://user-images.githubusercontent.com/124795286/225628657-ac2ef91e-9d5e-4428-8918-bc07d2b13327.png" width="250" height="450" />
 </p>
+
 * **Watch Version of the App:** As part of our app's efforts to reduce the adverse effects of natural disasters, including the recent earthquake, we plan to incorporate a watch version of the app with additional features. This watch version includes an SOS button that can be used by individuals who may be trapped under debris after an earthquake.
 <p align="center">
 <img width="250"  src="https://user-images.githubusercontent.com/124795286/225680457-9f24ba3c-494b-4a5d-9ec0-bd829313ddfd.png">
