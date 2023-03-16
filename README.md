@@ -22,6 +22,15 @@ Our team was deeply moved by the heartbreaking photo of the father holding his d
 * **Account Creation and Information Sharing:** Users can create an account and share crucial information, such as the location of a missing person, with the wider community. This facilitates the dissemination of vital information and supports organized rescue and recovery efforts.
 [photo]
 * **Volunteer Work:** The app provides a platform for individuals to locate nearby opportunities for volunteer work. By enabling users to easily identify and participate in local volunteer work, the app encourages community involvement in disaster response efforts.
-* **Donation System:** The app features a donation system that facilitates monetary donations and blood donations to organizations supporting earthquake relief efforts. The AI system is designed to avoid issues observed in previous disaster relief efforts where donated items were not useful, such as the inclusion of cocktail dresses or high heels.
-* **Mapping Function:** The app includes a mapping function that allows users to identify buildings that have collapsed during the earthquake. By providing this information, the app supports the safety of individuals and emergency responders by indicating areas that should be avoided.
+* **Donation System:** The app features a donation system that facilitates monetary donations and blood donations to organizations supporting earthquake relief efforts. The AI system is designed to avoid issues observed in previous disaster relief efforts where donated items were not useful, such as the inclusion of cocktail dresses or high heels. 
+[photo]
+After the box is ready, user can easily just call the authorized and the box will be taken from the address.
+[photo]
+When an users wants to donate blood, our app shows the nearest locations.
+* **Mapping Function:** The app includes a mapping function that allows users to identify buildings that have collapsed during the earthquake. By providing this information, the app supports the safety of individuals and emergency responders by indicating areas that should be avoided. This function is integrated with social media and functions by enabling users to select their location, which is subsequently marked on the map. This process is achieved automatically, allowing users to seamlessly share their location with others on the platform. 
+[photo]
+The green marks are places of shelters for earthquake victims.
+[photo]
 * **Watch Version of the App:** As part of our app's efforts to reduce the adverse effects of natural disasters, including the recent earthquake, we plan to incorporate a watch version of the app with additional features. This watch version will include an SOS button that can be used by individuals who may be trapped under debris after an earthquake.
+[photo]
+* **Explore Page:**  Our app features an "Explore" page that provides users with crucial information regarding earthquakes. This page serves as a platform for users to easily access educational resources on earthquake preparedness and response, as well as learn more about the nature of earthquakes themselves.
