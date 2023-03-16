@@ -10,27 +10,75 @@ Our app aligns with Goal 11 of the SDGs, which aims to make cities inclusive, sa
 * 11.5.2, which aims to mitigate economic losses resulting from natural disasters. 
 
 # The Meaning Of Our Logo
+<img src="https://user-images.githubusercontent.com/124795286/225617516-224729d0-74d3-441b-b651-f0a9dc46fd22.png" width="400" height="400" />
+
+
 Our team was deeply moved by the heartbreaking photo of the father holding his deceased daughter's hand under the rubble after the recent earthquake in Turkey. It served as a stark reminder of the devastating impact of natural disasters and the importance of taking steps to mitigate their effects. As a tribute to those affected by the earthquake, we chose to incorporate the image of a hand holding in our app logo. Our hope is that it will serve as a reminder of the importance of disaster preparedness and the need for greater efforts to promote safety and resilience in the face of natural disasters.
+
+<img src="https://user-images.githubusercontent.com/124795286/225621788-9abfa25b-7fa4-45fa-9705-6279cc9170c4.png" width="600" height="400" />
+
 
 # Technolgies Used
 * Flutter for cross-platform development of the user interface
 * Firebase for backend development, including the Firestore database for storing user and location data
 * Tensorflow and Tensorflow Lite for building and implementing artificial intelligence features
-* Google Maps API for location data
+* Google Maps API for location data!
+# Log In Page
+<p align="center">
+<img width="250"  src="https://user-images.githubusercontent.com/124795286/225636416-aed159db-9f2e-4de4-8e15-d8511e69470e.png">
+<img width="250"  src="https://user-images.githubusercontent.com/124795286/225636488-af772f8f-7ffb-4bb6-9602-28bf10ccf039.png">
+</p>
+
+# Main
+Our app has user-friendly interface, after you login our simple, easy to use main page will be open.
+<p align="center">
+<img src="https://user-images.githubusercontent.com/124795286/225623650-3de0ccd6-5e69-4458-aa3b-b4a07b4c5f53.png" width="250" height="450" />
+</p>
+
 
 # Features
 * **Account Creation and Information Sharing:** Users can create an account and share crucial information, such as the location of a missing person, with the wider community. This facilitates the dissemination of vital information and supports organized rescue and recovery efforts.
-[photo]
+<p align="center">
+<img src="https://user-images.githubusercontent.com/124795286/225624620-b6a079be-9035-419b-bda2-11fbed596569.png" width="250" height="450" />
+</p>
 * **Volunteer Work:** The app provides a platform for individuals to locate nearby opportunities for volunteer work. By enabling users to easily identify and participate in local volunteer work, the app encourages community involvement in disaster response efforts.
 * **Donation System:** The app features a donation system that facilitates monetary donations and blood donations to organizations supporting earthquake relief efforts. The AI system is designed to avoid issues observed in previous disaster relief efforts where donated items were not useful, such as the inclusion of cocktail dresses or high heels. 
-[photo]
+<p align="center">
+<img width="250"  src="https://user-images.githubusercontent.com/124795286/225634885-002bec6e-0063-4fea-9e3c-5b775b0b3b5e.png">
+<img width="250"  src="https://user-images.githubusercontent.com/124795286/225634996-f12e502d-a0f8-4374-a9b6-0423772fd19a.png">
+<img width="250"  src="https://user-images.githubusercontent.com/124795286/225635089-91b249ae-0987-49dd-bcd1-3e0b01294829.png">
+</p>
 After the box is ready, user can easily just call the authorized and the box will be taken from the address.
-[photo]
+<p align="center">
+<img src="https://user-images.githubusercontent.com/124795286/225635179-543dcaa7-d462-40a6-8774-3b5f3913deb4.png" width="250" height="450" />
+</p>
 When an users wants to donate blood, our app shows the nearest locations.
+<p align="center">
+<img src="https://user-images.githubusercontent.com/124795286/225626687-b4a0ed36-984e-4f00-9f71-49d95c638812.png" width="250" height="450" />
+</p>
+Also we enabled users to donate money easily
+<p align="center">
+<img src="https://user-images.githubusercontent.com/124795286/225633463-c84b23ba-6e32-487b-8bfc-7c671f0e9cf4.png" width="250" height="450" />
+</p>
+
+
+
 * **Mapping Function:** The app includes a mapping function that allows users to identify buildings that have collapsed during the earthquake. By providing this information, the app supports the safety of individuals and emergency responders by indicating areas that should be avoided. This function is integrated with social media and functions by enabling users to select their location, which is subsequently marked on the map. This process is achieved automatically, allowing users to seamlessly share their location with others on the platform. 
-[photo]
+<p align="center">
+<img src="https://user-images.githubusercontent.com/124795286/225626943-38332c3e-9e36-479b-aa4d-f4ab2da26997.png" width="250" height="450" />
+</p>
+
 The green marks are places of shelters for earthquake victims.
-[photo]
+<p align="center">
+<img src="https://user-images.githubusercontent.com/124795286/225628657-ac2ef91e-9d5e-4428-8918-bc07d2b13327.png" width="250" height="450" />
+</p>
 * **Watch Version of the App:** As part of our app's efforts to reduce the adverse effects of natural disasters, including the recent earthquake, we plan to incorporate a watch version of the app with additional features. This watch version will include an SOS button that can be used by individuals who may be trapped under debris after an earthquake.
 [photo]
 * **Explore Page:**  Our app features an "Explore" page that provides users with crucial information regarding earthquakes. This page serves as a platform for users to easily access educational resources on earthquake preparedness and response, as well as learn more about the nature of earthquakes themselves.
+
+<p align="center">
+<img width="250"  src="https://user-images.githubusercontent.com/124795286/225625566-89a06ab6-b436-42d9-a42d-7b75a213f78b.png">
+<img width="250"  src="https://user-images.githubusercontent.com/124795286/225629135-dcd8ffdc-0a74-4690-a251-244620e8b9d9.png">
+</p>
+
+
