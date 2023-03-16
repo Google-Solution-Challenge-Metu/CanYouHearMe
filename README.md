@@ -24,6 +24,7 @@ Our team was deeply moved by the heartbreaking photo of the father holding his d
 * Tensorflow and Tensorflow Lite for building and implementing artificial intelligence features
 * Google Maps API for location data!
 # Log In Page
+We have SOS button on our login page as well as on watch version of our app in case of emergency.
 <p align="center">
 <img width="250"  src="https://user-images.githubusercontent.com/124795286/225636416-aed159db-9f2e-4de4-8e15-d8511e69470e.png">
 <img width="250"  src="https://user-images.githubusercontent.com/124795286/225636488-af772f8f-7ffb-4bb6-9602-28bf10ccf039.png">
@@ -32,17 +33,30 @@ Our team was deeply moved by the heartbreaking photo of the father holding his d
 # Main
 Our app has user-friendly interface, after you login our simple, easy to use main page will be open.
 <p align="center">
-<img src="https://user-images.githubusercontent.com/124795286/225623650-3de0ccd6-5e69-4458-aa3b-b4a07b4c5f53.png" width="250" height="450" />
+<img src="https://user-images.githubusercontent.com/124795286/225623650-3de0ccd6-5e69-4458-aa3b-b4a07b4c5f53.png" width="250" />
 </p>
-
 
 # Features
 * **Account Creation and Information Sharing:** Users can create an account and share crucial information, such as the location of a missing person, with the wider community. This facilitates the dissemination of vital information and supports organized rescue and recovery efforts.
 <p align="center">
-<img src="https://user-images.githubusercontent.com/124795286/225624620-b6a079be-9035-419b-bda2-11fbed596569.png" width="250" height="450" />
+<img src="https://user-images.githubusercontent.com/124795286/225624620-b6a079be-9035-419b-bda2-11fbed596569.png" width="250" />
+<img width="250"  src="https://user-images.githubusercontent.com/124795286/225681847-4ceed3ce-7191-45c6-a56f-04c1cb596b21.png">
+<img width="250"  src="https://user-images.githubusercontent.com/124795286/225681982-73f3aeb9-08aa-426e-8d41-18e0f1eb376e.png">
+<img width="250"  src="https://user-images.githubusercontent.com/124795286/225682926-a2fa384f-f9ca-4810-ac6f-e712cbcccc2c.png">
+<img width="250"  src="https://user-images.githubusercontent.com/124795286/225683098-78196717-260e-4fb3-bc0f-d0aafab9c98b.png">
 </p>
+
 * **Volunteer Work:** The app provides a platform for individuals to locate nearby opportunities for volunteer work. By enabling users to easily identify and participate in local volunteer work, the app encourages community involvement in disaster response efforts.
-* **Donation System:** The app features a donation system that facilitates monetary donations and blood donations to organizations supporting earthquake relief efforts. The AI system is designed to avoid issues observed in previous disaster relief efforts where donated items were not useful, such as the inclusion of cocktail dresses or high heels. 
+<p align="center">
+<img src="https://user-images.githubusercontent.com/124795286/225681115-c5ef6e37-868d-4328-8477-3e79437e0131.png" width="250" height="450" />
+</p>
+* **Donation System:** The app features a donation system that facilitates monetary donations and blood donations to organizations supporting earthquake relief efforts. 
+
+<p align="center">
+<img width="250"  src="https://user-images.githubusercontent.com/124795286/225683498-6889a8af-40de-4a64-8396-5dd02d2d42ab.png">
+</p>
+
+The AI system is designed to avoid issues observed in previous disaster relief efforts where donated items were not useful, such as the inclusion of cocktail dresses or high heels. 
 <p align="center">
 <img width="250"  src="https://user-images.githubusercontent.com/124795286/225634885-002bec6e-0063-4fea-9e3c-5b775b0b3b5e.png">
 <img width="250"  src="https://user-images.githubusercontent.com/124795286/225634996-f12e502d-a0f8-4374-a9b6-0423772fd19a.png">
@@ -72,8 +86,12 @@ The green marks are places of shelters for earthquake victims.
 <p align="center">
 <img src="https://user-images.githubusercontent.com/124795286/225628657-ac2ef91e-9d5e-4428-8918-bc07d2b13327.png" width="250" height="450" />
 </p>
-* **Watch Version of the App:** As part of our app's efforts to reduce the adverse effects of natural disasters, including the recent earthquake, we plan to incorporate a watch version of the app with additional features. This watch version will include an SOS button that can be used by individuals who may be trapped under debris after an earthquake.
-[photo]
+* **Watch Version of the App:** As part of our app's efforts to reduce the adverse effects of natural disasters, including the recent earthquake, we plan to incorporate a watch version of the app with additional features. This watch version includes an SOS button that can be used by individuals who may be trapped under debris after an earthquake.
+<p align="center">
+<img width="250"  src="https://user-images.githubusercontent.com/124795286/225680457-9f24ba3c-494b-4a5d-9ec0-bd829313ddfd.png">
+<img width="250"  src="https://user-images.githubusercontent.com/124795286/225680538-a8e7c135-cefc-48e7-a9f0-a1daf7f9c7a1.png">
+</p>
+
 * **Explore Page:**  Our app features an "Explore" page that provides users with crucial information regarding earthquakes. This page serves as a platform for users to easily access educational resources on earthquake preparedness and response, as well as learn more about the nature of earthquakes themselves.
 
 <p align="center">
