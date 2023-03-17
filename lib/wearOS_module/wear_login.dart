@@ -1,10 +1,12 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:dietapp/wearOS_module/wear_intro.dart';
 import 'package:dietapp/wearOS_module/wear_sos.dart';
 import 'package:flutter/material.dart';
 import 'package:dietapp/services/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:watch_connectivity/watch_connectivity.dart';
 import 'package:watch_connectivity_garmin/watch_connectivity_garmin.dart';
 import 'package:wear/wear.dart';
@@ -177,7 +179,35 @@ class _wear_loginState extends State<wear_login> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(height: 15),
+                Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: InkWell(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Image.asset(
+                          'assets/images/outline_arrow.png',
+                          height: 23,
+                        ),
+                        SizedBox(width: 5),
+                        Text(
+                          'Back',
+                          style: TextStyle(fontSize: 20, fontWeight: FontWeight.w300),
+                          
+                        )
+                      ],
+                    ),
+                    onTap: () => Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return Intro_Wear();
+                        },
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 10),
                 Container(
                   height: 20,
                   child: Row(

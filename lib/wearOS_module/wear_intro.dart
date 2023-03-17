@@ -40,56 +40,61 @@ class _Intro_WearState extends State<Intro_Wear> {
           //  end: Alignment.bottomCenter
           //)
         ),
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 5.0,
-                right: 5.0,
-                top: 50,
-                bottom: 0,
-              ),
-              child: Image.asset(
-                'assets/images/hands.png',
-                height: 50,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Text(
-                'This app is for emergency calls. Please use only when necessary.',
-                textAlign: TextAlign.center,
-                //style: GoogleFonts.notoSerif(
-                //    fontSize: 36, fontWeight: FontWeight.bold),
-              ),
-            ),
-            GestureDetector(
-              onTap: () => Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return Wear_Auth();
-                  },
-                ),
-              ),
-              child: Container(
-                padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(100),
-                  color: Color(0xffe97d47),
-                ),
-                child: const Text(
-                  "Get Started",
-                  style: TextStyle(
-                    color: Colors.white,
-                    // fontWeight: FontWeight.bold,
-                    fontSize: 16,
+        child:SingleChildScrollView(
+          child: SafeArea(
+            child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          left: 5.0,
+                          right: 5.0,
+                          top: 0,
+                          bottom: 0,
+                        ),
+                        child: Image.asset(
+                          'assets/images/hands.png',
+                          height: 50,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Text(
+                          'This app is for emergency calls. Please use only when necessary.',
+                          textAlign: TextAlign.center,
+                          //style: GoogleFonts.notoSerif(
+                          //    fontSize: 36, fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () => Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return Wear_Auth();
+                            },
+                          ),
+                        ),
+                        child: Container(
+                          padding: const EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(100),
+                            color: Color(0xffe97d47),
+                          ),
+                          child: const Text(
+                            "Get Started",
+                            style: TextStyle(
+                              color: Colors.white,
+                              // fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-              ),
-            ),
-          ],
-        ),
+          )
+        ) 
+                  
         
       ),
 

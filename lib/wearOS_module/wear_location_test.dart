@@ -88,10 +88,10 @@ class MapWearState extends State<MapWear> {
     );
     // set up the AlertDialog
     AlertDialog alert = AlertDialog(
-      backgroundColor: Color(0xffe97d47),
+      backgroundColor: Color.fromARGB(237, 233, 125, 71),
       content: Container(
         width: MediaQuery.of(context).size.width-20,
-        height: 50,),
+        height: MediaQuery.of(context).size.height-20,),
       title: Text(
         "Sending a sos call, are you sure?",
         style: TextStyle(color: Colors.white, fontSize: 12),
@@ -128,41 +128,96 @@ class MapWearState extends State<MapWear> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Container(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
+      body: Stack(
+        children: <Widget>[
+          GoogleMap(
+           myLocationEnabled: true,
+           myLocationButtonEnabled: true ,
+           onTap: (LatLng latlng){
+             Marker onemarker= Marker(
+               markerId: MarkerId(""),
+               position: latlng,
+               infoWindow: InfoWindow(title: "I'm here"),
+               icon:BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueOrange),
+             );
+             one_marker.add(onemarker);
+             setState(() {
+               last_latLng=latlng;
+             });
+             print(latlng);
+           },
+           initialCameraPosition: _kGooglePlex,
+           onMapCreated: (GoogleMapController controller){
+             _controller.complete(controller);
+           },  //
+           markers: one_marker.map((e) => e).toSet(),
+           polylines: _polylines,
+         ),
+         Container(
+          padding: EdgeInsets.only(top:24,right:12),
+          alignment: Alignment.topRight,
           child: Column(
-            children: [
-              Expanded(
-                child: GoogleMap(
-                  myLocationEnabled: true,
-                  myLocationButtonEnabled: true ,
-                  onTap: (LatLng latlng){
-                    Marker onemarker= Marker(
-                      markerId: MarkerId(""),
-                      position: latlng,
-                      infoWindow: InfoWindow(title: "I'm here"),
-                      icon:BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueOrange),
-                    );
-                    one_marker.add(onemarker);
-                    setState(() {
-                      last_latLng=latlng;
-                    });
-                    print(latlng);
-                  },
-                  initialCameraPosition: _kGooglePlex,
-                  onMapCreated: (GoogleMapController controller){
-                    _controller.complete(controller);
-                  },
-
-                  markers: one_marker.map((e) => e).toSet(),
-                  polylines: _polylines,
+            children: <Widget>[
+              FloatingActionButton.small(
+                backgroundColor: const Color(0xffe97d47),
+                onPressed: () => Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return sos_page();
+                    },
+                  ),
                 ),
-              ),
+                child: Icon(Icons.arrow_back_outlined),)
             ],
           ),
         )
+        ],
+      //  child: Container(
+      //    height: MediaQuery.of(context).size.height,
+      //    width: MediaQuery.of(context).size.width,
+      //    child: Column(
+      //      children: [
+      //        Expanded(
+      //          child: GoogleMap(
+      //            myLocationEnabled: true,
+      //            myLocationButtonEnabled: true ,
+      //            onTap: (LatLng latlng){
+      //              Marker onemarker= Marker(
+      //                markerId: MarkerId(""),
+      //                position: latlng,
+      //                infoWindow: InfoWindow(title: "I'm here"),
+      //                icon:BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueOrange),
+      //              );
+      //              one_marker.add(onemarker);
+      //              setState(() {
+      //                last_latLng=latlng;
+      //              });
+      //              print(latlng);
+      //            },
+      //            initialCameraPosition: _kGooglePlex,
+      //            onMapCreated: (GoogleMapController controller){
+      //              _controller.complete(controller);
+      //            },  //
+      //            markers: one_marker.map((e) => e).toSet(),
+      //            polylines: _polylines,
+      //          ),
+      //        ),
+      //        Container(
+      //          padding: EdgeInsets.only(top:24,right:12),
+      //          alignment: Alignment.topRight,
+      //          child: Column(
+      //            children: <Widget>[
+      //              FloatingActionButton(
+      //                backgroundColor: const Color(0xffe97d47),
+      //                onPressed: null,
+      //                child: Icon(Icons.arrow_back),)
+      //            ],
+      //          ),
+      //        )
+      //      ],
+      //    ),
+      //  )
       ),
       
       floatingActionButton: FloatingActionButton.extended(
