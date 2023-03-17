@@ -143,115 +143,115 @@ class _sos_pageState extends State<sos_page> {
   Widget build(BuildContext context) {
     return Scaffold(
       
-      body: Container(
-        decoration: BoxDecoration(
-          //gradient: LinearGradient(
-          //  colors: [
-          //    Colors.orange,
-          //    Color.fromARGB(255, 245, 203, 141),
-          //  ],
-          //  stops: [0.05,1],
-          //  begin: Alignment.topCenter,
-          //  end: Alignment.bottomCenter
-          //)
-        ),
-        child: Column(
-          children: [
-            Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: InkWell(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Image.asset(
-                    'assets/images/profile_black.png',
-                    height: 23,
-                  ),
-                  SizedBox(width: 5),
-                  Text(
-                    'Profile',
-                    style: GoogleFonts.nunitoSans(
-                      textStyle: TextStyle(
-                        fontSize: 20, 
-                        fontWeight: FontWeight.w300,
-                        color: Color(0xffe97d47)),
+      body: SingleChildScrollView(
+        child: Container(
+          decoration: BoxDecoration(
+            //gradient: LinearGradient(
+            //  colors: [
+            //    Colors.orange,
+            //    Color.fromARGB(255, 245, 203, 141),
+            //  ],
+            //  stops: [0.05,1],
+            //  begin: Alignment.topCenter,
+            //  end: Alignment.bottomCenter
+            //)
+          ),
+          child: Column(
+            children: [
+              Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: InkWell(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Image.asset(
+                      'assets/images/profile_black.png',
+                      height: 23,
                     ),
-                    
-                  )
+                    SizedBox(width: 5),
+                    Text(
+                      'Profile',
+                      style: GoogleFonts.nunitoSans(
+                        textStyle: TextStyle(
+                          fontSize: 20, 
+                          fontWeight: FontWeight.w300,
+                          color: Color(0xffe97d47)),
+                      ),
+                    )
+                  ],
+                ),
+                onTap: () => Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return Wear_Profile();
+                    },
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(
+                  height: 6,
+                ),
+            Container(
+              width: 120,
+              height: 120,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(60),
+                color: const Color(0xffffffff),
+                image: const DecorationImage(
+                  image: AssetImage("assets/images/ring.png"),
+                ),
+                boxShadow: const [
+                  BoxShadow(
+                    color: Color(0xffe97d47),
+                    offset: Offset(0, 4),
+                    blurRadius: 2,
+                  ),
                 ],
               ),
-              onTap: () => Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return Wear_Profile();
-                  },
-                ),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(context,MaterialPageRoute(builder: (context) => MapWear()));
+                  //warnmes(context);
+                  //SendSosMessage();
+                  //_getCurrentPosition();
+                },
               ),
             ),
-          ),
-          const SizedBox(
-                height: 6,
-              ),
-          Container(
-            width: 120,
-            height: 120,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(60),
-              color: const Color(0xffffffff),
-              image: const DecorationImage(
-                image: AssetImage("assets/images/ring.png"),
-              ),
-              boxShadow: const [
-                BoxShadow(
-                  color: Color(0xffe97d47),
-                  offset: Offset(0, 4),
-                  blurRadius: 2,
-                ),
-              ],
-            ),
-            child: GestureDetector(
-              onTap: () {
-                Navigator.push(context,MaterialPageRoute(builder: (context) => MapWear()));
-                  
-                //warnmes(context);
-                //SendSosMessage();
-                //_getCurrentPosition();
-              },
-            ),
-          ),
-
-          const SizedBox(
-                height: 19,
-              ),  
-          GestureDetector(
-              onTap: () => Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return devices_page();
-                  },
-                ),
-              ),
-              child: Container(
-                padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                  color: Color(0xffe97d47),
-                ),
-                child: const Text(
-                  "Find Device",
-                  style: TextStyle(
-                    color: Colors.white,
-                    // fontWeight: FontWeight.bold,
-                    fontSize: 16,
+            const SizedBox(
+                  height: 19,
+                ),  
+            GestureDetector(
+                onTap: () => Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return devices_page();
+                    },
                   ),
                 ),
-              ),
-            ),  
-          ],
-        ),     
+                child: Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    color: Color(0xffe97d47),
+                  ),
+                  child: const Text(
+                    "Find Device",
+                    style: TextStyle(
+                      color: Colors.white,
+                      // fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
+              ),  
+            ],
+          ),     
+        ),
       ),
+              
     );
   }
 }
