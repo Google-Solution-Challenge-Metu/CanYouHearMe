@@ -48,7 +48,7 @@ Our app has user-friendly interface, after you login our simple, easy to use mai
 
 * **Volunteer Work:** The app provides a platform for individuals to locate nearby opportunities for volunteer work. By enabling users to easily identify and participate in local volunteer work, the app encourages community involvement in disaster response efforts.
 <p align="center">
-<img src="https://user-images.githubusercontent.com/124795286/225681115-c5ef6e37-868d-4328-8477-3e79437e0131.png" width="250" height="450" />
+<img src="https://user-images.githubusercontent.com/124795286/225681115-c5ef6e37-868d-4328-8477-3e79437e0131.png" width="250" />
 </p>
 
 * **Donation System:** The app features a donation system that facilitates monetary donations and blood donations to organizations supporting earthquake relief efforts. 
