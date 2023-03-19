@@ -5,10 +5,14 @@ This app is a mobile application designed to help individuals and communities re
  The Sustainable Development Goals, also known as the Global Goals, are a set of 17 goals established by the United Nations in 2015 to promote sustainable development worldwide. These goals cover a range of topics including poverty, hunger, health, education, gender equality, clean water and sanitation, renewable energy, economic growth, infrastructure, and climate action. Google has committed to supporting the Sustainable Development Goals by leveraging its technology, expertise, and resources to create positive impact around the world. Google works with partners across sectors to address these challenges and create scalable solutions that can help achieve the Sustainable Development Goals.
 
 # Our Goal
+<img align="right" src="https://user-images.githubusercontent.com/96688864/226203314-b9405886-cb64-4f4c-8530-415cf32cc957.png" width="180" height="180" />
+
 Our app aligns with Goal 11 of the SDGs, which aims to make cities inclusive, safe, resilient and sustainable. Specifically, we aim to contribute to Target 11.5, which seeks to reduce the adverse effects of natural disasters. This target includes two sub-targets: 
 * 11.5.1, which focuses on reducing the number of deaths and injuries caused by natural disasters
 * 11.5.2, which aims to mitigate economic losses resulting from natural disasters. 
 
+ 
+ 
 # The Meaning Of Our Logo
 <img src="https://user-images.githubusercontent.com/124795286/225617516-224729d0-74d3-441b-b651-f0a9dc46fd22.png" width="400" height="400" />
 
