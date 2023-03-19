@@ -58,20 +58,24 @@ Our app has user-friendly interface, after you login our simple, easy to use mai
 </p>
 
 The AI system is designed to avoid issues observed in previous disaster relief efforts where donated items were not useful, such as the inclusion of cocktail dresses or high heels. 
+
 <p align="center">
 <img width="250"  src="https://user-images.githubusercontent.com/124795286/225634885-002bec6e-0063-4fea-9e3c-5b775b0b3b5e.png">
 <img width="250"  src="https://user-images.githubusercontent.com/124795286/225634996-f12e502d-a0f8-4374-a9b6-0423772fd19a.png">
 <img width="250"  src="https://user-images.githubusercontent.com/124795286/225635089-91b249ae-0987-49dd-bcd1-3e0b01294829.png">
 </p>
 After the box is ready, user can easily just call the authorized and the box will be taken from the address.
+
 <p align="center">
 <img src="https://user-images.githubusercontent.com/124795286/225635179-543dcaa7-d462-40a6-8774-3b5f3913deb4.png" width="250" height="450" />
 </p>
 When an users wants to donate blood, our app shows the nearest locations.
+
 <p align="center">
 <img src="https://user-images.githubusercontent.com/124795286/225626687-b4a0ed36-984e-4f00-9f71-49d95c638812.png" width="250" height="450" />
 </p>
 Also we enabled users to donate money easily
+
 <p align="center">
 <img src="https://user-images.githubusercontent.com/124795286/225633463-c84b23ba-6e32-487b-8bfc-7c671f0e9cf4.png" width="250" height="450" />
 </p>
@@ -79,16 +83,19 @@ Also we enabled users to donate money easily
 
 
 * **Mapping Function:** The app includes a mapping function that allows users to identify buildings that have collapsed during the earthquake. By providing this information, the app supports the safety of individuals and emergency responders by indicating areas that should be avoided. This function is integrated with social media and functions by enabling users to select their location, which is subsequently marked on the map. This process is achieved automatically, allowing users to seamlessly share their location with others on the platform. 
+
 <p align="center">
 <img src="https://user-images.githubusercontent.com/124795286/225626943-38332c3e-9e36-479b-aa4d-f4ab2da26997.png" width="250" height="450" />
 </p>
 
 The green marks are places of shelters for earthquake victims.
+
 <p align="center">
 <img src="https://user-images.githubusercontent.com/124795286/225628657-ac2ef91e-9d5e-4428-8918-bc07d2b13327.png" width="250" height="450" />
 </p>
 
 * **Watch Version of the App:** As part of our app's efforts to reduce the adverse effects of natural disasters, including the recent earthquake, we plan to incorporate a watch version of the app with additional features. This watch version includes an SOS button that can be used by individuals who may be trapped under debris after an earthquake.
+
 <p align="center">
 <img width="250"  src="https://user-images.githubusercontent.com/124795286/225680457-9f24ba3c-494b-4a5d-9ec0-bd829313ddfd.png">
 <img width="250"  src="https://user-images.githubusercontent.com/124795286/225680538-a8e7c135-cefc-48e7-a9f0-a1daf7f9c7a1.png">
