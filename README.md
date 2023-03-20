@@ -45,8 +45,12 @@ Our app has user-friendly interface, after you login our simple, easy to use mai
 <p align="center">
 <img src="https://user-images.githubusercontent.com/124795286/225624620-b6a079be-9035-419b-bda2-11fbed596569.png" width="250" />
 <img width="250"  src="https://user-images.githubusercontent.com/124795286/225681847-4ceed3ce-7191-45c6-a56f-04c1cb596b21.png">
+</p>
+
+According to the order of importance of the topic to be reported, only the location of the user is allowed to be shared in order to prevent possible fake sharing for the priority subject("debris building or need"). For other external subject/s ("missing person"), the user can select and report different locations on the map.
+
+<p align="center">
 <img width="250"  src="https://user-images.githubusercontent.com/124795286/225681982-73f3aeb9-08aa-426e-8d41-18e0f1eb376e.png">
-<img width="250"  src="https://user-images.githubusercontent.com/124795286/225682926-a2fa384f-f9ca-4810-ac6f-e712cbcccc2c.png">
 <img width="250"  src="https://user-images.githubusercontent.com/124795286/225683098-78196717-260e-4fb3-bc0f-d0aafab9c98b.png">
 </p>
 
@@ -73,7 +77,7 @@ After the box is ready, user can easily just call the authorized and the box wil
 <p align="center">
 <img src="https://user-images.githubusercontent.com/124795286/225635179-543dcaa7-d462-40a6-8774-3b5f3913deb4.png" width="250"  />
 </p>
-When an users wants to donate blood, our app shows the nearest locations.
+When an users wants to donate blood, our app shows the nearest locations. Since we do not have this data yet, the user is directed to the official website of Kızılay in order to increase the usability. The feature can be added to the interface by providing the data.
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/124795286/225626687-b4a0ed36-984e-4f00-9f71-49d95c638812.png" width="250"  />
