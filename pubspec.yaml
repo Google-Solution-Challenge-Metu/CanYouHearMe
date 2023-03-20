@@ -22,21 +22,24 @@ dependencies:
   image_picker: ^0.8.4+11
   provider:
   ionicons: ^0.2.1
-  audioplayers: ^0.20.1
+  flutter_svg: ^1.0.3
+  smooth_page_indicator: ^1.0.0  
   google_sign_in: ^5.4.2
   toast: ^0.3.0
+
+  #audioplayer
+  audioplayers: ^0.20.1
+
   #error snackbar
   awesome_snackbar_content: ^0.1.0
-  flutter_svg: ^1.0.3
-  smooth_page_indicator: ^1.0.0
 
   #QR code
   qr_flutter: ^4.0.0 
   qr_code_scanner: ^1.0.1
 
   #Tensorflow Lite
-  tflite:
-    path: ./lib/flutter_tflite-master
+  tflite: #^1.1.2
+    path: ./lib/flutter_tflite-master  # original plugin gives error for our code. So we personalized the package.
   get: ^4.6.5
   get_storage: ^2.0.3
 
