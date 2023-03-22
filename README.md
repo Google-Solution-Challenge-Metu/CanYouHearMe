@@ -27,7 +27,7 @@ Our team was deeply moved by the heartbreaking photo of the father holding his d
 * Firebase for backend development, including the Firestore database for storing user and location data
 * Tensorflow and Tensorflow Lite for building and implementing artificial intelligence features
 * Google Maps API for location data!
-# Log In Page
+# Login Page
 We have SOS button on our login page as well as on watch version of our app in case of emergency.
 <p align="center">
 <img width="250"  src="https://user-images.githubusercontent.com/124795286/225636416-aed159db-9f2e-4de4-8e15-d8511e69470e.png">
