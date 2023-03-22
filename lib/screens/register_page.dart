@@ -82,6 +82,7 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
@@ -102,10 +103,6 @@ class _RegisterPageState extends State<RegisterPage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  //const CircleAvatar(
-                  //  radius: 50.0,
-                  //  backgroundImage: AssetImage("assets/images/mithat.jpg"),
-                  //),
                   const Text(
                     "Can You Hear Me?",
                     style: TextStyle(

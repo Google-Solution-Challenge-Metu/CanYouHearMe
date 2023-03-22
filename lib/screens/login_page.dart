@@ -1,3 +1,4 @@
+import 'package:dietapp/screens/forgot_password.dart';
 import 'package:dietapp/screens/register_page.dart';
 import 'package:dietapp/services/auth_service.dart';
 import 'package:dietapp/screens/login/service/login_service.dart';
@@ -129,7 +130,11 @@ class _MainPageState extends State<MainPage> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ForgotPasswordPage(),
+                        )),
                     child: const Text(
                       "Forgot password?",
                       style: TextStyle(color: Color(0xffe97d47)),
