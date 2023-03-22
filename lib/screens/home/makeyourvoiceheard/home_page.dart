@@ -143,11 +143,15 @@ class _MakeYourVoiceHeardPageState extends State<MakeYourVoiceHeardPage> {
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
-                                      Image.asset(
-                                          "assets/images/call_black.png"),
-                                      SizedBox(width: 10),
-                                      Image.asset(
-                                          "assets/images/location_black.png"),
+                                      IconButton(
+                                        onPressed: () {},
+                                        icon: Icon(Icons.call),
+                                      ),
+                                      const SizedBox(width: 10),
+                                      IconButton(
+                                        onPressed: () {},
+                                        icon: Icon(Icons.location_on),
+                                      ),
                                     ],
                                   ),
                                 ],

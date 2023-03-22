@@ -37,19 +37,6 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               ElevatedButton(
                 // BLOOD BUTTON
-                child: Row(
-                  //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Image.asset("assets/images/myvh_black.png",width: 75,),
-                    SizedBox(width: 5,),
-                    Container(
-                      width: 180,
-                      child:
-                        Text('Make Your Voice Heard'),
-                    ),
-                  ]
-                ),
-                
                 onPressed: () {
                   Navigator.push(
                       context,
@@ -68,28 +55,34 @@ class _HomeScreenState extends State<HomeScreen> {
                     shadowColor: const Color(0xffe97d47),
                     side: const BorderSide(color: Color(0xffe97d47), width: 4),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(25.0))),
+                        borderRadius: BorderRadius.circular(25.0))),
+                // BLOOD BUTTON
+                child: Row(
+                    //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Image.asset(
+                        "assets/images/myvh_black.png",
+                        width: 75,
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      const SizedBox(
+                        width: 180,
+                        child: Text('Make Your Voice Heard'),
+                      ),
+                    ]),
               ),
               const SizedBox(
                 height: 30,
               ),
               ElevatedButton(
                 // BE VOLUNTEER
-                child: Row(
-                  //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Image.asset("assets/images/hands_black.png",width: 75,),
-                    SizedBox(width: 5,),
-                    Text('Volunteer'),
-                    //SizedBox(width: 75,),
-                  ]
-                ),
-                
                 onPressed: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => VolunteerScreen()));
+                          builder: (context) => const VolunteerScreen()));
                 },
                 style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.black,
@@ -99,10 +92,24 @@ class _HomeScreenState extends State<HomeScreen> {
                     textStyle: const TextStyle(
                         fontSize: 25, fontWeight: FontWeight.bold),
                     elevation: 15,
-                    shadowColor: Color(0xffe97d47),
+                    shadowColor: const Color(0xffe97d47),
                     side: const BorderSide(color: Color(0xffe97d47), width: 4),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(25.0))),
+                        borderRadius: BorderRadius.circular(25.0))),
+                // BE VOLUNTEER
+                child: Row(
+                    //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Image.asset(
+                        "assets/images/hands_black.png",
+                        width: 75,
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      const Text('Volunteer'),
+                      //SizedBox(width: 75,),
+                    ]),
               ),
               const SizedBox(
                 height: 30,
@@ -110,49 +117,44 @@ class _HomeScreenState extends State<HomeScreen> {
               ElevatedButton(
                 // BOX BUTTON
                 //icon: Icon(Icons.wallet_giftcard_outlined),
-                child: Row(
-                  //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Image.asset("assets/images/donation_main_black.png",width: 75,),
-                    SizedBox(width: 5,),
-                    Text('Donate'),
-                    
-                  ]
-                ),
                 onPressed: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => DonationMainScreen()));
+                          builder: (context) => const DonationMainScreen()));
                 },
                 style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.black,
                     backgroundColor: Colors.white,
-                    padding: EdgeInsets.all(20.0),
+                    padding: const EdgeInsets.all(20.0),
                     fixedSize: const Size(300, 95),
                     textStyle: const TextStyle(
                         fontSize: 25, fontWeight: FontWeight.bold),
                     elevation: 15,
-                    shadowColor: Color(0xffe97d47),
+                    shadowColor: const Color(0xffe97d47),
                     side: const BorderSide(color: Color(0xffe97d47), width: 4),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(25.0))),
+                        borderRadius: BorderRadius.circular(25.0))),
+                // BOX BUTTON
+                //icon: Icon(Icons.wallet_giftcard_outlined),
+                child: Row(
+                    //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Image.asset(
+                        "assets/images/donation_main_black.png",
+                        width: 75,
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      const Text('Donate'),
+                    ]),
               ),
               const SizedBox(
                 height: 30,
               ),
               ElevatedButton(
                 // MAPS
-                child: Row(
-                  //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Image.asset("assets/images/map_black.png",width: 75,),
-                    SizedBox(width: 5,),
-                    Text('Maps'),
-                    //SizedBox(width: 75,),
-                  ]
-                ),
-                
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => MapUIcustom()));
@@ -165,10 +167,24 @@ class _HomeScreenState extends State<HomeScreen> {
                     textStyle: const TextStyle(
                         fontSize: 25, fontWeight: FontWeight.bold),
                     elevation: 15,
-                    shadowColor: Color(0xffe97d47),
+                    shadowColor: const Color(0xffe97d47),
                     side: const BorderSide(color: Color(0xffe97d47), width: 4),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(25.0))),
+                        borderRadius: BorderRadius.circular(25.0))),
+                // MAPS
+                child: Row(
+                    //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Image.asset(
+                        "assets/images/map_black.png",
+                        width: 75,
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      const Text('Maps'),
+                      //SizedBox(width: 75,),
+                    ]),
               ),
               const SizedBox(
                 height: 30,

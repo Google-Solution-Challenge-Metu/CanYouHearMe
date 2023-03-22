@@ -3,6 +3,7 @@ import 'package:dietapp/screens/login/service/login_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
 
 import '../../services/report_service.dart';
@@ -18,6 +19,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   final ReportService _reportService = ReportService();
   final user = FirebaseAuth.instance.currentUser!;
   final FirebaseFirestore db = FirebaseFirestore.instance;
+
   String name = "";
   String surname = "";
 
