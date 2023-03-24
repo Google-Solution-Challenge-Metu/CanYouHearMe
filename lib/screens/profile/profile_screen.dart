@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dietapp/screens/login/service/login_service.dart';
+import 'package:dietapp/screens/profile/sos_mobile.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
@@ -44,6 +45,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
   void add_device() {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => AddDevice()));
+  }
+
+  void sos_mobile(){
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => SosMobile()));
   }
 
   @override
@@ -172,6 +178,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   buildButton(changeUserProfile, "Profili Düzenle"),
                   buildButton(add_device, "Add device"),
+                  buildButton(sos_mobile, "SOS Button"),
                 ],
               ),
             ),
