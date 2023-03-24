@@ -17,9 +17,9 @@ class SosMobile extends StatefulWidget {
 
 class _SosMobileState extends State<SosMobile> {
 
-  static double _latitude = 0;
-  static double _longitude = 0;
-  static LatLng last_latLng =LatLng(1,1);
+  static double? _latitude;
+  static double? _longitude;
+  static LatLng? last_latLng;
   final SosMobileService _reportService = SosMobileService();
   var currentLocation;
   late bool serviceEnabled;
@@ -28,6 +28,7 @@ class _SosMobileState extends State<SosMobile> {
   final FirebaseFirestore db = FirebaseFirestore.instance;
   String name = "";
   String surname = "";
+
 
   FirebaseDocument() async {
     var document = await db.collection('Person').doc(user.uid).get();
@@ -55,7 +56,7 @@ class _SosMobileState extends State<SosMobile> {
     );
   }
 
-  void warnmes(BuildContext context) {
+  void warnmes(BuildContext context,_latitude,_longitude) {
     FirebaseDocument();
     // set up the buttons
     Widget cancelButton = TextButton(
@@ -68,7 +69,7 @@ class _SosMobileState extends State<SosMobile> {
       child: Text("Continue", style: TextStyle(color: Colors.white),),
       onPressed:  () {
         Navigator.of(context, rootNavigator: true).pop();   
-        SendSosMessage();
+        SendSosMessage(_latitude,_longitude);
         Navigator.pop(context);
         
       },
@@ -101,17 +102,35 @@ class _SosMobileState extends State<SosMobile> {
   }
 
 
-  Future<void> SendSosMessage() async {
+  Future<void> SendSosMessage(_latitude,_longitude) async {
     FirebaseDocument();
   
     _reportService
-        .addStatus("Help Me Please", 
+        .addStatus("Help Me Please!!", 
                   (name+" "+surname),
                   GeoPoint(_latitude, _longitude),
         ).then((value) {
           SOSsent();
     });
   
+  }
+
+  Future<Position> _getCurrentLocation() async{
+    bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    if(!serviceEnabled){
+      return Future.error("Location services are disabled.");
+    }
+    LocationPermission permission =await Geolocator.checkPermission();
+    if(permission==LocationPermission.denied){
+      permission= await Geolocator.requestPermission();
+      if (permission==LocationPermission.denied){
+        return Future.error("Location services are disabled.");
+      }
+    }
+    if(permission==LocationPermission.deniedForever){
+      return Future.error("Location services are permanently disabled.");
+    }
+    return await Geolocator.getCurrentPosition();
   }
 
   @override
@@ -185,13 +204,17 @@ class _SosMobileState extends State<SosMobile> {
                 ),
                 child: GestureDetector(
                   onTap: () {
-                    setState(() {
-                      _latitude = last_latLng.latitude;
-                      _longitude = last_latLng.longitude;
-                    });
-                    print(last_latLng);
+                    _getCurrentLocation().then((value) {
+                      setState(() {
+                        _latitude=value.latitude;
+                        _longitude=value.longitude;
+                        print(_latitude);
+                        //last_latLng=LatLng(_latitude, _longitude);
+                      });
+                    },);
+                    //print(last_latLng);
                     FirebaseDocument();
-                    warnmes(context);
+                    warnmes(context,_latitude,_longitude);
                   },
                 ),
               ),
