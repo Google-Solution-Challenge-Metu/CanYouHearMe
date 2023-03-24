@@ -1,4 +1,3 @@
-import 'package:dietapp/screens/forgot_password.dart';
 import 'package:dietapp/screens/register_page.dart';
 import 'package:dietapp/services/auth_service.dart';
 import 'package:dietapp/screens/login/service/login_service.dart';
@@ -15,6 +14,8 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  int play_pause=0;
+  final player = AudioPlayer();
 
   void sos_warning() {
     showDialog(
@@ -23,7 +24,7 @@ class _MainPageState extends State<MainPage> {
         return const AlertDialog(
           backgroundColor: Color(0xffe97d47),
           title: Text(
-            "Turn Up Your Phone Volume!",
+            "Turn Up Your Phone Volume! To Pause The Sound, Please Press The Button Again.",
             style: TextStyle(color: Colors.white),
           ),
         );
@@ -82,9 +83,26 @@ class _MainPageState extends State<MainPage> {
                           ),
                           child: GestureDetector(
                             onTap: () {
-                              final player = AudioCache();
-                              player.play("sossound.mp3");
-                              sos_warning();
+                                                           
+                              
+                              if (play_pause==0){
+                                player.play(AssetSource("sossound.mp3"));
+                                //player.stop();
+                                sos_warning();
+                                setState(() {
+                                  play_pause=1;
+                                  print(play_pause);
+                                });
+                              }else{
+                                player.stop();
+                                setState(() {
+                                  play_pause=0;
+                                  print(play_pause);
+                                });
+                                
+                                
+                              }
+                              
                             },
                           ),
                         ),
@@ -130,11 +148,7 @@ class _MainPageState extends State<MainPage> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   GestureDetector(
-                    onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const ForgotPasswordPage(),
-                        )),
+                    onTap: () {},
                     child: const Text(
                       "Forgot password?",
                       style: TextStyle(color: Color(0xffe97d47)),
