@@ -117,6 +117,7 @@ This system allows you to run the "Can You Hear Me" application on your smart de
 <img width="250"  src="https://user-images.githubusercontent.com/96688864/226194667-324b02fa-2667-47d9-a7ac-e9d6390378c3.gif">
 <img width="250"  src="https://user-images.githubusercontent.com/96688864/226194679-5b385789-39af-44ee-ad46-80be9eeab0d1.gif">
 </p>
+
 * **Explore Page:** Our app features an "Explore" page that provides users with crucial information regarding earthquakes. This page serves as a platform for users to easily access educational resources on earthquake preparedness and response, as well as learn more about the nature of earthquakes themselves.
 
 <p align="center">
@@ -125,9 +126,14 @@ This system allows you to run the "Can You Hear Me" application on your smart de
 </p>
 
 # Structure
+
+* **Workspace:**
+
 <img align="left" src="https://user-images.githubusercontent.com/96688864/227571519-6c977e0d-b92d-4d29-b1f2-84f33fa2f5b2.png" width="432" height="228" />
 
 
 Since, our app is a **cross platform app**, which is written with Flutter. Each platform does not require a separate application for itself. We can run same code on Android/IOS phones and WatchOS smart watches. The app firstly checks whether the device is a phone or a smart watch by comparing the hight of the screen of the current device and then, directs to it's required artifacts.
 
+* **Permissions:** 
 
+<img align="left" src="https://user-images.githubusercontent.com/96688864/227786380-96ea9b7e-2860-40da-998e-dc05b8e7f9c2.png" />
