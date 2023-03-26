@@ -127,13 +127,23 @@ This system allows you to run the "Can You Hear Me" application on your smart de
 
 # Structure
 
-* **Workspace:**
+<img align="left" src="https://user-images.githubusercontent.com/96688864/227571519-6c977e0d-b92d-4d29-b1f2-84f33fa2f5b2.png" width="344" height="182" />
 
-<img align="left" src="https://user-images.githubusercontent.com/96688864/227571519-6c977e0d-b92d-4d29-b1f2-84f33fa2f5b2.png" width="432" height="228" />
+Since, our app is a **cross platform app**, which is written with Flutter. Each platform does not require a separate application for itself. We can run same code on Android/IOS phones and WatchOS smart watches. The app firstly checks whether the device is a phone or a smart watch by comparing the hight of the screen of the current device and then, directs to it's required artifacts. Thanks to Flutter, this future helps us to create solutions for current problems, to develop an app for all platforms in a short time with less effort, and to helps to increase our efficiency.
 
-
-Since, our app is a **cross platform app**, which is written with Flutter. Each platform does not require a separate application for itself. We can run same code on Android/IOS phones and WatchOS smart watches. The app firstly checks whether the device is a phone or a smart watch by comparing the hight of the screen of the current device and then, directs to it's required artifacts.
-
-* **Permissions:** 
-
-<img align="left" src="https://user-images.githubusercontent.com/96688864/227786380-96ea9b7e-2860-40da-998e-dc05b8e7f9c2.png" />
+> **Note**
+> <details>
+> <summary>"Permissions:"</summary>
+> Our app will ask you for permission as it needs location and camera access. However, please always enable location and camera permissions for the application to avoid any problems and for the application to work properly.
+> <img align="center" src="https://user-images.githubusercontent.com/96688864/227787718-75a88872-bc10-4ada-b052-1e4e7bb8dc1b.png" width="344" height="145"/>
+> </details> 
+ 
+ 
+> **Note**
+> <details>
+> <summary>"Minor Bugs:"</summary>
+> Be confident while running our source code on your machine, if you are dealing with any bug, it might be a minor stuff, just keep running the code. If you have not any issue with version embeding about flutter, you are able to analyze our project easly.
+> </details>
+ 
+ 
+ 
