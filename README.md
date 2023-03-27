@@ -1,4 +1,7 @@
 # Can You Hear Me
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 This app is a mobile application designed to help individuals and communities respond to natural disasters in a more organized and efficient manner. The app features five main components: account creation and information sharing, volunteer work, donation system, mapping function, and a watch version of the app with additional features.
 # The Sustainable Development Goals
@@ -145,3 +148,25 @@ Since, our app is a **cross platform app**, which is written with Flutter. Each 
 > Be confident while running our source code on your machine, if you are dealing with any bug, it might be a minor stuff, just keep running the code. If you don't have any issues with version embeding about flutter, you are able to analyze our project easly.
 > </details>
  
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/AlperenOvak"><img src="https://avatars.githubusercontent.com/u/96688864?v=4?s=100" width="100px;" alt="Alperen OVAK"/><br /><sub><b>Alperen OVAK</b></sub></a><br /><a href="https://github.com/Google-Solution-Challenge-Metu/CanYouHearMe/commits?author=AlperenOvak" title="Code">💻</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
