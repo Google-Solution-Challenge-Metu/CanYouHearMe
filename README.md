@@ -1,6 +1,6 @@
 # Can You Hear Me
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 This app is a mobile application designed to help individuals and communities respond to natural disasters in a more organized and efficient manner. The app features five main components: account creation and information sharing, volunteer work, donation system, mapping function, and a watch version of the app with additional features.
@@ -160,6 +160,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tbody>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/AlperenOvak"><img src="https://avatars.githubusercontent.com/u/96688864?v=4?s=100" width="100px;" alt="Alperen OVAK"/><br /><sub><b>Alperen OVAK</b></sub></a><br /><a href="https://github.com/Google-Solution-Challenge-Metu/CanYouHearMe/commits?author=AlperenOvak" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/mcantimurcan"><img src="https://avatars.githubusercontent.com/u/108149301?v=4?s=100" width="100px;" alt="Mithat Can Timurcan"/><br /><sub><b>Mithat Can Timurcan</b></sub></a><br /><a href="https://github.com/Google-Solution-Challenge-Metu/CanYouHearMe/commits?author=mcantimurcan" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
