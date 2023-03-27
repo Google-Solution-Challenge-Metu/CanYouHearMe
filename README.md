@@ -161,7 +161,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/AlperenOvak"><img src="https://avatars.githubusercontent.com/u/96688864?v=4?s=100" width="100px;" alt="Alperen OVAK"/><br /><sub><b>Alperen OVAK</b></sub></a><br /><a href="https://github.com/Google-Solution-Challenge-Metu/CanYouHearMe/commits?author=AlperenOvak" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/mcantimurcan"><img src="https://avatars.githubusercontent.com/u/108149301?v=4?s=100" width="100px;" alt="Mithat Can Timurcan"/><br /><sub><b>Mithat Can Timurcan</b></sub></a><br /><a href="https://github.com/Google-Solution-Challenge-Metu/CanYouHearMe/commits?author=mcantimurcan" title="Code">💻</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/shevsahin"><img src="https://avatars.githubusercontent.com/u/124795286?v=4?s=100" width="100px;" alt="shevsahin"/><br /><sub><b>shevsahin</b></sub></a><br /><a href="https://github.com/Google-Solution-Challenge-Metu/CanYouHearMe/commits?author=shevsahin" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/shevsahin"><img src="https://avatars.githubusercontent.com/u/124795286?v=4?s=100" width="100px;" alt="shevsahin"/><br /><sub><b>shevsahin</b></sub></a><br /><a href="https://github.com/Google-Solution-Challenge-Metu/CanYouHearMe/commits?author=shevsahin" title="Design">💻</a></td>
     </tr>
   </tbody>
 </table>
