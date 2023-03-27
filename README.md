@@ -145,7 +145,6 @@ Since, our app is a **cross platform app**, which is written with Flutter. Each 
 > Be confident while running our source code on your machine, if you are dealing with any bug, it might be a minor stuff, just keep running the code. If you don't have any issues with version embeding about flutter, you are able to analyze our project easly.
 > </details>
  
- 
 ## Contributors
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
