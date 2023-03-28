@@ -1,4 +1,7 @@
 # Can You Hear Me
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 This app is a mobile application designed to help individuals and communities respond to natural disasters in a more organized and efficient manner. The app features five main components: account creation and information sharing, volunteer work, donation system, mapping function, and a watch version of the app with additional features.
 # The Sustainable Development Goals
@@ -117,11 +120,55 @@ This system allows you to run the "Can You Hear Me" application on your smart de
 <img width="250"  src="https://user-images.githubusercontent.com/96688864/226194667-324b02fa-2667-47d9-a7ac-e9d6390378c3.gif">
 <img width="250"  src="https://user-images.githubusercontent.com/96688864/226194679-5b385789-39af-44ee-ad46-80be9eeab0d1.gif">
 </p>
-* **Explore Page:**  Our app features an "Explore" page that provides users with crucial information regarding earthquakes. This page serves as a platform for users to easily access educational resources on earthquake preparedness and response, as well as learn more about the nature of earthquakes themselves.
+
+* **Explore Page:** Our app features an "Explore" page that provides users with crucial information regarding earthquakes. This page serves as a platform for users to easily access educational resources on earthquake preparedness and response, as well as learn more about the nature of earthquakes themselves.
 
 <p align="center">
 <img width="250"  src="https://user-images.githubusercontent.com/124795286/225625566-89a06ab6-b436-42d9-a42d-7b75a213f78b.png">
 <img width="250"  src="https://user-images.githubusercontent.com/124795286/225629135-dcd8ffdc-0a74-4690-a251-244620e8b9d9.png">
 </p>
 
+# Structure
 
+<img align="left" src="https://user-images.githubusercontent.com/96688864/227571519-6c977e0d-b92d-4d29-b1f2-84f33fa2f5b2.png" width="344" height="182" />
+
+Since, our app is a **cross platform app**, which is written with Flutter. Each platform does not require a separate application for itself. We can run the same code on Android/IOS phones and WatchOS smart watches. The app firstly checks whether the device is a phone or a smart watch by comparing the height of the screen of the current device and then, directs to it's required artifacts. Thanks to Flutter, this feature helps us to create solutions for current problems, to develop an app for all platforms in a short time with less effort, and helps us to increase our efficiency.
+
+> **Note**
+> <details>
+> <summary>"Permissions:"</summary>
+> Our app will ask you for permission as it needs location and camera access. However, please always enable location and camera permissions for the application to avoid any problems and for the application to work properly.
+> <img align="center" src="https://user-images.githubusercontent.com/96688864/227787718-75a88872-bc10-4ada-b052-1e4e7bb8dc1b.png" width="344" height="145"/>
+> </details> 
+ 
+ 
+> **Note**
+> <details>
+> <summary>"Minor Bugs:"</summary>
+> Be confident while running our source code on your machine, if you are dealing with any bug, it might be a minor stuff, just keep running the code. If you don't have any issues with version embeding about flutter, you are able to analyze our project easly.
+> </details>
+ 
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/AlperenOvak"><img src="https://avatars.githubusercontent.com/u/96688864?v=4?s=100" width="100px;" alt="Alperen OVAK"/><br /><sub><b>Alperen OVAK</b></sub></a><br /><a href="https://github.com/Google-Solution-Challenge-Metu/CanYouHearMe/commits?author=AlperenOvak" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/mcantimurcan"><img src="https://avatars.githubusercontent.com/u/108149301?v=4?s=100" width="100px;" alt="Mithat Can Timurcan"/><br /><sub><b>Mithat Can Timurcan</b></sub></a><br /><a href="https://github.com/Google-Solution-Challenge-Metu/CanYouHearMe/commits?author=mcantimurcan" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/shevsahin"><img src="https://avatars.githubusercontent.com/u/124795286?v=4?s=100" width="100px;" alt="shevsahin"/><br /><sub><b>shevsahin</b></sub></a><br /><a href="https://github.com/Google-Solution-Challenge-Metu/CanYouHearMe/commits?author=shevsahin" title="Design">💻</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

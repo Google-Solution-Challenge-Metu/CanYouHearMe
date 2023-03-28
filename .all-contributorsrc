@@ -1,0 +1,43 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "AlperenOvak",
+      "name": "Alperen OVAK",
+      "avatar_url": "https://avatars.githubusercontent.com/u/96688864?v=4",
+      "profile": "https://github.com/AlperenOvak",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "mcantimurcan",
+      "name": "Mithat Can Timurcan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/108149301?v=4",
+      "profile": "https://github.com/mcantimurcan",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "shevsahin",
+      "name": "shevsahin",
+      "avatar_url": "https://avatars.githubusercontent.com/u/124795286?v=4",
+      "profile": "https://github.com/shevsahin",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true,
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "projectName": "CanYouHearMe",
+  "projectOwner": "Google-Solution-Challenge-Metu"
+}
