@@ -136,7 +136,7 @@ Since, our app is a **cross platform app**, which is written with Flutter. Each 
 
 > **Note**
 > <details>
-> <summary>"Permissions:"</summary>
+> <summary> Permissions </summary>
 > Our app will ask you for permission as it needs location and camera access. However, please always enable location and camera permissions for the application to avoid any problems and for the application to work properly.
 > <img align="center" src="https://user-images.githubusercontent.com/96688864/227787718-75a88872-bc10-4ada-b052-1e4e7bb8dc1b.png" width="344" height="145"/>
 > </details> 
@@ -144,12 +144,25 @@ Since, our app is a **cross platform app**, which is written with Flutter. Each 
  
 > **Note**
 > <details>
-> <summary>"Minor Bugs:"</summary>
+> <summary> Minor Bugs </summary>
 > Be confident while running our source code on your machine, if you are dealing with any bug, it might be a minor stuff, just keep running the code. If you don't have any issues with version embeding about flutter, you are able to analyze our project easly.
 > </details>
- 
 
-## Contributors ✨
+#How To Run/Test The App?
+
+## Download APK
+
+[DOWNLOAD LINK](https://drive.google.com/uc?export=download&id=1zYpKjpv0fGKVsl29LMeriM-J59zS24h_)
+
+You can download our apk from link or from apk_app folder in our repo. 
+Please use **Android**.
+
+## RUN
+
+You can run the code directly in your emulator or edge device. 
+Please make sure you are using **Android** 
+
+# Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
