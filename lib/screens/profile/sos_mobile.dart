@@ -60,13 +60,13 @@ class _SosMobileState extends State<SosMobile> {
     FirebaseDocument();
     // set up the buttons
     Widget cancelButton = TextButton(
-      child: Text("Cancel", style: TextStyle(color: Colors.white),),
+      child: Text("Cancel", style: TextStyle(color: Colors.white, fontSize: 24),),
       onPressed:  () {
         Navigator.of(context, rootNavigator: true).pop();    
       },
     );
     Widget continueButton = TextButton(
-      child: Text("Continue", style: TextStyle(color: Colors.white),),
+      child: Text("Continue", style: TextStyle(color: Colors.white, fontSize: 24),),
       onPressed:  () {
         Navigator.of(context, rootNavigator: true).pop();   
         SendSosMessage(_latitude,_longitude);
@@ -79,10 +79,10 @@ class _SosMobileState extends State<SosMobile> {
       backgroundColor: Color.fromARGB(237, 233, 125, 71),
       content: Container(
         width: MediaQuery.of(context).size.width-20,
-        height: MediaQuery.of(context).size.height-20,),
+        height: MediaQuery.of(context).size.height/8,),
       title: Text(
         "Sending a sos call, are you sure?",
-        style: TextStyle(color: Colors.white, fontSize: 12),
+        style: TextStyle(color: Colors.white, fontSize: 24),
         textAlign: TextAlign.center,
       ),
       actions: [
