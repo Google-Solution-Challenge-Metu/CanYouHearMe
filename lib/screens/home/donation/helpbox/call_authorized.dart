@@ -7,6 +7,7 @@ class Callauthorized extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
         leading: IconButton(
@@ -42,7 +43,6 @@ class Callauthorized extends StatelessWidget {
                   const SizedBox(
                     height: 15.0,
                   ),
-                  
                   const SizedBox(
                     height: 25.0,
                     width: 200.0,
@@ -51,7 +51,6 @@ class Callauthorized extends StatelessWidget {
                       thickness: 3.0,
                     ),
                   ),
-                  
                   Text(
                     "Fields marked with an * are required",
                     style: TextStyle(
@@ -65,11 +64,8 @@ class Callauthorized extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Expanded(
-                          child: buildTextField(null, "Name *", false)),
-                      Expanded(
-                          child: buildTextField(
-                              null, "Surname *", false)),
+                      Expanded(child: buildTextField(null, "Name *", false)),
+                      Expanded(child: buildTextField(null, "Surname *", false)),
                     ],
                   ),
                   const SizedBox(
@@ -77,11 +73,8 @@ class Callauthorized extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Expanded(
-                          child: buildTextField(null, "City *", false)),
-                      Expanded(
-                          child: buildTextField(
-                              null, "State *", false)),
+                      Expanded(child: buildTextField(null, "City *", false)),
+                      Expanded(child: buildTextField(null, "State *", false)),
                     ],
                   ),
                   const SizedBox(
@@ -95,8 +88,6 @@ class Callauthorized extends StatelessWidget {
                   const SizedBox(
                     height: 20.0,
                   ),
-                  
-                  
                   const SizedBox(
                     height: 20.0,
                   ),
@@ -110,7 +101,6 @@ class Callauthorized extends StatelessWidget {
                             color: Colors.grey.shade200,
                           ),
                         ),
-                        
                         Expanded(
                           child: Divider(
                             thickness: 1,
@@ -135,15 +125,15 @@ class Callauthorized extends StatelessWidget {
                         behavior: SnackBarBehavior.floating,
                         backgroundColor: Colors.transparent,
                         elevation: 0,
-                      ));                      
+                      ));
                     },
                     style: ElevatedButton.styleFrom(
                         foregroundColor: Color(0xffe97d47),
                         backgroundColor: Color.fromARGB(255, 255, 255, 255),
                         padding: EdgeInsets.all(20.0),
                         fixedSize: Size(325, 80),
-                        textStyle:
-                            TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                        textStyle: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.bold),
                         elevation: 15,
                         shadowColor: Color(0xffe97d47),
                         side: const BorderSide(
