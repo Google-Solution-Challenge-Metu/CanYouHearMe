@@ -58,7 +58,7 @@ class _MakeYourVoiceHeardPageState extends State<MakeYourVoiceHeardPage> {
             stream: _reportService.getStatus(),
             builder: (context, snapshot) {
               return !snapshot.hasData
-                  ? const CircularProgressIndicator()
+                  ? const CircularProgressIndicator(color: Color(0xffe97d47))
                   : ListView.separated(
                       separatorBuilder: (context, index) => const Padding(
                         padding: EdgeInsets.symmetric(horizontal: 20.0),

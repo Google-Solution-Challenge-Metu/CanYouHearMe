@@ -39,6 +39,10 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => CartModel()),
       ],
       child: MaterialApp(
+        theme: ThemeData(
+          colorScheme:
+              ColorScheme.fromSwatch().copyWith(secondary: Color(0xffff7800)),
+        ),
         debugShowCheckedModeBanner: false,
         home: Scaffold(
           body: LayoutBuilder(

@@ -20,6 +20,10 @@ class _AuthPageState extends State<AuthPage> {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return GetMaterialApp(
+              theme: ThemeData(
+                colorScheme: ColorScheme.fromSwatch()
+                    .copyWith(secondary: Color(0xffff7800)),
+              ),
               debugShowCheckedModeBanner: false,
               initialRoute: AppPage.getNavBar(),
               getPages: AppPage.routes,
