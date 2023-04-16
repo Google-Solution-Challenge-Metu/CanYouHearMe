@@ -132,7 +132,7 @@ This system allows you to run the "Can You Hear Me" application on your smart de
 
 <img align="left" src="https://user-images.githubusercontent.com/96688864/227571519-6c977e0d-b92d-4d29-b1f2-84f33fa2f5b2.png" width="344" height="182" />
 
-Since, our app is a **cross platform app**, which is written with Flutter. Each platform does not require a separate application for itself. We can run the same code on Android/IOS phones and WatchOS smart watches. The app firstly checks whether the device is a phone or a smart watch by comparing the height of the screen of the current device and then, directs to it's required artifacts. Thanks to Flutter, this feature helps us to create solutions for current problems, to develop an app for all platforms in a short time with less effort, and helps us to increase our efficiency.
+Since, our app is a **cross platform app**, which is written with Flutter. Each platform does not require a separate application for itself. We can run the same code on Android/~~IOS~~ phones and WatchOS smart watches. The app firstly checks whether the device is a phone or a smart watch by comparing the height of the screen of the current device and then, directs to it's required artifacts. Thanks to Flutter, this feature helps us to create solutions for current problems, to develop an app for all platforms in a short time with less effort, and helps us to increase our efficiency.
 
 > **Note**
 > <details>
@@ -148,11 +148,11 @@ Since, our app is a **cross platform app**, which is written with Flutter. Each 
 > Be confident while running our source code on your machine, if you are dealing with any bug, it might be a minor stuff, just keep running the code. If you don't have any issues with version embeding about flutter, you are able to analyze our project easly.
 > </details>
 
-#How To Run/Test The App?
+# How To Run/Test The App?
 
 ## Download APK
 
-[DOWNLOAD LINK](https://drive.google.com/uc?export=download&id=1zYpKjpv0fGKVsl29LMeriM-J59zS24h_)
+[DOWNLOAD LINK](https://drive.google.com/uc?export=download&id=1f6be_H1NokmjlloX4ysoPqNTwjeGvHzr)
 
 You can download our apk from link or from apk_app folder in our repo. 
 Please use **Android**.
