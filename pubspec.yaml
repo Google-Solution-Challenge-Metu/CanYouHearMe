@@ -38,7 +38,8 @@ dependencies:
   qr_code_scanner: ^1.0.1
 
   #Tensorflow Lite
-  tflite: #^1.1.2
+  tflite: ^1.1.2
+  #tflite_flutter: ^0.9.1
     path: ./lib/flutter_tflite-master  # original plugin gives error for our code. So we personalized the package.
   get: ^4.6.5
   get_storage: ^2.0.3
