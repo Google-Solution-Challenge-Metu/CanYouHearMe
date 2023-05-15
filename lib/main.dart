@@ -7,12 +7,43 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:workmanager/workmanager.dart';
 import 'firebase_options.dart';
 
 int? initScreen = 0;
 
+void printData(){
+  print("printle **************3131313131313131313313131131313131313");
+}
+
+/*void callbackDispatcherr(){
+  Workmanager().executeTask((taskName,inputData){
+    switch(taskName){
+      case 'toFirebase':
+        break;
+      case 'print':
+        printData();
+        break;
+      default:
+    }
+    return Future.value(true);
+  });
+}*/
+
+@pragma('vm:entry-point') // Mandatory if the App is obfuscated or using Flutter 3.1+
+void callbackDispatcher() {
+  Workmanager().executeTask((task, inputData) {
+    print("Native called background task: **********************"); //simpleTask will be emitted here.
+    return Future.value(true);
+  });
+}
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Workmanager().initialize(
+    callbackDispatcher,
+    isInDebugMode: true,
+  );
   SharedPreferences preferences = await SharedPreferences.getInstance();
   initScreen = await preferences.getInt("initScreen");
   await preferences.setInt("initScreen", 100);
