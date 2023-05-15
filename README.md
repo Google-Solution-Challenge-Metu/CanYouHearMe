@@ -25,7 +25,7 @@ Our team was deeply moved by the heartbreaking photo of the father holding his d
 <img src="https://user-images.githubusercontent.com/124795286/225621788-9abfa25b-7fa4-45fa-9705-6279cc9170c4.png" width="600" height="400" />
 
 
-# Technolgies Used
+# Technologies Used
 * Flutter for cross-platform development of the user interface
 * Firebase for backend development, including the Firestore database for storing user and location data
 * Tensorflow and Tensorflow Lite for building and implementing artificial intelligence features
