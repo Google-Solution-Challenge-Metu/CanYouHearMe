@@ -1,13 +1,15 @@
 import 'dart:async';
+import 'package:dietapp/screens/home/donation/money/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sms/flutter_sms.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-class MyApp extends StatefulWidget {
+class SendingSMS extends StatefulWidget {
   @override
-  _MyAppState createState() => _MyAppState();
+  _SendingSMSState createState() => _SendingSMSState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _SendingSMSState extends State<SendingSMS> {
   late TextEditingController _controllerPeople, _controllerMessage;
   String? _message, body;
   String _canSendSMSMessage = 'Check is not run.';
@@ -86,8 +88,23 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('SMS/MMS Example'),
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => Navigator.pop(context),
+          color: const Color(0xffe97d47),
         ),
+        backgroundColor: Colors.transparent,
+        title: Text(
+          "SMS Donation",
+          style: GoogleFonts.prozaLibre(
+            color: const Color(0xffe97d47),
+            fontSize: 20,
+            fontWeight: FontWeight.w600,
+            height: 1.355,
+          ),
+        ),
+      ),
         body: ListView(
           children: <Widget>[
             if (people.isEmpty)
@@ -157,19 +174,37 @@ class _MyAppState extends State<MyApp> {
                 }),
             Padding(
               padding: const EdgeInsets.all(8),
-              child: ElevatedButton(
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.resolveWith(
-                      (states) => Theme.of(context).colorScheme.secondary),
-                  padding: MaterialStateProperty.resolveWith(
-                      (states) => const EdgeInsets.symmetric(vertical: 16)),
-                ),
-                onPressed: () {
+              child: GestureDetector(
+                onTap: () {
                   _send();
                 },
-                child: Text(
-                  'SEND',
-                  style: Theme.of(context).textTheme.displayMedium,
+                child: Container(
+                  // frame28qQL (36:49)
+                  margin:
+                      EdgeInsets.fromLTRB(1 , 0 , 2 , 0 ),
+                  width: double.infinity,
+                  height: 56,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20 ),
+                    gradient: LinearGradient(
+                      begin: Alignment(0, -1),
+                      end: Alignment(0, 1),
+                      colors: <Color>[Color(0xffe97d47), Color(0xffe97d47)],
+                      stops: <double>[0, 1],
+                    ),
+                  ),
+                  child: Center(
+                    child: Text(
+                      'Donate by SMS',
+                      style: SafeGoogleFont(
+                        'Poppins',
+                        fontSize: 16 ,
+                        fontWeight: FontWeight.w700,
+                        height: 1.5 ,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ),

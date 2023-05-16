@@ -1,3 +1,4 @@
+import 'package:dietapp/screens/home/donation/money/sms_test.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../components/CustomSnackBarContent.dart';
@@ -394,6 +395,49 @@ class _DonationScreen extends State<DonationScreen> {
                   child: Center(
                     child: Text(
                       'Donate now',
+                      style: SafeGoogleFont(
+                        'Poppins',
+                        fontSize: 16 * ffem,
+                        fontWeight: FontWeight.w700,
+                        height: 1.5 * ffem / fem,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 10,),
+              GestureDetector(
+                onTap: () {
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                    content: CustomSnackBarContent(
+                      errorText: "Thank Youu",
+                    ),
+                    behavior: SnackBarBehavior.floating,
+                    backgroundColor: Colors.transparent,
+                    elevation: 0,
+                  ));
+                  Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => SendingSMS()));
+                },
+                child: Container(
+                  // frame28qQL (36:49)
+                  margin:
+                      EdgeInsets.fromLTRB(1 * fem, 0 * fem, 2 * fem, 0 * fem),
+                  width: double.infinity,
+                  height: 56 * fem,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20 * fem),
+                    gradient: LinearGradient(
+                      begin: Alignment(0, -1),
+                      end: Alignment(0, 1),
+                      colors: <Color>[Color(0xffe97d47), Color(0xffe97d47)],
+                      stops: <double>[0, 1],
+                    ),
+                  ),
+                  child: Center(
+                    child: Text(
+                      'Donate by SMS',
                       style: SafeGoogleFont(
                         'Poppins',
                         fontSize: 16 * ffem,

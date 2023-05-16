@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dietapp/screens/login/service/login_service.dart';
-import 'package:dietapp/screens/profile/sms_test.dart';
 import 'package:dietapp/screens/profile/sos_mobile.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import "package:flutter/material.dart";
@@ -75,7 +74,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   void sos_mobile() {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => MyApp())); //SosMobile
+        context, MaterialPageRoute(builder: (context) => SosMobile())); //MyApp
   }
 
   @override
