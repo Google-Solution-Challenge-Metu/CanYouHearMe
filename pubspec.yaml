@@ -30,6 +30,9 @@ dependencies:
   #audioplayer
   audioplayers: ^1.1.0
 
+  #SMS
+  flutter_sms: ^2.3.3
+
   #error snackbar
   awesome_snackbar_content: ^0.1.0
 

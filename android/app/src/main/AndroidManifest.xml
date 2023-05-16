@@ -7,6 +7,13 @@
    <!--<uses-permission android:name="android.hardware.location.gps" />-->
     <uses-permission android:name="android.hardware.location" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.SENDTO" />
+            <data android:scheme="smsto"/>
+        </intent>
+    </queries>
 
    <application
         android:usesCleartextTraffic="true"
