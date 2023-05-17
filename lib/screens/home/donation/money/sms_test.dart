@@ -87,24 +87,25 @@ class _SendingSMSState extends State<SendingSMS> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () => Navigator.pop(context),
-          color: const Color(0xffe97d47),
-        ),
-        backgroundColor: Colors.transparent,
-        title: Text(
-          "SMS Donation",
-          style: GoogleFonts.prozaLibre(
+          elevation: 0,
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () => Navigator.pop(context),
             color: const Color(0xffe97d47),
-            fontSize: 20,
-            fontWeight: FontWeight.w600,
-            height: 1.355,
+          ),
+          backgroundColor: Colors.transparent,
+          title: Text(
+            "SMS Donation",
+            style: GoogleFonts.prozaLibre(
+              color: const Color(0xffe97d47),
+              fontSize: 20,
+              fontWeight: FontWeight.w600,
+              height: 1.355,
+            ),
           ),
         ),
-      ),
         body: ListView(
           children: <Widget>[
             if (people.isEmpty)
@@ -180,12 +181,11 @@ class _SendingSMSState extends State<SendingSMS> {
                 },
                 child: Container(
                   // frame28qQL (36:49)
-                  margin:
-                      EdgeInsets.fromLTRB(1 , 0 , 2 , 0 ),
+                  margin: EdgeInsets.fromLTRB(1, 0, 2, 0),
                   width: double.infinity,
                   height: 56,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20 ),
+                    borderRadius: BorderRadius.circular(20),
                     gradient: LinearGradient(
                       begin: Alignment(0, -1),
                       end: Alignment(0, 1),
@@ -198,9 +198,9 @@ class _SendingSMSState extends State<SendingSMS> {
                       'Donate by SMS',
                       style: SafeGoogleFont(
                         'Poppins',
-                        fontSize: 16 ,
+                        fontSize: 16,
                         fontWeight: FontWeight.w700,
-                        height: 1.5 ,
+                        height: 1.5,
                         color: Colors.white,
                       ),
                     ),
