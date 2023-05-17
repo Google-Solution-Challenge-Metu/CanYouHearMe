@@ -69,24 +69,28 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
                   'We need 100 volunteers in Anfa Altinpark who will take care of the earthquake victims individually and meet their clothing needs ',
               date: "06.02.2023",
               user: "user123",
+              phoneNumber: "+398982390482",
             ),
             VolunteerTile(
               Titles:
                   'Belko cold storage (behind Ankamall), urgently we need 200 volunteers. Please let’s get to the area immediately. I’ll share a new announcement when it’s no longer needed.',
               date: "06.02.2023",
               user: "user3",
+              phoneNumber: "+905447201300",
             ),
             VolunteerTile(
               Titles:
                   'VOLUNTEER INTERPRETERS ARE NEEDED!\nVolunteers are sought to support the international search and rescue teams.',
               date: "06.02.2023",
               user: "user2",
+              phoneNumber: "+9213984923",
             ),
             VolunteerTile(
               Titles:
                   'Sociology undergraduate students prepared a survey on effects of the earthquake on students.The survey duration is 7-8 minutes and will remain open until 23:59 on Tuesday.\nhttps://forms.gle/Hjdgeuhsk6',
               date: "07.02.2023",
               user: "user1",
+              phoneNumber: "+932480239432",
             ),
           ]),
         ));

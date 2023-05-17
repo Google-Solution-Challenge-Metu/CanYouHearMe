@@ -40,7 +40,6 @@ dependencies:
   qr_flutter: ^4.0.0 
   qr_code_scanner: ^1.0.1
 
-  #Background messaging
   workmanager: ^0.5.1
 
   #Tensorflow Lite
@@ -87,6 +86,7 @@ dependencies:
 
   shared_preferences: ^2.0.18
   after_layout: ^1.2.0
+  url_launcher: ^6.1.11
 
 
 dev_dependencies:

@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class VolunteerTile extends StatelessWidget {
   final String Titles;
   final String user;
   final String date;
+  final String phoneNumber;
   VolunteerTile(
       {super.key,
       required this.Titles,
       required this.user,
-      required this.date});
+      required this.date,
+      required this.phoneNumber});
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +64,12 @@ class VolunteerTile extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () async {
+                      final _call = 'tel:$phoneNumber';
+                      if (await canLaunch(_call)) {
+                        await launch(_call);
+                      }
+                    },
                     icon: Icon(Icons.call),
                   ),
                   const SizedBox(width: 10),
