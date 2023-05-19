@@ -1,10 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dietapp/screens/login/service/login_service.dart';
+import 'package:dietapp/screens/profile/edit_profile.dart';
 import 'package:dietapp/screens/profile/sos_mobile.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
 
 import '../../services/report_service.dart';
@@ -64,8 +64,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
       }
     }
   }
-
-  void changeUserProfile() {}
 
   void add_device() {
     Navigator.push(
@@ -188,7 +186,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               height: 10.0,
                             ),
                             Text(
-                              "Gönderi",
+                              "Posts",
                               style: TextStyle(
                                 color: Colors.grey.shade500,
                                 fontFamily: "Raleway",
@@ -203,7 +201,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     const SizedBox(
                       height: 10,
                     ),
-                    buildButton(changeUserProfile, "Profili Düzenle"),
+                    buildButton(
+                        () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const EditProfilePage())),
+                        "Edit Profile"),
                     buildButton(add_device, "Add device"),
                     buildButton(sos_mobile, "SOS Button"),
                   ],

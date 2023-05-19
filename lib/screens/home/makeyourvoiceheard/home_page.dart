@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dietapp/services/report_service.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MakeYourVoiceHeardPage extends StatefulWidget {
   const MakeYourVoiceHeardPage({super.key});
@@ -149,7 +150,15 @@ class _MakeYourVoiceHeardPageState extends State<MakeYourVoiceHeardPage> {
                                       ),
                                       const SizedBox(width: 10),
                                       IconButton(
-                                        onPressed: () {},
+                                        onPressed: () async {
+                                          GeoPoint _point =
+                                              myReport['location'];
+                                          final _map =
+                                              'https://www.google.com/maps/search/?api=1&query=${_point.latitude},${_point.longitude}';
+                                          if (await (canLaunch(_map))) {
+                                            await launch(_map);
+                                          }
+                                        },
                                         icon: Icon(Icons.location_on),
                                       ),
                                     ],
