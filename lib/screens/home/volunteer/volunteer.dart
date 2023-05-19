@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dietapp/screens/home/volunteer/volunteer_tile.dart';
 import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
@@ -70,6 +71,7 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
               date: "06.02.2023",
               user: "user123",
               phoneNumber: "+398982390482",
+              location: const GeoPoint(37.008792, 35.3246395),
             ),
             VolunteerTile(
               Titles:
@@ -77,6 +79,7 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
               date: "06.02.2023",
               user: "user3",
               phoneNumber: "+905447201300",
+              location: const GeoPoint(39.0279941, 35.31023030000001),
             ),
             VolunteerTile(
               Titles:
@@ -84,6 +87,7 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
               date: "06.02.2023",
               user: "user2",
               phoneNumber: "+9213984923",
+              location: const GeoPoint(36.2559921, 36.5675623),
             ),
             VolunteerTile(
               Titles:
@@ -91,6 +95,7 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
               date: "07.02.2023",
               user: "user1",
               phoneNumber: "+932480239432",
+              location: const GeoPoint(38.963745, 35.24332189999999),
             ),
           ]),
         ));

@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -7,12 +8,14 @@ class VolunteerTile extends StatelessWidget {
   final String user;
   final String date;
   final String phoneNumber;
+  final GeoPoint location;
   VolunteerTile(
       {super.key,
       required this.Titles,
       required this.user,
       required this.date,
-      required this.phoneNumber});
+      required this.phoneNumber,
+      required this.location});
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +77,23 @@ class VolunteerTile extends StatelessWidget {
                   ),
                   const SizedBox(width: 10),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () async {
+                      final _sms = 'sms:$phoneNumber';
+                      if (await canLaunch(_sms)) {
+                        await launch(_sms);
+                      }
+                    },
+                    icon: Icon(Icons.message),
+                  ),
+                  const SizedBox(width: 10),
+                  IconButton(
+                    onPressed: () async {
+                      final _map =
+                          'https://www.google.com/maps/search/?api=1&query=${location.latitude},${location.longitude}';
+                      if (await (canLaunch(_map))) {
+                        await launch(_map);
+                      }
+                    },
                     icon: Icon(Icons.location_on),
                   ),
                 ],
