@@ -146,7 +146,7 @@ class _MakeYourVoiceHeardPageState extends State<MakeYourVoiceHeardPage> {
                                     children: [
                                       IconButton(
                                         onPressed: () {},
-                                        icon: Icon(Icons.call),
+                                        icon: Icon(Icons.share),
                                       ),
                                       const SizedBox(width: 10),
                                       IconButton(

@@ -130,24 +130,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   children: [
                     Stack(
                       alignment: Alignment.bottomRight,
-                      children: [
-                        const CircleAvatar(
+                      children: const [
+                        CircleAvatar(
                           radius: 50.0,
                           backgroundImage:
                               AssetImage("assets/images/profile_anonym.webp"),
-                        ),
-                        InkWell(
-                          onTap: () {},
-                          child: const CircleAvatar(
-                            radius: 15.0,
-                            backgroundColor: Color(0xffe97d47),
-                            child: Icon(
-                              Icons.edit,
-                              size: 15,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
+                        )
                       ],
                     ),
                     Padding(
@@ -207,7 +195,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             MaterialPageRoute(
                                 builder: (context) => const EditProfilePage())),
                         "Edit Profile"),
-                    buildButton(add_device, "Add device"),
+                    buildButton(add_device, "Add Device"),
                     buildButton(sos_mobile, "SOS Button"),
                   ],
                 ),
