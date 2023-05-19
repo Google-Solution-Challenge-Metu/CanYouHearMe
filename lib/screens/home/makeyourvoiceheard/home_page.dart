@@ -139,7 +139,7 @@ class _MakeYourVoiceHeardPageState extends State<MakeYourVoiceHeardPage> {
                                       color: Color(0xff000000),
                                     ),
                                   ),
-                                  SizedBox(height: 10),
+                                  const SizedBox(height: 10),
                                   imagePlace(size.height * 0.3),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
