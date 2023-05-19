@@ -11,6 +11,8 @@ class AuthService {
       'surname': "",
       'email': gUser?.email,
       'password': "",
+      'description': "",
+      "profileImage": gUser?.photoUrl,
     });
   }
 

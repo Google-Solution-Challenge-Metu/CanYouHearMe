@@ -22,6 +22,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   final FirebaseFirestore db = FirebaseFirestore.instance;
 
   String username = "";
+  String description = "";
   int posts = 0;
 
   signUserOut() async {
@@ -50,6 +51,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         String a = value!['name'];
         String b = value['surname'];
         username = "$a $b";
+        description = value['description'];
       });
     }
   }
@@ -150,7 +152,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 30.0, vertical: 10.0),
                       child: Text(
-                        "İnsanlara yardım etmeyi seviyorum.",
+                        description,
                         style: TextStyle(
                           fontFamily: "Raleway",
                           fontWeight: FontWeight.bold,

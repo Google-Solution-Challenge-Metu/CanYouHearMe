@@ -16,12 +16,13 @@ class _RegisterPageState extends State<RegisterPage> {
   final confirmPasswordController = TextEditingController();
   final nameController = TextEditingController();
   final surnameController = TextEditingController();
+  final descriptionController = TextEditingController();
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
-  Future<User?> createPerson(
-      String name, String surname, String email, String password) async {
+  Future<User?> createPerson(String name, String surname, String email,
+      String password, String description, String profileImage) async {
     var user = await _auth.createUserWithEmailAndPassword(
         email: email, password: password);
 
@@ -29,7 +30,9 @@ class _RegisterPageState extends State<RegisterPage> {
       'name': name,
       'surname': surname,
       'email': email,
-      'password': password
+      'password': password,
+      'description': description,
+      'profileImage': profileImage,
     });
 
     return user.user;
@@ -38,8 +41,13 @@ class _RegisterPageState extends State<RegisterPage> {
   signUserUp() async {
     try {
       if (passwordController.text == confirmPasswordController.text) {
-        createPerson(nameController.text, surnameController.text,
-            emailController.text, passwordController.text);
+        createPerson(
+            nameController.text,
+            surnameController.text,
+            emailController.text,
+            passwordController.text,
+            descriptionController.text,
+            "");
         Navigator.pop(context);
       } else if (passwordController.text != confirmPasswordController.text) {
         notConfirmedMessage();
@@ -129,6 +137,35 @@ class _RegisterPageState extends State<RegisterPage> {
                       thickness: 1,
                     ),
                   ),
+                  const Text("Pick an image"),
+                  const SizedBox(
+                    height: 20.0,
+                  ),
+                  Stack(
+                    alignment: Alignment.bottomRight,
+                    children: [
+                      const CircleAvatar(
+                        radius: 50.0,
+                        backgroundImage:
+                            AssetImage("assets/images/profile_anonym.webp"),
+                      ),
+                      InkWell(
+                        onTap: () {},
+                        child: const CircleAvatar(
+                          radius: 15.0,
+                          backgroundColor: Color(0xffe97d47),
+                          child: Icon(
+                            Icons.edit,
+                            size: 15,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 20.0,
+                  ),
                   Row(
                     children: [
                       Expanded(
@@ -142,6 +179,11 @@ class _RegisterPageState extends State<RegisterPage> {
                     height: 20.0,
                   ),
                   buildTextField(emailController, "E-mail", false),
+                  const SizedBox(
+                    height: 20.0,
+                  ),
+                  buildTextField(descriptionController,
+                      "Write your description here.", false),
                   const SizedBox(
                     height: 20.0,
                   ),
