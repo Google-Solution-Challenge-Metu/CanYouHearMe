@@ -3,6 +3,8 @@ import 'package:dietapp/screens/home/volunteer/volunteer_tile.dart';
 import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../services/volunteer_service.dart';
+
 class VolunteerScreen extends StatefulWidget {
   const VolunteerScreen({super.key});
   @override
@@ -10,8 +12,13 @@ class VolunteerScreen extends StatefulWidget {
 }
 
 class _VolunteerScreenState extends State<VolunteerScreen> {
+  final ReportVolunService _reportService = ReportVolunService();
+  final FirebaseFirestore db = FirebaseFirestore.instance;
+  var City_name="Ankara";
+
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
         appBar: AppBar(
           leading: IconButton(
@@ -65,38 +72,125 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
               ),
             ),
             const SizedBox(height: 12),
-            VolunteerTile(
-              Titles:
-                  'We need 100 volunteers in Anfa Altinpark who will take care of the earthquake victims individually and meet their clothing needs ',
-              date: "06.02.2023",
-              user: "user123",
-              phoneNumber: "+398982390482",
-              location: const GeoPoint(37.008792, 35.3246395),
-            ),
-            VolunteerTile(
-              Titles:
-                  'Belko cold storage (behind Ankamall), urgently we need 200 volunteers. Please let’s get to the area immediately. I’ll share a new announcement when it’s no longer needed.',
-              date: "06.02.2023",
-              user: "user3",
-              phoneNumber: "+905447201300",
-              location: const GeoPoint(39.0279941, 35.31023030000001),
-            ),
-            VolunteerTile(
-              Titles:
-                  'VOLUNTEER INTERPRETERS ARE NEEDED!\nVolunteers are sought to support the international search and rescue teams.',
-              date: "06.02.2023",
-              user: "user2",
-              phoneNumber: "+9213984923",
-              location: const GeoPoint(36.2559921, 36.5675623),
-            ),
-            VolunteerTile(
-              Titles:
-                  'Sociology undergraduate students prepared a survey on effects of the earthquake on students.The survey duration is 7-8 minutes and will remain open until 23:59 on Tuesday.\nhttps://forms.gle/Hjdgeuhsk6',
-              date: "07.02.2023",
-              user: "user1",
-              phoneNumber: "+932480239432",
-              location: const GeoPoint(38.963745, 35.24332189999999),
-            ),
+            StreamBuilder(
+                      stream: _reportService.getStatus(),
+                      builder: (context, snapshot) {
+                        return !snapshot.hasData
+                            ? const CircularProgressIndicator()
+                            : ListView.builder(
+                                physics: const NeverScrollableScrollPhysics(),
+                                shrinkWrap: true,
+                                itemCount: snapshot.data!.docs.length,
+                                itemBuilder: (context, index) {
+                                  var item_count = 0;
+                                  DocumentSnapshot myReport =
+                                      snapshot.data!.docs[index];
+                                  
+
+                                  
+                                  if (myReport['City'] == City_name) {
+                                    item_count += 1;
+                                    return Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          color: Colors.grey[300],
+                                          borderRadius: const BorderRadius.all(
+                                            Radius.circular(25),
+                                          ),
+                                        ),
+                                        margin: const EdgeInsets.fromLTRB(
+                                            3, 0, 3, 9),
+                                        width: double.infinity,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(15.0),
+                                          child: Column(
+                                            children: [
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                children: [
+                                                  Row(
+                                                    children: [
+                                                      Image.asset(
+                                                          "assets/images/profile_black.png"),
+                                                      const SizedBox(width: 10),
+                                                      Text(
+                                                        myReport['user'],
+                                                        style: const TextStyle(
+                                                          fontWeight:
+                                                              FontWeight.w700,
+                                                        ),
+                                                      )
+                                                    ],
+                                                  ),
+                                                  Text(
+                                                    myReport['Date'],                                                        
+                                                    style: const TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.w700,
+                                                        fontSize: 12),
+                                                  )
+                                                ],
+                                              ),
+                                              const SizedBox(height: 20),
+                                              Text(
+                                                myReport['Description'],
+                                                style: GoogleFonts.nunitoSans(
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.w400,
+                                                  height: 1.3625,
+                                                  color: Color(0xff000000),
+                                                ),
+                                              ),
+                                              SizedBox(height: 10),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.end,
+                                                children: [
+                                                  IconButton(
+                                                    onPressed: () {},
+                                                    icon: Icon(Icons.call),
+                                                  ),
+                                                  const SizedBox(width: 10),
+                                                  IconButton(
+                                                    onPressed: () {},
+                                                    icon:
+                                                        Icon(Icons.location_on),
+                                                  ),
+                                                  const SizedBox(width: 10),
+                                                  IconButton(
+                                                    onPressed: () {},
+                                                    icon: Icon(Icons.delete),
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                                  }
+                                  if (index == snapshot.data!.docs.length - 1 &&
+                                      item_count == 0) {
+                                    return Center(
+                                      child: Column(
+                                        children: [
+                                          Text("$item_count item is founded."),
+                                          const SizedBox(
+                                            height: 15.0,
+                                          )
+                                        ],
+                                      ),
+                                    );
+                                  } else {
+                                    return const SizedBox();
+                                  }
+                                },
+                              );
+                      },
+                    )
           ]),
         ));
   }
