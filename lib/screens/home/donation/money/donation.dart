@@ -1,5 +1,6 @@
 import 'package:dietapp/screens/home/donation/money/sms_test.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_sms/flutter_sms.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../components/CustomSnackBarContent.dart';
 import 'utils.dart';
@@ -9,6 +10,21 @@ class DonationScreen extends StatefulWidget {
   @override
   State<DonationScreen> createState() => _DonationScreen();
 }
+
+Future<void> _sendSMS() async {
+    List<String> recipients=["1866"];
+    try {
+      String _result = await sendSMS(
+        message: "DEPREM",
+        recipients: recipients,
+        sendDirect: false,
+      );
+      
+    } catch (error) {
+
+    }
+  }
+
 
 class _DonationScreen extends State<DonationScreen> {
   final donateController = TextEditingController();
@@ -417,8 +433,7 @@ class _DonationScreen extends State<DonationScreen> {
                     backgroundColor: Colors.transparent,
                     elevation: 0,
                   ));
-                  Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => SendingSMS()));
+                  _sendSMS();
                 },
                 child: Container(
                   // frame28qQL (36:49)
