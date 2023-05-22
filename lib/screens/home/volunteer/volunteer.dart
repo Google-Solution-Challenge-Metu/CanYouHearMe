@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dietapp/screens/home/volunteer/volunteer_tile.dart';
 import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../services/volunteer_service.dart';
 
@@ -188,20 +189,41 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
                                                     MainAxisAlignment.end,
                                                 children: [
                                                   IconButton(
-                                                    onPressed: () {},
+                                                    onPressed: () async{
+                                                      String pnum = myReport['Phone'];
+                                                      final _call="tel:$pnum";
+                                                      if (await (canLaunch(_call))) {
+                                                        await launch(_call);
+                                                      }
+                                                    },
                                                     icon: Icon(Icons.call),
                                                   ),
                                                   const SizedBox(width: 10),
                                                   IconButton(
-                                                    onPressed: () {},
-                                                    icon:
-                                                        Icon(Icons.location_on),
+                                                    onPressed: () async{
+                                                      String pnum = myReport['Phone'];
+                                                      final _sms="sms:$pnum";
+                                                      if (await (canLaunch(_sms))) {
+                                                        await launch(_sms);
+                                                      }
+                                                    },
+                                                    icon: Icon(Icons.sms),
                                                   ),
                                                   const SizedBox(width: 10),
                                                   IconButton(
-                                                    onPressed: () {},
-                                                    icon: Icon(Icons.delete),
+                                                    onPressed: () async {
+                                                      GeoPoint _point =
+                                                          myReport['Location'];
+                                                      final _map =
+                                                          'https://www.google.com/maps/search/?api=1&query=${_point.latitude},${_point.longitude}';
+                                                      if (await (canLaunch(_map))) {
+                                                        await launch(_map);
+                                                      }
+                                                    },
+                                                    icon: Icon(Icons.location_on),
                                                   ),
+                                                  const SizedBox(width: 10),
+                                                  
                                                 ],
                                               ),
                                             ],
@@ -210,20 +232,7 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
                                       ),
                                     );
                                   }
-                                  if (index == snapshot.data!.docs.length - 1) {
-                                    return Center(
-                                      child: Column(
-                                        children: [
-                                          Text("$item_count item is founded."),
-                                          const SizedBox(
-                                            height: 15.0,
-                                          )
-                                        ],
-                                      ),
-                                    );
-                                  } else {
-                                    return const SizedBox();
-                                  }
+                                  return SizedBox(height: 5,);
                                 },
                               );
                       },
