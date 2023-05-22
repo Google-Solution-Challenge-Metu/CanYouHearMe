@@ -14,7 +14,18 @@ class VolunteerScreen extends StatefulWidget {
 class _VolunteerScreenState extends State<VolunteerScreen> {
   final ReportVolunService _reportService = ReportVolunService();
   final FirebaseFirestore db = FirebaseFirestore.instance;
-  var City_name="Ankara";
+  String? selectedCity;
+  var item_count = 0;
+  List<String> citiesList = <String>[
+    "Ankara",
+    "İzmir",
+    "İstanbul",
+    "Antalya",
+    "City E",
+    "City F",
+    "City G",
+    "City H",
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -71,6 +82,33 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
                 ],
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: DropdownButton<String>(
+                hint: const Text(
+                  'In which city do you live?',
+                ),
+                isExpanded: true,
+                value: selectedCity,
+                items: citiesList.map((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(
+                      value,
+                    ),
+                  );
+                }).toList(),
+                onChanged: (_) {
+                  FocusScope.of(context).requestFocus(FocusNode());
+                  FocusScope.of(context).requestFocus(FocusNode());
+                  setState(() {
+                    selectedCity = _!;
+                    item_count = 0;
+                    
+                  });
+                },
+              ),
+            ),
             const SizedBox(height: 12),
             StreamBuilder(
                       stream: _reportService.getStatus(),
@@ -82,13 +120,13 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
                                 shrinkWrap: true,
                                 itemCount: snapshot.data!.docs.length,
                                 itemBuilder: (context, index) {
-                                  var item_count = 0;
+                                  
                                   DocumentSnapshot myReport =
                                       snapshot.data!.docs[index];
                                   
 
                                   
-                                  if (myReport['City'] == City_name) {
+                                  if (myReport['City'] == selectedCity) {
                                     item_count += 1;
                                     return Padding(
                                       padding: const EdgeInsets.all(8.0),
@@ -172,8 +210,7 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
                                       ),
                                     );
                                   }
-                                  if (index == snapshot.data!.docs.length - 1 &&
-                                      item_count == 0) {
+                                  if (index == snapshot.data!.docs.length - 1) {
                                     return Center(
                                       child: Column(
                                         children: [
