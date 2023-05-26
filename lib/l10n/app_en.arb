@@ -1,0 +1,9 @@
+{
+    "language":"english",
+    "helloWord":"Hello Word",
+    "forget_password_reset":"Password reset email sent successfully.",
+    "forget_password_forgot_title":"Forgot Password Page",
+    "forget_password_enterEmail":"Enter your email and we'll send you a password reset link.",
+    "forget_password_enterHere":"Enter your email here.",
+    "forget_password_sendPswrd":"Send Password Reset Email"
+}
