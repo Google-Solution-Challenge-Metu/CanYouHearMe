@@ -7,6 +7,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'dart:io';
 
 import '../../services/report_service.dart';
 import 'add_device/add_smart_device.dart';
@@ -24,6 +25,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   String username = "";
   String description = "";
+  String profileImage = "";
   int posts = 0;
 
   signUserOut() async {
@@ -53,6 +55,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         String b = value['surname'];
         username = "$a $b";
         description = value['description'];
+        profileImage = value['profileImage'];
       });
     }
   }
@@ -68,14 +71,22 @@ class _ProfileScreenState extends State<ProfileScreen> {
     }
   }
 
+  profileReplace() {
+    if (profileImage == "") {
+      return const AssetImage("assets/images/profile_anonym.webp");
+    } else {
+      return NetworkImage(profileImage);
+    }
+  }
+
   void add_device() {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => AddDevice()));
   }
 
   void sos_mobile() {
-    Navigator.push(context,
-        MaterialPageRoute(builder: (context) => SosRev())); //SosMobile
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => SosRev())); //SosMobile
   }
 
   @override
@@ -133,11 +144,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   children: [
                     Stack(
                       alignment: Alignment.bottomRight,
-                      children: const [
+                      children: [
                         CircleAvatar(
                           radius: 50.0,
-                          backgroundImage:
-                              AssetImage("assets/images/profile_anonym.webp"),
+                          backgroundImage: profileReplace(),
                         )
                       ],
                     ),

@@ -1,6 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'dart:async';
+import 'dart:io';
 
 class EditProfilePage extends StatefulWidget {
   const EditProfilePage({Key? key}) : super(key: key);
@@ -13,6 +16,9 @@ class _EditProfilePageState extends State<EditProfilePage> {
   final user = FirebaseAuth.instance.currentUser!;
   final FirebaseFirestore db = FirebaseFirestore.instance;
   final descriptionController = TextEditingController();
+  final ImagePicker _pickerImage = ImagePicker();
+  dynamic _pickImage;
+  var profileImage;
 
   String username = "";
 
@@ -31,6 +37,146 @@ class _EditProfilePageState extends State<EditProfilePage> {
         username = "$a $b";
       });
     }
+  }
+
+  Widget imagePlace() {
+    if (profileImage != null) {
+      return Stack(
+        alignment: Alignment.bottomRight,
+        children: [
+          CircleAvatar(
+            radius: 50.0,
+            backgroundImage: FileImage(
+              File(profileImage!.path),
+            ),
+          ),
+          InkWell(
+            onTap: () => imagePicker(),
+            child: const CircleAvatar(
+              radius: 15.0,
+              backgroundColor: Color(0xffe97d47),
+              child: Icon(
+                Icons.edit,
+                size: 15,
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ],
+      );
+    } else {
+      if (_pickImage != null) {
+        return Stack(
+          alignment: Alignment.bottomRight,
+          children: [
+            CircleAvatar(
+              radius: 50.0,
+              backgroundImage: NetworkImage(_pickImage),
+            ),
+            InkWell(
+              onTap: () => imagePicker(),
+              child: const CircleAvatar(
+                radius: 15.0,
+                backgroundColor: Color(0xffe97d47),
+                child: Icon(
+                  Icons.edit,
+                  size: 15,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ],
+        );
+      } else {
+        return Stack(
+          alignment: Alignment.bottomRight,
+          children: [
+            const CircleAvatar(
+              radius: 50.0,
+              backgroundImage: AssetImage("assets/images/profile_anonym.webp"),
+            ),
+            InkWell(
+              onTap: () => imagePicker(),
+              child: const CircleAvatar(
+                radius: 15.0,
+                backgroundColor: Color(0xffe97d47),
+                child: Icon(
+                  Icons.edit,
+                  size: 15,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ],
+        );
+      }
+    }
+  }
+
+  handleTakePhoto(ImageSource source, {required BuildContext context}) async {
+    () => Navigator.pop(context);
+    try {
+      final pickedFile = await _pickerImage.pickImage(source: source);
+      setState(() {
+        profileImage = pickedFile!;
+        print("dosyaya geldim: $profileImage");
+        if (profileImage != null) {}
+      });
+      print('aaa');
+    } catch (e) {
+      setState(() {
+        _pickImage = e;
+        print("Image Error: $_pickImage");
+      });
+    }
+  }
+
+  handleChooseFromGallery(ImageSource source,
+      {required BuildContext context}) async {
+    Navigator.pop(context);
+    try {
+      final pickedFile = await _pickerImage.pickImage(source: source);
+      setState(() {
+        profileImage = pickedFile!;
+        print("dosyaya geldim: $profileImage");
+        if (profileImage != null) {}
+      });
+      print('aaa');
+    } catch (e) {
+      setState(() {
+        _pickImage = e;
+        print("Image Error: $_pickImage");
+      });
+    }
+  }
+
+  void imagePicker() async {
+    Future.delayed(Duration.zero, () {
+      showDialog(
+        context: context,
+        builder: (context) {
+          return SimpleDialog(
+            title: const Text("Pick an image"),
+            children: [
+              SimpleDialogOption(
+                onPressed: () =>
+                    handleTakePhoto(ImageSource.camera, context: context),
+                child: const Text("Photo with Camera"),
+              ),
+              SimpleDialogOption(
+                onPressed: () => handleChooseFromGallery(ImageSource.gallery,
+                    context: context),
+                child: const Text("Photo from Gallery"),
+              ),
+              SimpleDialogOption(
+                child: const Text("Cancel"),
+                onPressed: () => Navigator.pop(context),
+              ),
+            ],
+          );
+        },
+      );
+    });
   }
 
   @override
@@ -64,28 +210,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
         child: Center(
           child: Column(
             children: [
-              Stack(
-                alignment: Alignment.bottomRight,
-                children: [
-                  const CircleAvatar(
-                    radius: 50.0,
-                    backgroundImage:
-                        AssetImage("assets/images/profile_anonym.webp"),
-                  ),
-                  InkWell(
-                    onTap: () {},
-                    child: const CircleAvatar(
-                      radius: 15.0,
-                      backgroundColor: Color(0xffe97d47),
-                      child: Icon(
-                        Icons.edit,
-                        size: 15,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+              imagePlace(),
               Padding(
                 padding: const EdgeInsets.fromLTRB(20, 20, 20, 10),
                 child: Text(

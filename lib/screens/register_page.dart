@@ -2,6 +2,11 @@ import 'package:dietapp/services/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'dart:async';
+import 'dart:io';
+
+import '../services/storage_service.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -17,14 +22,21 @@ class _RegisterPageState extends State<RegisterPage> {
   final nameController = TextEditingController();
   final surnameController = TextEditingController();
   final descriptionController = TextEditingController();
+  final ImagePicker _pickerImage = ImagePicker();
+  final StorageService _storageService = StorageService();
+  dynamic _pickImage;
+  var profileImage;
+  String mediaUrl = '';
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   Future<User?> createPerson(String name, String surname, String email,
-      String password, String description, String profileImage) async {
+      String password, String description, XFile profileImage) async {
     var user = await _auth.createUserWithEmailAndPassword(
         email: email, password: password);
+
+    mediaUrl = await _storageService.uploadMedia(File(profileImage.path));
 
     await _firestore.collection("Person").doc(user.user?.uid).set({
       'name': name,
@@ -32,7 +44,7 @@ class _RegisterPageState extends State<RegisterPage> {
       'email': email,
       'password': password,
       'description': description,
-      'profileImage': profileImage,
+      'profileImage': mediaUrl,
     });
 
     return user.user;
@@ -42,12 +54,13 @@ class _RegisterPageState extends State<RegisterPage> {
     try {
       if (passwordController.text == confirmPasswordController.text) {
         createPerson(
-            nameController.text,
-            surnameController.text,
-            emailController.text,
-            passwordController.text,
-            descriptionController.text,
-            "");
+          nameController.text,
+          surnameController.text,
+          emailController.text,
+          passwordController.text,
+          descriptionController.text,
+          profileImage ?? '',
+        );
         Navigator.pop(context);
       } else if (passwordController.text != confirmPasswordController.text) {
         notConfirmedMessage();
@@ -85,6 +98,146 @@ class _RegisterPageState extends State<RegisterPage> {
         );
       },
     );
+  }
+
+  Widget imagePlace() {
+    if (profileImage != null) {
+      return Stack(
+        alignment: Alignment.bottomRight,
+        children: [
+          CircleAvatar(
+            radius: 50.0,
+            backgroundImage: FileImage(
+              File(profileImage!.path),
+            ),
+          ),
+          InkWell(
+            onTap: () => imagePicker(),
+            child: const CircleAvatar(
+              radius: 15.0,
+              backgroundColor: Color(0xffe97d47),
+              child: Icon(
+                Icons.edit,
+                size: 15,
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ],
+      );
+    } else {
+      if (_pickImage != null) {
+        return Stack(
+          alignment: Alignment.bottomRight,
+          children: [
+            CircleAvatar(
+              radius: 50.0,
+              backgroundImage: NetworkImage(_pickImage),
+            ),
+            InkWell(
+              onTap: () => imagePicker(),
+              child: const CircleAvatar(
+                radius: 15.0,
+                backgroundColor: Color(0xffe97d47),
+                child: Icon(
+                  Icons.edit,
+                  size: 15,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ],
+        );
+      } else {
+        return Stack(
+          alignment: Alignment.bottomRight,
+          children: [
+            const CircleAvatar(
+              radius: 50.0,
+              backgroundImage: AssetImage("assets/images/profile_anonym.webp"),
+            ),
+            InkWell(
+              onTap: () => imagePicker(),
+              child: const CircleAvatar(
+                radius: 15.0,
+                backgroundColor: Color(0xffe97d47),
+                child: Icon(
+                  Icons.edit,
+                  size: 15,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ],
+        );
+      }
+    }
+  }
+
+  handleTakePhoto(ImageSource source, {required BuildContext context}) async {
+    () => Navigator.pop(context);
+    try {
+      final pickedFile = await _pickerImage.pickImage(source: source);
+      setState(() {
+        profileImage = pickedFile!;
+        print("dosyaya geldim: $profileImage");
+        if (profileImage != null) {}
+      });
+      print('aaa');
+    } catch (e) {
+      setState(() {
+        _pickImage = e;
+        print("Image Error: $_pickImage");
+      });
+    }
+  }
+
+  handleChooseFromGallery(ImageSource source,
+      {required BuildContext context}) async {
+    Navigator.pop(context);
+    try {
+      final pickedFile = await _pickerImage.pickImage(source: source);
+      setState(() {
+        profileImage = pickedFile!;
+        print("dosyaya geldim: $profileImage");
+        if (profileImage != null) {}
+      });
+      print('aaa');
+    } catch (e) {
+      setState(() {
+        _pickImage = e;
+        print("Image Error: $_pickImage");
+      });
+    }
+  }
+
+  void imagePicker() async {
+    Future.delayed(Duration.zero, () {
+      showDialog(
+        context: context,
+        builder: (context) {
+          return SimpleDialog(
+            title: const Text("Pick an image"),
+            children: [
+              SimpleDialogOption(
+                onPressed: () =>
+                    handleTakePhoto(ImageSource.camera, context: context),
+                child: const Text("Photo with Camera"),
+              ),
+              SimpleDialogOption(
+                onPressed: () => handleChooseFromGallery(ImageSource.gallery,
+                    context: context),
+                child: const Text("Photo from Gallery"),
+              ),
+              SimpleDialogOption(
+                child: const Text("Cancel"),
+                onPressed: () => Navigator.pop(context),
+              ),
+            ],
+          );
+        },
+      );
+    });
   }
 
   @override
@@ -141,28 +294,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   const SizedBox(
                     height: 20.0,
                   ),
-                  Stack(
-                    alignment: Alignment.bottomRight,
-                    children: [
-                      const CircleAvatar(
-                        radius: 50.0,
-                        backgroundImage:
-                            AssetImage("assets/images/profile_anonym.webp"),
-                      ),
-                      InkWell(
-                        onTap: () {},
-                        child: const CircleAvatar(
-                          radius: 15.0,
-                          backgroundColor: Color(0xffe97d47),
-                          child: Icon(
-                            Icons.edit,
-                            size: 15,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                  imagePlace(),
                   const SizedBox(
                     height: 20.0,
                   ),
