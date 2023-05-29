@@ -1,6 +1,7 @@
 import 'package:dietapp/screens/home/donation/helpbox/cart_model.dart';
 import 'package:dietapp/screens/login/auth_login.dart';
 import 'package:dietapp/screens/login/service/login_service.dart';
+import 'package:dietapp/translations/codegen_loader.g.dart';
 import 'package:dietapp/wearOS_module/wear_intro.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -8,23 +9,36 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'firebase_options.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 int? initScreen = 0;
 
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
   SharedPreferences preferences = await SharedPreferences.getInstance();
   initScreen = await preferences.getInt("initScreen");
   await preferences.setInt("initScreen", 100);
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
+  runApp(
+    EasyLocalization(
+      supportedLocales: [Locale('en'),
+                        Locale('tr'),
+                        Locale('ar')],
+      path: 'assets/translations', 
+      fallbackLocale: Locale('en'),
+      assetLoader: CodegenLoader(),
+      child: MyApp()
+    ),);
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  
+  Locale? _locale;
 
   @override
   Widget build(BuildContext context) {
@@ -45,6 +59,9 @@ class MyApp extends StatelessWidget {
               ColorScheme.fromSwatch().copyWith(secondary: Color(0xffff7800)),
         ),
         debugShowCheckedModeBanner: false,
+        localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
         home: Scaffold(
           body: LayoutBuilder(
             builder: (context, constraints) {
@@ -59,4 +76,6 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
+  
+  
 }

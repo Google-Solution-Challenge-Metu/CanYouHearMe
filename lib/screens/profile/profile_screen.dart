@@ -1,4 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dietapp/main.dart';
+import 'package:dietapp/models/languages.dart';
 import 'package:dietapp/screens/login/service/login_service.dart';
 import 'package:dietapp/screens/profile/edit_profile.dart';
 import 'package:dietapp/screens/profile/sos_mobile.dart';
@@ -7,9 +9,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'dart:io';
-
 import '../../services/report_service.dart';
+import '../../translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'add_device/add_smart_device.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -17,6 +19,8 @@ class ProfileScreen extends StatefulWidget {
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
 }
+
+
 
 class _ProfileScreenState extends State<ProfileScreen> {
   final ReportService _reportService = ReportService();
@@ -27,11 +31,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
   String description = "";
   String profileImage = "";
   int posts = 0;
+  String _language='';
+
+  static String nullSafeStr(String source) => (source == null || source.isEmpty || source == "null") ? "" : source;
 
   signUserOut() async {
     await Provider.of<FirebaseUserAuthentication>(context, listen: false)
         .logout();
   }
+
 
   void initState() {
     super.initState();
@@ -92,6 +100,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+    
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -108,6 +118,36 @@ class _ProfileScreenState extends State<ProfileScreen> {
         backgroundColor: Colors.white,
         elevation: 0,
         actions: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: DropdownButton<Language>(
+              underline: const SizedBox(),
+              icon: const Icon(
+                Icons.language,
+                color: Color.fromARGB(255, 123, 123, 123),
+              ),
+              onChanged: (Language? language) {
+                context.setLocale(Locale(language!.languageCode));
+              },
+              items: Language.languageList()
+                  .map<DropdownMenuItem<Language>>(
+                    (e) => DropdownMenuItem<Language>(
+                      value: e,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: <Widget>[
+                          Text(
+                            e.flag,
+                            style: const TextStyle(fontSize: 30),
+                          ),
+                          Text(e.name)
+                        ],
+                      ),
+                    ),
+                  )
+                  .toList(),
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.only(right: 15.0),
             child: IconButton(
@@ -221,9 +261,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: Column(
                   children: [
-                    const Center(
+                    Center(
                       child: Text(
-                        "My Posts",
+                        LocaleKeys.language.tr(),
                         style: TextStyle(
                           fontFamily: "Raleway",
                           fontWeight: FontWeight.bold,
