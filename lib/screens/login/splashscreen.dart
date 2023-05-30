@@ -1,4 +1,4 @@
-import 'package:dietapp/screens/login_page.dart';
+import 'package:dietapp/screens/login/login_page.dart';
 import 'package:dietapp/screens/onboardingscreen.dart';
 import 'package:flutter/material.dart';
 import '../../main.dart';

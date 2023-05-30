@@ -2,7 +2,7 @@ import 'package:dietapp/screens/intro_screens/intro_screen_1.dart';
 import 'package:dietapp/screens/intro_screens/intro_screen_2.dart';
 import 'package:dietapp/screens/intro_screens/intro_screen_3.dart';
 import 'package:dietapp/screens/intro_screens/intro_screen_4.dart';
-import 'package:dietapp/screens/login_page.dart';
+import 'package:dietapp/screens/login/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 

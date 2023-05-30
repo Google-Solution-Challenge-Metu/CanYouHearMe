@@ -107,7 +107,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       appBar: AppBar(
         title: Center(
           child: Text(
-            "My Profile",
+            LocaleKeys.Profile_profileScreen_MyProfile.tr(),
             style: TextStyle(
               color: Colors.grey.shade800,
               fontFamily: "Raleway",
@@ -227,7 +227,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               height: 10.0,
                             ),
                             Text(
-                              "Posts",
+                              LocaleKeys.Profile_profileScreen_Posts,
                               style: TextStyle(
                                 color: Colors.grey.shade500,
                                 fontFamily: "Raleway",
@@ -247,9 +247,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             context,
                             MaterialPageRoute(
                                 builder: (context) => const EditProfilePage())),
-                        "Edit Profile"),
-                    buildButton(add_device, "Add Device"),
-                    buildButton(sos_mobile, "SOS Button"),
+                        LocaleKeys.Profile_profileScreen_EditProfile.tr()),
+                    buildButton(add_device, LocaleKeys.Profile_profileScreen_addDevice),
+                    buildButton(sos_mobile, LocaleKeys.Profile_profileScreen_sosButton),
                   ],
                 ),
               ),
@@ -297,8 +297,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       context: context,
                                       builder: (context) {
                                         return AlertDialog(
-                                          title: const Text(
-                                              'Do you really want to delete this post?'),
+                                          title: Text(
+                                              LocaleKeys.Profile_profileScreen_deletePost.tr()),
                                           shape: const RoundedRectangleBorder(
                                             borderRadius: BorderRadius.all(
                                               Radius.circular(10),
@@ -316,7 +316,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                           Navigator.pop(
                                                               context)),
                                                   child: const Text(
-                                                    'Yes',
+                                                    LocaleKeys.Profile_profileScreen_Yes,
                                                     style: TextStyle(
                                                         color:
                                                             Color(0xffe97d47)),
@@ -327,7 +327,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                   onTap: () =>
                                                       Navigator.pop(context),
                                                   child: const Text(
-                                                    'No',
+                                                    LocaleKeys.Profile_profileScreen_No,
                                                     style: TextStyle(
                                                       color: Color(0xffe97d47),
                                                     ),
@@ -452,9 +452,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       item_count == 0) {
                                     return Center(
                                       child: Column(
-                                        children: const [
-                                          Text("End of posts."),
-                                          SizedBox(
+                                        children: [
+                                          Text('Profile.profileScreen.EndPost'.tr()),
+                                          const SizedBox(
                                             height: 15.0,
                                           )
                                         ],

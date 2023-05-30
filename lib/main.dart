@@ -31,6 +31,7 @@ Future<void> main() async {
                         Locale('ar')],
       path: 'assets/translations', 
       fallbackLocale: Locale('en'),
+      saveLocale: true,
       assetLoader: CodegenLoader(),
       child: MyApp()
     ),);
