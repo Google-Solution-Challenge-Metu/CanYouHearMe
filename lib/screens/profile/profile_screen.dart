@@ -227,7 +227,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               height: 10.0,
                             ),
                             Text(
-                              LocaleKeys.Profile_profileScreen_Posts,
+                              LocaleKeys.Profile_profileScreen_Posts.tr(),
                               style: TextStyle(
                                 color: Colors.grey.shade500,
                                 fontFamily: "Raleway",
@@ -248,8 +248,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             MaterialPageRoute(
                                 builder: (context) => const EditProfilePage())),
                         LocaleKeys.Profile_profileScreen_EditProfile.tr()),
-                    buildButton(add_device, LocaleKeys.Profile_profileScreen_addDevice),
-                    buildButton(sos_mobile, LocaleKeys.Profile_profileScreen_sosButton),
+                    buildButton(add_device, LocaleKeys.Profile_profileScreen_addDevice.tr()),
+                    buildButton(sos_mobile, LocaleKeys.Profile_profileScreen_sosButton.tr()),
                   ],
                 ),
               ),
@@ -453,7 +453,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     return Center(
                                       child: Column(
                                         children: [
-                                          Text('Profile.profileScreen.EndPost'.tr()),
+                                          Text('Profile_profileScreen_EndPost'.tr()),
                                           const SizedBox(
                                             height: 15.0,
                                           )
