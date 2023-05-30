@@ -1,142 +1,122 @@
 {
     "language":"english",
     "helloWord":"Hello Word",
-    "forget_password":{
-        "reset":"Password reset email sent successfully.",
-        "forgot_title":"Forgot Password Page",
-        "enterEmail":"Enter your email and we'll send you a password reset link.",
-        "enterHere":"Enter your email here.",
-        "sendPswrd":"Send Password Reset Email"
-    },
-    "volunteer":{
-        "Volunteer":"Volunteer",
-        "motivation":"'“Alone we can do so little; together we can do so much.”'",
-        "whcity":"In which city do you live?"
-    },
-    "Intro":{
-        "1":{
-           "Help":"Help" ,
-           "motivation":"Help people by making \n your voice heard."
-        },
-        "2":{
-            "Volunteer":"Volunteer",
-            "motivation":"Find places to volunteer \n near your location."
-        },
-        "3":{
-            "Donate":"Donate",
-            "motivation":"You can donate money, \n blood or needs."
-        },
-        "4":{
-            "Map":"Map",
-            "motivation":"See places effected \n by the earthquake."
-        }
-    },
-    "Login":{
-        "service":{
-            "incrtmail":"Incorrect email.",
-            "incrtpswrd":"Incorrect password.",
-            "incrtboth":"No email, password or both."
-        },
-        "loginPage":{
-            "ring":"Turn Up Your Phone Volume! To Pause The Sound, Please Press The Button Again.",
-            "loginPage":"Login Page",
-            "email":"E-mail",
-            "password":"Password",
-            "forget_password":"Forgot password?",
-            "or":"or continue with",
-            "notHaveAccount":"Don’t have an account?",
-            "signUp":" Sign Up",
-            "logIn":"Login"
-        }
-    },
-    "Profile":{
-        "addDevice":{
-            "addSmartDevice":{
-                "logAdd":"Notice: You have been sent 'connection key' to your smart device. Please refresh your smart device.",
-                "conneting":"Connecting to your device",
-                "chackDevice":"Please check your connection",
-                "Add_a_Smart_Device":"Add a Smart Device",
-                "info":" Supported:\n \nCheck if your device is supported by the current platform. \n \n \nPairable:\n \nTo provide your device. Please make sure that Wear OS or Galaxy Wearable apps are installed. \n \n \nReachable:\n \nCheck if your smart device connected to your phone and ready to send a connection key.",
-                "closeInfo":"Close",
-                "checkSupported":"Supported:",
-                "checkPairable":"Pairable:",
-                "checkReachable":"Reachable:",
-                "OpenSelection":"Open device selection",
-                "log":"Log",
-                "refresh":"Refresh the page"
-            },
-            "sendTile":{
-                "connectionKey":"Send a Connection Key"
-            }
-        },
-        "editProfile":{
-            "pickImage":"Pick an image",
-            "photoCam":"Photo with Camera",
-            "photoGall":"Photo from Gallery",
-            "cancel":"Cancel",
-            "editProfile":"Edit Profile",
-            "newDescription":"Enter your new description.",
-            "toChangePswrd":"To change your password",
-            "NewPassword":"New Password",
-            "ConfirmPassword":"Confirm password",
-            "ConfirmChanges":"Confirm Changes"
-        },
-        "profileScreen":{
-            "MyProfile":"My Profile",
-            "Posts":"Posts",
-            "EditProfile":"Edit Profile",
-            "addDevice":"Add Device",
-            "sosButton":"SOS Button",
-            "deletePost":"Do you really want to delete this post?",
-            "Yes":"Yes",
-            "No":"No",
-            "EndPost":"End of posts.",
-            "myPost":"My Posts"
-        },
-        "sosMobile":{
-            "sosCall":"Sending a sos call",
-            "Cancel":"Cancel",
-            "Continue":"Continue",
-            "AreuSure":"Sending a sos call, are you sure?",
-            "locationDisable":"Location services are disabled.",
-            "locationDisablePer":"Location services are permanently disabled.",
-            "sosButton":"SOS Button",
-            "info":"Use when needed!",
-            "Close":"Close",
-            "SOS":"S.O.S",
-            "emergency":"IN CASE OF AN EMERGENCY PRESS THE BUTTON"
-        }
-    },
-    "Home":{
-        "HomePage":"Home Page",
-        "MYVH":"Make Your Voice Heard",
-        "Volunteer":"Volunteer",
-        "Donate":"Donate",
-        "Maps":"Maps"
-    },
-    "OnBoarding":{
-        "Done":"Done",
-        "Next":"Next",
-        "Skip":"Skip"
-    },
-    "Register":{
-        "pswrdMatch":"Passwords do not match.",
-        "pickImage":"Pick an image",
-        "photoCam":"Photo with Camera",
-        "photoGall":"Photo from Gallery",
-        "cancel":"Cancel",
-        "RegisterPage":"Register Page",
-        "Name":"Name",
-        "Surname":"Surname",
-        "email":"E-mail",
-        "description":"Write your description here.",
-        "Password":"Password",
-        "ConfirmPassword":"Confirm Password",
-        "or":"O continue with",
-        "already":"Already registered?",
-        "logIn":" Login",
-        "signIn":"Sign In"
-    }
+    "forget_password_reset":"Password reset email sent successfully.",
+    "forget_password_forgot_title":"Forgot Password Page",
+    "forget_password_enterEmail":"Enter your email and we'll send you a password reset link.",
+    "forget_password_enterHere":"Enter your email here.",
+    "forget_password_sendPswrd":"Send Password Reset Email",
+    "volunteer_Volunteer":"Volunteer",
+    "volunteer_motivation":"'“Alone we can do so little; together we can do so much.”'",
+    "volunteer_whcity":"In which city do you live?",
+    
+
+    "Intro1_Help":"Help" ,
+    "Intro1_motivation":"Help people by making \n your voice heard.",
+
+     "Intro2_Volunteer":"Volunteer",
+     "Intro2_motivation":"Find places to volunteer \n near your location.", 
+     "Intro3_Donate":"Donate",
+     "Intro3_motivation":"You can donate money, \n blood or needs.",    
+     "Intro4_Map":"Map",
+     "Intro4_motivation":"See places effected \n by the earthquake.",
+        
+
+    "Login_service_incrtmail":"Incorrect email.",
+    "Login_service_incrtpswrd":"Incorrect password.",
+    "Login_service_incrtboth":"No email, password or both.",
+
+    "Login_Page_ring":"Turn Up Your Phone Volume! To Pause The Sound, Please Press The Button Again.",
+    "Login_Page_loginPage":"Login Page",
+    "Login_Page_email":"E-mail",
+    "Login_Page_password":"Password",
+    "Login_Page_forget_password":"Forgot password?",
+    "Login_Page_or":"or continue with",
+    "Login_Page_notHaveAccount":"Don’t have an account?",
+    "Login_Page_signUp":" Sign Up",
+    "Login_Page_logIn":"Login",
+
+    
+    "Profile_addDevice_addSmartDevice_logAdd":"Notice: You have been sent 'connection key' to your smart device. Please refresh your smart device.",
+    "Profile_addDevice_addSmartDevice_conneting":"Connecting to your device",
+    "Profile_addDevice_addSmartDevice_chackDevice":"Please check your connection",
+    "Profile_addDevice_addSmartDevice_Add_a_Smart_Device":"Add a Smart Device",
+    "Profile_addDevice_addSmartDevice_info":" Supported:\n \nCheck if your device is supported by the current platform. \n \n \nPairable:\n \nTo provide your device. Please make sure that Wear OS or Galaxy Wearable apps are installed. \n \n \nReachable:\n \nCheck if your smart device connected to your phone and ready to send a connection key.",
+    "Profile_addDevice_addSmartDevice_closeInfo":"Close",
+    "Profile_addDevice_addSmartDevice_checkSupported":"Supported:",
+    "Profile_addDevice_addSmartDevice_checkPairable":"Pairable:",
+    "Profile_addDevice_addSmartDevice_checkReachable":"Reachable:",
+    "Profile_addDevice_addSmartDevice_OpenSelection":"Open device selection",
+    "Profile_addDevice_addSmartDevice_log":"Log",
+    "Profile_addDevice_addSmartDevice_refresh":"Refresh the page",
+
+
+    "Profile_addDevice_sendTile_connectionKey":"Send a Connection Key",
+
+    "Profile_editProfile_pickImage":"Pick an image",
+    "Profile_editProfile_photoCam":"Photo with Camera",
+    "Profile_editProfile_photoGall":"Photo from Gallery",
+    "Profile_editProfile_cancel":"Cancel",
+    "Profile_editProfile_editProfile":"Edit Profile",
+    "Profile_editProfile_newDescription":"Enter your new description.",
+    "Profile_editProfile_toChangePswrd":"To change your password",
+    "Profile_editProfile_NewPassword":"New Password",
+    "Profile_editProfile_ConfirmPassword":"Confirm password",
+    "Profile_editProfile_ConfirmChanges":"Confirm Changes",
+
+    "Profile_profileScreen_MyProfile":"My Profile",
+    "Profile_profileScreen_Posts":"Posts",
+    "Profile_profileScreen_EditProfile":"Edit Profile",
+    "Profile_profileScreen_addDevice":"Add Device",
+    "Profile_profileScreen_sosButton":"SOS Button",
+    "Profile_profileScreen_deletePost":"Do you really want to delete this post?",
+    "Profile_profileScreen_Yes":"Yes",
+    "Profile_profileScreen_No":"No",
+    "Profile_profileScreen_EndPost":"End of posts.",
+    "Profile_profileScreen_myPost":"My Posts",
+
+    "Profile_sosMobile_sosCall":"Sending a sos call",
+    "Profile_sosMobile_Cancel":"Cancel",
+    "Profile_sosMobile_Continue":"Continue",
+    "Profile_sosMobile_AreuSure":"Sending a sos call, are you sure?",
+    "Profile_sosMobile_locationDisable":"Location services are disabled.",
+    "Profile_sosMobile_locationDisablePer":"Location services are permanently disabled.",
+    "Profile_sosMobile_sosButton":"SOS Button",
+    "Profile_sosMobile_info":"Use when needed!",
+    "Profile_sosMobile_Close":"Close",
+    "Profile_sosMobile_SOS":"S.O.S",
+    "Profile_sosMobile_emergency":"IN CASE OF AN EMERGENCY PRESS THE BUTTON",
+
+
+    "Home_HomePage":"Home Page",
+    "Home_MYVH":"Make Your Voice Heard",
+    "Home_Volunteer":"Volunteer",
+    "Home_Donate":"Donate",
+    "Home_Maps":"Maps",
+
+
+    "OnBoarding_Done":"Done",
+    "OnBoarding_Next":"Next",
+    "OnBoarding_Skip":"Skip",
+
+
+    "Register_pswrdMatch":"Passwords do not match.",
+    "Register_pickImage":"Pick an image",
+    "Register_photoCam":"Photo with Camera",
+    "Register_photoGall":"Photo from Gallery",
+    "Register_cancel":"Cancel",
+    "Register_RegisterPage":"Register Page",
+    "Register_Name":"Name",
+    "Register_Surname":"Surname",
+    "Register_email":"E-mail",
+    "Register_description":"Write your description here.",
+    "Register_Password":"Password",
+    "Register_ConfirmPassword":"Confirm Password",
+    "Register_or":"O continue with",
+    "Register_already":"Already registered?",
+    "Register_logIn":" Login",
+    "Register_signIn":"Sign In"
+
 
 
 }
