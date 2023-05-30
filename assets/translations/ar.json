@@ -1,5 +1,5 @@
 {
-    "language_a": "العربية",
+    "language": "العربية",
     "helloWord": "Hello Word",
     "forget_password_reset": "تم إرسال البريد الإلكتروني لإعادة تعيين كلمة المرور بنجاح.",
     "forget_password_forgot_title": "نسيت صفحة كلمة المرور" ,
@@ -85,7 +85,7 @@
     "Profile_sosMobile_info": "استخدم عند الحاجة!",
     "Profile_sosMobile_Close": "إغلاق" ,
     "Profile_sosMobile_SOS": "S.O.S",
-    "Profile_sosMobile_em Emergency": "في حالة الطوارئ , اضغط على الزر" ,
+    "Profile_sosMobile_emergency": "في حالة الطوارئ , اضغط على الزر" ,
 
 
     "Home_HomePage": "الصفحة الرئيسية" ,
@@ -167,7 +167,7 @@
     "donation_helpbox_page_call_authorized_title": "الاتصال بالمفوض" ,
     "donation_helpbox_page_call_authorized_description": "الحقول المميزة بعلامة * مطلوبة" ,
     "donation_helpbox_page_call_authorized_name": "الاسم *" ,
-    "donation_helpbox_page_call_authorized_s اللقب": "اللقب *" ,
+    "donation_helpbox_page_call_authorized_surname": "اللقب *" ,
     "donation_helpbox_page_call_authorized_city": "المدينة *" ,
     "donation_helpbox_page_call_authorized_state": "State *",
     "donation_helpbox_page_call_authorized_address": "العنوان *" ,
