@@ -12,19 +12,15 @@ class DonationScreen extends StatefulWidget {
 }
 
 Future<void> _sendSMS() async {
-    List<String> recipients=["1866"];
-    try {
-      String _result = await sendSMS(
-        message: "DEPREM",
-        recipients: recipients,
-        sendDirect: false,
-      );
-      
-    } catch (error) {
-
-    }
-  }
-
+  List<String> recipients = ["1866"];
+  try {
+    String _result = await sendSMS(
+      message: "DEPREM",
+      recipients: recipients,
+      sendDirect: false,
+    );
+  } catch (error) {}
+}
 
 class _DonationScreen extends State<DonationScreen> {
   final donateController = TextEditingController();
@@ -386,7 +382,7 @@ class _DonationScreen extends State<DonationScreen> {
                 onTap: () {
                   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                     content: CustomSnackBarContent(
-                      errorText: "Thank Youu",
+                      errorText: "Thank You!",
                     ),
                     behavior: SnackBarBehavior.floating,
                     backgroundColor: Colors.transparent,
@@ -422,12 +418,14 @@ class _DonationScreen extends State<DonationScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               GestureDetector(
                 onTap: () {
                   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                     content: CustomSnackBarContent(
-                      errorText: "Thank Youu",
+                      errorText: "Thank You!",
                     ),
                     behavior: SnackBarBehavior.floating,
                     backgroundColor: Colors.transparent,

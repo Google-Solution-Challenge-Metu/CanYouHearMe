@@ -9,18 +9,18 @@
     "volunteer_Volunteer":"Volunteer",
     "volunteer_motivation":"'“Alone we can do so little; together we can do so much.”'",
     "volunteer_whcity":"In which city do you live?",
-    
+
 
     "Intro1_Help":"Help" ,
     "Intro1_motivation":"Help people by making \n your voice heard.",
 
-     "Intro2_Volunteer":"Volunteer",
-     "Intro2_motivation":"Find places to volunteer \n near your location.", 
-     "Intro3_Donate":"Donate",
-     "Intro3_motivation":"You can donate money, \n blood or needs.",    
-     "Intro4_Map":"Map",
-     "Intro4_motivation":"See places effected \n by the earthquake.",
-        
+    "Intro2_Volunteer":"Volunteer",
+    "Intro2_motivation":"Find places to volunteer \n near your location.",
+    "Intro3_Donate":"Donate",
+    "Intro3_motivation":"You can donate money, \n blood or needs.",
+    "Intro4_Map":"Map",
+    "Intro4_motivation":"See places effected \n by the earthquake.",
+
 
     "Login_service_incrtmail":"Incorrect email.",
     "Login_service_incrtpswrd":"Incorrect password.",
@@ -36,7 +36,7 @@
     "Login_Page_signUp":" Sign Up",
     "Login_Page_logIn":"Login",
 
-    
+
     "Profile_addDevice_addSmartDevice_logAdd":"Notice: You have been sent 'connection key' to your smart device. Please refresh your smart device.",
     "Profile_addDevice_addSmartDevice_conneting":"Connecting to your device",
     "Profile_addDevice_addSmartDevice_chackDevice":"Please check your connection",
