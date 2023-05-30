@@ -3,6 +3,8 @@ import 'package:dietapp/screens/intro_screens/intro_screen_2.dart';
 import 'package:dietapp/screens/intro_screens/intro_screen_3.dart';
 import 'package:dietapp/screens/intro_screens/intro_screen_4.dart';
 import 'package:dietapp/screens/login/login_page.dart';
+import 'package:dietapp/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -65,7 +67,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                 builder: (context) => const MainPage(),
                               ),
                             ),
-                            'Done',
+                            LocaleKeys.OnBoarding_Done.tr(),
                             const Color(0xffe97d47),
                             Colors.white,
                           ),
@@ -77,7 +79,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                               duration: const Duration(milliseconds: 500),
                               curve: Curves.ease,
                             ),
-                            'Next',
+                            LocaleKeys.OnBoarding_Next.tr(),
                             const Color(0xffe97d47),
                             Colors.white,
                           ),
@@ -93,7 +95,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                   builder: (context) => const MainPage(),
                                 ),
                               ),
-                      'Skip',
+                      LocaleKeys.OnBoarding_Skip.tr(),
                       Colors.white,
                       onLastPage ? Colors.white : const Color(0xffe97d47),
                     ),

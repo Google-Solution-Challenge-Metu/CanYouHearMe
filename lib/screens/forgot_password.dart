@@ -1,4 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dietapp/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -24,10 +26,10 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
           .sendPasswordResetEmail(email: emailController.text.trim());
       showDialog(
         context: context,
-        builder: (context) => const AlertDialog(
+        builder: (context) => AlertDialog(
           backgroundColor: Color(0xffe97d47),
           content: Text(
-            "Password reset email sent successfully.",
+            LocaleKeys.forget_password_reset.tr(),
             style: TextStyle(color: Colors.white),
           ),
         ),
@@ -78,8 +80,8 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                         color: Color(0xffe97d47),
                         fontWeight: FontWeight.bold),
                   ),
-                  const Text(
-                    "Forgot Password Page",
+                  Text(
+                    LocaleKeys.forget_password_forgot_title.tr(),
                     style: TextStyle(
                       fontFamily: "Source Sans Pro",
                       fontSize: 15.0,
@@ -98,10 +100,10 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
+                    children: [
                       Expanded(
                         child: Text(
-                          "Enter your email and we'll send you a password reset link.",
+                          LocaleKeys.forget_password_enterEmail.tr(),
                           style: TextStyle(
                             fontFamily: "Source Sans Pro",
                             fontSize: 16.0,
@@ -117,7 +119,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                     height: 20.0,
                   ),
                   buildTextField(Icons.email, emailController,
-                      "Enter your email here.", false),
+                      LocaleKeys.forget_password_enterHere.tr(), false),
                   const SizedBox(
                     height: 20.0,
                   ),
@@ -145,9 +147,9 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
           decoration: BoxDecoration(
               color: const Color(0xffe97d47),
               borderRadius: BorderRadius.circular(12.0)),
-          child: const Center(
+          child: Center(
             child: Text(
-              "Send Password Reset Email",
+              LocaleKeys.forget_password_sendPswrd.tr(),
               style: TextStyle(
                 color: Colors.white,
               ),

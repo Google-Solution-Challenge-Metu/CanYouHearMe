@@ -2,6 +2,8 @@ import 'package:dietapp/screens/forgot_password.dart';
 import 'package:dietapp/screens/register_page.dart';
 import 'package:dietapp/services/auth_service.dart';
 import 'package:dietapp/screens/login/service/login_service.dart';
+import 'package:dietapp/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 
@@ -22,10 +24,10 @@ class _MainPageState extends State<MainPage> {
     showDialog(
       context: context,
       builder: (context) {
-        return const AlertDialog(
+        return AlertDialog(
           backgroundColor: Color(0xffe97d47),
           title: Text(
-            "Turn Up Your Phone Volume! To Pause The Sound, Please Press The Button Again.",
+            LocaleKeys.Login_Page_ring.tr(),
             style: TextStyle(color: Colors.white),
           ),
         );
@@ -112,8 +114,8 @@ class _MainPageState extends State<MainPage> {
                   color: Color(0xffe97d47),
                   fontWeight: FontWeight.bold),
             ),
-            const Text(
-              "Login Page",
+            Text(
+              LocaleKeys.Login_Page_loginPage.tr(),
               style: TextStyle(
                 fontFamily: "Source Sans Pro",
                 fontSize: 15.0,
@@ -130,11 +132,11 @@ class _MainPageState extends State<MainPage> {
                 thickness: 1.0,
               ),
             ),
-            buildTextField(Icons.email, emailController, "E-mail", false),
+            buildTextField(Icons.email, emailController, LocaleKeys.Login_Page_email.tr(), false),
             const SizedBox(
               height: 20.0,
             ),
-            buildTextField(Icons.lock, passwordController, "Password", true),
+            buildTextField(Icons.lock, passwordController, LocaleKeys.Login_Page_password.tr(), true),
             const SizedBox(
               height: 10.0,
             ),
@@ -148,8 +150,8 @@ class _MainPageState extends State<MainPage> {
                         context,
                         MaterialPageRoute(
                             builder: (context) => ForgotPasswordPage())),
-                    child: const Text(
-                      "Forgot password?",
+                    child: Text(
+                      LocaleKeys.Login_Page_forget_password.tr(),
                       style: TextStyle(color: Color(0xffe97d47)),
                     ),
                   ),
@@ -179,10 +181,10 @@ class _MainPageState extends State<MainPage> {
                       color: Colors.grey.shade200,
                     ),
                   ),
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.symmetric(horizontal: 10.0),
                     child: Text(
-                      "or continue with",
+                      LocaleKeys.Login_Page_or.tr(),
                       style: TextStyle(
                         color: Color(0xffe97d47),
                       ),
@@ -226,16 +228,16 @@ class _MainPageState extends State<MainPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text(
-                  "Don’t have an account?",
+                Text(
+                  LocaleKeys.Login_Page_notHaveAccount.tr(),
                   style: TextStyle(
                     color: Color.fromARGB(255, 0, 0, 0),
                   ),
                 ),
                 GestureDetector(
                   onTap: registerUser,
-                  child: const Text(
-                    " Sign Up",
+                  child: Text(
+                    LocaleKeys.Login_Page_signUp.tr(),
                     style: TextStyle(
                       color: Color(0xffe97d47),
                       fontWeight: FontWeight.bold,
@@ -268,9 +270,9 @@ class _MainPageState extends State<MainPage> {
           decoration: BoxDecoration(
               color: const Color(0xffe97d47),
               borderRadius: BorderRadius.circular(12.0)),
-          child: const Center(
+          child: Center(
             child: Text(
-              "Login",
+              LocaleKeys.Login_Page_logIn.tr(),
               style: TextStyle(
                 color: Colors.white,
               ),

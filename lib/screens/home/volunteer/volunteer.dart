@@ -8,6 +8,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../../../services/volunteer_service.dart';
 
+
 class VolunteerScreen extends StatefulWidget {
   const VolunteerScreen({super.key});
   @override
@@ -45,7 +46,7 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
           elevation: 0,
           backgroundColor: Colors.transparent,
           title: Text(
-            "Volunteer",
+            LocaleKeys.volunteer_Volunteer.tr(),
             style: GoogleFonts.prozaLibre(
               color: Color(0xffe97d47),
               fontSize: 25,
@@ -73,7 +74,7 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
                 children: [
                   Expanded(
                     child: Text(
-                      '“Alone we can do so little; together we can do so much.”',
+                      LocaleKeys.volunteer_motivation.tr(),
                       style: GoogleFonts.nunitoSans(
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
@@ -106,8 +107,8 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
             Padding(
               padding: const EdgeInsets.all(12.0),
               child: DropdownButton<String>(
-                hint: const Text(
-                  'In which city do you live?',
+                hint: Text(
+                  LocaleKeys.volunteer_whcity.tr(),
                 ),
                 isExpanded: true,
                 value: selectedCity,

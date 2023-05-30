@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dietapp/services/sos_mobile_service.dart';
+import 'package:dietapp/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -44,10 +46,10 @@ class _SosMobileState extends State<SosMobile> {
     showDialog(
       context: context,
       builder: (context) {
-        return const AlertDialog(
+        return AlertDialog(
           backgroundColor: Color.fromARGB(148, 233, 125, 71),
           title: Text(
-            "Sending a sos call",
+            LocaleKeys.Profile_sosMobile_sosCall.tr(),
             style: TextStyle(color: Colors.white),
             textAlign: TextAlign.center,
           ),
@@ -60,13 +62,13 @@ class _SosMobileState extends State<SosMobile> {
     FirebaseDocument();
     // set up the buttons
     Widget cancelButton = TextButton(
-      child: Text("Cancel", style: TextStyle(color: Colors.white, fontSize: 24),),
+      child: Text(LocaleKeys.Profile_sosMobile_Cancel.tr(), style: TextStyle(color: Colors.white, fontSize: 24),),
       onPressed:  () {
         Navigator.of(context, rootNavigator: true).pop();    
       },
     );
     Widget continueButton = TextButton(
-      child: Text("Continue", style: TextStyle(color: Colors.white, fontSize: 24),),
+      child: Text(LocaleKeys.Profile_sosMobile_Continue.tr(), style: TextStyle(color: Colors.white, fontSize: 24),),
       onPressed:  () {
         Navigator.of(context, rootNavigator: true).pop();   
         SendSosMessage(_latitude,_longitude);
@@ -81,7 +83,7 @@ class _SosMobileState extends State<SosMobile> {
         width: MediaQuery.of(context).size.width-20,
         height: MediaQuery.of(context).size.height/8,),
       title: Text(
-        "Sending a sos call, are you sure?",
+        LocaleKeys.Profile_sosMobile_AreuSure.tr(),
         style: TextStyle(color: Colors.white, fontSize: 24),
         textAlign: TextAlign.center,
       ),
@@ -118,17 +120,17 @@ class _SosMobileState extends State<SosMobile> {
   Future<Position> _getCurrentLocation() async{
     bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if(!serviceEnabled){
-      return Future.error("Location services are disabled.");
+      return Future.error(LocaleKeys.Profile_sosMobile_locationDisable.tr());
     }
     LocationPermission permission =await Geolocator.checkPermission();
     if(permission==LocationPermission.denied){
       permission= await Geolocator.requestPermission();
       if (permission==LocationPermission.denied){
-        return Future.error("Location services are disabled.");
+        return Future.error(LocaleKeys.Profile_sosMobile_locationDisable.tr());
       }
     }
     if(permission==LocationPermission.deniedForever){
-      return Future.error("Location services are permanently disabled.");
+      return Future.error(LocaleKeys.Profile_sosMobile_locationDisablePer.tr());
     }
     return await Geolocator.getCurrentPosition();
   }
@@ -139,7 +141,7 @@ class _SosMobileState extends State<SosMobile> {
       appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
-          title: const Text("SOS Button",style: TextStyle(color: Color(0xffe97d47)),),
+          title: Text(LocaleKeys.Profile_sosMobile_sosButton.tr(),style: TextStyle(color: Color(0xffe97d47)),),
           leading: IconButton(
             onPressed: () => Navigator.pop(context),
             icon: const Icon(
@@ -155,15 +157,15 @@ class _SosMobileState extends State<SosMobile> {
                   showDialog(
                     context: context, 
                     builder: (context)=> SimpleDialog(
-                      title: const Text("SOS Button"),
+                      title: Text(LocaleKeys.Profile_sosMobile_sosButton.tr()),
                       contentPadding: const EdgeInsets.all(20.0),
                       children: [
-                        const Text("Use when needed!"),
+                        Text(LocaleKeys.Profile_sosMobile_info.tr()),
                         TextButton(
                           onPressed:() {
                             Navigator.of(context).pop();
                           }, 
-                          child: const Text("Close", style: TextStyle(color:Color(0xffe97d47) ),),
+                          child: Text(LocaleKeys.Profile_sosMobile_Close.tr(), style: TextStyle(color:Color(0xffe97d47) ),),
                         )
                       ],
 

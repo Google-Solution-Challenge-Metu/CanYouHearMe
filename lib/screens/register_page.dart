@@ -1,4 +1,6 @@
 import 'package:dietapp/services/auth_service.dart';
+import 'package:dietapp/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -89,10 +91,10 @@ class _RegisterPageState extends State<RegisterPage> {
     showDialog(
       context: context,
       builder: (context) {
-        return const AlertDialog(
+        return AlertDialog(
           backgroundColor: Color(0xFF4E6C50),
           title: Text(
-            "Passwords do not match.",
+            LocaleKeys.Register_pswrdMatch.tr(),
             style: TextStyle(color: Colors.white),
           ),
         );
@@ -217,20 +219,20 @@ class _RegisterPageState extends State<RegisterPage> {
         context: context,
         builder: (context) {
           return SimpleDialog(
-            title: const Text("Pick an image"),
+            title: Text(LocaleKeys.Register_pickImage.tr()),
             children: [
               SimpleDialogOption(
                 onPressed: () =>
                     handleTakePhoto(ImageSource.camera, context: context),
-                child: const Text("Photo with Camera"),
+                child: Text(LocaleKeys.Register_photoCam.tr()),
               ),
               SimpleDialogOption(
                 onPressed: () => handleChooseFromGallery(ImageSource.gallery,
                     context: context),
-                child: const Text("Photo from Gallery"),
+                child: Text(LocaleKeys.Register_photoGall.tr()),
               ),
               SimpleDialogOption(
-                child: const Text("Cancel"),
+                child: Text(LocaleKeys.Register_cancel.tr()),
                 onPressed: () => Navigator.pop(context),
               ),
             ],
@@ -272,8 +274,8 @@ class _RegisterPageState extends State<RegisterPage> {
                         color: Color(0xffe97d47),
                         fontWeight: FontWeight.bold),
                   ),
-                  const Text(
-                    "Register Page",
+                  Text(
+                    LocaleKeys.Register_RegisterPage.tr(),
                     style: TextStyle(
                       fontFamily: "Source Sans Pro",
                       fontSize: 15.0,
@@ -290,7 +292,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       thickness: 1,
                     ),
                   ),
-                  const Text("Pick an image"),
+                  Text(LocaleKeys.Register_pickImage.tr()),
                   const SizedBox(
                     height: 20.0,
                   ),
@@ -301,30 +303,30 @@ class _RegisterPageState extends State<RegisterPage> {
                   Row(
                     children: [
                       Expanded(
-                          child: buildTextField(nameController, "Name", false)),
+                          child: buildTextField(nameController, LocaleKeys.Register_Name.tr(), false)),
                       Expanded(
                           child: buildTextField(
-                              surnameController, "Surname", false)),
+                              surnameController, LocaleKeys.Register_Sname.tr(), false)),
                     ],
                   ),
                   const SizedBox(
                     height: 20.0,
                   ),
-                  buildTextField(emailController, "E-mail", false),
+                  buildTextField(emailController, LocaleKeys.Register_email.tr(), false),
                   const SizedBox(
                     height: 20.0,
                   ),
                   buildTextField(descriptionController,
-                      "Write your description here.", false),
+                      LocaleKeys.Register_description.tr(), false),
                   const SizedBox(
                     height: 20.0,
                   ),
-                  buildTextField(passwordController, "Password", true),
+                  buildTextField(passwordController, LocaleKeys.Register_Password.tr(), true),
                   const SizedBox(
                     height: 20.0,
                   ),
                   buildTextField(
-                      confirmPasswordController, "Confirm Password", true),
+                      confirmPasswordController, LocaleKeys.Register_ConfirmPassword.tr(), true),
                   const SizedBox(
                     height: 20.0,
                   ),
@@ -342,10 +344,10 @@ class _RegisterPageState extends State<RegisterPage> {
                             color: Colors.grey.shade200,
                           ),
                         ),
-                        const Padding(
+                        Padding(
                           padding: EdgeInsets.symmetric(horizontal: 10.0),
                           child: Text(
-                            "Or continue with",
+                            LocaleKeys.Register_or.tr(),
                             style: TextStyle(
                               color: Color(0xffe97d47),
                             ),
@@ -389,17 +391,17 @@ class _RegisterPageState extends State<RegisterPage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text(
-                        "Already registered?",
+                      Text(
+                        LocaleKeys.Register_already.tr(),
                         style: TextStyle(
-                          color: Color.fromARGB(255, 0, 0, 0),
+                          color:  Color.fromARGB(255, 0, 0, 0),
                         ),
                       ),
                       GestureDetector(
                         onTap: () => Navigator.pop(context),
-                        child: const Text(
-                          " Login",
-                          style: TextStyle(
+                        child: Text(
+                          LocaleKeys.Register_logIn.tr(),
+                          style: const TextStyle(
                             color: Color(0xffe97d47),
                             fontWeight: FontWeight.bold,
                           ),
@@ -431,9 +433,9 @@ class _RegisterPageState extends State<RegisterPage> {
           decoration: BoxDecoration(
               color: const Color(0xffe97d47),
               borderRadius: BorderRadius.circular(12.0)),
-          child: const Center(
+          child: Center(
             child: Text(
-              "Sign In",
+              LocaleKeys.Register_signIn.tr(),
               style: TextStyle(
                 color: Colors.white,
               ),

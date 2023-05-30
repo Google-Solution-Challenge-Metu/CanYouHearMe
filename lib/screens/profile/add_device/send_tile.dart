@@ -1,3 +1,5 @@
+import 'package:dietapp/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 
@@ -25,7 +27,7 @@ class SendTile extends StatelessWidget {
                 size: 36.0,
               ),
               SizedBox(width: 20,),
-              Text("Send a Connection Key",style: TextStyle(
+              Text(LocaleKeys.Profile_addDevice_sendTile_connectionKey.tr(),style: TextStyle(
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
                 fontSize: 17,

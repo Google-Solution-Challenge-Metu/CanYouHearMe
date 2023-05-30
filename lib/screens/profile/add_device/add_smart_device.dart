@@ -1,5 +1,7 @@
 import 'package:dietapp/screens/components/CustomSnackBarContent.dart';
 import 'package:dietapp/screens/profile/add_device/send_tile.dart';
+import 'package:dietapp/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:io';
@@ -89,10 +91,10 @@ class _AddDeviceState extends State<AddDevice> {
   void sendMessage() {
     final message = {"email": email, "password":password};
     _watch.sendMessage(message);
-    setState(() => _log.add('Notice: You have been sent "connection key" to your smart device. Please refresh your smart device.'));
-    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+    setState(() => _log.add(LocaleKeys.Profile_addDevice_addSmartDevice_refresh.tr()));
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       content: CustomSnackBarContent(
-        errorText: "Connecting to your device",
+        errorText: LocaleKeys.Profile_addDevice_addSmartDevice_conneting.tr(),
       ),
       behavior: SnackBarBehavior.floating,
       backgroundColor: Colors.transparent,
@@ -101,9 +103,9 @@ class _AddDeviceState extends State<AddDevice> {
   }
 
   void cannotsendMessage(){
-    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       content: CustomSnackBarContent(
-        errorText: "Please check your connection",
+        errorText: LocaleKeys.Profile_addDevice_addSmartDevice_chackDevice.tr(),
       ),
       behavior: SnackBarBehavior.floating,
       backgroundColor: Colors.transparent,
@@ -118,7 +120,7 @@ class _AddDeviceState extends State<AddDevice> {
       appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
-          title: const Text("Add a Smart Device",style: TextStyle(color: Color(0xffe97d47)),),
+          title: Text(LocaleKeys.Profile_addDevice_addSmartDevice_Add_a_Smart_Device.tr(),style: TextStyle(color: Color(0xffe97d47)),),
           leading: IconButton(
             onPressed: () => Navigator.pop(context),
             icon: const Icon(
@@ -134,15 +136,15 @@ class _AddDeviceState extends State<AddDevice> {
                   showDialog(
                     context: context, 
                     builder: (context)=> SimpleDialog(
-                      title: const Text("Add A Smart Device"),
+                      title: Text(LocaleKeys.Profile_addDevice_addSmartDevice_Add_a_Smart_Device.tr()),
                       contentPadding: const EdgeInsets.all(20.0),
                       children: [
-                        const Text(" Supported:\n \nCheck if your device is supported by the current platform. \n \n \nPairable:\n \nTo provide your device. Please make sure that Wear OS or Galaxy Wearable apps are installed. \n \n \nReachable:\n \nCheck if your smart device connected to your phone and ready to send a connection key."),
+                        Text(LocaleKeys.Profile_addDevice_addSmartDevice_info.tr()),
                         TextButton(
                           onPressed:() {
                             Navigator.of(context).pop();
                           }, 
-                          child: const Text("Close", style: TextStyle(color:Color(0xffe97d47) ),),
+                          child: Text(LocaleKeys.Profile_addDevice_addSmartDevice_closeInfo.tr(), style: TextStyle(color:Color(0xffe97d47) ),),
                         )
                       ],
 
@@ -180,17 +182,17 @@ class _AddDeviceState extends State<AddDevice> {
                   ),
                 ),
                 CheckTile(
-                  Titles: 'Supported:',
+                  Titles: LocaleKeys.Profile_addDevice_addSmartDevice_checkSupported.tr(),
                   bools: _supported,
                   iconss: Icons.devices_other_outlined,
                 ),
                 CheckTile(
-                  Titles: 'Pairable:',
+                  Titles: LocaleKeys.Profile_addDevice_addSmartDevice_checkPairable.tr(),
                   bools: _paired,
                   iconss: Icons.bluetooth_connected,
                 ),
                 CheckTile(
-                  Titles: 'Reachable:',
+                  Titles: LocaleKeys.Profile_addDevice_addSmartDevice_checkReachable.tr(),
                   bools: _reachable,
                   iconss: Icons.access_time_outlined,
                 ),
@@ -199,7 +201,7 @@ class _AddDeviceState extends State<AddDevice> {
                   TextButton(
                     onPressed:
                         (_watch as WatchConnectivityGarmin).showDeviceSelection,
-                    child: const Text('Open device selection'),
+                    child: Text(LocaleKeys.Profile_addDevice_addSmartDevice_OpenSelection.tr()),
                   ),
                 const SizedBox(height: 8),
                 
@@ -217,7 +219,7 @@ class _AddDeviceState extends State<AddDevice> {
                   ),
                 ),
                 const SizedBox(width: 50),
-                const Text('Log'),
+                Text(LocaleKeys.Profile_addDevice_addSmartDevice_log.tr()),
                 ..._log.reversed.map(Text.new),
               ],
             ),
@@ -226,7 +228,7 @@ class _AddDeviceState extends State<AddDevice> {
       floatingActionButton: FloatingActionButton(     // refresh
         backgroundColor: Color(0xffe97d47),
         onPressed: initPlatformState,
-        tooltip: "Refresh the page",
+        tooltip: LocaleKeys.Profile_addDevice_addSmartDevice_refresh.tr(),
         child: const Icon(Icons.cached_outlined),
       ),
     );

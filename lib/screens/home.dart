@@ -1,5 +1,7 @@
 import 'package:dietapp/screens/home/donation/donation_main.dart';
 import 'package:dietapp/screens/home/makeyourvoiceheard/home_page.dart';
+import 'package:dietapp/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
 import 'home/maps/map_custom.dart';
@@ -19,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
         elevation: 0,
         backgroundColor: Colors.transparent,
         title: Text(
-          "Home Page",
+          LocaleKeys.Home_HomePage.tr(),
           style: GoogleFonts.prozaLibre(
             color: const Color(0xffe97d47),
             fontSize: 25,
@@ -67,9 +69,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       const SizedBox(
                         width: 5,
                       ),
-                      const SizedBox(
+                      SizedBox(
                         width: 180,
-                        child: Text('Make Your Voice Heard'),
+                        child: Text(LocaleKeys.Home_MYVH.tr(),),
                       ),
                     ]),
               ),
@@ -107,7 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       const SizedBox(
                         width: 5,
                       ),
-                      const Text('Volunteer'),
+                      Text(LocaleKeys.Home_Volunteer.tr(),),
                       //SizedBox(width: 75,),
                     ]),
               ),
@@ -147,7 +149,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       const SizedBox(
                         width: 5,
                       ),
-                      const Text('Donate'),
+                      Text(LocaleKeys.Home_Donate.tr(),),
                     ]),
               ),
               const SizedBox(
@@ -182,7 +184,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       const SizedBox(
                         width: 5,
                       ),
-                      const Text('Maps'),
+                      Text(LocaleKeys.Home_Maps.tr(),),
                       //SizedBox(width: 75,),
                     ]),
               ),

@@ -1,4 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+
+import '../../translations/locale_keys.g.dart';
 
 class IntroScreen3 extends StatelessWidget {
   const IntroScreen3({Key? key}) : super(key: key);
@@ -15,8 +18,8 @@ class IntroScreen3 extends StatelessWidget {
           children: [
             const Image(image: AssetImage('assets/images/donate_people.png')),
             const SizedBox(height: 10.0),
-            const Text(
-              "Donate",
+            Text(
+              LocaleKeys.Intro3_Donate.tr(),
               style: TextStyle(
                   fontFamily: "Pacifico",
                   fontSize: 30.0,
@@ -24,8 +27,8 @@ class IntroScreen3 extends StatelessWidget {
                   fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10.0),
-            const Text(
-              "You can donate money, \n blood or needs.",
+            Text(
+              LocaleKeys.Intro3_motivation.tr(),
               style: TextStyle(
                 fontFamily: "Source Sans Pro",
                 fontSize: 18.0,

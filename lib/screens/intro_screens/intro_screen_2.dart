@@ -1,3 +1,5 @@
+import 'package:dietapp/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class IntroScreen2 extends StatelessWidget {
@@ -15,8 +17,8 @@ class IntroScreen2 extends StatelessWidget {
           children: [
             const Image(image: AssetImage('assets/images/share.png')),
             const SizedBox(height: 10.0),
-            const Text(
-              "Volunteer",
+            Text(
+              LocaleKeys.Intro2_Volunteer.tr(),
               style: TextStyle(
                   fontFamily: "Pacifico",
                   fontSize: 30.0,
@@ -24,8 +26,8 @@ class IntroScreen2 extends StatelessWidget {
                   fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10.0),
-            const Text(
-              "Find places to volunteer \n near your location.",
+            Text(
+              LocaleKeys.Intro2_motivation.tr(),
               style: TextStyle(
                 fontFamily: "Source Sans Pro",
                 fontSize: 18.0,

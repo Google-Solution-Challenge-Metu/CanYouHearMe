@@ -1,4 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dietapp/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -156,20 +158,20 @@ class _EditProfilePageState extends State<EditProfilePage> {
         context: context,
         builder: (context) {
           return SimpleDialog(
-            title: const Text("Pick an image"),
+            title: Text(LocaleKeys.Profile_editProfile_pickImage.tr()),
             children: [
               SimpleDialogOption(
                 onPressed: () =>
                     handleTakePhoto(ImageSource.camera, context: context),
-                child: const Text("Photo with Camera"),
+                child: Text(LocaleKeys.Profile_editProfile_photoCam.tr()),
               ),
               SimpleDialogOption(
                 onPressed: () => handleChooseFromGallery(ImageSource.gallery,
                     context: context),
-                child: const Text("Photo from Gallery"),
+                child: Text(LocaleKeys.Profile_editProfile_photoGall.tr()),
               ),
               SimpleDialogOption(
-                child: const Text("Cancel"),
+                child: Text(LocaleKeys.Profile_editProfile_cancel.tr()),
                 onPressed: () => Navigator.pop(context),
               ),
             ],
@@ -186,7 +188,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(
-          "Edit Profile",
+          LocaleKeys.Profile_editProfile_editProfile.tr(),
           style: TextStyle(
             color: Colors.grey.shade800,
             fontFamily: "Raleway",
@@ -223,21 +225,21 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 padding: const EdgeInsets.only(
                     left: 20, right: 20, top: 20, bottom: 20),
                 child: buildTextField(descriptionController,
-                    "Enter your new description.", false),
+                    LocaleKeys.Profile_editProfile_newDescription.tr(), false),
               ),
-              Text("To change your password"),
+              Text(LocaleKeys.Profile_editProfile_toChangePswrd.tr()),
               Padding(
                 padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
                 child: buildTextField(
-                    descriptionController, "New Password", false),
+                    descriptionController, LocaleKeys.Profile_editProfile_NewPassword.tr(), false),
               ),
               Padding(
                 padding: const EdgeInsets.only(
                     left: 20, right: 20, top: 20, bottom: 20),
                 child: buildTextField(
-                    descriptionController, "Confirm password", false),
+                    descriptionController, LocaleKeys.Profile_editProfile_ConfirmPassword.tr(), false),
               ),
-              buildButton(() => null, "Confirm Changes"),
+              buildButton(() => null, LocaleKeys.Profile_editProfile_ConfirmChanges.tr()),
             ],
           ),
         ),
