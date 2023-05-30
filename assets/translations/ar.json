@@ -9,23 +9,17 @@
     "volunteer_Volunteer": "متطوع" ,
     "volunteer_motivation": " بمفردنا يمكننا فعل القليل ؛ معًا يمكننا فعل الكثير. ",
     "volunteer_whcity": "في أي مدينة تعيش؟",
-
-
     "Intro1_Help": "مساعدة",
     "Intro1_motivation": "ساعد الناس بجعل \n صوتك مسموعًا.",
-
     "Intro2_Volunteer": "متطوع" ,
     "Intro2_motivation": "ابحث عن أماكن للتطوع \n بالقرب من موقعك.",
     "Intro3_Donate": "تبرع",
     "Intro3_motivation": "يمكنك التبرع بالمال , \n بالدم أو الاحتياجات.",
     "Intro4_Map": "خريطة",
     "Intro4_motivation": "شاهد الأماكن التي تأثرت \n بالزلزال.",
-
-
     "Login_service_incrtmail": "بريد إلكتروني غير صحيح.",
     "Login_service_incrtpswrd": "كلمة المرور غير صحيحة.",
     "Login_service_incrtboth": "لا بريد إلكتروني أو كلمة مرور أو كليهما.",
-
     "Login_Page_ring": "ارفع مستوى صوت هاتفك! لإيقاف الصوت مؤقتًا , يرجى الضغط على الزر مرة أخرى.",
     "Login_Page_loginPage": "صفحة تسجيل الدخول",
     "Login_Page_email": "بريد إلكتروني" ,
@@ -35,8 +29,6 @@
     "Login_Page_notHaveAccount": "أليس لديك حساب؟",
     "Login_Page_signUp": "تسجيل",
     "Login_Page_logIn": "تسجيل الدخول" ,
-
-
     "Profile_addDevice_addSmartDevice_logAdd": "إشعار: لقد تم إرسال' مفتاح الاتصال 'إلى جهازك الذكي. يرجى تحديث جهازك الذكي.",
     "Profile_addDevice_addSmartDevice_conneting": "الاتصال بجهازك" ,
     "Profile_addDevice_addSmartDevice_chackDevice": "الرجاء التحقق من اتصالك" ,
@@ -49,10 +41,7 @@
     "Profile_addDevice_addSmartDevice_OpenSelection": "فتح اختيار الجهاز" ,
     "Profile_addDevice_addSmartDevice_log": "السجل" ,
     "Profile_addDevice_addSmartDevice_refresh": "قم بتحديث الصفحة" ,
-
-
     "Profile_addDevice_sendTile_connectionKey": "أرسل مفتاح اتصال" ,
-
     "Profile_editProfile_pickImage": "اختر صورة" ,
     "Profile_editProfile_photoCam": "صورة بالكاميرا" ,
     "Profile_editProfile_photoGall": "صورة من المعرض" ,
@@ -63,7 +52,6 @@
     "Profile_editProfile_NewPassword": "كلمة مرور جديدة" ,
     "Profile_editProfile_ConfirmPassword": "تأكيد كلمة المرور" ,
     "Profile_editProfile_ConfirmChanges": "تأكيد التغييرات" ,
-
     "Profile_profileScreen_MyProfile": "ملفي الشخصي" ,
     "Profile_profileScreen_Posts": "المشاركات",
     "Profile_profileScreen_EditProfile": "تحرير ملف التعريف" ,
@@ -74,7 +62,6 @@
     "Profile_profileScreen_No": "لا" ,
     "Profile_profileScreen_EndPost": "نهاية المشاركات.",
     "Profile_profileScreen_myPost": "مشاركاتي",
-
     "Profile_sosMobile_sosCall": "إرسال مكالمة طوارئ" ,
     "Profile_sosMobile_Cancel": "إلغاء" ,
     "Profile_sosMobile_Continue": "متابعة" ,
@@ -86,20 +73,14 @@
     "Profile_sosMobile_Close": "إغلاق" ,
     "Profile_sosMobile_SOS": "S.O.S",
     "Profile_sosMobile_emergency": "في حالة الطوارئ , اضغط على الزر" ,
-
-
     "Home_HomePage": "الصفحة الرئيسية" ,
     "Home_MYVH": "اجعل صوتك مسموعًا" ,
     "Home_Volunteer": "متطوع" ,
     "Home_Donate": "تبرع",
     "Home_Maps": "خرائط",
-
-
     "OnBoarding_Done": "تم" ,
     "OnBoarding_Next": "التالي" ,
     "OnBoarding_Skip": "تخطي" ,
-
-
     "Register_pswrdMatch": "كلمات المرور غير متطابقة.",
     "Register_pickImage": "اختر صورة" ,
     "Register_photoCam": "صورة بالكاميرا",
@@ -116,14 +97,10 @@
     "Register_already": "مسجل بالفعل؟",
     "Register_logIn": "تسجيل الدخول" ,
     "Register_signIn": "تسجيل الدخول",
-
     "element_notification": "إعلام!" ,
-
     "explore_page_title": "Explore",
     "explore_page_post": "مشاركات المدونة",
-
     "maps_title": "Maps",
-
     "make_your_voice_heard_title": "اجعل صوتك مسموعًا",
     "make_your_voice_heard_reports": "التقارير",
     "make_your_voice_heard_choose": "اختر ما تريد الإبلاغ عنه" ,
@@ -138,7 +115,6 @@
     "make_your_voice_heard_debris_page_gallery": "صورة من المعرض" ,
     "make_your_voice_heard_debris_page_camera_cancel": "إلغاء" ,
     "make_your_voice_heard_debris_page_post_shared": "تمت مشاركة مشاركتك.",
-
     "donation_title": "خيارات التبرع",
     "donation_blood": "التبرع بالدم",
     "donation_helpbox": "Help-box Donation",
@@ -193,5 +169,4 @@
     "donation_helpbox_page_help_tflite_no_image": "لم يتم تحديد صورة" ,
     "donation_helpbox_page_help_tflite_error_message": "لا , حاول مرة أخرى" ,
     "donation_helpbox_page_help_tflite_pick_image": "اختر صورة"
-
 }

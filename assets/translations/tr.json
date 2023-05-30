@@ -1,18 +1,14 @@
 {
     "language":"Türkçe",
     "helloWord":"Merhaba Dünya",
-
     "forget_password_reset":"Şifre sıfırlama linki başarıyla gönderildi.",
     "forget_password_forgot_title":"Şifremi Unuttum",
     "forget_password_enterEmail":"E-mail adresinizi girin, size bir şifre sıfırlama linki göndereceğiz.",
     "forget_password_enterHere":"E-mail adresinizi buraya girin.",
     "forget_password_sendPswrd":"Şifre sıfırlama linki gönder.",
-
     "volunteer_Volunteer":"Gönüllü Ol",
     "volunteer_motivation":"'“Bir elin nesi var, iki elin sesi var.”'",
     "volunteer_whcity":"Hangi şehirde yaşıyorsunuz?",
-
-
     "Intro1_Help":"Yardım Et" ,
     "Intro1_motivation":"Sesini duyurarak \n insanlara yardım et.",
     "Intro2_Volunteer":"Gönüllü Ol",
@@ -21,12 +17,9 @@
     "Intro3_motivation":"Para, kan, veya erzak \n bağışı yapabilirsiniz.",
     "Intro4_Map":"Haritalar",
     "Intro4_motivation":"Depremden etkilenen \n yerleri görün.",
-
-
     "Login_service_incrtmail":"Yanlış e-mail",
     "Login_service_incrtpswrd":"Yanlış şifre.",
     "Login_service_incrtboth":"E-mail ve şifre hatalı.",
-
     "Login_Page_ring":"Telefonunuzun Sesini Açın!! Sesi Kapatmak İçin Butona Tekrar Basın.",
     "Login_Page_loginPage":"Giriş Sayfası",
     "Login_Page_email":"E-mail",
@@ -36,8 +29,6 @@
     "Login_Page_notHaveAccount":"Hesabınız yok mu?",
     "Login_Page_signUp":" Kayıt Ol",
     "Login_Page_logIn":"Giriş Yap",
-
-
     "Profile_addDevice_addSmartDevice_logAdd":"Bildirim: Cihazınıza bir 'bağlantı anahtarı' gönderildi. Lütfen akıllı cihazınızı kontrol edin.",
     "Profile_addDevice_addSmartDevice_conneting":"Cihazınıza bağlanılıyor.",
     "Profile_addDevice_addSmartDevice_chackDevice":"Lütfen bağlantınızı kontrol edin.",
@@ -50,10 +41,7 @@
     "Profile_addDevice_addSmartDevice_OpenSelection":"Cihaz şeçimini aç",
     "Profile_addDevice_addSmartDevice_log":"Kayıt",
     "Profile_addDevice_addSmartDevice_refresh":"Sayfayı Yenile",
-
-
     "Profile_addDevice_sendTile_connectionKey":"Bir Bağlantı Anahtarı Gönder",
-
     "Profile_editProfile_pickImage":"Bir fotoğraf seç",
     "Profile_editProfile_photoCam":"Kamera ile çek",
     "Profile_editProfile_photoGall":"Galeriden fotoğraf seç",
@@ -64,7 +52,6 @@
     "Profile_editProfile_NewPassword":"Yeni Şifre",
     "Profile_editProfile_ConfirmPassword":"Şifreyi Onayla",
     "Profile_editProfile_ConfirmChanges":"Değişiklikleri Onayla",
-
     "Profile_profileScreen_MyProfile":"Profilim",
     "Profile_profileScreen_Posts":"Postlar",
     "Profile_profileScreen_EditProfile":"Profili Düzenle",
@@ -75,7 +62,6 @@
     "Profile_profileScreen_No":"Hayır",
     "Profile_profileScreen_EndPost":"Postların sonuna ulaştınız.",
     "Profile_profileScreen_myPost":"Postlarım",
-
     "Profile_sosMobile_sosCall":"Bir acil durum çağrısı gönderiliyor.",
     "Profile_sosMobile_Cancel":"İptal",
     "Profile_sosMobile_Continue":"Devam",
@@ -87,20 +73,14 @@
     "Profile_sosMobile_Close":"Kapat",
     "Profile_sosMobile_SOS":"S.O.S",
     "Profile_sosMobile_emergency":"BİR ACİL DURUM OLDUĞUNDA KULLANINIZ!!",
-
-
     "Home_HomePage":"Ana Sayfa",
     "Home_MYVH":"Sesini Duyur",
     "Home_Volunteer":"Gönüllü Ol",
     "Home_Donate":"Bağış Yap",
     "Home_Maps":"Haritalar",
-
-
     "OnBoarding_Done":"Bitti",
     "OnBoarding_Next":"Sonraki",
     "OnBoarding_Skip":"Atla",
-
-
     "Register_pswrdMatch":"Şifreler birbirleriyle eşleşmiyor.",
     "Register_pickImage":"Bir fotoğraf seç",
     "Register_photoCam":"Kamera ile çek",
@@ -117,14 +97,10 @@
     "Register_already":"Zaten kayıtlı mısınız?",
     "Register_logIn":" Giriş Yap",
     "Register_signIn":"Kayıt Ol",
-
     "components_notification":"Bildirim!",
-
     "explore_page_title": "Keşfet",
     "explore_page_post": "Blog Postları",
-
     "maps_title": "Haritalar",
-
     "make_your_voice_heard_title": "Sesini Duyur",
     "make_your_voice_heard_reports": "Raporlar",
     "make_your_voice_heard_choose": "Neyi raporlamak istediğini seç",
@@ -139,7 +115,6 @@
     "make_your_voice_heard_debris_page_gallery": "Galeriden fotoğraf seç",
     "make_your_voice_heard_debris_page_camera_cancel": "İptal",
     "make_your_voice_heard_debris_page_post_shared": "Raporunuz başarıyla paylaşıldı.",
-
     "donation_title": "Bağış Seçenekleri",
     "donation_blood": "Kan Bağışı",
     "donation_helpbox": "Yardım Kutusu Bağışı",
@@ -194,6 +169,4 @@
     "donation_helpbox_page_help_tflite_no_image": "Bir fotoğraf seçilmedi.",
     "donation_helpbox_page_help_tflite_error_message": "Tekrar Dene",
     "donation_helpbox_page_help_tflite_pick_image": "Fotoğraf Seç"
-
-
 }
