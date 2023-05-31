@@ -1,5 +1,7 @@
+import 'package:dietapp/screens/explore/explore.dart';
 import 'package:dietapp/screens/home/makeyourvoiceheard/post_options.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dietapp/screens/profile/profile_screen.dart';
 import 'package:dietapp/services/report_service.dart';
 import 'package:dietapp/translations/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -22,20 +24,30 @@ class _MakeYourVoiceHeardPageState extends State<MakeYourVoiceHeardPage> {
       appBar: AppBar(
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () => Navigator.pop(context),
+          icon: const Icon(Icons.person),
+          onPressed:() => Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileScreen())),
           color: const Color(0xffe97d47),
         ),
         backgroundColor: Colors.transparent,
-        title: Text(
-          LocaleKeys.make_your_voice_heard_title.tr(),
-          style: GoogleFonts.prozaLibre(
-            color: const Color(0xffe97d47),
-            fontSize: 20,
-            fontWeight: FontWeight.w600,
-            height: 1.355,
+        title: Center(
+          child: Text(
+            LocaleKeys.make_your_voice_heard_title.tr(),
+            style: GoogleFonts.prozaLibre(
+              color: const Color(0xffe97d47),
+              fontSize: 20,
+              fontWeight: FontWeight.w600,
+              height: 1.355,
+            ),
+        
           ),
         ),
+        actions: [
+          IconButton(
+          icon: const Icon(Icons.search_outlined),
+          onPressed:() => Navigator.push(context, MaterialPageRoute(builder: (context) => ExploreScreen())),
+          color: const Color(0xffe97d47),
+        ),
+        ],
       ),
       body: ListView(
         physics: const ScrollPhysics(),

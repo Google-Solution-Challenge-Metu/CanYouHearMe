@@ -18,15 +18,17 @@ class _ExploreScreenState extends State<ExploreScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Padding(
-          padding: const EdgeInsets.only(left: 15.0),
-          child: Text(
-            LocaleKeys.explore_page_title.tr(),
-            style: TextStyle(
-              color: Colors.grey.shade800,
-              fontFamily: "Raleway",
-              fontWeight: FontWeight.bold,
-            ),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed:() => Navigator.pop(context),
+          color: Colors.grey.shade800,
+        ),
+        title: Text(
+          LocaleKeys.explore_page_title.tr(),
+          style: TextStyle(
+            color: Colors.grey.shade800,
+            fontFamily: "Raleway",
+            fontWeight: FontWeight.bold,
           ),
         ),
         elevation: 0,

@@ -1,5 +1,8 @@
 import 'package:dietapp/controller/controller.dart';
-import 'package:dietapp/screens/home.dart';
+import 'package:dietapp/screens/home/donation/donation_main.dart';
+import 'package:dietapp/screens/home/makeyourvoiceheard/home_page.dart';
+import 'package:dietapp/screens/home/maps/map_custom.dart';
+import 'package:dietapp/screens/home/volunteer/volunteer.dart';
 import 'package:dietapp/screens/profile/profile_screen.dart';
 import 'package:dietapp/screens/explore/explore.dart';
 import "package:flutter/material.dart";
@@ -20,7 +23,7 @@ class _NavBarState extends State<NavBar> {
       return Scaffold(
         body: IndexedStack(
           index: controller.tabIndex,
-          children: const [ExploreScreen(), HomeScreen(), ProfileScreen()],
+          children: [MapUIcustom(), MakeYourVoiceHeardPage(), VolunteerScreen(),DonationMainScreen()],
         ),
         bottomNavigationBar: Container(
           decoration: const BoxDecoration(
@@ -44,16 +47,20 @@ class _NavBarState extends State<NavBar> {
               padding: const EdgeInsets.all(16.0),
               tabs: const [
                 GButton(
-                  icon: Icons.search,
-                  text: "Explore",
+                  icon: Icons.map,
+                  text: "Maps",
                 ),
                 GButton(
                   icon: Icons.home,
-                  text: "Home",
+                  text: "MYVH",
                 ),
                 GButton(
-                  icon: Icons.person,
-                  text: "My Profile",
+                  icon: Icons.handshake_outlined ,
+                  text: "Volunteer",
+                ),
+                GButton(
+                  icon: Icons.hotel_class_outlined,
+                  text: "Donate",
                 ),
               ],
             ),
