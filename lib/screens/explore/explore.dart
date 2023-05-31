@@ -1,6 +1,9 @@
 import 'package:dietapp/models/blog_details_page.dart';
+import 'package:easy_localization/easy_localization.dart';
 import "package:flutter/material.dart";
 import 'package:dietapp/models/data.dart';
+
+import '../../translations/locale_keys.g.dart';
 
 class ExploreScreen extends StatefulWidget {
   const ExploreScreen({super.key});
@@ -18,7 +21,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
         title: Padding(
           padding: const EdgeInsets.only(left: 15.0),
           child: Text(
-            "Explore",
+            LocaleKeys.explore_page_title.tr(),
             style: TextStyle(
               color: Colors.grey.shade800,
               fontFamily: "Raleway",
@@ -52,11 +55,12 @@ class _ExploreScreenState extends State<ExploreScreen> {
               color: Colors.grey,
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
+          Padding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
             child: Text(
-              "Blog Posts",
-              style: TextStyle(
+              LocaleKeys.explore_page_post.tr(),
+              style: const TextStyle(
                 fontFamily: "Raleway",
                 fontWeight: FontWeight.bold,
               ),

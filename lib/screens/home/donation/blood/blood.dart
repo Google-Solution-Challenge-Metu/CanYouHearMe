@@ -1,6 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import "package:flutter/material.dart";
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../../../../translations/locale_keys.g.dart';
 //import 'package:webview_flutter/webview_flutter.dart';
 
 class BloodScreen extends StatefulWidget {
@@ -10,12 +13,11 @@ class BloodScreen extends StatefulWidget {
 }
 
 class _BloodScreenState extends State<BloodScreen> {
-
   InAppWebViewController? webViewController;
   PullToRefreshController? refreshController;
   late var url;
-  var initialURL ="https://www.kanver.org/KanHizmetleri/KanBagisiNoktalari";
-  double progress=0;
+  var initialURL = "https://www.kanver.org/KanHizmetleri/KanBagisiNoktalari";
+  double progress = 0;
   var urlController = TextEditingController();
 
   @override
@@ -23,7 +25,7 @@ class _BloodScreenState extends State<BloodScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Blood Donations',
+          LocaleKeys.donation_blood_page_title.tr(),
           style: GoogleFonts.prozaLibre(
             color: const Color(0xffe97d47),
             fontWeight: FontWeight.w600,
@@ -40,27 +42,33 @@ class _BloodScreenState extends State<BloodScreen> {
         ),
         actions: [
           IconButton(
-            onPressed: (){
+            onPressed: () {
               webViewController!.reload();
-            }, 
-            icon: Icon(Icons.refresh),color: Color(0xffe97d47),),
+            },
+            icon: Icon(Icons.refresh),
+            color: Color(0xffe97d47),
+          ),
+          IconButton(
+              onPressed: () async {
+                if (await webViewController!.canGoBack()) {
+                  webViewController!.goBack();
+                }
+              },
+              icon: Icon(
+                Icons.arrow_back,
+                color: Color(0xffe97d47),
+              )),
           IconButton(
             onPressed: () async {
-              if(await webViewController!.canGoBack()){
-                webViewController!.goBack();
-              }
-            }, 
-            icon: Icon(Icons.arrow_back,color: Color(0xffe97d47),)),
-          IconButton(
-            onPressed: () async {
-              if(await webViewController!.canGoForward()){
+              if (await webViewController!.canGoForward()) {
                 webViewController!.goForward();
               }
-            }, 
+            },
             icon: Icon(Icons.arrow_forward),
-            color: Color(0xffe97d47),),
+            color: Color(0xffe97d47),
+          ),
         ],
-      ),      
+      ),
       body: Column(
         children: [
           Expanded(

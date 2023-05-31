@@ -1,9 +1,12 @@
 import 'package:custom_info_window/custom_info_window.dart';
+import 'package:easy_localization/easy_localization.dart';
 import "package:flutter/material.dart";
 import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+
+import '../../../translations/locale_keys.g.dart';
 
 class MapUIcustom extends StatefulWidget {
   @override
@@ -11,12 +14,12 @@ class MapUIcustom extends StatefulWidget {
 }
 
 class _MapUIStatecustom extends State<MapUIcustom> {
-    CustomInfoWindowController _customInfoWindowController =
+  CustomInfoWindowController _customInfoWindowController =
       CustomInfoWindowController();
 
   final LatLng _latLng = LatLng(28.7041, 77.1025);
   final double _zoom = 15.0;
-  int i_mar=0;
+  int i_mar = 0;
   bool mapToggle = false;
   var currentLocation;
 
@@ -25,44 +28,45 @@ class _MapUIStatecustom extends State<MapUIcustom> {
     _customInfoWindowController.dispose();
     super.dispose();
   }
+
   @override
   void initState() {
     super.initState();
-    Geolocator.getCurrentPosition().then((currloc){
+    Geolocator.getCurrentPosition().then((currloc) {
       setState(() {
-        currentLocation=currloc;
-        mapToggle=true;
+        currentLocation = currloc;
+        mapToggle = true;
         populateClients();
-        i_mar=_markers.length;
+        i_mar = _markers.length;
         populateClients_safeArea();
-        
       });
     });
-
-  }  
+  }
 
   Set<Marker> _markers = {};
   Set<Marker> _markerss = {};
-  List<LatLng> _latLang = <LatLng> [
-    LatLng(38.4237, 27.1428),LatLng(41.0082, 28.9784)
-  ];  
-  populateClients_safeArea(){
+  List<LatLng> _latLang = <LatLng>[
+    LatLng(38.4237, 27.1428),
+    LatLng(41.0082, 28.9784)
+  ];
+  populateClients_safeArea() {
     //clients=[];
-    FirebaseFirestore.instance.collection("markers").get().then((docs){
-      if(docs.docs.isNotEmpty){
-        for(int i=0; i<docs.docs.length; ++i){
+    FirebaseFirestore.instance.collection("markers").get().then((docs) {
+      if (docs.docs.isNotEmpty) {
+        for (int i = 0; i < docs.docs.length; ++i) {
           //clients.add(docs.docs[i].data);
-          loadData_safeArea(docs.docs[i].data,i+i_mar);
+          loadData_safeArea(docs.docs[i].data, i + i_mar);
         }
       }
     });
   }
 
-  loadData_safeArea(_latLang,i){
+  loadData_safeArea(_latLang, i) {
     _markers.add(
       Marker(
         markerId: MarkerId("$i"),
-        position: LatLng(_latLang()['location'].latitude,_latLang()['location'].longitude),
+        position: LatLng(
+            _latLang()['location'].latitude, _latLang()['location'].longitude),
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueGreen),
         onTap: () {
           _customInfoWindowController.addInfoWindow!(
@@ -82,18 +86,18 @@ class _MapUIStatecustom extends State<MapUIcustom> {
                     width: 300,
                     height: 100,
                     decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: NetworkImage(_latLang()['image']),
-                        fit: BoxFit.fitWidth,
-                        filterQuality: FilterQuality.high),
-                      borderRadius: const BorderRadius.all(
-                        Radius.circular(10.0),
-                      ),
-                      color: Color.fromARGB(255, 255, 197, 146)
-                    ),
+                        image: DecorationImage(
+                            image: NetworkImage(_latLang()['image']),
+                            fit: BoxFit.fitWidth,
+                            filterQuality: FilterQuality.high),
+                        borderRadius: const BorderRadius.all(
+                          Radius.circular(10.0),
+                        ),
+                        color: Color.fromARGB(255, 255, 197, 146)),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 10, left: 10,right: 10),
+                    padding:
+                        const EdgeInsets.only(top: 10, left: 10, right: 10),
                     child: Row(
                       children: [
                         SizedBox(
@@ -111,39 +115,42 @@ class _MapUIStatecustom extends State<MapUIcustom> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 10, left: 10,right: 10),
-                    child: Text(_latLang()['snippet'],
-                    maxLines: 2, )
-                  )
+                      padding:
+                          const EdgeInsets.only(top: 10, left: 10, right: 10),
+                      child: Text(
+                        _latLang()['snippet'],
+                        maxLines: 2,
+                      ))
                 ],
               ),
             ),
-            LatLng(_latLang()['location'].latitude,_latLang()['location'].longitude),
+            LatLng(_latLang()['location'].latitude,
+                _latLang()['location'].longitude),
           );
         },
       ),
     );
-    setState(() {
-
-      });
+    setState(() {});
   }
-  populateClients(){
+
+  populateClients() {
     //clients=[];
-    FirebaseFirestore.instance.collection("Status").get().then((docs){
-      if(docs.docs.isNotEmpty){
-        for(int i=0; i<docs.docs.length; ++i){
+    FirebaseFirestore.instance.collection("Status").get().then((docs) {
+      if (docs.docs.isNotEmpty) {
+        for (int i = 0; i < docs.docs.length; ++i) {
           //clients.add(docs.docs[i].data);
-          loadData(docs.docs[i].data,i);
+          loadData(docs.docs[i].data, i);
         }
       }
     });
   }
 
-  loadData(_latLang,i){
+  loadData(_latLang, i) {
     _markers.add(
       Marker(
         markerId: MarkerId("$i"),
-        position: LatLng(_latLang()['location'].latitude,_latLang()['location'].longitude),
+        position: LatLng(
+            _latLang()['location'].latitude, _latLang()['location'].longitude),
         onTap: () {
           _customInfoWindowController.addInfoWindow!(
             Container(
@@ -162,18 +169,18 @@ class _MapUIStatecustom extends State<MapUIcustom> {
                     width: 300,
                     height: 100,
                     decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: NetworkImage(_latLang()['image']),
-                        fit: BoxFit.fitWidth,
-                        filterQuality: FilterQuality.high),
-                      borderRadius: const BorderRadius.all(
-                        Radius.circular(10.0),
-                      ),
-                      color: Color.fromARGB(255, 255, 197, 146)
-                    ),
+                        image: DecorationImage(
+                            image: NetworkImage(_latLang()['image']),
+                            fit: BoxFit.fitWidth,
+                            filterQuality: FilterQuality.high),
+                        borderRadius: const BorderRadius.all(
+                          Radius.circular(10.0),
+                        ),
+                        color: Color.fromARGB(255, 255, 197, 146)),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 10, left: 10,right: 10),
+                    padding:
+                        const EdgeInsets.only(top: 10, left: 10, right: 10),
                     child: Row(
                       children: [
                         SizedBox(
@@ -191,21 +198,22 @@ class _MapUIStatecustom extends State<MapUIcustom> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 10, left: 10,right: 10),
-                    child: Text(_latLang()['status'],
-                    maxLines: 2, )
-                  )
+                      padding:
+                          const EdgeInsets.only(top: 10, left: 10, right: 10),
+                      child: Text(
+                        _latLang()['status'],
+                        maxLines: 2,
+                      ))
                 ],
               ),
             ),
-            LatLng(_latLang()['location'].latitude,_latLang()['location'].longitude),
+            LatLng(_latLang()['location'].latitude,
+                _latLang()['location'].longitude),
           );
         },
       ),
     );
-    setState(() {
-
-      });
+    setState(() {});
   }
 
   @override
@@ -221,7 +229,7 @@ class _MapUIStatecustom extends State<MapUIcustom> {
         ),
         backgroundColor: Colors.transparent,
         title: Text(
-          "Maps",
+          LocaleKeys.maps_title.tr(),
           style: GoogleFonts.prozaLibre(
             color: const Color(0xffe97d47),
             fontSize: 20,
@@ -247,7 +255,6 @@ class _MapUIStatecustom extends State<MapUIcustom> {
               target: LatLng(37.5753, 36.9228),
               zoom: 5,
             ),
-            
           ),
           CustomInfoWindow(
             controller: _customInfoWindowController,

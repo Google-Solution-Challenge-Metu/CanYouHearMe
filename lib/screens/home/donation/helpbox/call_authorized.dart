@@ -1,5 +1,8 @@
 import 'package:dietapp/screens/components/CustomSnackBarContent.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../translations/locale_keys.g.dart';
 
 class Callauthorized extends StatelessWidget {
   const Callauthorized({super.key});
@@ -20,7 +23,7 @@ class Callauthorized extends StatelessWidget {
         elevation: 0,
         backgroundColor: Colors.transparent,
         title: Text(
-          "Call The Authorized",
+          LocaleKeys.donation_helpbox_page_call_authorized_title.tr(),
           style: TextStyle(color: Color(0xffe97d47)),
         ),
       ),
@@ -32,8 +35,8 @@ class Callauthorized extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  const Text(
-                    "Call The Authorized",
+                  Text(
+                    LocaleKeys.donation_helpbox_page_call_authorized_title.tr(),
                     style: TextStyle(
                         fontFamily: "Google",
                         fontSize: 30.0,
@@ -52,7 +55,8 @@ class Callauthorized extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    "Fields marked with an * are required",
+                    LocaleKeys.donation_helpbox_page_call_authorized_description
+                        .tr(),
                     style: TextStyle(
                         fontFamily: "Google",
                         fontSize: 15.0,
@@ -64,8 +68,20 @@ class Callauthorized extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Expanded(child: buildTextField(null, "Name *", false)),
-                      Expanded(child: buildTextField(null, "Surname *", false)),
+                      Expanded(
+                          child: buildTextField(
+                              null,
+                              LocaleKeys
+                                  .donation_helpbox_page_call_authorized_name
+                                  .tr(),
+                              false)),
+                      Expanded(
+                          child: buildTextField(
+                              null,
+                              LocaleKeys
+                                  .donation_helpbox_page_call_authorized_surname
+                                  .tr(),
+                              false)),
                     ],
                   ),
                   const SizedBox(
@@ -73,18 +89,38 @@ class Callauthorized extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Expanded(child: buildTextField(null, "City *", false)),
-                      Expanded(child: buildTextField(null, "State *", false)),
+                      Expanded(
+                          child: buildTextField(
+                              null,
+                              LocaleKeys
+                                  .donation_helpbox_page_call_authorized_city
+                                  .tr(),
+                              false)),
+                      Expanded(
+                          child: buildTextField(
+                              null,
+                              LocaleKeys
+                                  .donation_helpbox_page_call_authorized_state
+                                  .tr(),
+                              false)),
                     ],
                   ),
                   const SizedBox(
                     height: 20.0,
                   ),
-                  buildTextField(null, "Address *", false),
+                  buildTextField(
+                      null,
+                      LocaleKeys.donation_helpbox_page_call_authorized_address
+                          .tr(),
+                      false),
                   const SizedBox(
                     height: 20.0,
                   ),
-                  buildTextField(null, "Any Note (Optional)", true),
+                  buildTextField(
+                      null,
+                      LocaleKeys.donation_helpbox_page_call_authorized_note
+                          .tr(),
+                      true),
                   const SizedBox(
                     height: 20.0,
                   ),
@@ -116,11 +152,15 @@ class Callauthorized extends StatelessWidget {
                   ElevatedButton.icon(
                     // DONATION BUTTON
                     icon: Icon(Icons.add_home_work_outlined),
-                    label: Text('Call The Authorized'),
+                    label: Text(LocaleKeys
+                        .donation_helpbox_page_call_authorized_title
+                        .tr()),
                     onPressed: () {
-                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                         content: CustomSnackBarContent(
-                          errorText: "You are very thoughtful!",
+                          errorText: LocaleKeys
+                              .donation_helpbox_page_call_authorized_thank_you_note
+                              .tr(),
                         ),
                         behavior: SnackBarBehavior.floating,
                         backgroundColor: Colors.transparent,
@@ -147,15 +187,19 @@ class Callauthorized extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Want to add more boxes?",
+                        LocaleKeys
+                            .donation_helpbox_page_call_authorized_want_to_add_box
+                            .tr(),
                         style: TextStyle(
                           color: Color.fromARGB(255, 0, 0, 0),
                         ),
                       ),
                       GestureDetector(
                         onTap: () => Navigator.pop(context),
-                        child: const Text(
-                          " Turn back",
+                        child: Text(
+                          LocaleKeys
+                              .donation_helpbox_page_call_authorized_turn_back
+                              .tr(),
                           style: TextStyle(
                             color: Colors.blueGrey,
                             fontWeight: FontWeight.bold,

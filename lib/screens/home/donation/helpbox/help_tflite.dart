@@ -1,11 +1,13 @@
 import 'dart:io';
 import 'package:dietapp/screens/components/CustomSnackBarContent.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 import 'package:dietapp/flutter_tflite-master/lib/tflite.dart';
 import 'package:provider/provider.dart';
+import '../../../../translations/locale_keys.g.dart';
 import 'cart_model.dart';
 
 class TfliteModel extends StatefulWidget {
@@ -26,7 +28,8 @@ class _TfliteModelState extends State<TfliteModel> {
     loadModel();
   }
 
-  Future loadModel() async {   // load our tflite model
+  Future loadModel() async {
+    // load our tflite model
     Tflite.close();
     String res;
     res = (await Tflite.loadModel(
@@ -42,6 +45,7 @@ class _TfliteModelState extends State<TfliteModel> {
     File image = File(pickedFile!.path);
     imageClassification(image);
   }
+
   Future pickImageCamera() async {
     final ImagePicker _picker = ImagePicker();
     final XFile? pickedFile = await _picker.pickImage(
@@ -51,7 +55,8 @@ class _TfliteModelState extends State<TfliteModel> {
     imageClassification(image);
   }
 
-  Future imageClassification(File image) async {     // Image Classification
+  Future imageClassification(File image) async {
+    // Image Classification
     final List? recognitions = await Tflite.runModelOnImage(
       path: image.path,
       numResults: 6,
@@ -65,50 +70,57 @@ class _TfliteModelState extends State<TfliteModel> {
       imageSelect = true;
     });
   }
-  Future SnackBarBox(String box) async{
-    ScaffoldMessenger.of(context).showSnackBar( SnackBar(
+
+  Future SnackBarBox(String box) async {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       content: CustomSnackBarContent(
-        errorText: "$box box added by AI",
-      ),
+          errorText: LocaleKeys.donation_helpbox_page_help_tflite_box_added
+              .tr(namedArgs: {box: box})),
       behavior: SnackBarBehavior.floating,
       backgroundColor: Colors.transparent,
       elevation: 0,
     ));
   }
+
   void imagePicker() async {
     Future.delayed(Duration.zero, () {
       showDialog(
         context: context,
         builder: (context) {
           return SimpleDialog(
-            title: const Text("Pick an image"),
+            title: Text(LocaleKeys
+                .donation_helpbox_page_help_tflite_pick_an_image
+                .tr()),
             children: [
               SimpleDialogOption(
                 onPressed: () {
                   pickImageCamera();
-                  Navigator.pop(context);  
+                  Navigator.pop(context);
                 },
-                child: const Text("Photo with Camera"),
+                child: Text(
+                    LocaleKeys.donation_helpbox_page_help_tflite_camera.tr()),
               ),
               SimpleDialogOption(
                 onPressed: () {
                   pickImageGallery();
                   Navigator.pop(context);
-                  },
-                child: const Text("Photo from Gallery"),
+                },
+                child: Text(
+                    LocaleKeys.donation_helpbox_page_help_tflite_gallery.tr()),
               ),
               SimpleDialogOption(
-                child: const Text("Cancel"),
-                onPressed: () { 
-                  Navigator.pop(context);
-                }
-              ),
+                  child: Text(
+                      LocaleKeys.donation_helpbox_page_help_tflite_cancel.tr()),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  }),
             ],
           );
         },
       );
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -123,7 +135,7 @@ class _TfliteModelState extends State<TfliteModel> {
         elevation: 0,
         backgroundColor: Colors.transparent,
         title: Text(
-          "AI",
+          LocaleKeys.donation_helpbox_page_help_tflite_title.tr(),
           style: TextStyle(color: Color(0xffe97d47)),
         ),
       ),
@@ -136,10 +148,12 @@ class _TfliteModelState extends State<TfliteModel> {
                 )
               : Container(
                   margin: const EdgeInsets.all(10),
-                  child: const Opacity(
+                  child: Opacity(
                     opacity: 0.8,
                     child: Center(
-                      child: Text("No image selected"),
+                      child: Text(LocaleKeys
+                          .donation_helpbox_page_help_tflite_no_image
+                          .tr()),
                     ),
                   ),
                 ),
@@ -153,68 +167,73 @@ class _TfliteModelState extends State<TfliteModel> {
                             Container(
                               margin: EdgeInsets.all(10),
                               child: Text(
-                                "${result['label']} (%${(result['confidence']*100).toStringAsFixed(0)})",
+                                "${result['label']} (%${(result['confidence'] * 100).toStringAsFixed(0)})",
                                 style: const TextStyle(
-                                    color: Color.fromARGB(255, 17, 57, 125), fontSize: 30),
+                                    color: Color.fromARGB(255, 17, 57, 125),
+                                    fontSize: 30),
                               ),
                             ),
-                            
-                            ElevatedButton.icon(      // add to customer's cart
+                            ElevatedButton.icon(
+                              // add to customer's cart
                               // Okey button
                               icon: Icon(Icons.assignment_turned_in_outlined),
                               label: Text("${result['label']}"),
                               onPressed: () {
                                 Navigator.pop(context);
                                 SnackBarBox("${result['label']}");
-                                if(result['label'] == 'Clothes'){ 
+                                if (result['label'] == 'Clothes') {
                                   Provider.of<CartModel>(context, listen: false)
                                       .addItemToCart(0);
-                                 }
-                                 if(result['label'] == 'Toys'){ 
+                                }
+                                if (result['label'] == 'Toys') {
                                   Provider.of<CartModel>(context, listen: false)
                                       .addItemToCart(2);
-                                 }
-                                 if(result['label'] == 'Packaged Food'){ 
+                                }
+                                if (result['label'] == 'Packaged Food') {
                                   Provider.of<CartModel>(context, listen: false)
                                       .addItemToCart(1);
-                                 }
-                                 else{}},
-                              
+                                } else {}
+                              },
+
                               style: ElevatedButton.styleFrom(
                                   foregroundColor: Colors.white,
                                   backgroundColor: Color(0xffe97d47),
                                   padding: EdgeInsets.all(20.0),
                                   fixedSize: Size(300, 75),
-                                  textStyle:
-                                      TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                                  textStyle: TextStyle(
+                                      fontSize: 25,
+                                      fontWeight: FontWeight.bold),
                                   elevation: 15,
                                   shadowColor: Color(0xffe97d47),
                                   side: const BorderSide(
                                       color: Colors.black, width: 4),
                                   shape: StadiumBorder()),
                             ),
-                            const SizedBox(       // try again button // same fonction with floatingActionButton buttom
+                            const SizedBox(
+                              // try again button // same fonction with floatingActionButton buttom
                               height: 30,
                             ),
                             ElevatedButton.icon(
                               // Try Again
                               icon: Icon(Icons.assignment_late_outlined),
-                              label: Text("No, Try Again"),
+                              label: Text(LocaleKeys
+                                  .donation_helpbox_page_help_tflite_error_message
+                                  .tr()),
                               onPressed: pickImageGallery,
                               style: ElevatedButton.styleFrom(
                                   foregroundColor: Colors.white,
                                   backgroundColor: Color(0xffe97d47),
                                   padding: EdgeInsets.all(20.0),
                                   fixedSize: Size(300, 75),
-                                  textStyle:
-                                      TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                                  textStyle: TextStyle(
+                                      fontSize: 25,
+                                      fontWeight: FontWeight.bold),
                                   elevation: 15,
                                   shadowColor: Color(0xffe97d47),
                                   side: const BorderSide(
                                       color: Colors.black, width: 4),
                                   shape: StadiumBorder()),
                             ),
-
                           ],
                         ),
                       );
@@ -224,7 +243,8 @@ class _TfliteModelState extends State<TfliteModel> {
           )
         ],
       ),
-      floatingActionButton: FloatingActionButton(     // pick image
+      floatingActionButton: FloatingActionButton(
+        // pick image
         backgroundColor: Color(0xffe97d47),
         onPressed: imagePicker,
         tooltip: "Pick Image",
@@ -232,6 +252,4 @@ class _TfliteModelState extends State<TfliteModel> {
       ),
     );
   }
-
-
 }

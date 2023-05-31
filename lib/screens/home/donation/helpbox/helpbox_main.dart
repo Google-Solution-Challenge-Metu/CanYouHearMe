@@ -1,6 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import '../../../../translations/locale_keys.g.dart';
 import 'cart_model.dart';
 import 'cart_page.dart';
 import 'boxes_item_tile.dart';
@@ -28,7 +30,7 @@ class _HelpBoxHomePageState extends State<HelpBoxHomePage> {
         elevation: 0,
         backgroundColor: Colors.transparent,
         title: Text(
-          "Donate a Box",
+          LocaleKeys.donation_helpbox_page_helpbox_main_title.tr(),
           style: TextStyle(color: Color(0xffe97d47)),
         ),
       ),
@@ -58,7 +60,8 @@ class _HelpBoxHomePageState extends State<HelpBoxHomePage> {
             children: [
               Expanded(
                 child: Text(
-                  "Set up a donation box let us take it from your address.",
+                  LocaleKeys.donation_helpbox_page_helpbox_main_description
+                      .tr(),
                   style: GoogleFonts.prozaLibre(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -67,7 +70,6 @@ class _HelpBoxHomePageState extends State<HelpBoxHomePage> {
                   ),
                 ),
               ),
-              
             ],
           ),
         ),
@@ -85,7 +87,7 @@ class _HelpBoxHomePageState extends State<HelpBoxHomePage> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Text(
-            "Boxes:",
+            LocaleKeys.donation_helpbox_page_helpbox_main_boxes.tr(),
             style: GoogleFonts.notoSerif(
               //fontWeight: FontWeight.bold,
               fontSize: 18,
@@ -105,73 +107,81 @@ class _HelpBoxHomePageState extends State<HelpBoxHomePage> {
               //    childAspectRatio: 1 / 1.2,
               //  ),
               //  itemBuilder: (context, index) {
-                  return SingleChildScrollView(
-                    child: Column(
+              return SingleChildScrollView(
+                child: Column(
+                  children: [
+                    //HelpBoxItemTile(
+                    //  itemName: value.shopItems[index][0],
+                    //  itemPrice: value.shopItems[index][1],
+                    //  imagePath: value.shopItems[index][2],
+                    //  color: value.shopItems[index][3],
+                    //  onPressed: () =>
+                    //      Provider.of<CartModel>(context, listen: false)
+                    //          .addItemToCart(index),
+                    //),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        //HelpBoxItemTile(
-                        //  itemName: value.shopItems[index][0],
-                        //  itemPrice: value.shopItems[index][1],
-                        //  imagePath: value.shopItems[index][2],
-                        //  color: value.shopItems[index][3],
-                        //  onPressed: () =>
-                        //      Provider.of<CartModel>(context, listen: false)
-                        //          .addItemToCart(index),
-                        //),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            HelpBoxItemTile(
-                              itemName: "Clothes",
-                              itemPrice: "1",
-                              imagePath: "assets/images/box_clothes.png",
-                              color: Color(0xffd9d9d9),
-                              onPressed: () =>
-                                  Provider.of<CartModel>(context, listen: false)
-                                      .addItemToCart(0),
-                            ),
-                            HelpBoxItemTile(
-                              itemName: "Packed Foods",
-                              itemPrice: "1",
-                              imagePath: "assets/images/box_food.png",
-                              color: Color(0xffd9d9d9),
-                              onPressed: () =>
-                                  Provider.of<CartModel>(context, listen: false)
-                                      .addItemToCart(1),
-                            ),
-                          ],
+                        HelpBoxItemTile(
+                          itemName: LocaleKeys
+                              .donation_helpbox_page_helpbox_main_clothes
+                              .tr(),
+                          itemPrice: "1",
+                          imagePath: "assets/images/box_clothes.png",
+                          color: Color(0xffd9d9d9),
+                          onPressed: () =>
+                              Provider.of<CartModel>(context, listen: false)
+                                  .addItemToCart(0),
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            HelpBoxItemTile(
-                              itemName: "Toys",
-                              itemPrice: "1",
-                              imagePath: "assets/images/box_toys.png",
-                              color: Color(0xffd9d9d9),
-                              onPressed: () =>
-                                  Provider.of<CartModel>(context, listen: false)
-                                      .addItemToCart(2),
-                            ),
-                            HelpBoxItemTile(
-                              itemName: "Use AI",
-                              itemPrice: "1",
-                              imagePath: "assets/images/box_ai.png",
-                              color: Color(0xffd9d9d9),
-                              onPressed: () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) {
-                                    return TfliteModel();
-                                  },
-                                ),
-                        ),
-                            ),
-                          ],
+                        HelpBoxItemTile(
+                          itemName: LocaleKeys
+                              .donation_helpbox_page_helpbox_main_packed_food
+                              .tr(),
+                          itemPrice: "1",
+                          imagePath: "assets/images/box_food.png",
+                          color: Color(0xffd9d9d9),
+                          onPressed: () =>
+                              Provider.of<CartModel>(context, listen: false)
+                                  .addItemToCart(1),
                         ),
                       ],
                     ),
-                  );               
-                },
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        HelpBoxItemTile(
+                          itemName: LocaleKeys
+                              .donation_helpbox_page_helpbox_main_toys
+                              .tr(),
+                          itemPrice: "1",
+                          imagePath: "assets/images/box_toys.png",
+                          color: Color(0xffd9d9d9),
+                          onPressed: () =>
+                              Provider.of<CartModel>(context, listen: false)
+                                  .addItemToCart(2),
+                        ),
+                        HelpBoxItemTile(
+                          itemName: LocaleKeys
+                              .donation_helpbox_page_helpbox_main_ai
+                              .tr(),
+                          itemPrice: "1",
+                          imagePath: "assets/images/box_ai.png",
+                          color: Color(0xffd9d9d9),
+                          onPressed: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return TfliteModel();
+                              },
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              );
+            },
           ),
         ),
       ]),

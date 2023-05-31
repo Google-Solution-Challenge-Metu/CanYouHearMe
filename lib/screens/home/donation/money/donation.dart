@@ -1,9 +1,10 @@
-import 'package:dietapp/screens/home/donation/money/sms_test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sms/flutter_sms.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../components/CustomSnackBarContent.dart';
 import 'utils.dart';
+import '/../translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class DonationScreen extends StatefulWidget {
   const DonationScreen({super.key});
@@ -43,7 +44,7 @@ class _DonationScreen extends State<DonationScreen> {
         ),
         backgroundColor: Colors.transparent,
         title: Text(
-          "Money Donation",
+          LocaleKeys.donation_money_page_title.tr(),
           style: GoogleFonts.prozaLibre(
             color: const Color(0xffe97d47),
             fontSize: 20,
@@ -92,7 +93,7 @@ class _DonationScreen extends State<DonationScreen> {
                           ),
                           Text(
                             // donateforkidstotheirwellbeing4 (26:150)
-                            'Donate for kids to their well being',
+                            LocaleKeys.donation_money_page_description.tr(),
                             style: SafeGoogleFont(
                               'Poppins',
                               fontSize: 18 * ffem,
@@ -114,7 +115,7 @@ class _DonationScreen extends State<DonationScreen> {
                         children: [
                           Text(
                             // ishafoundationdbn (40:62)
-                            'AFAD Foundation',
+                            LocaleKeys.donation_money_page_afad.tr(),
                             style: SafeGoogleFont(
                               'Poppins',
                               fontSize: 18 * ffem,
@@ -134,7 +135,7 @@ class _DonationScreen extends State<DonationScreen> {
                 margin:
                     EdgeInsets.fromLTRB(0 * fem, 0 * fem, 149 * fem, 31 * fem),
                 child: Text(
-                  'Choose Amount',
+                  LocaleKeys.donation_money_page_choose_amount.tr(),
                   style: SafeGoogleFont(
                     'Poppins',
                     fontSize: 22 * ffem,
@@ -342,7 +343,7 @@ class _DonationScreen extends State<DonationScreen> {
                                 ),
                                 Text(
                                   // orvek (36:39)
-                                  'or',
+                                  LocaleKeys.donation_money_page_or.tr(),
                                   style: SafeGoogleFont(
                                     'Poppins',
                                     fontSize: 17 * ffem,
@@ -371,7 +372,10 @@ class _DonationScreen extends State<DonationScreen> {
                             ),
                           ),
                           buildTextField(
-                              donateController, "Enter Price Manually", false),
+                              donateController,
+                              LocaleKeys.donation_money_page_enter_manually
+                                  .tr(),
+                              false),
                         ],
                       ),
                     ),
@@ -380,9 +384,9 @@ class _DonationScreen extends State<DonationScreen> {
               ),
               GestureDetector(
                 onTap: () {
-                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                     content: CustomSnackBarContent(
-                      errorText: "Thank You!",
+                      errorText: LocaleKeys.donation_money_page_thank_you.tr(),
                     ),
                     behavior: SnackBarBehavior.floating,
                     backgroundColor: Colors.transparent,
@@ -406,7 +410,7 @@ class _DonationScreen extends State<DonationScreen> {
                   ),
                   child: Center(
                     child: Text(
-                      'Donate now',
+                      LocaleKeys.donation_money_page_first_button.tr(),
                       style: SafeGoogleFont(
                         'Poppins',
                         fontSize: 16 * ffem,
@@ -423,9 +427,9 @@ class _DonationScreen extends State<DonationScreen> {
               ),
               GestureDetector(
                 onTap: () {
-                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                     content: CustomSnackBarContent(
-                      errorText: "Thank You!",
+                      errorText: LocaleKeys.donation_money_page_thank_you.tr(),
                     ),
                     behavior: SnackBarBehavior.floating,
                     backgroundColor: Colors.transparent,
@@ -450,7 +454,7 @@ class _DonationScreen extends State<DonationScreen> {
                   ),
                   child: Center(
                     child: Text(
-                      'Donate by SMS',
+                      LocaleKeys.donation_money_page_second_button.tr(),
                       style: SafeGoogleFont(
                         'Poppins',
                         fontSize: 16 * ffem,

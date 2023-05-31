@@ -99,7 +99,7 @@ abstract class  LocaleKeys {
   static const Register_already = 'Register_already';
   static const Register_logIn = 'Register_logIn';
   static const Register_signIn = 'Register_signIn';
-  static const element_notification = 'element_notification';
+  static const components_notification = 'components_notification';
   static const explore_page_title = 'explore_page_title';
   static const explore_page_post = 'explore_page_post';
   static const maps_title = 'maps_title';
@@ -108,6 +108,7 @@ abstract class  LocaleKeys {
   static const make_your_voice_heard_choose = 'make_your_voice_heard_choose';
   static const make_your_voice_heard_report_missing = 'make_your_voice_heard_report_missing';
   static const make_your_voice_heard_report_debris = 'make_your_voice_heard_report_debris';
+  static const make_your_voice_heard_report_missing_location = 'make_your_voice_heard_report_missing_location';
   static const make_your_voice_heard_debris_page_cancel = 'make_your_voice_heard_debris_page_cancel';
   static const make_your_voice_heard_debris_page_create = 'make_your_voice_heard_debris_page_create';
   static const make_your_voice_heard_debris_page_type = 'make_your_voice_heard_debris_page_type';
@@ -125,6 +126,7 @@ abstract class  LocaleKeys {
   static const donation_money_page_title = 'donation_money_page_title';
   static const donation_money_page_description = 'donation_money_page_description';
   static const donation_money_page_afad = 'donation_money_page_afad';
+  static const donation_money_page_choose_amount = 'donation_money_page_choose_amount';
   static const donation_money_page_thank_you = 'donation_money_page_thank_you';
   static const donation_money_page_or = 'donation_money_page_or';
   static const donation_money_page_enter_manually = 'donation_money_page_enter_manually';

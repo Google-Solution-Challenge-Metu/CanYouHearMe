@@ -1,6 +1,8 @@
 import 'package:dietapp/screens/home/makeyourvoiceheard/post_options.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dietapp/services/report_service.dart';
+import 'package:dietapp/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -26,7 +28,7 @@ class _MakeYourVoiceHeardPageState extends State<MakeYourVoiceHeardPage> {
         ),
         backgroundColor: Colors.transparent,
         title: Text(
-          "Make Your Voice Heard",
+          LocaleKeys.make_your_voice_heard_title.tr(),
           style: GoogleFonts.prozaLibre(
             color: const Color(0xffe97d47),
             fontSize: 20,
@@ -41,11 +43,12 @@ class _MakeYourVoiceHeardPageState extends State<MakeYourVoiceHeardPage> {
           const SizedBox(
             height: 10,
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
+          Padding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
             child: Text(
-              "Reports",
-              style: TextStyle(
+              LocaleKeys.make_your_voice_heard_reports.tr(),
+              style: const TextStyle(
                   fontFamily: "Raleway",
                   fontWeight: FontWeight.bold,
                   fontSize: 20.0),

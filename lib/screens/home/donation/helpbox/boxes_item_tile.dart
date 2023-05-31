@@ -1,6 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../../../../translations/locale_keys.g.dart';
 
 class HelpBoxItemTile extends StatelessWidget {
   final String itemName;
@@ -21,7 +24,7 @@ class HelpBoxItemTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right:15,left:15,top: 30, bottom: 10),
+      padding: const EdgeInsets.only(right: 15, left: 15, top: 30, bottom: 10),
       child: Container(
         height: 160,
         decoration: BoxDecoration(
@@ -43,16 +46,11 @@ class HelpBoxItemTile extends StatelessWidget {
             ),
 
             // item name
-            Text(
-              itemName,
-              style: GoogleFonts.nunitoSans(
-                textStyle: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold
-                ),
-              )
-            ),
-            
+            Text(itemName,
+                style: GoogleFonts.nunitoSans(
+                  textStyle:
+                      TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                )),
 
             MaterialButton(
               onPressed: onPressed,
@@ -61,17 +59,13 @@ class HelpBoxItemTile extends StatelessWidget {
                 borderRadius: BorderRadius.circular(25.0),
               ),
               child: Text(
-                'Add a box',
-                style: GoogleFonts.nunitoSans(
-                textStyle: TextStyle(
-                  color: Colors.white,
-                  //fontSize: 16,
-                  fontWeight: FontWeight.w800
-                ),
-              )
-
-                
-              ),
+                  LocaleKeys.donation_helpbox_page_helpbox_main_add_a_box.tr(),
+                  style: GoogleFonts.nunitoSans(
+                    textStyle: TextStyle(
+                        color: Colors.white,
+                        //fontSize: 16,
+                        fontWeight: FontWeight.w800),
+                  )),
             )
           ],
         ),

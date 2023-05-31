@@ -3,6 +3,8 @@ import 'package:dietapp/screens/home/donation/money/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sms/flutter_sms.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '/../translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class SendingSMS extends StatefulWidget {
   @override

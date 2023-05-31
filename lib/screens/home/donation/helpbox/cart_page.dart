@@ -1,6 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import '../../../../translations/locale_keys.g.dart';
 import '../../../components/CustomSnackBarContent.dart';
 import 'call_authorized.dart';
 import 'cart_model.dart';
@@ -27,7 +29,7 @@ class CartPage extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 24.0),
                 child: Text(
-                  "My Boxes",
+                  LocaleKeys.donation_helpbox_page_cart_page_title.tr(),
                   style: GoogleFonts.prozaLibre(
                     fontSize: 36,
                     fontWeight: FontWeight.bold,
@@ -60,7 +62,9 @@ class CartPage extends StatelessWidget {
                               style: const TextStyle(fontSize: 18),
                             ),
                             subtitle: Text(
-                              value.cartItems[index][1] + ' Box',
+                              value.cartItems[index][1] +
+                                  LocaleKeys.donation_helpbox_page_cart_page_box
+                                      .tr(),
                               style: const TextStyle(fontSize: 12),
                             ),
                             trailing: IconButton(
@@ -94,14 +98,16 @@ class CartPage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Total Boxes',
+                            LocaleKeys
+                                .donation_helpbox_page_cart_page_total_boxes
+                                .tr(),
                             style: TextStyle(color: Colors.white60),
                           ),
 
                           const SizedBox(height: 8),
                           // total price
                           Text(
-                            '${value.calculateTotal()} piece',
+                            '${value.calculateTotal()} ${LocaleKeys.donation_helpbox_page_cart_page_total_piece.tr()}',
                             style: const TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
@@ -114,10 +120,11 @@ class CartPage extends StatelessWidget {
                         onTap: () {
                           print(value.calculateTotal().runtimeType);
                           if (value.calculateTotal() == '0') {
-                            ScaffoldMessenger.of(context)
-                                .showSnackBar(const SnackBar(
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                               content: CustomSnackBarContent(
-                                errorText: "You must select at least 1 box.",
+                                errorText: LocaleKeys
+                                    .donation_helpbox_page_cart_page_error_message
+                                    .tr(),
                               ),
                               behavior: SnackBarBehavior.floating,
                               backgroundColor: Colors.transparent,
@@ -137,9 +144,10 @@ class CartPage extends StatelessWidget {
                           ),
                           padding: const EdgeInsets.all(12),
                           child: Row(
-                            children: const [
+                            children: [
                               Text(
-                                'Call The Authorized',
+                                LocaleKeys.donation_helpbox_page_cart_page_call
+                                    .tr(),
                                 style: TextStyle(color: Colors.white),
                               ),
                               Icon(

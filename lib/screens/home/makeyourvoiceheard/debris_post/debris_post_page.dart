@@ -2,6 +2,8 @@ import 'dart:async';
 import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dietapp/screens/components/CustomSnackBarContent.dart';
+import 'package:dietapp/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
@@ -38,7 +40,7 @@ class _DebrisPostPageState extends State<DebrisPostPage> {
   double _longitude = 0;
   String _address = "";
 
-  late LatLng _currentPostion=LatLng(38.9637, 35.2433);
+  late LatLng _currentPostion = LatLng(38.9637, 35.2433);
   Set<Marker> _markers = {};
 
   void _getUserLocation() async {
@@ -168,20 +170,24 @@ class _DebrisPostPageState extends State<DebrisPostPage> {
         context: context,
         builder: (context) {
           return SimpleDialog(
-            title: const Text("Pick an image"),
+            title: Text(
+                LocaleKeys.make_your_voice_heard_debris_page_pick_image.tr()),
             children: [
               SimpleDialogOption(
                 onPressed: () =>
                     handleTakePhoto(ImageSource.camera, context: context),
-                child: const Text("Photo with Camera"),
+                child: Text(
+                    LocaleKeys.make_your_voice_heard_debris_page_camera.tr()),
               ),
               SimpleDialogOption(
                 onPressed: () => handleChooseFromGallery(ImageSource.gallery,
                     context: context),
-                child: const Text("Photo from Gallery"),
+                child: Text(
+                    LocaleKeys.make_your_voice_heard_debris_page_gallery.tr()),
               ),
               SimpleDialogOption(
-                child: const Text("Cancel"),
+                child: Text(
+                    LocaleKeys.make_your_voice_heard_debris_page_cancel.tr()),
                 onPressed: () => Navigator.pop(context),
               ),
             ],
@@ -212,7 +218,7 @@ class _DebrisPostPageState extends State<DebrisPostPage> {
         ),
         backgroundColor: Colors.transparent,
         title: Text(
-          "Create a Report",
+          LocaleKeys.make_your_voice_heard_debris_page_create.tr(),
           style: GoogleFonts.prozaLibre(
             color: const Color(0xffe97d47),
             fontSize: 20,
@@ -227,12 +233,14 @@ class _DebrisPostPageState extends State<DebrisPostPage> {
             const SizedBox(
               height: 20.0,
             ),
-            buildTextField(postController, "Type the report here.", false),
+            buildTextField(postController,
+                LocaleKeys.make_your_voice_heard_debris_page_type.tr(), false),
             const SizedBox(
               height: 10.0,
             ),
             imagePlace(),
-            buildButton(imagePicker, "Pick an image"),
+            buildButton(imagePicker,
+                LocaleKeys.make_your_voice_heard_debris_page_pick_image.tr()),
             Container(
                 height: 250,
                 width: MediaQuery.of(context).size.width,
@@ -253,7 +261,7 @@ class _DebrisPostPageState extends State<DebrisPostPage> {
       floatingActionButton: FloatingActionButton.extended(
         onPressed: postReport,
         icon: const Icon(Icons.save),
-        label: const Text("Post"),
+        label: Text(LocaleKeys.make_your_voice_heard_debris_page_post.tr()),
         backgroundColor: const Color(0xffe97d47),
       ),
     );

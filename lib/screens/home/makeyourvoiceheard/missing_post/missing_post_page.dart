@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dietapp/screens/components/CustomSnackBarContent.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,6 +18,8 @@ import 'dart:io' show Platform;
 // Only to control hybrid composition and the renderer in Android
 import 'package:google_maps_flutter_android/google_maps_flutter_android.dart';
 import 'package:google_maps_flutter_platform_interface/google_maps_flutter_platform_interface.dart';
+
+import '../../../../translations/locale_keys.g.dart';
 
 class MissingPostPage extends StatefulWidget {
   MissingPostPage({Key? key}) : super(key: key);
@@ -182,20 +185,24 @@ class _MissingPostPageState extends State<MissingPostPage> {
         context: context,
         builder: (context) {
           return SimpleDialog(
-            title: const Text("Pick an image"),
+            title: Text(
+                LocaleKeys.make_your_voice_heard_debris_page_pick_image.tr()),
             children: [
               SimpleDialogOption(
                 onPressed: () =>
                     handleTakePhoto(ImageSource.camera, context: context),
-                child: const Text("Photo with Camera"),
+                child: Text(
+                    LocaleKeys.make_your_voice_heard_debris_page_camera.tr()),
               ),
               SimpleDialogOption(
                 onPressed: () => handleChooseFromGallery(ImageSource.gallery,
                     context: context),
-                child: const Text("Photo from Gallery"),
+                child: Text(
+                    LocaleKeys.make_your_voice_heard_debris_page_gallery.tr()),
               ),
               SimpleDialogOption(
-                child: const Text("Cancel"),
+                child: Text(
+                    LocaleKeys.make_your_voice_heard_debris_page_cancel.tr()),
                 onPressed: () => Navigator.pop(context),
               ),
             ],
@@ -219,7 +226,7 @@ class _MissingPostPageState extends State<MissingPostPage> {
         ),
         backgroundColor: Colors.transparent,
         title: Text(
-          "Create a Report",
+          LocaleKeys.make_your_voice_heard_debris_page_create.tr(),
           style: GoogleFonts.prozaLibre(
             color: const Color(0xffe97d47),
             fontSize: 20,
@@ -234,7 +241,8 @@ class _MissingPostPageState extends State<MissingPostPage> {
             const SizedBox(
               height: 20.0,
             ),
-            buildTextField(postController, "Type the report here.", false),
+            buildTextField(postController,
+                LocaleKeys.make_your_voice_heard_debris_page_type.tr(), false),
             const SizedBox(
               height: 10.0,
             ),
@@ -247,7 +255,8 @@ class _MissingPostPageState extends State<MissingPostPage> {
                   selectedPlace!.geometry!.location.lng.toString() +
                   ")"),
             ],
-            buildButton(imagePicker, "Pick an image"),
+            buildButton(imagePicker,
+                LocaleKeys.make_your_voice_heard_debris_page_pick_image.tr()),
             GestureDetector(
               behavior: HitTestBehavior.translucent,
               onTap: () {
@@ -293,22 +302,24 @@ class _MissingPostPageState extends State<MissingPostPage> {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25),
                 ),
-                color: Color(0xffe97d47),
-                margin: EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
+                color: const Color(0xffe97d47),
+                margin: const EdgeInsets.symmetric(
+                    horizontal: 25.0, vertical: 10.0),
                 child: Padding(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: ListTile(
-                    leading: Icon(
+                    leading: const Icon(
                       Icons.location_on,
                       color: Colors.white,
                     ),
                     title: Text(
-                      "Pick a location",
-                      style: TextStyle(
+                      LocaleKeys.make_your_voice_heard_report_missing_location
+                          .tr(),
+                      style: const TextStyle(
                         color: Colors.white,
                       ),
                     ),
-                    trailing: Icon(
+                    trailing: const Icon(
                       Icons.arrow_forward_ios,
                       color: Colors.white,
                     ),
@@ -322,7 +333,7 @@ class _MissingPostPageState extends State<MissingPostPage> {
       floatingActionButton: FloatingActionButton.extended(
         onPressed: postReport,
         icon: const Icon(Icons.save),
-        label: const Text("Post"),
+        label: Text(LocaleKeys.make_your_voice_heard_debris_page_post.tr()),
         backgroundColor: const Color(0xffe97d47),
       ),
     );

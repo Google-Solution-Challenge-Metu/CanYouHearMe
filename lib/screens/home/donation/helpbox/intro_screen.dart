@@ -1,5 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../../../translations/locale_keys.g.dart';
 import 'helpbox_main.dart';
 
 class IntroScreen extends StatelessWidget {
@@ -27,7 +29,7 @@ class IntroScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(28.0),
               child: Text(
-                'Prepare your helpbox, pack each variety separately',
+                LocaleKeys.donation_helpbox_page_intro.tr(),
                 textAlign: TextAlign.center,
                 style: GoogleFonts.prozaLibre(
                   color: const Color(0xffe97d47),
@@ -40,7 +42,7 @@ class IntroScreen extends StatelessWidget {
 
             // groceree gives you fresh vegetables and fruits
             Text(
-              'Ready to report',
+              LocaleKeys.donation_helpbox_page_ready_to_report.tr(),
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 16,
@@ -68,8 +70,8 @@ class IntroScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(25),
                   color: Color(0xffe97d47),
                 ),
-                child: const Text(
-                  "Get Started",
+                child: Text(
+                  LocaleKeys.donation_helpbox_page_get_started.tr(),
                   style: TextStyle(
                     color: Colors.white,
                     // fontWeight: FontWeight.bold,
