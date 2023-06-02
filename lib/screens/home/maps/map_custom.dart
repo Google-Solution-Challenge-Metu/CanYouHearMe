@@ -222,11 +222,7 @@ class _MapUIStatecustom extends State<MapUIcustom> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () => Navigator.pop(context),
-          color: const Color(0xffe97d47),
-        ),
+        
         backgroundColor: Colors.transparent,
         title: Text(
           LocaleKeys.maps_title.tr(),

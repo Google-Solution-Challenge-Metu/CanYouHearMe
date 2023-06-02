@@ -24,13 +24,7 @@ class DonationMainScreen extends StatelessWidget {
         ),
         elevation: 0,
         backgroundColor: Colors.transparent,
-        leading: IconButton(
-          onPressed: () => Navigator.pop(context),
-          icon: const Icon(
-            Icons.arrow_back,
-            color: Color(0xffe97d47),
-          ),
-        ),
+        
       ),
       body: Center(
         child: Column(

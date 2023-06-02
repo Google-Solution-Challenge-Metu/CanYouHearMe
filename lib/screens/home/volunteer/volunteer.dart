@@ -36,13 +36,7 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
     var size = MediaQuery.of(context).size;
     return Scaffold(
         appBar: AppBar(
-          leading: IconButton(
-            onPressed: () => Navigator.pop(context),
-            icon: Icon(
-              Icons.arrow_back,
-              color: Color(0xffe97d47),
-            ),
-          ),
+          
           elevation: 0,
           backgroundColor: Colors.transparent,
           title: Text(
