@@ -87,24 +87,6 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Text(
-                      LocaleKeys.helloWord.tr(),
-                      style: GoogleFonts.nunitoSans(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w400,
-                        height: 1.3625,
-                        color: Color(0xff000000),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
               padding: const EdgeInsets.all(12.0),
               child: DropdownButton<String>(
                 hint: Text(

@@ -15,7 +15,7 @@ class CodegenLoader extends AssetLoader{
   }
 
   static const Map<String,dynamic> ar = {
-  "language": "العربية",
+  "language": "مشاركاتي",
   "helloWord": "Hello Word",
   "forget_password_reset": "تم إرسال البريد الإلكتروني لإعادة تعيين كلمة المرور",
   "forget_password_forgot_title": "هل نسيت كلمة المرور؟",
@@ -189,7 +189,7 @@ class CodegenLoader extends AssetLoader{
   "donation_helpbox_page_help_tflite_pick_image": "اختر صورة"
 };
 static const Map<String,dynamic> en = {
-  "language": "English",
+  "language": "My Posts",
   "helloWord": "Hello Word",
   "forget_password_reset": "Password reset email sent successfully.",
   "forget_password_forgot_title": "Forgot Password Page",
@@ -308,7 +308,7 @@ static const Map<String,dynamic> en = {
   "make_your_voice_heard_debris_page_post_shared": "Your post has been shared.",
   "donation_title": "Donation Options",
   "donation_blood": "Blood Donation",
-  "donation_helpbox": "Help-box Donation",
+  "donation_helpbox": "Box Donation",
   "donation_money": "Money Donation",
   "donation_blood_page_title": "Blood Donations",
   "donation_money_page_title": "Money Donation",
@@ -363,7 +363,7 @@ static const Map<String,dynamic> en = {
   "donation_helpbox_page_help_tflite_pick_image": "Pick Image"
 };
 static const Map<String,dynamic> tr = {
-  "language": "Türkçe",
+  "language": "Postlarım",
   "helloWord": "Merhaba Dünya",
   "forget_password_reset": "Şifre sıfırlama linki başarıyla gönderildi.",
   "forget_password_forgot_title": "Şifremi Unuttum",

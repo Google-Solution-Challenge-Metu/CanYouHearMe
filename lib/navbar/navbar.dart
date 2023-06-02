@@ -110,7 +110,7 @@ class _NavBarState extends State<NavBar> {
                   text: "Volunteer",
                 ),
                 GButton(
-                  icon: Icons.hotel_class_outlined,
+                  icon: Icons.attach_money_rounded,
                   text: "Donate",
                 ),
                 GButton(
@@ -165,7 +165,7 @@ class _NavBarState extends State<NavBar> {
                       text: "Volunteer",
                     ),
                     GButton(
-                      icon: Icons.hotel_class_outlined,
+                      icon: Icons.attach_money_rounded,
                       text: "Donate",
                     ),
                   ],

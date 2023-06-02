@@ -1,5 +1,5 @@
 {
-    "language":"English",
+    "language":"My Posts",
     "helloWord":"Hello Word",
     "forget_password_reset":"Password reset email sent successfully.",
     "forget_password_forgot_title":"Forgot Password Page",
@@ -118,7 +118,7 @@
     "make_your_voice_heard_debris_page_post_shared": "Your post has been shared.",
     "donation_title": "Donation Options",
     "donation_blood": "Blood Donation",
-    "donation_helpbox": "Help-box Donation",
+    "donation_helpbox": "Box Donation",
     "donation_money": "Money Donation",
     "donation_blood_page_title": "Blood Donations",
     "donation_money_page_title": "Money Donation",
