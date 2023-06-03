@@ -25,7 +25,8 @@ class _MakeYourVoiceHeardPageState extends State<MakeYourVoiceHeardPage> {
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.person),
-          onPressed:() => Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileScreen())),
+          onPressed: () => Navigator.push(context,
+              MaterialPageRoute(builder: (context) => ProfileScreen())),
           color: const Color(0xffe97d47),
         ),
         backgroundColor: Colors.transparent,
@@ -38,15 +39,15 @@ class _MakeYourVoiceHeardPageState extends State<MakeYourVoiceHeardPage> {
               fontWeight: FontWeight.w600,
               height: 1.355,
             ),
-        
           ),
         ),
         actions: [
           IconButton(
-          icon: const Icon(Icons.search_outlined),
-          onPressed:() => Navigator.push(context, MaterialPageRoute(builder: (context) => ExploreScreen())),
-          color: const Color(0xffe97d47),
-        ),
+            icon: const Icon(Icons.search_outlined),
+            onPressed: () => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => ExploreScreen())),
+            color: const Color(0xffe97d47),
+          ),
         ],
       ),
       body: ListView(
@@ -194,6 +195,7 @@ class _MakeYourVoiceHeardPageState extends State<MakeYourVoiceHeardPage> {
       ),
       floatingActionButton: FloatingActionButton(
         // Go to CartPage
+        heroTag: const Text("btn1"),
         backgroundColor: Colors.black,
         onPressed: () {
           showOptions(context);
