@@ -53,14 +53,22 @@ As the home screen changes, so does the navigation bar, as you can see. As a res
 # Features
 * **Account Creation and Information Sharing:** Users can create an account and share crucial information, such as the location of a missing person, with the wider community. This facilitates the dissemination of vital information and supports organized rescue and recovery efforts.
 <p align="center">
-<img src="https://user-images.githubusercontent.com/124795286/225624620-b6a079be-9035-419b-bda2-11fbed596569.png" width="250" />
+<img src="https://github.com/Google-Solution-Challenge-Metu/CanYouHearMe/assets/96688864/e84d695b-33f2-4e31-b5a9-2d03e673b38d.png" width="250" />
 <img width="250"  src="https://user-images.githubusercontent.com/124795286/225681847-4ceed3ce-7191-45c6-a56f-04c1cb596b21.png">
+</p>
+
+We have incorporated **language support** to cater to diverse language preferences. By offering multiple language options, we ensure that individuals from various linguistic backgrounds can easily navigate and engage with our app. This expansion of language support has significantly broadened the app's usability and made it more accessible to a wider user base. For now, our app supports *Turkish, English and Arabic* languages.
+
+<p align="center">
+<img width="250"  src="https://github.com/Google-Solution-Challenge-Metu/CanYouHearMe/assets/96688864/d534efa6-e3e7-40db-867b-f097d134c97e.png">
+<img width="250"  src="https://github.com/Google-Solution-Challenge-Metu/CanYouHearMe/assets/96688864/ba500009-c106-46bf-b539-679653d46c9c.png">
+<img width="250"  src="https://github.com/Google-Solution-Challenge-Metu/CanYouHearMe/assets/96688864/5a03a34f-0cce-4719-b5c4-5045b35338a8.png">
 </p>
 
 According to the order of importance of the topic to be reported, only the location of the user is allowed to be shared in order to prevent possible fake sharing for the priority subject("debris building or need"). For other external subject/s ("missing person"), the user can select and report different locations on the map.
 
 <p align="center">
-<img width="250"  src="https://user-images.githubusercontent.com/124795286/225681982-73f3aeb9-08aa-426e-8d41-18e0f1eb376e.png">
+<img width="250"  src="https://github.com/Google-Solution-Challenge-Metu/CanYouHearMe/assets/96688864/79e5fd88-0e1b-4f8e-a25b-4098e388aa20.png">
 <img width="250"  src="https://user-images.githubusercontent.com/124795286/225683098-78196717-260e-4fb3-bc0f-d0aafab9c98b.png">
 </p>
 
@@ -115,7 +123,7 @@ Users can donate by sending an SMS if they wish. (Since we set our app to send s
 The green marks are places of shelters for earthquake victims.
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/124795286/225628657-ac2ef91e-9d5e-4428-8918-bc07d2b13327.png" width="250" />
+<img src="https://github.com/Google-Solution-Challenge-Metu/CanYouHearMe/assets/96688864/1f3ecbad-6669-459e-a1be-dcd315582f3b.png" width="250" />
 </p>
 
 * **Watch Version of the App:** As part of our app's efforts to reduce the adverse effects of natural disasters, including the recent earthquake, we plan to incorporate a watch version of the app with additional features. This watch version includes an SOS button that can be used by individuals who may be trapped under debris after an earthquake.
@@ -137,7 +145,7 @@ This system allows you to run the "Can You Hear Me" application on your smart de
 * **Explore Page:** Our app features an "Explore" page that provides users with crucial information regarding earthquakes. This page serves as a platform for users to easily access educational resources on earthquake preparedness and response, as well as learn more about the nature of earthquakes themselves.
 
 <p align="center">
-<img width="250"  src="https://user-images.githubusercontent.com/124795286/225625566-89a06ab6-b436-42d9-a42d-7b75a213f78b.png">
+<img width="250"  src="https://github.com/Google-Solution-Challenge-Metu/CanYouHearMe/assets/96688864/10f9f2c9-890f-45d6-8c1e-0877957cc798.png">
 <img width="250"  src="https://user-images.githubusercontent.com/124795286/225629135-dcd8ffdc-0a74-4690-a251-244620e8b9d9.png">
 </p>
 
