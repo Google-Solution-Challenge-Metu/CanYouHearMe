@@ -37,11 +37,18 @@ We have SOS button on our login page as well as on watch version of our app in c
 <img width="250"  src="https://user-images.githubusercontent.com/124795286/225636488-af772f8f-7ffb-4bb6-9602-28bf10ccf039.png">
 </p>
 
-# Main
+# Main Page & Dynamic UI Structure
 Our app has user-friendly interface, after you login our simple, easy to use main page will be open.
+After the login process, our app is able to collect the current location of the user and compare it with the seismic zone, which is provided by our Firebase database.
+When users open the app in an area affected by an earthquake, the "SOS" button takes precedence, providing quick access to emergency resources. On the other hand, if users are not in a seismic zone, the social media page takes center stage, facilitating communication and information sharing among users. To do that, we aim to ensure the utmost inclusivity and reach a larger audience in the event of disasters.
+
 <p align="center">
-<img src="https://user-images.githubusercontent.com/124795286/225623650-3de0ccd6-5e69-4458-aa3b-b4a07b4c5f53.png" width="250" />
+<img width="250"  src="https://github.com/Google-Solution-Challenge-Metu/CanYouHearMe/assets/96688864/7f3bcf4f-5a61-4173-9ceb-6c4fa98983c5.png">
+
+<img width="250"  src="https://github.com/Google-Solution-Challenge-Metu/CanYouHearMe/assets/96688864/e9921eaf-922f-445c-813a-dace8a548d3c.png">
 </p>
+
+As the home screen changes, so does the navigation bar, as you can see. As a result, this feature allow users to find what they need in our app comfortably.
 
 # Features
 * **Account Creation and Information Sharing:** Users can create an account and share crucial information, such as the location of a missing person, with the wider community. This facilitates the dissemination of vital information and supports organized rescue and recovery efforts.
@@ -65,8 +72,9 @@ According to the order of importance of the topic to be reported, only the locat
 * **Donation System:** The app features a donation system that facilitates monetary donations and blood donations to organizations supporting earthquake relief efforts. 
 
 <p align="center">
-<img width="250"  src="https://user-images.githubusercontent.com/124795286/225683498-6889a8af-40de-4a64-8396-5dd02d2d42ab.png">
+<img width="250"  src="https://github.com/Google-Solution-Challenge-Metu/CanYouHearMe/assets/96688864/3ea0c757-5a99-4b83-8927-75e23b200932.png">
 </p>
+
 
 The AI system is designed to avoid issues observed in previous disaster relief efforts where donated items were not useful, such as the inclusion of cocktail dresses or high heels. 
 
@@ -85,11 +93,14 @@ When an users wants to donate blood, our app shows the nearest locations. Since 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/124795286/225626687-b4a0ed36-984e-4f00-9f71-49d95c638812.png" width="250"  />
 </p>
-Also we enabled users to donate money easily
+Also we enabled users to donate money easily. 
+Users can donate by sending an SMS if they wish. (Since we set our app to send sms to AFAD, users can actually donate. Be carefull and donate please :) )
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/124795286/225633463-c84b23ba-6e32-487b-8bfc-7c671f0e9cf4.png" width="250"  />
+<img src="https://github.com/Google-Solution-Challenge-Metu/CanYouHearMe/assets/96688864/283c9286-e25c-45a5-a849-3d5201bd70b7.png" width="250"  />
+<img src="https://github.com/Google-Solution-Challenge-Metu/CanYouHearMe/assets/96688864/04ed4206-ce0c-4038-bc2c-1bca042459ea.png" width="250"  />
 </p>
+
 
 
 
