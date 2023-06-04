@@ -59,7 +59,7 @@ As the home screen changes, so does the navigation bar, as you can see. As a res
 
 
 
-We have incorporated **language support** to cater to diverse language preferences. By offering multiple language options, we ensure that individuals from various linguistic backgrounds can easily navigate and engage with our app. This expansion of language support has significantly broadened the app's usability and made it more accessible to a wider user base. For now, our app supports *Turkish, English and Arabic* languages.
+We have incorporated **language support** to cater to diverse language preferences. By offering multiple language options, we ensure that individuals from various linguistic backgrounds can easily navigate and engage with our app. This expansion of language support  significantly broadens the app's usability and makes it more accessible to a wider user base. For now, our app supports *Turkish, English and Arabic* languages.
 
 <p align="center">
 <img width="250"  src="https://github.com/Google-Solution-Challenge-Metu/CanYouHearMe/assets/96688864/d534efa6-e3e7-40db-867b-f097d134c97e.png">
