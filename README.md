@@ -64,10 +64,12 @@ According to the order of importance of the topic to be reported, only the locat
 <img width="250"  src="https://user-images.githubusercontent.com/124795286/225683098-78196717-260e-4fb3-bc0f-d0aafab9c98b.png">
 </p>
 
-* **Volunteer Work:** The app provides a platform for individuals to locate nearby opportunities for volunteer work. By enabling users to easily identify and participate in local volunteer work, the app encourages community involvement in disaster response efforts.
+* **Volunteer Work:** The app provides a platform for individuals to locate nearby opportunities for volunteer work. By enabling users to easily identify and participate in local volunteer work, the app encourages community involvement in disaster response efforts. This filter allows users to see other volunteer work in different cities.
+
 <p align="center">
-<img src="https://user-images.githubusercontent.com/124795286/225681115-c5ef6e37-868d-4328-8477-3e79437e0131.png" width="250" />
+<img src="https://github.com/Google-Solution-Challenge-Metu/CanYouHearMe/assets/96688864/9c5c86da-10f6-4dd8-b0ec-72ab07ba5a5b.gif" width="250" />
 </p>
+
 
 * **Donation System:** The app features a donation system that facilitates monetary donations and blood donations to organizations supporting earthquake relief efforts. 
 
@@ -165,7 +167,7 @@ Since, our app is a **cross platform app**, which is written with Flutter. Each 
 
 [DOWNLOAD LINK](https://drive.google.com/uc?export=download&id=12sJsdhsoWxTHxO_xWD_g7l6LGmLv5rVw)
 
-You can download our apk from link or from apk_app folder in our repo. 
+You can download our apk from link (recomended - new version) or from apk_app (previous version) folder in our repo. 
 Please use **Android**.
 
 ## RUN
