@@ -152,7 +152,7 @@ Since, our app is a **cross platform app**, which is written with Flutter. Each 
 
 ## Download APK
 
-[DOWNLOAD LINK](https://drive.google.com/uc?export=download&id=1f6be_H1NokmjlloX4ysoPqNTwjeGvHzr)
+[DOWNLOAD LINK](https://drive.google.com/uc?export=download&id=12sJsdhsoWxTHxO_xWD_g7l6LGmLv5rVw)
 
 You can download our apk from link or from apk_app folder in our repo. 
 Please use **Android**.
