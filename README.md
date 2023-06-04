@@ -54,8 +54,10 @@ As the home screen changes, so does the navigation bar, as you can see. As a res
 * **Account Creation and Information Sharing:** Users can create an account and share crucial information, such as the location of a missing person, with the wider community. This facilitates the dissemination of vital information and supports organized rescue and recovery efforts.
 <p align="center">
 <img src="https://github.com/Google-Solution-Challenge-Metu/CanYouHearMe/assets/96688864/e84d695b-33f2-4e31-b5a9-2d03e673b38d.png" width="250" />
-<img width="250"  src="https://user-images.githubusercontent.com/124795286/225681847-4ceed3ce-7191-45c6-a56f-04c1cb596b21.png">
+<img width="250"  src="https://github.com/Google-Solution-Challenge-Metu/CanYouHearMe/assets/96688864/2029a411-2913-4e04-8e76-17f3cb8c4acf.png">
 </p>
+
+
 
 We have incorporated **language support** to cater to diverse language preferences. By offering multiple language options, we ensure that individuals from various linguistic backgrounds can easily navigate and engage with our app. This expansion of language support has significantly broadened the app's usability and made it more accessible to a wider user base. For now, our app supports *Turkish, English and Arabic* languages.
 
